@@ -4,7 +4,6 @@
         <div
             class="grid items-center grid-cols-1 text-center lg:grid-cols-2 text-slate-400 dark:text-zink-200 ltr:lg:text-left rtl:lg:text-right">
             <div>
-                <script>document.write(new Date().getFullYear())</script>
 
             </div>
             <div class="hidden lg:block">

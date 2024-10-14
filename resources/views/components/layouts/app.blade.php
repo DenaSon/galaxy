@@ -8,7 +8,6 @@
 
 
     @include('components.layouts.inc.sidebar')
-    <!-- Left Sidebar End -->
 
     @include('components.layouts.inc.topbar')
 
@@ -36,7 +35,6 @@
     </div>
 
 </div>
-<!-- end main content -->
 
 
 <div class="fixed items-center hidden bottom-6 right-12 h-header group-data-[navbar=hidden]:flex">
@@ -49,8 +47,7 @@
 
 @include('components.layouts.inc.templateSetting')
 
-@include('components.layouts.inc.scripts')
 
 </body>
-
+@include('components.layouts.inc.scripts')
 </html>

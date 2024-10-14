@@ -1,3 +1,4 @@
+{{--
 <div id="cartSidePenal" drawer-end
      class="fixed inset-y-0 flex flex-col w-full transition-transform duration-300 ease-in-out transform bg-white shadow dark:bg-zink-600 ltr:right-0 rtl:left-0 md:w-96 z-drawer show">
     <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-zink-500">
@@ -161,3 +162,4 @@
         </div>
     </div>
 </div>
+--}}

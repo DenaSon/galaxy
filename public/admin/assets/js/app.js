@@ -1,4 +1,5 @@
 
+document.addEventListener('livewire:navigated', () => {
 
 // const { document } = require("postcss");
 var navbarMenuHTML = document.querySelector(".app-menu").innerHTML;
@@ -873,6 +874,10 @@ function init() {
 
 init();
 
+
+
+
+
 //  Window scroll sticky class add
 function windowScroll() {
     var navbar = document.getElementById("page-topbar");
@@ -884,3 +889,4 @@ function windowScroll() {
         }
     }
 }
+})

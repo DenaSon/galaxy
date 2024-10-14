@@ -1,4 +1,3 @@
-
 dom_el(`.${el_name} .bw-dropdown`).addEventListener('click', function (e){
     changeCssForDomArray('.dropdown-items-parent', 'hidden');
     this.nextElementSibling.classList.toggle('hidden');
