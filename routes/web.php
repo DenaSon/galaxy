@@ -1,15 +1,6 @@
 <?php
 
-use App\Livewire\Admin\Dashboard;
-use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
 
-
-Route::prefix('master')->as('master.')->group(function () {
-    Route::get('/', Dashboard::class)->name('dashboard');
-
-
-    Route::prefix('blog')->as('blog.')->group(function () {
-
-    });
-});
-
+Volt::route('/', \App\Livewire\Admin\Dashboard::class);
+Volt::route('/master',\App\Livewire\Admin\Dashboard::class)->name('master');

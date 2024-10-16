@@ -1,0 +1,30 @@
+<?php
+
+namespace [namespace];
+use Livewire\Attributes\Layout;
+use Livewire\Component;
+#[Layout('components.layouts.admin')]
+class [class] extends Component
+{
+
+
+
+    public function save()
+    {
+       //        $this->validate(
+       //            [''=>'']
+       //        );
+    }
+
+    public function mount()
+    {
+
+    }
+
+
+    public function render()
+    {
+        return view('[view]')
+        ->title('');
+    }
+}
