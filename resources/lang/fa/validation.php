@@ -309,6 +309,9 @@ return [
         'licenceExpire' => 'انقضاء مجوز',
         'telephone' => 'تلفن',
         'rules' => 'قوانین و مقررات',
+        'selectedCategories' => 'دسته',
+        'additionalInfo' => 'یادداشت',
+        'photo'=>'عکس'
 
 
 

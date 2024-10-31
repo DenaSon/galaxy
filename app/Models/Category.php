@@ -9,13 +9,20 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
 
-    public static function scopeBlogs(Builder $query)
+
+    public  function scopeBlogs(Builder $query)
     {
         return $query->where('type', 'blog');
     }
 
+    public function scopeOnlyParent(Builder $query)
+    {
+        return $query->whereNull('parent_id');
 
-    protected $fillable = ['name', 'description'];
+    }
+
+
+    protected $fillable = ['name', 'description','parent_id','type'];
 
     public function blogs()
     {

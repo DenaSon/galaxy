@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('type',15);
             $table->text('description')->nullable();
             $table->timestamps();
+
+            $table->index('type');
+            $table->index('parent_id');
         });
     }
 

@@ -5,7 +5,9 @@ export default {
 		 './resources/**/*.js',
 		 './resources/**/*.vue',
 		 './app/Http/Livewire/**/*.php',
-		 "./vendor/robsontenorio/mary/src/View/Components/**/*.php"
+		 "./vendor/robsontenorio/mary/src/View/Components/**/*.php",
+		'./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+
 	],
   theme: {
     extend: {},
@@ -13,5 +15,12 @@ export default {
   plugins: [
 		require("daisyui")
 	],
+
+	// daisyUI config (optional - here are the default values)
+	daisyui: {
+        themes: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+
+	},
+
 }
 
