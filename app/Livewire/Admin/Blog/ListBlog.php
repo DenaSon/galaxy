@@ -33,6 +33,11 @@ class ListBlog extends Component
         }
     }
 
+    public function editBlog(Blog $blog)
+    {
+         $this->redirectRoute('master.blog.edit',['blog'=>$blog->id],[],true);
+    }
+
     public function mount()
     {
 

@@ -19,8 +19,6 @@
 
 
 
-
-
 <x-nav sticky full-width>
 
 
@@ -32,7 +30,7 @@
         </label>
 
 
-        <div>App</div>
+        <div>{{ config('app.name') }}</div>
     </x-slot:brand>
 
     {{-- Right side actions --}}

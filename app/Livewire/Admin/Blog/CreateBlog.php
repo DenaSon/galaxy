@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\Blog;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Image;
+use App\Traits\ImageTrait;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -50,7 +51,9 @@ class CreateBlog extends Component
 
         $blog->categories()->attach($this->selectedCategories);
         $blog->categories()->attach($this->selectedSubCategories);
-         $this->saveImage($this->photo,$blog->id);
+        $this->saveImage($this->photo,$blog->id);
+        $this->toast('success','مقاله ذخیره شد');
+        $this->redirectRoute('master.blog.list',[],true,true);
 
     }
 
@@ -71,13 +74,20 @@ class CreateBlog extends Component
 
     private function saveImage($photo,$blogId)
     {
-        $filePath = $photo->store('photos/blog', 'public');
+         $filePath = $photo->store('photos/blog', 'public');
+
+
+        $fileName = $photo->getClientOriginalName();
+
+       // $this->optimizeImage($filePath,$fileName);
         Image::create([
             'file_path' => $filePath,
             'imageable_type' => Blog::class,
             'imageable_id' => $blogId
         ]);
     }
+
+
 
 
 
