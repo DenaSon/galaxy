@@ -55,7 +55,7 @@
             <x-card separator progress-indicator="save" class="shadow-lg mb-2">
                 <div class="flex justify-center">
                     <x-file hint="" label="تصویر شاخص" wire:model="photo" accept="image/png, image/jpeg">
-                        <img src="{{ asset($photo)  }}" class="h-40 rounded-lg"/>
+                        <img src="{{ asset($photo ?? 'admin/assets/images/products/product-3.png')  }}" class="h-40 rounded-lg" alt=""/>
                     </x-file>
                 </div>
 
@@ -77,11 +77,16 @@
 
             <x-card class="shadow-lg mt-2">
 
-                <x-checkbox label="پیش نویس" wire:model="draft" class="checkbox-warning mb-3" left tight/>
+                @if($draft == 1)
+                    <x-checkbox   label="پیش نویس" wire:model="draft" class="checkbox-warning mb-3" left tight/>
+                @else
+                    <x-checkbox  checked  label="پیش نویس" wire:model="draft" class="checkbox-warning mb-3" left tight/>
+                @endif
+
 
 
                 <x-button class="btn btn-accent bg-blue-500" tooltip="ثبت" icon="o-arrow-up-on-square" spinner
-                          wire:click.debounce.250ms="save" class="w-full" label="ثبت"></x-button>
+                          wire:click.debounce.250ms="save({{$blog}})" class="w-full" label="ثبت"></x-button>
 
             </x-card>
 
