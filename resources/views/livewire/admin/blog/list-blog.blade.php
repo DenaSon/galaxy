@@ -14,7 +14,7 @@
                 ];
             @endphp
 
-            <x-table  :headers="$headers" :rows="$blog" selectable="true" striped="true" empty-text="موردی وجود ندارد" >
+            <x-table  :headers="$headers" :rows="$blog" selectable="true" striped="true" empty-text="موردی وجود ندارد" with-pagination >
 
 
                 @scope('cell_id', $blog)
@@ -28,7 +28,11 @@
 
 
                 @scope('cell_blog.category', $blog)
-                <b>{{ $blog->categories->first()->name }}</b>
+                <b>{{ $blog->categories->where('parent_id',null)->first->first()->name }}</b>
+
+                |
+
+                <small>{{ $blog->categories->where('parent_id','!=',null)->first->first()->name }}</small>
                 @endscope
 
 

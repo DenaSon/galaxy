@@ -9,4 +9,8 @@
 
     </x-menu-sub>
 
+
+    <x-menu-separator></x-menu-separator>
+    <x-menu-item title="تنظیمات" icon="o-cog-8-tooth" link="{{ route('master.setting') }}"/>
+
 </x-menu>

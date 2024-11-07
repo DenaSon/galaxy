@@ -4,12 +4,14 @@ namespace App\Livewire\Admin\Blog;
 use App\Models\Category;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Lazy;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Mary\Traits\Toast;
 
 #[Layout('components.layouts.admin')]
 #[Lazy]
+#[Title('دسته ها')]
 class Categories extends Component
 {
     use Toast,WithPagination;

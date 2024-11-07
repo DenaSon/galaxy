@@ -12,6 +12,7 @@
         "livewire/livewire": "^3.5",
         "livewire/volt": "^1.6",
         "nesbot/carbon": "^3.8",
+        "owenvoke/blade-fontawesome": "^2.7",
         "pishran/zarinpal": "*",
         "robsontenorio/mary": "^1.40",
         "spatie/laravel-image-optimizer": "*",

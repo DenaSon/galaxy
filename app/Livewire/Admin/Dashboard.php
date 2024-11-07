@@ -2,10 +2,10 @@
 
 namespace App\Livewire\Admin;
 
-use http\Client\Curl\User;
-use Livewire\Component;
-use Mary\Traits\Toast;
 
+use Livewire\Attributes\Title;use Livewire\Component;
+use Mary\Traits\Toast;
+#[Title('داشبورد')]
 class Dashboard extends Component
 {
     use Toast;
