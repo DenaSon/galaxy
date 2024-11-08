@@ -4,9 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Database\Eloquent\Builder;
+
+
 
 class Product extends Model
 {
+
+
+    public function scopeActive(Builder $query): Builder
+    {
+        return $query->where('is_active', true)->where('stop_selling',null);
+    }
+
+
     public $guarded = [];
     public function categories()
     {

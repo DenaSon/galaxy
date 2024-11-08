@@ -7,14 +7,15 @@
 
                 $headers = [
                     ['key' => 'id', 'label' => '#'],
-                    ['key' => 'name', 'label' => 'عنوان'],
+                    ['key' => 'title', 'label' => 'عنوان'],
                     ['key' => 'blog.category', 'label' => 'دسته'],
                     ['key' => 'status', 'label' => 'وضعیت'],
                     ['key' => 'actions', 'label' => 'اقدامات']
                 ];
             @endphp
 
-            <x-table  :headers="$headers" :rows="$blog" selectable="true" striped="true" empty-text="موردی وجود ندارد" with-pagination >
+            <x-table :headers="$headers" :rows="$blog" selectable="true" striped="true" empty-text="موردی وجود ندارد"
+                     with-pagination>
 
 
                 @scope('cell_id', $blog)
@@ -22,17 +23,17 @@
                 @endscope
 
 
-                @scope('cell_name', $blog)
+                @scope('cell_title', $blog)
                 <x-badge :value="$blog->title" class="badge-info text-white"/>
                 @endscope
 
 
                 @scope('cell_blog.category', $blog)
-                <b>{{ $blog->categories->where('parent_id',null)->first->first()->name }}</b>
+                <b>{{ $blog->categories->where('parent_id',null)->where('type','blog')->first()->name ?? 'N/A'}}</b>
 
-                |
+                -
 
-                <small>{{ $blog->categories->where('parent_id','!=',null)->first->first()->name }}</small>
+                <small>{{ $blog->categories->where('parent_id','!=',null)->where('type','blog')->first()->name ?? 'N/A' }}</small>
                 @endscope
 
 

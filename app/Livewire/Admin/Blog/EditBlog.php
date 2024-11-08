@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\Blog;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Image;
+use Illuminate\Support\Carbon;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
@@ -45,6 +46,7 @@ class EditBlog extends Component
                 'title' => $this->title,
                 'content' => $this->content,
                 'additional_info' => $this->additionalInfo,
+                'update_date' => Carbon::now(),
                 'is_active' => $draft,
             ]);
             $message = 'مقاله به‌روزرسانی شد';
@@ -56,6 +58,7 @@ class EditBlog extends Component
                 'content' => $this->content,
                 'description' => '',
                 'additional_info' => $this->additionalInfo,
+
                 'is_active' => $draft,
             ]);
             $message = 'مقاله ذخیره شد';

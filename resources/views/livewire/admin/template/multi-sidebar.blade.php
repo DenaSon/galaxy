@@ -4,7 +4,7 @@
 
     <x-menu-sub title="فروشگاه" icon="o-shopping-bag">
 
-        <x-menu-item title="محصولات" icon="o-archive-box-arrow-down" link=""/>
+        <x-menu-item title="محصولات" icon="o-archive-box-arrow-down" link="{{ route('master.shop.list') }}"/>
         <x-menu-item title="سفارش‌ها" icon="o-queue-list" link=""/>
 
         <x-menu-item title="دسته بندی" icon="o-rectangle-group" link=""/>

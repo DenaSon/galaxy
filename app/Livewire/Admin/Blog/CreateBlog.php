@@ -5,8 +5,6 @@ namespace App\Livewire\Admin\Blog;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Image;
-use App\Traits\ImageTrait;
-use Illuminate\Support\Str;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -15,7 +13,7 @@ use Mary\Traits\Toast;
 #[Layout('components.layouts.admin')]
 class CreateBlog extends Component
 {
-    use Toast,WithFileUploads;
+    use Toast, WithFileUploads;
 
     public $title = '';
     public $content = '';
@@ -38,7 +36,7 @@ class CreateBlog extends Component
             ]
         );
 
-       $draft =  $this->draft ? 0 : 1;
+        $draft = $this->draft ? 0 : 1;
 
         $blog = Blog::create([
             'user_id' => auth()->id() ?? 0,
@@ -51,9 +49,9 @@ class CreateBlog extends Component
 
         $blog->categories()->attach($this->selectedCategories);
         $blog->categories()->attach($this->selectedSubCategories);
-        $this->saveImage($this->photo,$blog->id);
-        $this->toast('success','مقاله ذخیره شد');
-        $this->redirectRoute('master.blog.list',[],true,true);
+        $this->saveImage($this->photo, $blog->id);
+        $this->toast('success', 'مقاله ذخیره شد');
+        $this->redirectRoute('master.blog.list', [], true, true);
 
     }
 
@@ -64,31 +62,29 @@ class CreateBlog extends Component
 
     public function updatedSelectedCategories()
     {
-        if (empty($this->selectedCategories)) {
+        if (empty($this->selectedCategories))
+        {
             $this->subCategories = null;
         }
-        else {
+        else
+        {
             $this->subCategories = Category::whereIn('parent_id', $this->selectedCategories)->get();
         }
     }
 
-    private function saveImage($photo,$blogId)
+    private function saveImage($photo, $blogId)
     {
-         $filePath = $photo->store('photos/blog', 'public');
-
+        $filePath = $photo->store('photos/blog', 'public');
 
         $fileName = $photo->getClientOriginalName();
 
-       // $this->optimizeImage($filePath,$fileName);
+        // $this->optimizeImage($filePath,$fileName);
         Image::create([
             'file_path' => $filePath,
             'imageable_type' => Blog::class,
             'imageable_id' => $blogId
         ]);
     }
-
-
-
 
 
     public function render()

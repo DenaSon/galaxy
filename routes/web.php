@@ -5,6 +5,8 @@ use App\Livewire\Admin\Blog\CreateBlog;
 use App\Livewire\Admin\Blog\EditBlog;
 use App\Livewire\Admin\Blog\ListBlog;
 use App\Livewire\Admin\Dashboard;
+use App\Livewire\Admin\Shop\CreateProduct;
+use App\Livewire\Admin\Shop\ListProduct;
 use Illuminate\Support\Facades\Route;
 
 // Master group
@@ -20,4 +22,14 @@ Route::prefix('master')->name('master.')->group(function () {
         Route::get('list', ListBlog::class)->name('list')->lazy();
         Route::get('categories', Categories::class)->name('categories')->lazy();
     });
+
+
+    // Shop subgroup
+    Route::prefix('shop')->name('shop.')->group(function () {
+        Route::get('create', CreateProduct::class)->name('create');
+        Route::get('list', ListProduct::class)->name('list');
+
+    });
+
+
 });
