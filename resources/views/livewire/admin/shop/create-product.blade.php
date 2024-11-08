@@ -57,6 +57,10 @@
 
                </div>
                <x-menu-separator/>
+
+
+               @livewire('admin.shop.inc.attribute-manager',['attribute' => $attribute,'productId' => $productId])
+
            </x-card>
 
 

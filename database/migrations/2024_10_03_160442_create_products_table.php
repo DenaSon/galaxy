@@ -28,7 +28,6 @@ return new class extends Migration
             $table->timestamps();
             // Adding indexes for performance improvements
             $table->index('name'); // If name is frequently queried
-            $table->index('attributes'); // If attr is frequently queried
             $table->index('views'); // If views are frequently queried
         });
     }

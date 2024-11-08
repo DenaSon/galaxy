@@ -2,10 +2,15 @@
 
 namespace App\Livewire\Admin\Shop;
 use App\Models\Category;
+use App\Models\Product;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Mary\Traits\Toast;
+
+
 #[Layout('components.layouts.admin')]
 
 class CreateProduct extends Component
@@ -21,6 +26,9 @@ class CreateProduct extends Component
     public array $selectedSubCategories = [];
     public $subCategories;
     public array $photos = [];
+    public array $attribute = [];
+    public $productId;
+
 
 
     public function updatedSelectedCategories()
@@ -32,7 +40,7 @@ class CreateProduct extends Component
         else
         {
             $this->subCategories = Category::whereIn('parent_id', $this->selectedCategories)->get();
-            dd($this->photos);
+
         }
     }
 
@@ -40,7 +48,25 @@ class CreateProduct extends Component
 
     public function mount()
     {
-        $this->categories_list = Category::get();
+        if (!Product::where('sku',$this->sku())->first())
+        {
+            $product = new Product(['unit'=>'','sku'=> $this->sku(),'name'=>'dena','is_active'=>0]);
+            $product->save();
+            $this->productId = $product->id;
+        }
+        else
+        {
+            \Illuminate\Log\log('Failed to Make SKU');
+            $this->redirectRoute('master.shop.list');
+        }
+    }
+
+    private function sku()
+    {
+        $date = Carbon::now()->format('Ymd');
+        $uniqueId = rand(1000,9999);
+        return "{$date}{$uniqueId}";
+
     }
 
     public function render()
