@@ -34,4 +34,10 @@ class Product extends Model
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
+
+    public function attributes()
+    {
+        return $this->belongsToMany(Attribute::class, 'product_attribute')->withPivot('value');
+
+    }
 }
