@@ -36,7 +36,7 @@ class ListProduct extends Component
 
     public function render()
     {
-        $product = Product::latest('created_at')  ->orderBy(...array_values($this->sortBy))->paginate(10);
+        $product = Product::latest('created_at')  ->orderBy(...array_values($this->sortBy))->paginate(20);
         return view('livewire.admin.shop.list-product',compact('product'))
         ->title('');
     }

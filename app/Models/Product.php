@@ -19,6 +19,12 @@ class Product extends Model
 
 
     public $guarded = [];
+
+
+    public function variants()
+    {
+        return $this->hasMany(Variant::class);
+    }
     public function categories()
     {
         return $this->morphToMany(Category::class, 'categorizable');

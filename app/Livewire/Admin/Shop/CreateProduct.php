@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\Shop;
 use App\Models\Attribute;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Variant;
 use Illuminate\Support\Carbon;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -19,7 +20,8 @@ class CreateProduct extends Component
 
     public $showAttrs = false;
     public $showImages = false;
-
+    public $showVariants = false;
+    public $variants = [];
     public $name = '';
     public $content = '';
     public $description = '';
@@ -30,9 +32,8 @@ class CreateProduct extends Component
     public $subCategories;
     public array $photos = [];
     public $attrs;
-    public $attrId;
     public $attributeValues = []; // Store attribute values here
-
+    public $variant_list;
 
     public $productId;
 
@@ -47,26 +48,24 @@ class CreateProduct extends Component
         }
     }
 
-
     public function mount()
     {
 
-        $this->attrs = Attribute::all();
-
+        $this->variants[] = ['type' => '', 'price' => ''];
         if (!Product::where('sku', $this->sku())->first()) {
             $product = new Product(['unit' => '', 'sku' => $this->sku(), 'name' => 'dena', 'is_active' => 0]);
             $product->save();
             $this->productId = $product->id;
+
+            $this->attrs = Attribute::all();
+
+
         } else {
             \Illuminate\Log\log('Failed to Make SKU');
             $this->redirectRoute('master.shop.list');
         }
     }
 
-    public function addAttribute()
-    {
-        $this->attributes[] = ['name' => '', 'value' => ''];
-    }
 
     public function saveAttrs()
     {
@@ -88,6 +87,48 @@ class CreateProduct extends Component
         }
 
         $this->success('ویژگی ها برای محصول ثبت شدند');
+    }
+
+    public function saveVariants()
+    {
+        $product = Product::find($this->productId);
+
+        $this->validate([
+            'variants.*.type' => 'required|string',
+            'variants.*.price' => 'required|numeric|min:0',
+        ]);
+        $product = Product::findOrFail($this->productId);
+        foreach ($this->variants as $variant) {
+            $product->variants()->firstOrCreate([
+                'type' => $variant['type'],
+                'price' => $variant['price'],
+            ]);
+        }
+        $this->variants[] = ['type' => '', 'price' => ''];
+
+
+        $this->variant_list = $product->variants()->get();
+
+        $this->toast('success', 'نوع محصول با موفقیت ذخیره شد');
+
+    }
+
+
+
+    public function deleteVariant(Variant $variant)
+    {
+
+        $variant->delete();
+        $this->info('نوع حذف شد');
+        $this->variant_list = Variant::where('product_id','=',$this->productId)->get();
+    }
+
+
+
+    public function removeVariant($index)
+    {
+        unset($this->variants[$index]);
+        $this->variants = array_values($this->variants);
     }
 
 
