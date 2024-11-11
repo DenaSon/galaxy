@@ -7,16 +7,18 @@
 
         <div class="w-full md:w-2/3 shadow-lg m-2">
 
-            <x-card subtitle="اطلاعات" separator progress-indicator="save">
+            <x-card subtitle="اطلاعات" separator progress-indicator="publish">
 
                 <x-form>
-                    <x-input icon="o-pencil" label="نام یا عنوان محصول" inline wire:model.blur="name" wire:dirty.class="focus:border-green-700"/>
+                    <x-input icon="o-pencil" label="نام یا عنوان محصول" inline wire:model.blur="name"
+                             wire:dirty.class="focus:border-green-700"/>
 
                     <div wire:ignore>
                         <textarea id="editor1" wire:model.blur="content"></textarea>
                     </div>
 
-                    <x-textarea wire:dirty.class="focus:border-green-700" label="توضیحات کوتاه" inline wire:model="description"></x-textarea>
+                    <x-textarea wire:dirty.class="focus:border-green-700" label="توضیحات کوتاه" inline
+                                wire:model="description"></x-textarea>
 
                     <x-choices-offline
 
@@ -27,7 +29,6 @@
                         searchable
                         no-result-text="دسته ای وجود ندارد"
                     />
-
 
 
                     @if (!empty($subCategories))
@@ -65,6 +66,12 @@
                 <x-menu-separator/>
 
                 @include('livewire.admin.shop.inc.upload-images-form')
+
+                <x-menu-separator/>
+
+                <x-input label="واحد" inline wire:model="unit"/>
+                <x-menu-separator/>
+                <x-input hint="درصد تخفیف" label="تخفیف" inline wire:model="discount"/>
 
             </x-card>
 

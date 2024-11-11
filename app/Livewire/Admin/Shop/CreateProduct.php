@@ -10,12 +10,15 @@ use App\Models\Variant;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Title;
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Mary\Traits\Toast;
 
-
+#[Title('محصول')]
 #[Layout('components.layouts.admin')]
+
 class CreateProduct extends Component
 {
     use Toast, WithFileUploads;
@@ -24,6 +27,7 @@ class CreateProduct extends Component
     public $showImages = false;
     public $showVariants = false;
     public $variants = [];
+
     public $name = '';
     public $content = '';
     public $description = '';
@@ -39,7 +43,8 @@ class CreateProduct extends Component
     public $categories_list_selected;
     public $productId;
     public $photo_list;
-    public $unit = "بسته";
+    #[Validate('required|string')]
+    public $unit = "";
     public $discount = 0;
 
 
@@ -128,6 +133,14 @@ class CreateProduct extends Component
 
     public function publish()
     {
+        $this->validate([
+            'unit' =>'required|string',
+            'description' => 'required|string|max:220',
+            'name' => 'required|string|max:255',
+            'discount' => 'numeric|nullable|max:100|min:0',
+            'selectedCategories' => 'required|array',
+
+        ]);
 
         $product = Product::findOrFail($this->productId);
         $product->categories()->sync(array_merge($this->selectedCategories, $this->selectedSubCategories));
@@ -138,15 +151,16 @@ class CreateProduct extends Component
         $product->unit = $this->unit;
         $product->discount = $this->discount;
 
-        if ($product->save())
-        {
+        if ($product->save()) {
+            $this->success(
+                'محصول ذخیره شد',
+                'انتشار محصول با موفقیت انجام شد'
+            );
 
+            $this->redirectRoute('master.shop.list');
         }
 
-        }
-
-
-
+    }
 
 
     private function setEditValues($productId)
@@ -156,6 +170,8 @@ class CreateProduct extends Component
         $this->content = $product->details;
         $this->draft = $product->is_active;
         $this->description = $product->description;
+        $this->unit = $product->unit;
+        $this->discount = $product->discount;
 
         $this->selectedCategories = $product->categories->where('parent_id', '=', null)->pluck('id')->toArray();
         $this->subCategories = Category::whereIn('parent_id', $this->selectedCategories)->get();
@@ -241,8 +257,8 @@ class CreateProduct extends Component
     public function render()
     {
         $categories_list = Category::query()->onlyParent()->where('type', 'product')->latest()->get();
-        return view('livewire.admin.shop.create-product', compact('categories_list'))
-            ->title('');
+        return view('livewire.admin.shop.create-product', compact('categories_list'));
+
     }
 
 }

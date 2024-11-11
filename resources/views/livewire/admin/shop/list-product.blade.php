@@ -35,7 +35,11 @@
 
 
                     @scope('cell_category', $product)
-                    <b>category</b>
+                    <b>{{ $product->categories->where('parent_id',null)->where('type','product')->first()->name ?? 'N/A'}}</b>
+
+                    -
+
+                    <small>{{ $product->categories->where('parent_id','!=',null)->where('type','product')->first()->name ?? 'N/A' }}</small>
                     @endscope
 
 

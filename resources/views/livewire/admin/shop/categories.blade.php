@@ -4,7 +4,7 @@
     @include('livewire.admin.blog.inc._edit-category')
 
     <div class="flex flex-col md:flex-row md:space-x-4">
-        <x-card progress-indicator="save" separator subtitle="افزودن دسته" class="w-full md:w-1/2 shadow-md m-1">
+        <x-card progress-indicator="save" separator subtitle="افزودن دسته فروشگاه" class="w-full md:w-1/2 shadow-md m-1">
 
 
             <x-form wire:submit="save">

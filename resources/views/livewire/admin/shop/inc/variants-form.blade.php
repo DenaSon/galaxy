@@ -46,7 +46,7 @@
                                 <span class="text-gray-800 font-semibold">{{ $var->type }}</span> -
                                 <span class="ml-2 text-sm text-blue-500 font-medium">قیمت: {{ number_format($var->price)  }} تومان</span>
                             </div>
-                            <x-button icon="o-trash" class="btn-xs"
+                            <x-button wire:confirm="نوع حذف شود؟" icon="o-trash" class="btn-xs"
                                       wire:click="deleteVariant({{ $var->id }})"></x-button>
                         </li>
                     @endforeach

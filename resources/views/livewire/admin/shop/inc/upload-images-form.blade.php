@@ -6,7 +6,7 @@
     <x-file  multiple wire:model="photos" accept="image/*"></x-file>
 
     <x-slot:actions>
-        <x-button icon="o-arrow-up-tray" wire:confirm="تصاویر آپلود شوند؟"
+        <x-button spinner icon="o-arrow-up-tray" wire:confirm="تصاویر آپلود شوند؟"
                   wire:click="uploadPhotos({{$productId}})" class="btn bg-blue-200"></x-button>
     </x-slot:actions>
 </x-form>

@@ -5,6 +5,7 @@ use App\Livewire\Admin\Blog\CreateBlog;
 use App\Livewire\Admin\Blog\EditBlog;
 use App\Livewire\Admin\Blog\ListBlog;
 use App\Livewire\Admin\Dashboard;
+use App\Livewire\Admin\Shop\CreateAttribute;
 use App\Livewire\Admin\Shop\CreateProduct;
 use App\Livewire\Admin\Shop\ListProduct;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,7 @@ Route::prefix('master')->name('master.')->group(function () {
         Route::get('create', CreateProduct::class)->name('create');
         Route::get('list', ListProduct::class)->name('list');
         Route::get('categories', \App\Livewire\Admin\Shop\Categories::class)->name('categories')->lazy();
+        Route::get('attribute', CreateAttribute::class)->name('attribute')->lazy();
 
     });
 

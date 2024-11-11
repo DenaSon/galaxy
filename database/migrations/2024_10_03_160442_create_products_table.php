@@ -22,9 +22,8 @@ return new class extends Migration
             $table->boolean('is_active')->default(true);
             $table->date('stop_selling')->nullable();
             $table->unsignedBigInteger('views')->default(0);
-            $table->string('unit');
-            $table->decimal('discount', 5, 2)->default(0.00);
-            $table->json('attributes')->nullable();
+            $table->string('unit')->nullable();
+            $table->integer('discount')->default(0);
             $table->timestamps();
             // Adding indexes for performance improvements
             $table->index('name'); // If name is frequently queried
