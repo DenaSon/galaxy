@@ -7,7 +7,7 @@
         <x-menu-item title="محصولات" icon="o-archive-box-arrow-down" link="{{ route('master.shop.list') }}"/>
         <x-menu-item title="سفارش‌ها" icon="o-queue-list" link=""/>
 
-        <x-menu-item title="دسته بندی" icon="o-rectangle-group" link=""/>
+        <x-menu-item title="دسته بندی" icon="o-rectangle-group" link="{{ route('master.shop.categories') }}"/>
         <x-menu-item title="ویژگی‌ها" icon="o-arrows-pointing-in" link=""/>
         <x-menu-item title="تامین کنندگان" icon="o-user-group" link=""/>
         <x-menu-item title="کوپن ها" icon="o-gift" link=""/>

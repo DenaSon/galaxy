@@ -16,7 +16,7 @@ return new class extends Migration
            // $table->foreignId('brand_id')->constrained()->onDelete('cascade');
             $table->char('sku', 50)->unique(); // Assuming SKU has a max length of 50
             $table->string('name');
-            $table->string('details')->nullable();
+            $table->longText('details')->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_featured')->default(false);
             $table->boolean('is_active')->default(true);

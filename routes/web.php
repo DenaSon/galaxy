@@ -28,6 +28,7 @@ Route::prefix('master')->name('master.')->group(function () {
     Route::prefix('shop')->name('shop.')->group(function () {
         Route::get('create', CreateProduct::class)->name('create');
         Route::get('list', ListProduct::class)->name('list');
+        Route::get('categories', \App\Livewire\Admin\Shop\Categories::class)->name('categories')->lazy();
 
     });
 

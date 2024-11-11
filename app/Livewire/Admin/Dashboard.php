@@ -25,7 +25,9 @@ class Dashboard extends Component
 
     public function render()
     {
-        \Auth::login(\App\Models\User::find(1));
+       if (!\Auth::check()) {
+           \Auth::login(\App\Models\User::find(1));
+       }
         return view('livewire.admin.dashboard')->layout('components.layouts.admin');
     }
 }

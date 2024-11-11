@@ -8,39 +8,46 @@
         <div class="w-full md:w-2/3 shadow-lg m-2">
 
             <x-card subtitle="اطلاعات" separator progress-indicator="save">
+
                 <x-form>
-                    <x-input label="نام یا عنوان محصول" inline wire:model="name"/>
+                    <x-input icon="o-pencil" label="نام یا عنوان محصول" inline wire:model.blur="name" wire:dirty.class="focus:border-green-700"/>
 
                     <div wire:ignore>
-                        <textarea id="editor1" wire:model="content"></textarea>
+                        <textarea id="editor1" wire:model.blur="content"></textarea>
                     </div>
 
-                    <x-textarea label="توضیحات کوتاه" inline wire:model="description"></x-textarea>
+                    <x-textarea wire:dirty.class="focus:border-green-700" label="توضیحات کوتاه" inline wire:model="description"></x-textarea>
 
                     <x-choices-offline
 
-                            label="دسته"
-                            wire:model.live="selectedCategories"
-                            :options="$categories_list"
-                            searchable
-                            no-result-text="دسته ای وجود ندارد"
+                        label="دسته"
+                        icon="o-bars-arrow-up"
+                        wire:model.live="selectedCategories"
+                        :options="$categories_list"
+                        searchable
+                        no-result-text="دسته ای وجود ندارد"
                     />
+
+
 
                     @if (!empty($subCategories))
 
                         <x-choices-offline
 
-                                label="زیر دسته"
-                                wire:model.live="selectedSubCategories"
-                                :options="$subCategories"
-                                searchable
-                                no-result-text="دسته ای وجود ندارد"
+                            label="زیر دسته"
+                            icon="o-bars-arrow-down"
+                            wire:model="selectedSubCategories"
+                            :options="$subCategories"
+                            searchable
+                            no-result-text="دسته ای وجود ندارد"
                         />
 
                     @endif
 
 
                 </x-form>
+
+                <x-button wire:confirm="محصول منتشر شود؟" wire:click="publish" label="ذخیره"/>
 
             </x-card>
 

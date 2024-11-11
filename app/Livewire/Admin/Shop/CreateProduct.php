@@ -4,9 +4,11 @@ namespace App\Livewire\Admin\Shop;
 
 use App\Models\Attribute;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Product;
 use App\Models\Variant;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -34,8 +36,57 @@ class CreateProduct extends Component
     public $attrs;
     public $attributeValues = []; // Store attribute values here
     public $variant_list;
-
+    public $categories_list_selected;
     public $productId;
+    public $photo_list;
+    public $unit = "بسته";
+    public $discount = 0;
+
+
+    public function uploadPhotos(Product $product)
+    {
+        if (!empty($this->photos)) {
+            $product = Product::find($this->productId);
+            foreach ($this->photos as $photo) {
+                $path = $photo->store('product_images', 'public');
+                $product->images()->firstorcreate(['file_path' => '/storage/' . $path]);
+                $this->photo_list = $product->images;
+
+
+            }
+            $this->success('آپلود', 'تصاویر با موفقیت آپلود شدند');
+            $this->reset('photos');
+        } else {
+            $this->warning('آپلود', 'تصویری انتخاب نشده است');
+        }
+    }
+
+    public function removeImage(Image $image)
+    {
+        $product = Product::findOrFail($this->productId);
+
+        $image = Image::find($image->id);
+        if ($image->delete()) {
+            $this->info('تصویر حذف شد');
+            $this->photo_list = $product->images;
+        }
+
+
+    }
+
+    public function updatedName($value)
+    {
+        $product = Product::find($this->productId);
+        $product->name = $value;
+        $product->save();
+    }
+
+    public function updatedContent($value)
+    {
+        $product = Product::find($this->productId);
+        $product->details = $value;
+        $product->save();
+    }
 
 
     public function updatedSelectedCategories()
@@ -48,22 +99,71 @@ class CreateProduct extends Component
         }
     }
 
+
     public function mount()
     {
 
         $this->variants[] = ['type' => '', 'price' => ''];
         if (!Product::where('sku', $this->sku())->first()) {
-            $product = new Product(['unit' => '', 'sku' => $this->sku(), 'name' => 'dena', 'is_active' => 0]);
-            $product->save();
-            $this->productId = $product->id;
-
-            $this->attrs = Attribute::all();
-
+            if (request()->has('edit')) {
+                $product = Product::findOrFail(request()->query('edit'));
+                $this->productId = $product->id;
+                $this->attrs = Attribute::all();
+                $this->setEditValues($this->productId);
+            } else {
+                $product = new Product(['unit' => '', 'sku' => $this->sku(), 'name' => '', 'is_active' => 0]);
+                $product->save();
+                $this->productId = $product->id;
+                $this->attrs = Attribute::all();
+            }
 
         } else {
-            \Illuminate\Log\log('Failed to Make SKU');
+            Log::error('Failed to make SKU');
             $this->redirectRoute('master.shop.list');
         }
+
+
+    }
+
+
+    public function publish()
+    {
+
+        $product = Product::findOrFail($this->productId);
+        $product->categories()->sync(array_merge($this->selectedCategories, $this->selectedSubCategories));
+        $product->description = $this->description;
+        $product->is_active = true;
+        $product->stop_selling = null;
+
+        $product->unit = $this->unit;
+        $product->discount = $this->discount;
+
+        if ($product->save())
+        {
+
+        }
+
+        }
+
+
+
+
+
+    private function setEditValues($productId)
+    {
+        $product = Product::find($productId);
+        $this->name = $product->name;
+        $this->content = $product->details;
+        $this->draft = $product->is_active;
+        $this->description = $product->description;
+
+        $this->selectedCategories = $product->categories->where('parent_id', '=', null)->pluck('id')->toArray();
+        $this->subCategories = Category::whereIn('parent_id', $this->selectedCategories)->get();
+        $this->selectedSubCategories = Category::whereIn('parent_id', $this->selectedCategories)->get()->pluck('id')->toArray();
+
+        $this->photo_list = $product->images;
+
+
     }
 
 
@@ -114,15 +214,13 @@ class CreateProduct extends Component
     }
 
 
-
     public function deleteVariant(Variant $variant)
     {
 
         $variant->delete();
         $this->info('نوع حذف شد');
-        $this->variant_list = Variant::where('product_id','=',$this->productId)->get();
+        $this->variant_list = Variant::where('product_id', '=', $this->productId)->get();
     }
-
 
 
     public function removeVariant($index)

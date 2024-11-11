@@ -60,8 +60,10 @@
     <x-slot:sidebar drawer="main-drawer" collapsible class="bg-base-200" right dir="rtl">
 
         {{-- User --}}
-        @auth()
-            <x-list-item :item="$user" value="name" sub-value="email" no-separator no-hover class="pt-2">
+        @if($user = auth()->user())
+
+
+        <x-list-item :item="$user" value="name" sub-value="email" no-separator no-hover class="pt-2">
                 <x-slot:actions>
                     <x-button icon="o-power" class="btn-circle btn-ghost btn-xs" tooltip-left="خروج" no-wire-navigate
                               link="/logout"/>
@@ -69,7 +71,7 @@
             </x-list-item>
 
             <x-menu-separator/>
-        @endauth
+        @endif
 
         @livewire('admin.template.multi-sidebar')
 

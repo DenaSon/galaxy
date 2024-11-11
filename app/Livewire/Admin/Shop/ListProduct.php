@@ -33,6 +33,11 @@ class ListProduct extends Component
         $this->success('محصول فعالسازی شد');
     }
 
+    public function editProduct(Product $product)
+    {
+        $this->redirect(route('master.shop.create',['edit'=>$product]));
+    }
+
 
     public function render()
     {
