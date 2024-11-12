@@ -8,6 +8,7 @@ use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\Shop\CreateAttribute;
 use App\Livewire\Admin\Shop\CreateProduct;
 use App\Livewire\Admin\Shop\ListProduct;
+use App\Livewire\Admin\Shop\Orders\OrderList;
 use Illuminate\Support\Facades\Route;
 
 // Master group
@@ -31,6 +32,7 @@ Route::prefix('master')->name('master.')->group(function () {
         Route::get('list', ListProduct::class)->name('list');
         Route::get('categories', \App\Livewire\Admin\Shop\Categories::class)->name('categories')->lazy();
         Route::get('attribute', CreateAttribute::class)->name('attribute')->lazy();
+        Route::get('orders', OrderList::class)->name('orders')->lazy();
 
     });
 
