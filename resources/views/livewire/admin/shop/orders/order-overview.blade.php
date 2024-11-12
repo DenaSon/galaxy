@@ -5,12 +5,12 @@
             <div class="w-full md:w-1/4 shadow-lg m-2">
 
                 <x-stat
-                    title="کل محصولات"
+                    title="تعداد "
                     class="text-blue-700"
                     color="text-blue-500"
-                    description="همه"
+                    description="شفارش‌ها"
                     value=""
-                    icon="fas.shop"
+                    icon="o-list-bullet"
                 />
 
             </div>
@@ -18,12 +18,12 @@
             <div class="w-full md:w-1/4 shadow-lg m-2">
 
                 <x-stat
-                    title="محصولات فعال"
+                    title="مبلغ کل"
                     class="text-green-600"
                     color="text-green-500"
-                    description="فعال"
+                    description="پرداخت ها"
                     value=""
-                    icon="o-shopping-bag"
+                    icon="o-currency-dollar"
                 />
 
             </div>
@@ -31,12 +31,12 @@
             <div class="w-full md:w-1/4 shadow-lg m-2">
 
                 <x-stat
-                    title="دیدگاه"
+                    title="امروز"
                     class="text-yellow-600"
                     color="text-yellow-500"
-                    description="همه دیدگاه ها"
+                    description="پرداخت امروز"
                     value=""
-                    icon="fas.comments"
+                    icon="o-calendar-days"
                 />
 
             </div>
@@ -44,12 +44,12 @@
             <div class="w-full md:w-1/4 shadow-lg m-2">
 
                 <x-stat
-                    title="بازدید"
+                    title="هفته"
                     class="text-orange-600"
                     color="text-orange-500"
-                    description="بازدید محصولات"
+                    description="پرداخت هفته"
                     value=""
-                    icon="fas.eye"
+                    icon="o-calendar"
                 />
 
             </div>

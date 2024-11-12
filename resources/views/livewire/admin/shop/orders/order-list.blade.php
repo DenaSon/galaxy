@@ -2,7 +2,6 @@
     @livewire('admin.shop.orders.order-overview')
     <x-menu-separator/>
 
-
     <div>
         <div class="flex flex-col md:flex-row md:space-x-4">
 
@@ -10,11 +9,12 @@
                 @php
                     $headers = [
                         ['key' => 'id', 'label' => '#'],
-                        ['key' => 'username', 'label' => 'کاربر'],
                         ['key' => 'order_number', 'label' => 'شماره سفارش'],
-                        ['key' => 'created_at', 'label' => 'زمان'],
-                        ['key' => 'views', 'label' => 'بازدید'],
-                        ['key' => 'actions', 'label' => 'اقدامات']
+                        ['key' => 'username', 'label' => 'کاربر'],
+                         ['key' => 'created_at', 'label' => 'زمان'],
+                        ['key' => 'grand_total', 'label' => 'مبلغ کل'],
+                        ['key' => 'status', 'label' => 'وضعیت'],
+
                     ];
                 @endphp
 
@@ -26,23 +26,26 @@
                     <strong>{{ $loop->iteration }}</strong>
                     @endscope
 
-
                     @scope('cell_username', $order)
                     {{ $order->user->first_name }} {{ $order->user->last_name }}
                     @endscope
-                    @scope('cell_order_number', $order)
-                    {{ $order->order_number }}
-                    @endscope
+
 
                     @scope('cell_order_number', $order)
-                    {{ $order->order_number }}
+                    <a href="" wire:navigate>{{ $order->order_number }} </a>
                     @endscope
-
 
                     @scope('cell_created_at', $order)
-                    {{ jdate($order->created_at)->toFormattedDateString() }}
-                    <small> ساعت :{{ jdate($order->created_at)->format('H:m') }}</small>
+                    <span title="{{ jdate($order->created_at)->ago() }}" class="
+                    @if(jdate($order->created_at)->isToday())   @endif
+                    "> {{ jdate($order->created_at)->toFormattedDateString() }}</span>
                     @endscope
+
+                    @scope('cell_grand_total', $order)
+                    <b class="font-bold">{{ number_format($order->grand_total) }}</b>
+                    @endscope
+
+
 
 
                 </x-table>
