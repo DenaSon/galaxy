@@ -2,10 +2,11 @@
 
 namespace App\Livewire\App\Home;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Lazy;
 use Livewire\Component;
 use Mary\Traits\Toast;
 #[Layout('components.layouts.app')]
-
+#[Lazy]
 class VisualCategoryList extends Component
 {
 use Toast;

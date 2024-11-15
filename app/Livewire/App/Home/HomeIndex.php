@@ -10,6 +10,7 @@ use Mary\Traits\Toast;
 class HomeIndex extends Component
 {
     use Toast;
+    public $showDrawer = false;
 
     public function mount()
     {

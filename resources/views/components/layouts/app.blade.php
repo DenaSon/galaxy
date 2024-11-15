@@ -16,10 +16,7 @@
 
 <body x-data class="font-sans antialiased" style="font-family: IRANSans,serif !important;">
 
-
-<x-nav class="bg-base-200" >
-
-
+<x-nav class="bg-base-200">
 
     <x-slot:brand>
 
@@ -31,7 +28,7 @@
 
 
     <x-slot:actions dir="rtl">
-        <x-button responsive label="جستجو..." @click.stop="$dispatch('mary-search-open')" icon="o-magnifying-glass" />
+        <x-button responsive label="جستجو..." @click.stop="$dispatch('mary-search-open')" icon="o-magnifying-glass"/>
 
 
         <x-dropdown label="دسته‌بندی" class="">
@@ -54,17 +51,14 @@
 
 <x-main with-nav full-width collapse-text="">
 
-
-
     <x-slot:content dir="rtl">
         {{ $slot }}
-
         @livewire('app.home.mobile-menu')
 
     </x-slot:content>
 </x-main>
 
-<x-spotlight dir="rtl" search-text="جستجو در محصولات"  no-results-text="محصول مشابه وجود ندارد" />
+<x-spotlight dir="rtl" search-text="جستجو در محصولات" no-results-text="محصول مشابه وجود ندارد"/>
 <x-toast/>
 </body>
 </html>

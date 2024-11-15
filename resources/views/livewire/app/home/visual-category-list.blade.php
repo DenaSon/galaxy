@@ -4,7 +4,7 @@
         class="px-2 lg:px-3  bg-white lg:rounded-large border-1 border-gradient-to-r from-blue-500 to-green-500 rounded-lg shadow-lg p-6">
         <div class="flex items-center justify-center py-3 lg:py-4 mb-2">
 
-            <h3 class="text-h3"> دسته های منتخب </h3>
+            <h3 class="text-h3"> انتخاب های شایسته برای شما </h3>
 
         </div>
 
