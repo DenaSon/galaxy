@@ -28,7 +28,7 @@
         </label>
 
 
-        <div class="badge bg-blue-700 text-xs text-white">{{ config('app.name') }}</div>
+        <a wire:navigate href="{{ route('home.index-home') }}" class="badge bg-blue-700 text-xs text-white">{{ config('app.name') }}</a>
     </x-slot:brand>
 
     {{-- Right side actions --}}

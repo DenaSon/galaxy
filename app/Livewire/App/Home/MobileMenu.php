@@ -1,12 +1,12 @@
 <?php
 
-namespace [namespace];
+namespace App\Livewire\App\Home;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
 #[Layout('components.layouts.app')]
 
-class [class] extends Component
+class MobileMenu extends Component
 {
 use Toast;
 
@@ -17,7 +17,7 @@ use Toast;
 
     public function render()
     {
-        return view('[view]')
+        return view('livewire.app.home.mobile-menu')
         ->title('');
     }
 }

@@ -9,7 +9,7 @@
                     class="text-blue-700"
                     color="text-blue-500"
                     description="شفارش‌ها"
-                    value=""
+                    value="{{ $totalCount }}"
                     icon="o-list-bullet"
                 />
 
@@ -21,8 +21,8 @@
                     title="مبلغ کل"
                     class="text-green-600"
                     color="text-green-500"
-                    description="پرداخت ها"
-                    value=""
+                    description="کل واریزی"
+                    value="{{ number_format($totalPayment) }}"
                     icon="o-currency-dollar"
                 />
 
@@ -34,8 +34,8 @@
                     title="امروز"
                     class="text-yellow-600"
                     color="text-yellow-500"
-                    description="پرداخت امروز"
-                    value=""
+                    description="واریز امروز"
+                    value="{{ number_format($todayPayment) }}"
                     icon="o-calendar-days"
                 />
 
@@ -47,8 +47,8 @@
                     title="هفته"
                     class="text-orange-600"
                     color="text-orange-500"
-                    description="پرداخت هفته"
-                    value=""
+                    description="واریز هفته"
+                    value="{{ number_format($weekPayment) }}"
                     icon="o-calendar"
                 />
 

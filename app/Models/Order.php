@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+
+
+
+    public  function scopeActive($query)
+    {
+        return $query->where('status', '!=', 'cancelled');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

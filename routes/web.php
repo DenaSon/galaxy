@@ -9,7 +9,21 @@ use App\Livewire\Admin\Shop\CreateAttribute;
 use App\Livewire\Admin\Shop\CreateProduct;
 use App\Livewire\Admin\Shop\ListProduct;
 use App\Livewire\Admin\Shop\Orders\OrderList;
+use App\Livewire\App\Home\HomeIndex;
 use Illuminate\Support\Facades\Route;
+
+
+Route::name('home.')->group(function () {
+
+    Route::get('/', HomeIndex::class)->name('index-home');
+
+    Route::prefix('product')->name('product.')->group(function () {
+
+    });
+
+});
+
+
 
 // Master group
 Route::prefix('master')->name('master.')->group(function () {

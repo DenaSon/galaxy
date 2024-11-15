@@ -48,7 +48,7 @@
 
                 </x-form>
 
-                <x-button wire:confirm="محصول منتشر شود؟" wire:click="publish" label="ذخیره"/>
+
 
             </x-card>
 
@@ -69,9 +69,16 @@
 
                 <x-menu-separator/>
 
+                @livewire('admin.shop.inc.accounting',['pid' => $productId])
+                <x-menu-separator/>
+
                 <x-input label="واحد" inline wire:model="unit"/>
                 <x-menu-separator/>
                 <x-input hint="درصد تخفیف" label="تخفیف" inline wire:model="discount"/>
+
+                <x-slot:actions>
+                    <x-button wire:confirm="محصول منتشر شود؟" wire:click="publish" label="ذخیره"/>
+                </x-slot:actions>
 
             </x-card>
 
