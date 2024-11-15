@@ -2,12 +2,11 @@
 
 namespace App\Livewire\App\Home;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\Lazy;
 use Livewire\Component;
 use Mary\Traits\Toast;
 #[Layout('components.layouts.app')]
-#[Lazy]
-class HomeSlider extends Component
+
+class VisualCategoryList extends Component
 {
 use Toast;
 
@@ -18,7 +17,7 @@ use Toast;
 
     public function render()
     {
-        return view('livewire.app.home.home-slider')
+        return view('livewire.app.home.visual-category-list')
         ->title('');
     }
 }

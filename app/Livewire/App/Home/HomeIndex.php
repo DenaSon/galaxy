@@ -20,6 +20,7 @@ class HomeIndex extends Component
     {
         $products = Product::take(9)->get();
 
+
         return view('livewire.app.home.home-index', compact('products'))
         ->title('دنا');
     }
