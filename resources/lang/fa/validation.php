@@ -311,7 +311,8 @@ return [
         'rules' => 'قوانین و مقررات',
         'selectedCategories' => 'دسته',
         'additionalInfo' => 'یادداشت',
-        'photo'=>'عکس'
+        'photo'=>'عکس',
+        'phoneNumber' => 'شماره تلفن'
 
 
 

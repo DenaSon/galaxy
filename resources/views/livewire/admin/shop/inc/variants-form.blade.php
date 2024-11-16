@@ -7,7 +7,7 @@
 
 
             @foreach ($variants as $index => $variant)
-                <div class="flex gap-2 mb-2">
+                <div wire:key="{{ random_int(10,999)}}" class="flex gap-2 mb-2">
                     <x-input
                         wire:model.defer="variants.{{ $index }}.type"
                         placeholder="نام نوع"
@@ -41,7 +41,7 @@
             @if(!empty($variant_list))
                 <ul class="bg-base-200 rounded-lg shadow-md p-4 w-64 space-y-2">
                     @foreach($variant_list as $var)
-                        <li class="flex items-center justify-between p-2 bg-white rounded-md shadow-sm">
+                        <li wire:key="{{ $var->id }}" class="flex items-center justify-between p-2 bg-white rounded-md shadow-sm">
                             <div>
                                 <span class="text-gray-800 font-semibold">{{ $var->type }}</span> -
                                 <span class="ml-2 text-sm text-blue-500 font-medium">قیمت: {{ number_format($var->price)  }} تومان</span>

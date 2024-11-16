@@ -14,7 +14,7 @@ class Product extends Model
 
     public function scopeActive(Builder $query): Builder
     {
-        return $query->where('is_active', true)->where('stop_selling',null);
+        return $query->where('is_active', true);
     }
 
 
@@ -46,4 +46,18 @@ class Product extends Model
         return $this->belongsToMany(Attribute::class, 'product_attribute')->withPivot('value');
 
     }
+
+    //Handle Cache
+    protected static function booted()
+    {
+        static::saved(function () {
+            cache()->forget('home_products');
+        });
+
+        static::deleted(function () {
+            cache()->forget('home_products');
+        });
+    }
+
+
 }

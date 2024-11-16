@@ -69,7 +69,8 @@
 
                 <x-menu-separator/>
 
-                @livewire('admin.shop.inc.accounting',['pid' => $productId])
+                @livewire('admin.shop.inc.accounting', ['pid' => $productId], key($productId))
+
                 <x-menu-separator/>
 
                 <x-input label="واحد" inline wire:model="unit"/>

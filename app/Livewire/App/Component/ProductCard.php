@@ -13,6 +13,7 @@ use Mary\Traits\Toast;
 class ProductCard extends Component
 {
 use Toast;
+
     public Product $product;
 
     public function addFavorite(Product $product)
@@ -39,6 +40,7 @@ use Toast;
 
     public function mount($product)
     {
+
         $this->product = $product;
     }
 

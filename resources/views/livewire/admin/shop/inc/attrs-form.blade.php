@@ -4,7 +4,7 @@
         <x-form>
             @foreach ($attrs as $index => $attribute)
 
-                <x-input label="{{ $attribute->name }}" icon="fas.edit"
+                <x-input wire:key="{{ $attribute->id }}" label="{{ $attribute->name }}" icon="fas.edit"
                          wire:model.defer="attributeValues.{{ $attribute->id }}" inline/>
 
             @endforeach

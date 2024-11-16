@@ -2,8 +2,12 @@
 
 namespace App\Livewire\App\System;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\RateLimiter;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\Locked;
 use Livewire\Component;
 use Mary\Traits\Toast;
 
@@ -18,24 +22,122 @@ class Login extends Component
 
     public bool $verifyModal = false;
 
-    public $phoneNumber;
+    public $phoneNumber = '09173434796';
 
     public function sendVerifySms()
     {
+        $this->validate([
+            'phoneNumber' => 'required|numeric|digits:11',
+        ]);
 
+        RateLimiter::attempt('sendVerifySms' . session()->getId(), 4, function () {
+
+
+            $this->sendSms();
+
+
+        });
+
+
+    }
+
+
+    private function sendSms()
+    {
         $this->loginModal = false;
-        $this->verifyModal = true;
+        try {
 
+            $verifyCode = random_int(1000, 9999);
+            $phoneNumber = $this->phoneNumber;
+            $template_id = config('sms.verify_sms_code');
+            $parameter = new \Cryptommer\Smsir\Objects\Parameters('CODE', $verifyCode);
+            $parameters = array($parameter);
+
+            session()->put('phoneNumber', $this->phoneNumber);
+            Cache::put('VerifyCode_' . $phoneNumber, bcrypt($verifyCode), now()->addMinutes(5));
+
+
+            sendVerifySms($phoneNumber, $template_id, $parameters);
+            sleep(0.700);
+            $this->verifyModal = true;
+
+
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
+        }
+
+    }
+
+    private function verifyPin()
+    {
+        if ($this->phoneNumber == session()->get('phoneNumber')) {
+            if (Hash::check($this->pin, Cache::get('VerifyCode_' . $this->phoneNumber))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function login()
     {
+
+
         $this->validate([
             'pin' => 'required|digits:4|numeric',
         ]);
-        $this->warning($this->pin);
+
+        if (Auth::check()) {
+            return redirect()->route('home.index-home');
+        }
+
+        if ($this->verifyPin()) {
+            $phoneNumber = session()->get('phoneNumber');
+            if ($this->UserExists()) {
+
+                $user = User::where('phone', $phoneNumber)->first();
+                $user->update(['phone_verified_at' => now()]);
+
+                Auth::login($user, true);
+                session()->regenerate();
+                session()->regenerateToken();
+                session()->forget('phone_number');
+
+                $this->verifyModal = false;
+
+
+                Cache::forget('VerifyCode_' . $phoneNumber);
+            } else {
+
+                $user = User::create([
+                    'phone' => $phoneNumber,
+                    'phone_verified_at' => now(),
+                ]);
+
+                Auth::login($user, true);
+                session()->regenerate();
+                session()->regenerateToken();
+                session()->forget('phone_number');
+                $user->assignRole('customer');
+                Cache::forget('VerifyCode_' . $phoneNumber);
+                $this->verifyModal = false;
+                $this->warning('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
+            }
+        }
+        else
+        {
+            $this->warning('کد وارد شده صحیح نیست','','');
+        }
+
     }
 
+
+    private function UserExists(): bool
+    {
+        $phoneNumber = session()->get('phoneNumber') ?? 0;
+
+        return User::where('phone', $phoneNumber)->exists();
+
+    }
 
 
     public function render()

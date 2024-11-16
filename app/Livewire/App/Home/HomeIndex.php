@@ -19,10 +19,15 @@ class HomeIndex extends Component
 
     public function render()
     {
-        $products = Product::take(9)->get();
-
+        $products = cache()->remember('home_products', now()->addHours(12), function () {
+            return Product::active()
+                ->latest()
+                ->take(9)
+                ->with(['variants', 'images'])
+                ->get();
+        });
 
         return view('livewire.app.home.home-index', compact('products'))
-        ->title('دنا');
+            ->title('دنا');
     }
 }

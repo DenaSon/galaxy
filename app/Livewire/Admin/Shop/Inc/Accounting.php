@@ -20,10 +20,14 @@ class Accounting extends Component
     public $productId;
 
 
+
+
     public function mount($pid)
     {
+        $this->productId = $pid;
 
-        $accounting = \App\Models\Accounting::where('product_id', $pid)->first();
+        $accounting = \App\Models\Accounting::where('product_id', $this->productId)->first();
+
         if ($accounting)
         {
             $this->purchase_price = $accounting->purchase_price;
@@ -36,12 +40,12 @@ class Accounting extends Component
 
     }
 
-    public function save()
+    public function saveAccounting()
     {
 
-        if (!$this->productId) {
+        if ($this->productId == null) {
             $this->error('Product ID is required');
-            return;
+            return ;
         }
 
             $this->validate([
@@ -82,6 +86,7 @@ class Accounting extends Component
 
     public function render()
     {
+
         return view('livewire.admin.shop.inc.accounting');
 
     }

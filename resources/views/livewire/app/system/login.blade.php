@@ -5,8 +5,11 @@
         <x-input wire:model="phoneNumber" label="شماره تلفن" inline></x-input>
 
         <div class="flex items-center justify-center">
+
+
             <x-button spinner="sendVerifySms" icon="o-arrow-left-start-on-rectangle" class="btn-primary w-2/4 mt-3"
                       label="ورود" wire:click="sendVerifySms"/>
+
         </div>
 
     </x-modal>
@@ -24,10 +27,15 @@
                       label="تایید" wire:click="login"/>
         </div>
 
+
     </x-modal>
 
 
-    <x-button responsive icon="o-user" label="ورود" @click="$wire.loginModal = true"/>
+    @if(Auth::check())
+        <x-button link="{{ route('master.dashboard') }}" responsive icon="o-user-circle" label="حساب کاربری"/>
+    @else
+        <x-button responsive icon="o-user" label="ورود" @click="$wire.loginModal = true"/>
+    @endif
 
 
 </div>

@@ -1,13 +1,9 @@
 <?php
 
 use App\Models\Address;
-
-use App\Models\Category;
 use App\Models\Log;
-
 use App\Models\Product;
 use App\Models\Setting;
-
 use Cryptommer\Smsir\Objects\Parameters;
 use Cryptommer\Smsir\Smsir;
 use Illuminate\Support\Facades\Auth;
@@ -17,8 +13,6 @@ use Illuminate\Support\Str;
 use Intervention\Image\Drivers\Imagick\Driver;
 use Intervention\Image\ImageManager;
 use Morilog\Jalali\Jalalian;
-use Pishran\Zarinpal\Zarinpal;
-use Illuminate\Http\JsonResponse;
 
 
 /*
@@ -29,7 +23,6 @@ use Illuminate\Http\JsonResponse;
 | functions are loaded by the laravel in everywhere  and all of them will
 | be assigned to the "Setting" model .
 |*/
-
 
 
 /**
@@ -49,10 +42,9 @@ function SkuMaker(int $end = 9999): string
         $additionalRandom = rand(1, 9); // Additional random number
 
         return $currentDate . $random_int . $additionalRandom;
-    }
-    catch (Exception $e) {
+    } catch (Exception $e) {
 
-        setLog('Make-Sku',$e->getMessage(),'danger');
+        setLog('Make-Sku', $e->getMessage(), 'danger');
 
         return 'Error';
     }
@@ -63,7 +55,7 @@ function SkuMaker(int $end = 9999): string
 /**
  * Send SMS API
  *
- *@param string $value
+ * @param string $value
  * @param string $phoneNumber
  * @param int $templateID
  * @param string $parameterName
@@ -80,9 +72,7 @@ function sendSms(string $value, string $phoneNumber, int $templateID, string $pa
         $parameters = array($parameter);
         $response = $send->Verify($phoneNumber, $templateID, $parameters);
 
-    }
-    catch (Throwable $e)
-    {
+    } catch (Throwable $e) {
         $errorMessage = $e->getMessage();
         setLog('Send-Sms', $errorMessage . ' | Source : ' . $e->getFile() . ' | Line : ' . $e->getLine(), 'danger');
 
@@ -92,34 +82,32 @@ function sendSms(string $value, string $phoneNumber, int $templateID, string $pa
 }
 
 
-
-
-
-
 /**
-* Send SMS API
-*
+ * Send SMS API
+ *
+ * @param string $phoneNumber
+ * @param int $templateID
+ * @param array|string $parameterName
+ * @return mixed
+ */
 
-* @param string $phoneNumber
-* @param int $templateID
-* @param array|string $parameterName
-* @return mixed
-*/
-
-function sendVerifySms( string $phoneNumber, int $templateID, array $parameters)
+function sendVerifySms(string $phoneNumber, int $templateID, array $parameters): bool
 {
-
     try {
         $send = Smsir::send();
         $response = $send->Verify($phoneNumber, $templateID, $parameters);
 
+        if ($response->status == 200) {
+            return true;
+        } else {
+            \Illuminate\Support\Facades\Log::error('SMS sending failed: ' . $response->message);
+            return false;
+        }
+    } catch (Throwable $e) {
+        \Illuminate\Support\Facades\Log::error('Error sending SMS: ' . $e->getMessage());
+        return false;
     }
-    catch (Throwable $e)
-    {
-        setLog('sendVerifySms', $e->getMessage() . ' '. $e->getFile(), 'danger');
 
-
-    }
 
 }
 
@@ -145,20 +133,17 @@ function sendPayment(int $amount, string $description, string $callbackUrl, stri
             ->email($email)
             ->send();
 
-        if ( !$response->success() )
-        {
+        if (!$response->success()) {
             $message = $response->error()->message();
             setLog('Send-Payment', $message, 'warning');
             return redirect()->back();
         }
 
-         return $response->redirect();
+        return $response->redirect();
 
 
-    }
-    catch (Throwable $e)
-    {
-        setLog('Send-Payment', $e->getMessage() . ' | Source : '.$e->getFile() . ' | Line : '. $e->getLine(), 'danger');
+    } catch (Throwable $e) {
+        setLog('Send-Payment', $e->getMessage() . ' | Source : ' . $e->getFile() . ' | Line : ' . $e->getLine(), 'danger');
         return false;
     }
 
@@ -176,7 +161,7 @@ function sendPayment(int $amount, string $description, string $callbackUrl, stri
  * @param string $order
  * @return mixed
  */
-function filterProduct(string $attributeName, string $attributeValue, string $field = '', int $limit = 100, string $orderField='created_at', string $order = 'DESC'): mixed
+function filterProduct(string $attributeName, string $attributeValue, string $field = '', int $limit = 100, string $orderField = 'created_at', string $order = 'DESC'): mixed
 {
     // Prepare the query with parameter binding
     $query = Product::query()
@@ -192,8 +177,8 @@ function filterProduct(string $attributeName, string $attributeValue, string $fi
 
     $query->limit($limit);
 
-    if (!empty($orderField) && in_array($orderField, ['created_at', 'updated_at','id'])) {
-        $query->orderBy('products.'.$orderField, $order);
+    if (!empty($orderField) && in_array($orderField, ['created_at', 'updated_at', 'id'])) {
+        $query->orderBy('products.' . $orderField, $order);
     }
 
     if ($limit === 1) {
@@ -210,14 +195,17 @@ function filterProduct(string $attributeName, string $attributeValue, string $fi
  * @param string|null $key
  * @return mixed
  */
-function getSetting(string $key = null): mixed
+function getSettings(): array
 {
-    $minutes = 60 * 10;
-    $setting = Cache::remember('settings_' . $key, $minutes, function () use ($key) {
-        return Setting::where('key', $key)->value('value');
+    return cache()->remember('site_settings', now()->addDays(7), function () {
+        return Setting::pluck('value', 'key')->toArray();
     });
+}
 
-    return $setting ?? null;
+function getSetting(string $key): mixed
+{
+    $settings = getSettings();
+    return $settings[$key] ?? null;
 }
 
 /**
@@ -246,15 +234,14 @@ function setLog($action = null, $description = null, $severity = null)
 
         }
 
-    }
-    catch (Throwable $e)
-    {
+    } catch (Throwable $e) {
 
         Log::error('Failed to save log entry: ' . $e->getMessage());
 
     }
 
 }
+
 /**
  * @param $datetime
  * @return string
@@ -265,6 +252,7 @@ function toSystemDate($datetime)
     $gregorianDate = $jalaliDate->toCarbon();
     return $gregorianDate->format('Y-m-d H:i:s');
 }
+
 /**
  * @param $date
  * @return string
@@ -275,10 +263,6 @@ function toSystemDateOnly($date)
     $gregorianDate = $jalaliDate->toCarbon();
     return $gregorianDate->format('Y-m-d');
 }
-
-
-
-
 
 
 function slugMaker($string)
@@ -299,33 +283,25 @@ function slugMaker($string)
 }
 
 
-
-
-
-
-
-
-
-
-function getArticleReadTime($text='abc', $division=100,$locale = 'fa')
+function getArticleReadTime($text = 'abc', $division = 100, $locale = 'fa')
 {
-   $str =  Str::length($text);
-   $length = round($str / $division,0,PHP_ROUND_HALF_DOWN) ?? 1;
-   $result = Number::spell($length,$locale);
+    $str = Str::length($text);
+    $length = round($str / $division, 0, PHP_ROUND_HALF_DOWN) ?? 1;
+    $result = Number::spell($length, $locale);
 
-   return $result ?? 0;
+    return $result ?? 0;
 }
 
 function userAddressExist($authId): bool
 {
     //get user address
-    $addressExists = (bool) Address::whereUserId($authId)->whereIsDefault(1)->first();
+    $addressExists = (bool)Address::whereUserId($authId)->whereIsDefault(1)->first();
 
     return $addressExists;
 }
 
 
- function imageOptimizer($directory,$imageName,$rectangleWidth,$rectangleHeight,$quality=90)
+function imageOptimizer($directory, $imageName, $rectangleWidth, $rectangleHeight, $quality = 90)
 {
     $new_directory = $directory . '/' . $imageName;
     $manager = new ImageManager(new Driver());
@@ -338,7 +314,7 @@ function userAddressExist($authId): bool
     $startX = max(0, ($imageWidth - $rectangleWidth) / 2);
     $startY = max(0, ($imageHeight - $rectangleHeight) / 2);
     $image->crop($rectangleWidth, $rectangleHeight, $startX, $startY);
-    $image->save(null,$quality);
+    $image->save(null, $quality);
 }
 
 
@@ -349,9 +325,7 @@ function formatPhoneNumber($phoneNumber)
         return substr($phoneNumber, 0, 4) . '-' .
             substr($phoneNumber, 4, 3) . '-' .
             substr($phoneNumber, 7, 4);
-    }
-    else
-    {
+    } else {
         return $phoneNumber;
     }
 }
@@ -370,9 +344,7 @@ function convertPersianNumbers($string): float|int|string
         $persian_numbers = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
         $english_numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
         return str_replace($persian_numbers, $english_numbers, $string);
-    }
-    catch (Throwable $e)
-    {
+    } catch (Throwable $e) {
         \Illuminate\Support\Facades\Log::error($e->getMessage());
     }
 }

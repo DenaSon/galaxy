@@ -17,7 +17,7 @@
             set('content', editor.getData());
         });
     }
-    initializeCKEditor();
+
 
     document.addEventListener("livewire:load", function () {
         initializeCKEditor();

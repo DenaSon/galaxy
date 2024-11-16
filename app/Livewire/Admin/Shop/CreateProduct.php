@@ -109,11 +109,13 @@ class CreateProduct extends Component
     {
 
         $this->variants[] = ['type' => '', 'price' => ''];
+
         if (!Product::where('sku', $this->sku())->first()) {
             if (request()->has('edit')) {
                 $product = Product::findOrFail(request()->query('edit'));
                 $this->productId = $product->id;
                 $this->attrs = Attribute::all();
+                $this->variant_list = Variant::whereProductId($product->id)->get();
                 $this->setEditValues($this->productId);
             } else {
                 $product = new Product(['unit' => '', 'sku' => $this->sku(), 'name' => '', 'is_active' => 0]);
