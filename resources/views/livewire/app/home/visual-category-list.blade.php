@@ -1,4 +1,4 @@
-<div class="container mx-auto lg:px-4 2xl:px-0 mt-2 shadow-md">
+<div class="container mx-auto lg:px-4 2xl:px-0 mt-2">
 
     <div
         class="px-2 lg:px-3  bg-white lg:rounded-large border-1 border-gradient-to-r from-blue-500 to-green-500 rounded-lg shadow-lg p-6">

@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
+
+
     public $guarded = [];
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', 1);
+    }
     public function categories()
     {
         return $this->morphToMany(Category::class, 'categorizable');
@@ -26,4 +33,21 @@ class Blog extends Model
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
+
+
+    //Handle Cache
+    protected static function booted()
+    {
+        static::saved(function () {
+            cache()->forget('home_blogs');
+        });
+
+        static::deleted(function () {
+            cache()->forget('home_blogs');
+        });
+    }
+
+
+
+
 }

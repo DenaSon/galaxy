@@ -1,5 +1,5 @@
 <div class="container mx-auto">
-        {{ getSetting('website:title') }}
+
     <div class="flex flex-col md:flex-row md:justify-center items-center space-y-2 md:space-y-0">
         <div class="w-full md:w-4/4 lg:w-3/4">
             @livewire('app.home.home-slider')
@@ -15,18 +15,43 @@
         تازه های دناپکس
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
-
-
-
         @foreach($products as $product)
-
             @livewire('app.component.product-card', ['product' => $product], key($product->id))
-
         @endforeach
-
     </div>
 
+    <div class="container mx-auto lg:px-4 2xl:px-0 mt-2">
+        <div
+            class="px-2 lg:px-3  bg-white lg:rounded-large border-1 border-gradient-to-r from-blue-500 to-green-500 rounded-lg shadow-lg p-6">
+            <div class="flex items-center justify-center py-3 lg:py-4 mb-2">
+
+                <h3 class="text-h3"> خواندنی های دناپکس </h3>
+
+
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+                @foreach($blogs as $blog)
+
+                    @livewire('app.component.blog-card', ['blog' => $blog], key($blog->id))
+
+                @endforeach
+            </div>
+        </div>
+
+
+
+
 </div>
+
+    <div class="w-full hidden md:block">
+        @include('livewire.app.home.inc.footer-icons')
+    </div>
+
+
+
+</div>
+
+
 
 
 

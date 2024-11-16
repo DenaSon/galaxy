@@ -1,43 +1,55 @@
-<div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
-
-    <x-card class="cursor-pointer">
-        <x-slot:title class="text-sm font-thin hidden sm:block"> {{ $product->name }} </x-slot:title>
-
-        <x-slot:figure class="relative group">
-
-            <img src="{{ asset($product->images->first()->file_path ?? 'https://picsum.photos/500/200') }}"
-                 class="w-full h-52 md:h-64 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-all duration-300 ease-in-out opacity-95 group-hover:opacity-100"
-                 alt="{{ $product->name }}"/>
+<div wire:poll.visible.60s
+     class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
 
 
-            <div class="absolute inset-0 bg-black opacity-5"></div>
+    <a wire:navigate href="{{ route('home.product.singleProduct',['product' => $product,'slug' => slugMaker($product->name)]) }}">
+        <x-card class="cursor-pointer">
+            <x-slot:title class="text-sm font-thin hidden sm:block"> {{ $product->name }} </x-slot:title>
 
-            <div class="absolute top-0 right-0 p-3 flex space-x-2">
-                <x-button data-tip="موردعلاقه" spinner="addFavorite" wire:click="addFavorite({{$product->id}})"
-                          icon="o-heart"
-                          class="tooltip tooltip-left btn-circle btn-xs  bg-opacity-10 text-white "/>
-            </div>
-            <div class="absolute top-0 left-0 p-3 flex space-x-2">
-                <x-badge value="{{ $product->discount ?? 0 }}%" class="badge badge-error text-white"/>
-            </div>
+            <x-slot:figure class="relative group">
 
-            <div class="absolute bottom-0 right-0 p-3 flex space-x-2 sm:hidden">
-             <span class="text-xs font-thin rounded border-gray-700 bg-gray-100 p-2 opacity-80"> {{ $product->name }}</span>
-            </div>
+                <img src="{{ asset($product->images->first()->file_path ?? 'https://picsum.photos/500/200') }}"
+                     class="w-full h-52 md:h-64 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-all duration-300 ease-in-out opacity-95 group-hover:opacity-100"
+                     alt="{{ $product->name }}"/>
 
-        </x-slot:figure>
 
-        <x-slot:menu class="hidden sm:flex">
+                <div class="absolute inset-0 bg-black opacity-5"></div>
+
+                <div class="absolute top-0 right-0 p-3 flex space-x-2">
+                    @if(Auth::check() && !Auth::user()->favorites->pluck('id')->contains($product->id))
+                        <x-button data-tip="موردعلاقه" spinner="addFavorite" wire:click="addFavorite({{$product->id}})"
+                                  icon="o-heart"
+                                  class="tooltip tooltip-left btn-circle btn-xs bg-opacity-10 text-white"/>
+                    @else
+                        <x-button data-tip="حذف از مورد علاقه" spinner="removeFavorite" wire:click="removeFavorite({{$product->id}})"
+                                  icon="o-heart"
+                                  class="tooltip tooltip-left btn-circle btn-xs bg-opacity-10 text-white"/>
+                    @endif
+                </div>
+                <div class="absolute top-0 left-0 p-3 flex space-x-2">
+                    <x-badge value="{{ $product->discount ?? 0 }}%" class="badge badge-error text-white"/>
+                </div>
+
+                <div class="absolute bottom-0 right-0 p-3 flex space-x-2 sm:hidden">
+                    <span class="text-xs font-thin rounded border-gray-700 bg-gray-100 p-2 opacity-80"> {{ $product->name }}</span>
+                </div>
+
+            </x-slot:figure>
+
+            <x-slot:menu class="hidden sm:flex">
             <span class="tooltip font-bold" data-tip="تومان">
                 {{ number_format($product->variants->min('price') ?? 0) }}</span>
-            <x-icon name="o-check-badge"></x-icon>
-        </x-slot:menu>
+                <x-icon name="o-check-badge"></x-icon>
+            </x-slot:menu>
 
-        <div class="sm:hidden text-center p-0">
+            <div class="sm:hidden text-center p-0">
                 <span class=" tooltip font-bold" data-tip="تومان">
                 {{ number_format($product->variants->min('price') ?? 0) }}</span>
-            <x-icon name="o-check-badge"></x-icon>
-        </div>
+                <x-icon name="o-check-badge"></x-icon>
+            </div>
 
-    </x-card>
+        </x-card>
+    </a>
+
+
 </div>

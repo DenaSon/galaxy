@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\App\Home;
+use App\Models\Blog;
 use App\Models\Product;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -19,15 +20,24 @@ class HomeIndex extends Component
 
     public function render()
     {
+        $websiteTitle = getSetting('website_title');
         $products = cache()->remember('home_products', now()->addHours(12), function () {
             return Product::active()
                 ->latest()
-                ->take(9)
+                ->take(18)
                 ->with(['variants', 'images'])
                 ->get();
         });
 
-        return view('livewire.app.home.home-index', compact('products'))
-            ->title('دنا');
+        $blogs = cache()->remember('home_blogs', now()->addHours(24), function () {
+            return Blog::active()
+                ->latest()
+                ->take(4)
+                ->with(['categories', 'images'])
+                ->get();
+        });
+
+        return view('livewire.app.home.home-index', compact('products','blogs'))
+            ->title($websiteTitle ?? 'Home');
     }
 }

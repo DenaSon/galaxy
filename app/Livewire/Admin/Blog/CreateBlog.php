@@ -74,7 +74,7 @@ class CreateBlog extends Component
 
     private function saveImage($photo, $blogId)
     {
-        $filePath = $photo->store('photos/blog', 'public');
+        $filePath = $photo->store('/photos/blog', 'public');
 
         $fileName = $photo->getClientOriginalName();
 

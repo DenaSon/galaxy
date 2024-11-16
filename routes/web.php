@@ -10,6 +10,7 @@ use App\Livewire\Admin\Shop\CreateProduct;
 use App\Livewire\Admin\Shop\ListProduct;
 use App\Livewire\Admin\Shop\Orders\OrderList;
 use App\Livewire\App\Home\HomeIndex;
+use App\Livewire\App\Shop\SingleProduct;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,10 +20,11 @@ Route::name('home.')->group(function () {
 
     Route::prefix('product')->name('product.')->group(function () {
 
+        Route::get('/pax-{product}/{slug}', SingleProduct::class)->name('singleProduct');
+
     });
 
 });
-
 
 
 // Master group

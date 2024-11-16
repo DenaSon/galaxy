@@ -94,7 +94,7 @@ class EditBlog extends Component
 
     private function saveImage($photo,$blogId)
     {
-        $filePath = $photo->store('photos/blog', 'public');
+        $filePath = $photo->store('/photos/blog', 'public');
 
         // Find the existing image record associated with the blog
         $image = Image::where('imageable_type', Blog::class)

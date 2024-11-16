@@ -318,6 +318,15 @@ function imageOptimizer($directory, $imageName, $rectangleWidth, $rectangleHeigh
 }
 
 
+/**
+ * @throws Exception
+ */
+function singleProductUrl($productId, $slug)
+{
+    return route('home.product.singleProduct',['product'=>$productId,'slug'=>slugMaker($slug)]);
+}
+
+
 function formatPhoneNumber($phoneNumber)
 {
     if (strlen($phoneNumber) === 11) {

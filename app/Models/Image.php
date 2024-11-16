@@ -12,4 +12,17 @@ class Image extends Model
     {
         return $this->morphTo();
     }
+
+
+    protected static function booted()
+    {
+        static::saved(function ($product) {
+            cache()->forget('slider-images-' . $product->id);
+        });
+
+        static::deleted(function ($product) {
+            cache()->forget('slider-images-' . $product->id);
+        });
+    }
+
 }
