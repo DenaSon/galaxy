@@ -11,6 +11,7 @@ class ProductDetail extends Component
 {
     use Toast;
     public Product $product;
+    public $selectedTab = 'productFeature';
 
     public function mount(Product $product)
     {

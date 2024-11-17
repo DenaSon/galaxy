@@ -51,6 +51,39 @@
     </div>
 
 
+    <div class="flex gap-4 h-auto mt-4">
+
+        <div class="flex-[1] rounded-md mt-4">
+            <x-tabs wire:model="selectedTab">
+
+                <x-tab name="productFeature" icon="o-queue-list" label="  ویژگی‌ها">
+
+
+                    <div>Users</div>
+                </x-tab>
+
+
+
+                <x-tab name="productComment" label="دیدگاه‌ها" icon="o-chat-bubble-bottom-center-text">
+                    <div>Tricks</div>
+                </x-tab>
+
+
+                <x-tab name="productSendComment" label="ارسال دیدگاه" icon="o-paper-airplane">
+                    <div>Musics</div>
+                </x-tab>
+
+
+            </x-tabs>
+
+
+        </div>
+
+    </div>
+
+
+
+
 
 
 </div>
