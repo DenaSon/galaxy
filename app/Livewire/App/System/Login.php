@@ -15,6 +15,14 @@ use Mary\Traits\Toast;
 class Login extends Component
 {
     use Toast;
+    protected $listeners = ['openLoginModal' => 'open'];
+
+    public function open()
+    {
+        $this->loginModal = true;
+    }
+
+
 
     public $pin;
 
@@ -98,15 +106,17 @@ class Login extends Component
                 $user->update(['phone_verified_at' => now()]);
 
                 Auth::login($user, true);
-                session()->regenerate();
-                session()->regenerateToken();
+//                session()->regenerate();
+//                session()->regenerateToken();
                 session()->forget('phone_number');
-
                 $this->verifyModal = false;
-
-
                 Cache::forget('VerifyCode_' . $phoneNumber);
-            } else {
+                $this->warning('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
+
+
+            }
+            else
+            {
 
                 $user = User::create([
                     'phone' => $phoneNumber,
@@ -114,13 +124,15 @@ class Login extends Component
                 ]);
 
                 Auth::login($user, true);
-                session()->regenerate();
-                session()->regenerateToken();
+//                session()->regenerate();
+//                session()->regenerateToken();
                 session()->forget('phone_number');
                 $user->assignRole('customer');
                 Cache::forget('VerifyCode_' . $phoneNumber);
                 $this->verifyModal = false;
                 $this->warning('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
+
+
             }
         }
         else

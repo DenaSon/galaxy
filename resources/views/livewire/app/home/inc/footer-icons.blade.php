@@ -1,3 +1,4 @@
+<div class="w-full hidden md:block">
 <div class="bg-white py-4 border-b border-gray-200 mt-5 mb-4">
     <div class="container mx-auto flex flex-wrap items-center justify-between px-4 lg:px-8">
 
@@ -52,4 +53,5 @@
 
 
     </div>
+</div>
 </div>

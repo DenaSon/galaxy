@@ -1,15 +1,21 @@
-<div>
-    <div class="flex flex-col md:flex-row md:space-x-4">
+<div class="container  max-w-full">
 
-        <div class="w-full md:w-2/3 shadow-lg m-2">
+<x-card progress-indicator separator>
 
-        </div>
+    <x-form wire:submit="saveComment({{$product}})" >
+        <x-input inline label="نام" wire:model="username" />
+        <x-textarea inline label="متن دیدگاه" wire:model="text"></x-textarea>
+       <div class="text-center">
+           <x-rating label="امتیاز" wire:model="rating" class="bg-warning" total="5" />
+       </div>
 
-        <!--    Separator -->
+        <x-slot:actions>
+            <x-button  label="ارسال دیدگاه" class="btn-primary" type="submit" spinner="saveComment" />
+        </x-slot:actions>
+    </x-form>
 
-        <div class="w-full md:w-1/3 shadow-lg m-2">
+</x-card>
 
-        </div>
 
-    </div>
+
 </div>

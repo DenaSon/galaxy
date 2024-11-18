@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Comment extends Model
 {
+    protected $fillable = ['user_id','username','likes','rating','text','reply','parent_id','status'];
     public function commentable():MorphTo
     {
         return $this->morphTo();

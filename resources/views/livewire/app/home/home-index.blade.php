@@ -43,11 +43,6 @@
 
 </div>
 
-    <div class="w-full hidden md:block">
-        @include('livewire.app.home.inc.footer-icons')
-    </div>
-
-
 
 </div>
 

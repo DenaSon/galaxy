@@ -53,7 +53,7 @@
     <x-slot:content dir="rtl">
         {{ $slot }}
         @livewire('app.home.mobile-menu')
-
+        @include('livewire.app.home.inc.footer-icons')
     </x-slot:content>
 </x-main>
 

@@ -39,7 +39,7 @@ class Spotlight
                     'name' => $product->name,
                     'icon' => Blade::render("<x-icon name='o-bolt' />"),
                     'description' => $product->description,
-                    'link' => "/product/{$product->id}"
+                    'link' => singleProductUrl($product->id,slugMaker($product->name)),
                 ];
             });
     }

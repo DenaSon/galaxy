@@ -28,7 +28,7 @@ class SingleProduct extends Component
         RateLimiter::attempt('product.' . $product->id . '.views', 1, function () use ($product) {
 
             $product->increment('views');
-        });
+        },120);
     }
 
     public function seoTitle()

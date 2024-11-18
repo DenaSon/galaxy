@@ -312,7 +312,8 @@ return [
         'selectedCategories' => 'دسته',
         'additionalInfo' => 'یادداشت',
         'photo'=>'عکس',
-        'phoneNumber' => 'شماره تلفن'
+        'phoneNumber' => 'شماره تلفن',
+        'variant' => 'نوع'
 
 
 
