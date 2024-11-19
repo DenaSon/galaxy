@@ -1,6 +1,6 @@
-<div wire:init="loadComments">
+<div>
 
-    @foreach($comment_list as $comment)
+    @foreach($product->comments->take(30) as  $comment)
         <div class="chat chat-start">
             <div class="chat-image avatar">
                 <div class="w-auto mt-3">

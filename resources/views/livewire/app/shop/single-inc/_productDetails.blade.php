@@ -16,5 +16,5 @@
         </button>
 
     </p>
-
+    @livewire('app.component.cart-modal',['product'=>$product])
 </div>

@@ -26,16 +26,23 @@ class AddToCartCard extends Component
     public $liveVariant;
     public $defaultVariant;
 
-    public function mount(Product $product)
+    public $variantCounts;
+
+    public function mount()
     {
 
-        $this->livePrice = $product->variants()->min('price');
 
-        $this->defaultVariant = $product->variants()->orderBy('price', 'asc')->first();
+        $variants = $this->product->variants;
 
-        $this->variantList = $this->product->variants->sortBy('price')->toArray();
+        $this->variantCounts = $variants->count();
 
+        $this->livePrice = $variants->min('price');
+
+        $this->defaultVariant = $variants->sortBy('price')->first();
+
+        $this->variantList = $variants->sortBy('price')->toArray();
     }
+
 
 
 
@@ -61,7 +68,12 @@ class AddToCartCard extends Component
 
     public function variantSelect()
     {
-        $selectedVariant = Variant::where('id',$this->variant)->where('product_id',$this->product->id)->first();
+
+        $selectedVariant = $this->product->variants()->where('id', $this->variant)
+            ->where('product_id', $this->product->id)
+            ->first();
+
+
         if ($selectedVariant)
         {
             $this->livePrice = $selectedVariant->price;
@@ -110,6 +122,7 @@ class AddToCartCard extends Component
            $cart->quantity = 1;
            $cart->save();
            $this->info('سبد خرید','محصول به سبد خرید شما افزوده شد');
+           $this->dispatch('openCartModal');
        }
         else
         {
@@ -119,6 +132,7 @@ class AddToCartCard extends Component
                 $cart->quantity = $cart->quantity + 1;
                 $cart->save();
                 $this->info('سبد خرید','محصول به سبد خرید شما افزوده شد');
+                $this->dispatch('openCartModal');
             }
         }
 

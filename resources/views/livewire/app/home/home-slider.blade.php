@@ -1,11 +1,12 @@
 @php
+    $slide1 = asset('storage/photos/slider/slider1.jpg');
     $slides = [
         [
-            'image' => 'https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp' ,
+            'image' => $slide1 ,
             'title' => 'سوغات کوهسار دنا',
-            'description' => 'We love last week frameworks.',
+            'description' => 'محصولات ارگانیک و تازه، با طعمی اصیل از دل دنا. تجربه خریدی سالم و طبیعی',
             'url' => '/docs/installation',
-            'urlText' => 'Get started',
+            'urlText' => 'مشاهده محصولات',
         ],
         [
             'image' => 'https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp' ,

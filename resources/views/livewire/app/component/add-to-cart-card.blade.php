@@ -9,25 +9,25 @@
                     <x-icon name="o-sparkles"/>
                 </div>
 
-                @if($product->variants->count() == 1)
+                @if($variantCounts == 1)
                     <div
                         class="stat-value text-black text-center">{{ number_format($defaultVariant->price ?? 0) }}</div>
                     <div class="stat-desc text-center">تومان</div>
+
                 @else
 
                     <div class="stat-value text-black text-center">{{ number_format($livePrice ?? 0) }}</div>
                     <div class="stat-desc text-center">تومان</div>
 
 
-                    <x-menu-separator/>
-                    <div class=" w-full">
+                    <x-hr/>
+                    <div class="w-full">
                         <x-select
                             class="select-sm"
                             :options="$variantList"
                             option-value="id"
                             option-label="type"
                             wire:model.live.debounce.2ms="variant"/>
-
 
                     </div>
 
@@ -38,10 +38,6 @@
                 @include('livewire.app.shop.single-inc._addCartButton')
 
                 <div class="clear-both"></div>
-
-
-
-
 
             </div>
 

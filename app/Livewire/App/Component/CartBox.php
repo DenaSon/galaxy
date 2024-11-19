@@ -6,7 +6,7 @@ use Livewire\Component;
 use Mary\Traits\Toast;
 #[Layout('components.layouts.app')]
 
-class ShopCart extends Component
+class CartBox extends Component
 {
 use Toast;
 
@@ -17,7 +17,7 @@ use Toast;
 
     public function render()
     {
-        return view('livewire.app.component.shop-cart')
+        return view('livewire.app.component.cart-box')
         ->title('');
     }
 }

@@ -1,4 +1,4 @@
-<div class="overflow-x-auto" wire:init="loadAttributes">
+<div class="overflow-x-auto">
 
     <table class="table w-full border border-gray-200 rounded-lg rtl">
         <!-- Table Header -->
@@ -10,7 +10,7 @@
         </thead>
         <!-- Table Body -->
         <tbody>
-        @foreach($features as $attribute)
+        @foreach($product->attributes as $attribute)
           @if($attribute->pivot->value != 'null')
               <tr class="hover:bg-gray-50">
                   <td class="px-6 py-4 text-sm text-right text-gray-800">{{ $attribute->name }}</td>

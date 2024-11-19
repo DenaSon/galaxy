@@ -23,9 +23,9 @@ class SendCommentForm extends Component
     public $reply;
     public $product;
 
-    public function mount(Product $product)
+    public function mount()
     {
-        $this->product = $product;
+
     }
 
     public function saveComment(Product $product)

@@ -23,4 +23,12 @@ class Order extends Model
     {
         return $this->belongsTo(Address::class);
     }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+
+
 }
