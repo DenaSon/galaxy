@@ -172,7 +172,8 @@ class CartBox extends Component
 
 
         }
-        catch (\Throwable $exception) {
+        catch (\Throwable $exception)
+        {
            dd($exception->getMessage());
 
         }
