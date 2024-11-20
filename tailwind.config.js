@@ -9,6 +9,9 @@ export default {
 		'./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
 
 	],
+
+
+
   theme: {
     extend: {},
   },
@@ -21,6 +24,7 @@ export default {
         themes: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
 
 	},
+
 
 }
 
