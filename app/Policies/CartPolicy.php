@@ -12,7 +12,7 @@ class CartPolicy
      */
     public function __construct()
     {
-        //
+        // this is new
     }
 
 
