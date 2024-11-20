@@ -1,0 +1,65 @@
+{
+    "name": "robsontenorio/mary",
+    "description": "Laravel Blade UI Components for Livewire 3",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robson Tenório",
+            "email": "rrtenorio@gmail.com",
+            "homepage": "https://github.com/robsontenorio"
+        }
+    ],
+    "homepage": "https://mary-ui.com",
+    "keywords": [
+        "laravel",
+        "livewire",
+        "livewire 3",
+        "livewire ui",
+        "livewire ui components",
+        "tallstack",
+        "tallstack ui",
+        "tallstackui",
+        "tallstack components",
+        "blade",
+        "ui",
+        "blade ui components",
+        "livewire-components",
+        "livewire components",
+        "livewire-packages",
+        "livewire packages",
+        "tailwind",
+        "components",
+        "daisyUI",
+        "alpinejs"
+    ],
+    "require": {
+        "illuminate/support": "^10.0|^11.0",
+        "jfcherng/php-diff": "^6.15",
+        "laravel/prompts": "^0|^1",
+        "blade-ui-kit/blade-heroicons": "^2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5",
+        "orchestra/testbench": "^8.21"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mary\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mary\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mary\\MaryServiceProvider"
+            ],
+            "aliases": {
+                "Mary": "Mary\\Facades\\Mary"
+            }
+        }
+    }
+}

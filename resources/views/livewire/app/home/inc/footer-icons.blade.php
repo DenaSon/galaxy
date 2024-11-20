@@ -44,6 +44,9 @@
 
         <div class="flex flex-col items-center text-center">
 
+
+            <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=548145&Code=9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=548145&Code=9pAhKYDetHQRHu97nYXqh24mMTeqQcNm' alt='' style='cursor:pointer' code='9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'></a>
+
            <x-icon name="o-truck" class="w-10 h-10 text-bold text-yellow-500"/>
 
             <span class="text-xs text-gray-700 font-medium mt-2">تحویل سریع</span>

@@ -1,0 +1,72 @@
+name: Bug Report
+description: File a bug report
+labels: [ "bug", "triage" ]
+body:
+  - type: input
+    id: mary-version
+    attributes:
+      label: maryUI version
+      description: You can see number on your `composer.json` file.
+      placeholder: "example: 2.7.0"
+    validations:
+      required: true
+
+  - type: input
+    id: daisy-version
+    attributes:
+      label: daisyUI version
+      description: You can see number on your `package.json` file.
+      placeholder: "example: 2.7.0"
+    validations:
+      required: true
+
+  - type: input
+    id: livewire-version
+    attributes:
+      label: Livewire version
+      description: You can see number on your `composer.json` file.
+      placeholder: "example: 2.7.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers are affected?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      placeholder: Tell us what you see!
+      value: |        
+        ❌ Don't paste your entire component code, it is hard to debug it.
+        
+        ✅ Paste only the MINIMAL code that reproduces your issue (PHP/BLADE).
+
+        ❌ Don't paste code as screenshot. 
+        
+        ✅ Paste code as formatted markdown.
+
+        PHP
+
+        ```php
+        public bool $modal = false;
+        ```
+
+        HTML/Blade
+
+        ```blade
+        <x-button label="Hi" />
+        ```
+
+    validations:
+      required: true
