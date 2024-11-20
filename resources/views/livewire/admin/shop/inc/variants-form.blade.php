@@ -24,6 +24,15 @@
                         required
                     />
 
+                    <x-input
+                        wire:model.defer="variants.{{ $index }}.weight"
+                        placeholder="وزن"
+
+                        step="10"
+                        class="w-3/3"
+                        required
+                    />
+
                     <x-button
                         spinner
                         icon="o-trash"
@@ -44,7 +53,8 @@
                         <li wire:key="{{ $var->id }}" class="flex items-center justify-between p-2 bg-white rounded-md shadow-sm">
                             <div>
                                 <span class="text-gray-800 font-semibold">{{ $var->type }}</span> -
-                                <span class="ml-2 text-sm text-blue-500 font-medium">قیمت: {{ number_format($var->price)  }} تومان</span>
+                                <span class="ml-2 text-sm text-blue-500 font-medium">قیمت: {{ number_format($var->price)  }} / </span>
+                                <span class="text-sm font-bold text-orange-400"> وزن :  {{ $var->weight }} گرم </span>
                             </div>
                             <x-button wire:confirm="نوع حذف شود؟" icon="o-trash" class="btn-xs"
                                       wire:click="deleteVariant({{ $var->id }})"></x-button>

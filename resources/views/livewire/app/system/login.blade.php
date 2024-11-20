@@ -1,6 +1,6 @@
 <div>
 
-    <x-modal wire:model="loginModal" class="backdrop-blur">
+    <x-modal wire:model="loginModal" class="backdrop-blur" box-class="w-96">
         <div class="mb-5"></div>
         <x-input wire:model="phoneNumber" label="شماره تلفن" inline></x-input>
 

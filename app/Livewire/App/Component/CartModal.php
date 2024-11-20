@@ -17,6 +17,7 @@ class CartModal extends Component
     public Product $product;
     protected $listeners = ['openCartModal' => 'openCartModal'];
     public $cartModal = false;
+    public $shippingCost = 0;
 
 
     public function openCartModal()
@@ -34,6 +35,8 @@ class CartModal extends Component
         {
             $cart->increment('quantity');
         }
+
+        $this->calcShipping($cart);
     }
 
     public function decreaseVariant(Cart $cart)
@@ -49,6 +52,8 @@ class CartModal extends Component
 
         }
     }
+
+
 
 
 

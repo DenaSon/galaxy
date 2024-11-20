@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->string('type');
-            $table->integer('price');
+            $table->unsignedInteger('price');
+            $table->unsignedInteger('weight')->default(0);
             $table->timestamps();
         });
     }

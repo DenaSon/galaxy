@@ -130,7 +130,7 @@ class Login extends Component
                 $user->assignRole('customer');
                 Cache::forget('VerifyCode_' . $phoneNumber);
                 $this->verifyModal = false;
-                $this->warning('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
+                $this->info('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
 
 
             }

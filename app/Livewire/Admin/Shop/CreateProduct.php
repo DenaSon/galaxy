@@ -214,15 +214,17 @@ class CreateProduct extends Component
         $this->validate([
             'variants.*.type' => 'required|string',
             'variants.*.price' => 'required|numeric|min:0',
+            'variants.*.weight' => 'required|numeric|min:10',
         ]);
         $product = Product::findOrFail($this->productId);
         foreach ($this->variants as $variant) {
             $product->variants()->firstOrCreate([
                 'type' => $variant['type'],
                 'price' => $variant['price'],
+                'weight' => $variant['weight'],
             ]);
         }
-        $this->variants[] = ['type' => '', 'price' => ''];
+        $this->variants[] = ['type' => '', 'price' => '','weight' => ''];
 
 
         $this->variant_list = $product->variants()->get();

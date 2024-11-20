@@ -9,29 +9,22 @@
                     <x-icon name="o-sparkles"/>
                 </div>
 
-                @if($variantCounts == 1)
-                    <div
-                        class="stat-value text-black text-center">{{ number_format($defaultVariant->price ?? 0) }}</div>
-                    <div class="stat-desc text-center">تومان</div>
 
-                @else
-
-                    <div class="stat-value text-black text-center">{{ number_format($livePrice ?? 0) }}</div>
-                    <div class="stat-desc text-center">تومان</div>
+                <div class="stat-value text-black text-center">{{ number_format($selectedVariant->price ?? 0) }}</div>
+                <div class="stat-desc text-center">تومان</div>
 
 
-                    <x-hr/>
-                    <div class="w-full">
-                        <x-select
-                            class="select-sm"
-                            :options="$variantList"
-                            option-value="id"
-                            option-label="type"
-                            wire:model.live.debounce.2ms="variant"/>
+                <x-hr/>
+                <div class="w-full">
+                    <x-select
+                        class="select-sm"
+                        :options="$product->variants()->orderBy('price')->select(['id', 'type'])->get()"
+                        option-value="id"
+                        option-label="type"
+                        wire:model.live="variant"/>
 
-                    </div>
+                </div>
 
-                @endif
 
                 <div class="clear-both"></div>
 
