@@ -26,6 +26,21 @@ Route::name('home.')->group(function () {
 
 });
 
+Route::name('panel.')->group(function () {
+
+    Route::prefix('profile')->name('profile.')->group(function () {
+
+        Route::get('/payment/callback', SingleProduct::class)->name('singleProduct');
+
+    });
+
+});
+
+
+
+
+
+
 
 // Master group
 Route::prefix('master')->name('master.')->group(function () {

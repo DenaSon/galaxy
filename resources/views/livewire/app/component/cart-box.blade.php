@@ -9,7 +9,7 @@
 
 
             <div class="mt-0 pb-10  px-2">
-                <div class="bg-white rounded overflow-y-auto max-h-[80vh] p-4">
+                <div class="bg-white rounded overflow-y-auto max-h-[70vh] sm:max-h[80vh]  p-4">
 
                     <h2 class="text-sm font-bold text-center pb-2">سبد خرید</h2>
                     <hr>

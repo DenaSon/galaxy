@@ -1,6 +1,6 @@
 <div>
 
-    @foreach($product->comments->take(30) as  $comment)
+    @forelse($product->comments->take(30) as  $comment)
         <div class="chat chat-start">
             <div class="chat-image avatar">
                 <div class="w-auto mt-3">
@@ -30,6 +30,10 @@
             </div>
 
         </div>
-    @endforeach
+    @empty
+        <div class="text-center text-base">
+            هنوز دیدگاهی ثبت نشده است
+        </div>
+    @endforelse
 
 </div>
