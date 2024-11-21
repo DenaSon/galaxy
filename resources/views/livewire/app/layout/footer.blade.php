@@ -4,21 +4,8 @@
     <div class="container mx-auto px-4 py-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
 
-            <div class="text-center md:text-right">
-                <p class="text-sm mb-4">
-                    فروشگاه اینترنتی دناپکس؛ بررسی، انتخاب و خرید آنلاین
-                    <br>
-                    یک خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و دارای قیمت مناسب را
-                    در مدت زمان کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد.
-                </p>
-                <x-hr/>
-                <p class="text-xs text-gray-500">
 
-                    تست
-                </p>
-            </div>
-
-            <div class="flex space-x-6 mb-6 md:mb-0">
+            <div class="flex space-x-6 mb-6 md:mb-0 ">
 
                 <div class="w-20 h-24 rounded flex items-center justify-center p-0">
 
@@ -37,6 +24,29 @@
 
                 </div>
             </div>
+
+
+
+            <div class="text-center md:text-right">
+                <p class="text-xs mb-4 sm:text-sm leading-5">
+                    <b>
+                  دنا پکس |
+                    </b>
+                    از دنا به خانه شما، با عشق و تعهد!
+                    <br>
+
+                     عرضه‌کننده سوغات اصیل و خشکبار دنا با بسته‌بندی‌های شکیل و بهداشتی.
+                    هدف ما حفظ طعم و اصالت محصولات بومی و ارتباط مستقیم با تولیدکنندگان محلی است.
+
+                </p>
+                <x-hr/>
+                <p class="text-xs text-gray-500 mb-5">
+
+                    © 2024 دنـا پکس | همه حقوق محفوظ است.
+                    طراحی و توسعه با ❤️ توسط تیم دنـا پکس.
+                </p>
+            </div>
+
 
 
         </div>
