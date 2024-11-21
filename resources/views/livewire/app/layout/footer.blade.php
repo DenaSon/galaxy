@@ -7,8 +7,13 @@
 
             <div class="flex space-x-6 mb-6 md:mb-0 ">
 
-                <div class="w-20 h-24 rounded flex items-center justify-center p-0">
+                <div class="w-20 h-24  rounded flex items-center justify-center p-1">
 
+                    <script src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>
+
+                </div>
+
+                <div class="w-20 h-24 rounded flex items-center justify-center p-0">
 
                     <a referrerpolicy='origin'
                        target='_blank'
@@ -18,11 +23,7 @@
                              alt='' style='cursor:pointer' code='9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'></a>
 
                 </div>
-                <div class="w-20 h-24  rounded flex items-center justify-center p-1">
 
-                    <script src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>
-
-                </div>
             </div>
 
 
