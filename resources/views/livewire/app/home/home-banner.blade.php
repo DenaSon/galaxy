@@ -2,7 +2,7 @@
     <div class=" card bg-base-100 image-full w-full shadow-xl ms-2 h-64 ">
     <figure class="">
         <img
-            src="{{ asset('storage/template/home/gerdoo-banner.png') }}"
+            src="https://picsum.photos/500/200"
             alt="Product Banner" />
     </figure>
     <div class="card-body">
