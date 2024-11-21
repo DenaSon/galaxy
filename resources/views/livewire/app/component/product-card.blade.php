@@ -27,7 +27,7 @@
                     @endif
                 </div>
                 <div class="absolute top-0 left-0 p-3 flex space-x-2">
-                    <x-badge value="{{ $product->discount ?? 0 }}%" class="badge badge-error text-white"/>
+                    <x-badge value="{{ $product->discount ?? 0 }}%" class="hidden sm:block badge badge-error text-white"/>
                 </div>
 
                 <div class="absolute bottom-0 right-0 p-3 flex space-x-2 sm:hidden">
