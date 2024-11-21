@@ -21,7 +21,7 @@
 
             <div class="flex space-x-6 mb-6 md:mb-0">
 
-                <div class="border  w-20 h-24 rounded flex items-center justify-center p-1">
+                <div class="border  w-20 h-24 rounded flex items-center justify-center p-0">
 
 
                     <a referrerpolicy='origin'
