@@ -14,14 +14,13 @@
                 <x-hr/>
                 <p class="text-xs text-gray-500">
 
-                    برای استفاده از مطالب دناپکس، داشتن «هدف غیرتجاری» و ذکر «منبع» بلامانع است. تمام حقوق این وبسایت
-                    نیز برای شرکت توانا فن آوران (فروشگاه آنلاین دیجی‌کالا) است.
+                    تست
                 </p>
             </div>
 
             <div class="flex space-x-6 mb-6 md:mb-0">
 
-                <div class="border  w-20 h-24 rounded flex items-center justify-center p-0">
+                <div class="w-20 h-24 rounded flex items-center justify-center p-0">
 
 
                     <a referrerpolicy='origin'
@@ -32,10 +31,9 @@
                              alt='' style='cursor:pointer' code='9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'></a>
 
                 </div>
-                <div class="border  w-20 h-24  rounded flex items-center justify-center p-1">
+                <div class="w-20 h-24  rounded flex items-center justify-center p-1">
 
                     <script src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>
-
 
                 </div>
             </div>
