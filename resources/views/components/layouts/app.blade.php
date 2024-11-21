@@ -6,6 +6,18 @@
     <title>{{ $title ?? config('app.name') }}</title>
 
     @stack('styles')
+
+    <style>
+        @font-face {
+            font-family: 'denapax-font';
+            src: url('{{asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum)_Light.woff2')}}') format('woff2'),
+            url('{{ asset('admin/assets/fonts/iransans/woff/IRANSansWeb(FaNum)_Light.woff') }}') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+
+
     @stack('cdn')
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -14,7 +26,7 @@
 
 </head>
 
-<body x-data class="font-sans antialiased" style="font-family: IRANSans,serif !important;">
+<body x-data class="font-sans antialiased" style="font-family: 'denapax-font',serif !important;">
 
 <x-nav class="bg-base-200">
 
