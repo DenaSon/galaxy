@@ -11,6 +11,7 @@ use App\Livewire\Admin\Shop\ListProduct;
 use App\Livewire\Admin\Shop\Orders\OrderList;
 use App\Livewire\App\Blog\SingleBlog;
 use App\Livewire\App\Home\HomeIndex;
+use App\Livewire\App\Profile\ProfileDashboard;
 use App\Livewire\App\Shop\ProductList;
 use App\Livewire\App\Shop\SingleProduct;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::name('home.')->group(function () {
 
     Route::get('/', HomeIndex::class)->name('index-home');
+    Route::get('/logout', \App\Livewire\App\System\Logout::class)->name('logout');
 
     Route::prefix('store')->name('product.')->group(function () {
 
@@ -37,18 +39,17 @@ Route::name('home.')->group(function () {
 
 });
 
-Route::name('panel.')->group(function () {
+Route::name('panel.')->group(function ()
+{
 
-    Route::prefix('profile')->name('profile.')->group(function () {
-
+    Route::prefix('profile')->name('profile.')->group(function ()
+    {
+        Route::get('/dashboard', ProfileDashboard::class)->name('ProfileDashboard');
         Route::get('/payment/callback', SingleProduct::class)->name('singleProduct');
 
     });
 
 });
-
-
-
 
 
 

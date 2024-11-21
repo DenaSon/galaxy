@@ -37,7 +37,7 @@
         <x-button link="{{ route('home.index-home') }}" class="bg-blue-700 text-xs  btn-xs text-white hover:bg-blue-500">{{ config('app.name') }}</x-button>
     </x-slot:brand>
 
-    {{-- Right side actions --}}
+
 
 
     <x-slot:actions dir="rtl">
