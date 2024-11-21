@@ -11,8 +11,8 @@
         <div class="grid grid-cols-2 lg:grid-cols-5 xl:grid-cols-6">
             <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
-                target="_blank"
-                href="">
+                wire:navigate
+                href="{{ singleCategoryUrl(1,'خشکبار و مغزها') }}">
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">

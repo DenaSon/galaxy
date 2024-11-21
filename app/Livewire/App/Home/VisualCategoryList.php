@@ -6,7 +6,7 @@ use Livewire\Attributes\Lazy;
 use Livewire\Component;
 use Mary\Traits\Toast;
 #[Layout('components.layouts.app')]
-#[Lazy]
+
 class VisualCategoryList extends Component
 {
 use Toast;
@@ -18,7 +18,7 @@ use Toast;
 
     public function render()
     {
-        return view('livewire.app.home.visual-category-list')
-        ->title('');
+        return view('livewire.app.home.visual-category-list');
+
     }
 }

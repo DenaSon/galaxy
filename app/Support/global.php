@@ -330,6 +330,16 @@ function singleBlogUrl($blogId, $slug)
     return route('home.blog.singleBlog',['blog'=>$blogId,'slug'=>slugMaker($slug)]) ?? '';
 }
 
+function singleCategoryUrl($categoryId, $slug)
+{
+    return route('home.product.singleCategory',['category'=>$categoryId,'slug'=>slugMaker($slug)]) ?? '';
+}
+
+function homeUrl()
+{
+    return route('home.index-home');
+}
+
 function formatPhoneNumber($phoneNumber)
 {
     if (strlen($phoneNumber) === 11) {

@@ -1,4 +1,4 @@
-<div wire:poll.visible.60s
+<div
      class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
 
 
@@ -26,9 +26,12 @@
                                   class="tooltip tooltip-left btn-circle btn-xs bg-opacity-10 text-white"/>
                     @endif
                 </div>
-                <div class="absolute top-0 left-0 p-3 flex space-x-2">
-                    <x-badge value="{{ $product->discount ?? 0 }}%" class="hidden sm:block badge badge-error text-white"/>
-                </div>
+
+                @if($product->discount > 0 )
+                    <div class="absolute top-0 left-0 p-3 flex space-x-2">
+                        <x-badge value="{{ $product->discount ?? 0 }}%" class="hidden sm:block badge badge-error text-white"/>
+                    </div>
+                @endif
 
                 <div class="absolute bottom-0 right-0 p-3 flex space-x-2 sm:hidden">
                     <span class="text-xs font-thin rounded border-gray-700 bg-gray-100 p-2 opacity-80"> {{ $product->name }}</span>

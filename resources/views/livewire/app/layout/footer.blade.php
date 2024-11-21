@@ -1,4 +1,4 @@
-<footer class="text-gray-600">
+<footer class="text-gray-600 sm:mb-1 mb-4">
     @include('livewire.app.layout.inc.footer-icons')
 
     <div class="container mx-auto px-4 py-8">
@@ -29,7 +29,7 @@
 
 
             <div class="text-center md:text-right">
-                <p class="text-xs mb-4 sm:text-sm leading-7">
+                <p class="text-xs mb-2 sm:text-sm leading-7">
                     <b>
                   دنا پکس |
                     </b>
@@ -46,13 +46,13 @@
                 <p class="text-xs text-gray-500   text-center">
 
                     © 2024 دنـا پکس | همه حقوق محفوظ است.
-                    طراحی و توسعه با ❤️ توسط تیم دنـا پکس.
+                    طراحی و توسعه با ❤️ توسط تیم دنـا پکس
                 </p>
             </div>
 
 
         </div>
-        <div class="w-full h-8  mb-5"></div>
+
     </div>
 
 
