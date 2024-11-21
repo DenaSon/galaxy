@@ -323,9 +323,12 @@ function imageOptimizer($directory, $imageName, $rectangleWidth, $rectangleHeigh
  */
 function singleProductUrl($productId, $slug)
 {
-    return route('home.product.singleProduct',['product'=>$productId,'slug'=>slugMaker($slug)]);
+    return route('home.product.singleProduct',['product'=>$productId,'slug'=>slugMaker($slug)]) ?? '';
 }
-
+function singleBlogUrl($blogId, $slug)
+{
+    return route('home.blog.singleBlog',['blog'=>$blogId,'slug'=>slugMaker($slug)]) ?? '';
+}
 
 function formatPhoneNumber($phoneNumber)
 {

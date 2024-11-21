@@ -5,10 +5,12 @@ namespace App\Livewire\App\Component;
 use App\Models\Product;
 use Illuminate\Support\Facades\RateLimiter;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Lazy;
 use Livewire\Component;
 use Mary\Traits\Toast;
 
 #[Layout('components.layouts.app')]
+#[Lazy]
 class ProductCard extends Component
 {
     use Toast;

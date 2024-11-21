@@ -15,5 +15,5 @@
 
         </div>
     </div>
-
+    @livewire('app.component.cart-box')
 </div>

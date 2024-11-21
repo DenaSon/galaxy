@@ -7,7 +7,7 @@ use Livewire\Attributes\Lazy;
 use Livewire\Component;
 use Mary\Traits\Toast;
 #[Layout('components.layouts.app')]
-
+#[Lazy]
 class BlogCard extends Component
 {
 use Toast;

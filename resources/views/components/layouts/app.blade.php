@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ $title ?? config('app.name') }}</title>
-
+    @stack('SEO')
     @stack('styles')
 
     <style>
@@ -23,6 +23,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 
 
 </head>
@@ -65,7 +66,7 @@
 
     <x-slot:content dir="rtl">
         {{ $slot }}
-        @livewire('app.component.cart-box')
+
         @livewire('app.home.mobile-menu')
         @include('livewire.app.layout.footer')
     </x-slot:content>

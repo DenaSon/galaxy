@@ -9,6 +9,7 @@ use App\Livewire\Admin\Shop\CreateAttribute;
 use App\Livewire\Admin\Shop\CreateProduct;
 use App\Livewire\Admin\Shop\ListProduct;
 use App\Livewire\Admin\Shop\Orders\OrderList;
+use App\Livewire\App\Blog\SingleBlog;
 use App\Livewire\App\Home\HomeIndex;
 use App\Livewire\App\Shop\SingleProduct;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,14 @@ Route::name('home.')->group(function () {
         Route::get('/pax-{product}/{slug}', SingleProduct::class)->name('singleProduct');
 
     });
+
+
+    Route::prefix('blog')->name('blog.')->group(function () {
+
+        Route::get('/{blog}/{slug}', SingleBlog::class)->name('singleBlog');
+
+    });
+
 
 });
 
