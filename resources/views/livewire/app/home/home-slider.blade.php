@@ -3,8 +3,8 @@
     $slides = [
         [
             'image' => 'https://picsum.photos/500/200' ,
-            'title' => 'سوغات کوهسار دنا',
-            'description' => 'محصولات ارگانیک و تازه، با طعمی اصیل از دل دنا',
+            'title' => 'سوغات  دنا',
+            'description' => 'محصولات ارگانیک و تازه، ',
             'url' => '/docs/installation',
             'urlText' => 'مشاهده محصولات',
         ],
