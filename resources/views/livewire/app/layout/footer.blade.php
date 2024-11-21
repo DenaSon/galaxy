@@ -21,7 +21,7 @@
 
             <div class="flex space-x-6 mb-6 md:mb-0">
 
-                <div class="border  w-20 h-16 bg-gray-50 rounded flex items-center justify-center p-1">
+                <div class="border  w-24 h-28 bg-gray-50 rounded flex items-center justify-center p-1">
 
 
                     <a referrerpolicy='origin'
@@ -32,7 +32,7 @@
                              alt='' style='cursor:pointer' code='9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'></a>
 
                 </div>
-                <div class="border  w-20 h-16 bg-gray-50 rounded flex items-center justify-center p-1">
+                <div class="border  w-24 h-28 bg-gray-50 rounded flex items-center justify-center p-1">
 
                     <img src="{{ asset('admin/assets/images/products/product-1.png') }}" alt="لوگو 3">
 
