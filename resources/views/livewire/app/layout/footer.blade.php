@@ -28,7 +28,7 @@
 
 
 
-            <div class="text-center md:text-right">
+            <div class="text-center md:text-right mb-8 pb-8">
                 <p class="text-xs mb-4 sm:text-sm leading-7">
                     <b>
                   دنا پکس |
@@ -43,7 +43,7 @@
 
                 </p>
                 <x-hr/>
-                <p class="text-xs text-gray-500  mb-8 sm:mb-2 text-center">
+                <p class="text-xs text-gray-500   text-center">
 
                     © 2024 دنـا پکس | همه حقوق محفوظ است.
                     طراحی و توسعه با ❤️ توسط تیم دنـا پکس.

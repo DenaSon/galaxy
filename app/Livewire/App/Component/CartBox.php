@@ -16,7 +16,7 @@ class CartBox extends Component
 {
     use Toast;
 
-    public bool $cartBox  = true;
+    public bool $cartBox  = false;
     public $products = [];
     public $variant;
 
