@@ -28,7 +28,7 @@
 
 
 
-            <div class="text-center md:text-right mb-8 pb-8">
+            <div class="text-center md:text-right">
                 <p class="text-xs mb-4 sm:text-sm leading-7">
                     <b>
                   دنا پکس |
@@ -51,8 +51,8 @@
             </div>
 
 
-
         </div>
+        <div class="w-full h-7  mb-4"></div>
     </div>
 
 
