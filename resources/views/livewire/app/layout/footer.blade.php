@@ -43,7 +43,7 @@
 
                 </p>
                 <x-hr/>
-                <p class="text-xs text-gray-500  mb-8 sm:mb-3 text-center">
+                <p class="text-xs text-gray-500  mb-8 sm:mb-2 text-center">
 
                     © 2024 دنـا پکس | همه حقوق محفوظ است.
                     طراحی و توسعه با ❤️ توسط تیم دنـا پکس.
