@@ -54,7 +54,7 @@
         {{ $slot }}
         @livewire('app.component.cart-box')
         @livewire('app.home.mobile-menu')
-        @include('livewire.app.home.inc.footer-icons')
+        @include('livewire.app.layout.footer')
     </x-slot:content>
 </x-main>
 
