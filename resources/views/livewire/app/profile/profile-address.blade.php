@@ -13,18 +13,9 @@
                 <div class="w-full lg:w-5/6 border rounded-lg">
 
 
-
                     <div class="flex flex-col lg:flex-row   lg:space-x- text-center m-2 p-2">
 
-
-                        <div class="w-full lg:w-1/2 m-2">
-                            @livewire('app.component.states-field',key($user->id))
-                        </div>
-
-                        <div class="w-full lg:w-1/2 m-2">
-                            @livewire('app.component.city-field',key($user->id))
-                        </div>
-
+                        @livewire('app.component.address-modal',['user' => $user])
                     </div>
 
 
