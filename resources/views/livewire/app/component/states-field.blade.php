@@ -6,9 +6,7 @@
 
             <option value="{{ $state['value'] }}" wire:key="{{ $state['value'] }}">{{ $state['label'] }}</option>
         @empty
-
         @endforelse
-
     @else
 
     @endif
