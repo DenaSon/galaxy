@@ -1,4 +1,4 @@
-<select wire:ignore wire:model.live.debounce.250ms="selectedState" class="select select-warning w-full max-w-xs">
+<select wire:ignore wire:model.live.debounce.10ms="selectedState" class="select select-warning w-full max-w-xs">
     <option disabled selected>انتخاب استان</option>
 
     @if($states)
