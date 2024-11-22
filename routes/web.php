@@ -42,7 +42,6 @@ Route::name('home.')->group(function () {
 
 Route::name('panel.')->group(function ()
 {
-
     Route::prefix('profile')->name('profile.')->group(function ()
     {
         Route::get('/dashboard', ProfileDashboard::class)->name('profileDashboard');
