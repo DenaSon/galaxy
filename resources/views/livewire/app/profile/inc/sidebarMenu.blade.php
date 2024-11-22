@@ -18,11 +18,12 @@
     </div>
     <x-hr/>
 
-    <x-menu-item title="فعالیت‌ها" icon="o-sparkles" link="{{ route('panel.profile.ProfileDashboard') }}"
-                 class="{{ request()->routeIs('panel.profile.ProfileDashboard') ? 'active' : '' }}"/>
+    <x-menu-item title="فعالیت‌ها" icon="o-sparkles" link="{{ route('panel.profile.profileDashboard') }}"
+                 class="{{ request()->routeIs('panel.profile.profileDashboard') ? 'active' : '' }}"/>
 
 
-    <x-menu-item title="آدرس‌ها" icon="o-link-slash"/>
+    <x-menu-item link="{{ route('panel.profile.profileAddress') }}"
+        title="آدرس‌ها" icon="o-link-slash" class="{{ request()->routeIs('panel.profile.profileAddress') ? 'active' : '' }}"/>
 
     <x-menu-item title="پیام‌ها" icon="o-envelope"/>
 

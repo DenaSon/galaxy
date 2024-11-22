@@ -32,7 +32,7 @@
 
 
     @if(Auth::check())
-        <x-button link="{{ route('panel.profile.ProfileDashboard') }}" responsive icon="o-user-circle" label="حساب کاربری"/>
+        <x-button link="{{ route('panel.profile.profileDashboard') }}" responsive icon="o-user-circle" label="حساب کاربری"/>
     @else
         <x-button responsive icon="o-user" label="ورود" @click="$wire.loginModal = true"/>
     @endif

@@ -11,6 +11,7 @@ use App\Livewire\Admin\Shop\ListProduct;
 use App\Livewire\Admin\Shop\Orders\OrderList;
 use App\Livewire\App\Blog\SingleBlog;
 use App\Livewire\App\Home\HomeIndex;
+use App\Livewire\App\Profile\ProfileAddress;
 use App\Livewire\App\Profile\ProfileDashboard;
 use App\Livewire\App\Shop\ProductList;
 use App\Livewire\App\Shop\SingleProduct;
@@ -44,7 +45,8 @@ Route::name('panel.')->group(function ()
 
     Route::prefix('profile')->name('profile.')->group(function ()
     {
-        Route::get('/dashboard', ProfileDashboard::class)->name('ProfileDashboard');
+        Route::get('/dashboard', ProfileDashboard::class)->name('profileDashboard');
+        Route::get('/address', ProfileAddress::class)->name('profileAddress');
         Route::get('/payment/callback', SingleProduct::class)->name('singleProduct');
 
     });
