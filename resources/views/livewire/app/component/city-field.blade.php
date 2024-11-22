@@ -1,6 +1,5 @@
 <select
-    wire:loading.attr="disabled"
-    wire:target="getCities"
+
     wire:model="selectedCity" class="select select-warning w-full max-w-xs">
     <option disabled selected>انتخاب شهر</option>
 
