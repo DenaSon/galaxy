@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Payment;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -44,10 +45,10 @@ class Checkout extends Component
 
     private function setNewPayment()
     {
-
+        $user = Auth::user();
         try {
 
-            $paymentPrice = $this->cartTotalCost;
+            $paymentPrice = $this->total;
             $description = 'پرداخت سفارش دناپکس';
             $callBackUrl = route('panel.checkoutPayment');
             $phone = Auth::user()->phone ?? '09999999999';
@@ -71,8 +72,8 @@ class Checkout extends Component
             }
 
 
-            // Set new Order
-            $user = Auth::user();
+
+
             $tax_rate = getSetting('tax');
             $orderData = [
                 'user_id' => $user->id,
@@ -89,7 +90,7 @@ class Checkout extends Component
                 'discount_amount' => 0,
                 'subtotal' => $this->cartTotalCost,
                 'payment_transaction_id' => null,
-                'grand_total' => $this->total,
+                'grand_total' => $paymentPrice,
                 'currency' => 'IRT',
                 'payment_due_date' => Carbon::now()->format('Y-m-d'),
             ];
@@ -99,7 +100,7 @@ class Checkout extends Component
             //End Set Order -first order
 
             $payment = Payment::create([
-                'user_id' => Auth::id(),
+                'user_id' => $user->id,
                 'order_id' => $order->id,
                 'amount' => $this->total,
                 'payment_method' => 'credit_card',
@@ -123,15 +124,14 @@ class Checkout extends Component
 
 
         } catch (\Throwable $exception) {
-            if($order)
-            {
+            // Log error and delete order/payment if they exist
+            Log::error("Payment failed: " . $exception->getMessage());
+            if (isset($order)) {
                 $order->delete();
             }
-            if ($payment)
-            {
+            if (isset($payment)) {
                 $payment->delete();
             }
-            dd($exception->getMessage());
 
 
         }
