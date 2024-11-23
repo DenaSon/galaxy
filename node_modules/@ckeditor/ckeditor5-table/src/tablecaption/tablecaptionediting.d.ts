@@ -25,6 +25,10 @@ export default class TableCaptionEditing extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     constructor(editor: Editor);
     /**
      * @inheritDoc

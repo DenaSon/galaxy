@@ -25,13 +25,13 @@
 
         @scope('cell_status', $order)
         @if($order->status == 'preparing')
-            <span class="text-xs badge bg-warning text-white">در حال آماده‌سازی</span>
+            <span class="text-xs badge bg-warning text-white"> آماده‌سازی</span>
         @elseif($order->status == 'shipped')
-            <span class="text-xs badge bg-info text-white">ارسال شده</span>
+            <span class="text-xs badge bg-info text-white">ارسال </span>
         @elseif($order->status == 'delivered')
-            <span class="text-xs badge bg-success text-white">تحویل شده</span>
+            <span class="text-xs badge bg-success text-white">تحویل </span>
         @elseif($order->status == 'cancelled')
-            <span class="text-xs badge bg-error text-white"> لغو شده</span>
+            <span class="text-xs badge bg-error text-white"> لغو </span>
         @else
             <span class="text-xs badge bg-secondary text-white">نامشخص</span>
         @endif

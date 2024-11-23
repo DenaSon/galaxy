@@ -17,5 +17,9 @@ export default class TableCaptionUI extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     init(): void;
 }

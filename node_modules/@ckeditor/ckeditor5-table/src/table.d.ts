@@ -37,4 +37,8 @@ export default class Table extends Plugin {
      * @inheritDoc
      */
     static get pluginName(): "Table";
+    /**
+     * @inheritDoc
+     */
+    static get isOfficialPlugin(): true;
 }

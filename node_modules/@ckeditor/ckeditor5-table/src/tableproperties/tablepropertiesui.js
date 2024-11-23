@@ -47,6 +47,12 @@ export default class TablePropertiesUI extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin() {
+        return true;
+    }
+    /**
+     * @inheritDoc
+     */
     constructor(editor) {
         super(editor);
         /**

@@ -20,6 +20,10 @@ export default class TableUtils extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     init(): void;
     /**
      * Returns the table cell location as an object with table row and table column indexes.

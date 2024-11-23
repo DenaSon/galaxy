@@ -21,6 +21,12 @@ export default class TableCaptionUI extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin() {
+        return true;
+    }
+    /**
+     * @inheritDoc
+     */
     init() {
         const editor = this.editor;
         const editingView = editor.editing.view;

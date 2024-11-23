@@ -25,6 +25,10 @@ export default class TableUI extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     init(): void;
     /**
      * Creates a dropdown view from a set of options.

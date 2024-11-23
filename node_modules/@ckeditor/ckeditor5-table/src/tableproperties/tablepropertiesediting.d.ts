@@ -32,6 +32,10 @@ export default class TablePropertiesEditing extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     static get requires(): readonly [typeof TableEditing];
     /**
      * @inheritDoc

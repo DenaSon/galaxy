@@ -8,7 +8,26 @@ class Order extends Model
 {
 
 
-
+    protected $fillable = [
+        'user_id',
+        'address_id',
+        'status',
+        'total_price',
+        'payment_status',
+        'payment_method',
+        'shipping_address',
+        'shipping_tracking',
+        'order_number',
+        'shipping_method',
+        'shipping_cost',
+        'tax',
+        'discount_amount',
+        'subtotal',
+        'payment_transaction_id',
+        'grand_total',
+        'currency',
+        'payment_due_date',
+    ];
     public  function scopeActive($query)
     {
         return $query->where('status', '!=', 'cancelled');

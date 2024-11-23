@@ -24,6 +24,12 @@ export default class TableUtils extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin() {
+        return true;
+    }
+    /**
+     * @inheritDoc
+     */
     init() {
         this.decorate('insertColumns');
         this.decorate('insertRows');

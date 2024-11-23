@@ -1,21 +1,28 @@
 <div>
     <x-modal wire:model="addressModal" class="backdrop-blur">
-        <div class="mb-2"></div>
+        <div class="mb-2 text-center text-black"> ثبت آدرس </div>
+        <x-hr/>
 
-        <x-select inline label="انتخاب استان" icon="o-user" :options="$state_list" wire:model="state" class="mb-2" />
+        <x-select
+            wire:dirty.attr="disabled"
+            inline
+            placeholder="انتخاب"
+            label="انتخاب استان"
+            icon="o-user"
+            :options="$province_list"
+            wire:model.live.debounce.2ms="province" class="mb-2" />
 
-        <x-input inline label=" شهر" wire:model="city" class="mb-3"/>
-        <x-input inline label="کد پستی" wire:model="postal_code" class="mb-3"/>
-        <x-textarea inline label="آدرس دقیق پستی"/>
+        <x-select inline label="انتخاب شهر" icon="o-user" :options="$city_list" wire:model="city" class="mb-2" />
+
+        <x-input clearable  inline label="کد پستی" wire:model="postal_code" class="mb-3"/>
+        <x-textarea   inline label="آدرس دقیق پستی" wire:model="address_line"/>
 
         <x-slot:actions>
-            <x-button label="ثبت آدرس" class="btn-primary"/>
+            <x-button icon="o-home-modern"  spinner="save" wire:click.debounce.250ms="save" label="ثبت آدرس" class="btn-primary"/>
         </x-slot:actions>
 
     </x-modal>
 
-
-        <x-button label="ثبت آدرس" @click="$wire.addressModal = true"/>
 
 
 

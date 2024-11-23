@@ -28,5 +28,9 @@ export default class TableToolbar extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     afterInit(): void;
 }

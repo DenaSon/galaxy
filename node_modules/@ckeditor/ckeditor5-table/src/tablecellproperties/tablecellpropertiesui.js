@@ -49,6 +49,12 @@ export default class TableCellPropertiesUI extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin() {
+        return true;
+    }
+    /**
+     * @inheritDoc
+     */
     constructor(editor) {
         super(editor);
         editor.config.define('table.tableCellProperties', {

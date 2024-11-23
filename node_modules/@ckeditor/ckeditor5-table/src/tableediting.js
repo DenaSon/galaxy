@@ -39,6 +39,12 @@ export default class TableEditing extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin() {
+        return true;
+    }
+    /**
+     * @inheritDoc
+     */
     static get requires() {
         return [TableUtils];
     }

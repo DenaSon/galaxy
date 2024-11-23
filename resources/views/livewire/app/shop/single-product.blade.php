@@ -16,4 +16,5 @@
         </div>
     </div>
     @livewire('app.component.cart-box')
+    @livewire('app.component.address-modal')
 </div>

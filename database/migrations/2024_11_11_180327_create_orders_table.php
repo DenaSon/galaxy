@@ -49,9 +49,6 @@ return new class extends Migration
                 ->nullable()
                 ->comment('shipping tracking number');
 
-            $table->unsignedInteger('order_number')
-                ->unique()
-                ->comment('Unique order number');
 
 
 
@@ -89,6 +86,9 @@ return new class extends Migration
 
 
         });
+
+        DB::statement('ALTER TABLE orders AUTO_INCREMENT = 1000;');
+
     }
 
     /**

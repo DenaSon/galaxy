@@ -13,6 +13,8 @@ use App\Livewire\App\Blog\SingleBlog;
 use App\Livewire\App\Home\HomeIndex;
 use App\Livewire\App\Profile\ProfileAddress;
 use App\Livewire\App\Profile\ProfileDashboard;
+use App\Livewire\App\Shop\Checkout;
+use App\Livewire\App\Shop\CheckoutPayment;
 use App\Livewire\App\Shop\ProductList;
 use App\Livewire\App\Shop\SingleProduct;
 use Illuminate\Support\Facades\Route;
@@ -46,9 +48,12 @@ Route::name('panel.')->group(function ()
     {
         Route::get('/dashboard', ProfileDashboard::class)->name('profileDashboard');
         Route::get('/address', ProfileAddress::class)->name('profileAddress');
-        Route::get('/payment/callback', SingleProduct::class)->name('singleProduct');
 
     });
+
+    Route::get('/checkout', Checkout::class)->name('checkout');
+    Route::get('/checkout/payment',CheckoutPayment::class)->name('checkoutPayment');
+
 
 });
 

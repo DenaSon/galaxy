@@ -23,6 +23,12 @@ export default class TableMouse extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin() {
+        return true;
+    }
+    /**
+     * @inheritDoc
+     */
     static get requires() {
         return [TableSelection, TableUtils];
     }

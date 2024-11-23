@@ -41,4 +41,10 @@ export default class Table extends Plugin {
     static get pluginName() {
         return 'Table';
     }
+    /**
+     * @inheritDoc
+     */
+    static get isOfficialPlugin() {
+        return true;
+    }
 }

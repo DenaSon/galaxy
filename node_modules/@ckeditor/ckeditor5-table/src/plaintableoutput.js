@@ -20,6 +20,12 @@ export default class PlainTableOutput extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin() {
+        return true;
+    }
+    /**
+     * @inheritDoc
+     */
     static get requires() {
         return [Table];
     }

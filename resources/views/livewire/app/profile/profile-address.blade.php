@@ -18,6 +18,17 @@
                         @livewire('app.component.address-modal',['user' => $user])
                     </div>
 
+                    @if($user->addresses->isNotEmpty())
+                        <x-badge value="شما {{ $user->addresses->count() }} آدرس ثبت شده دارید"/>
+                    @else
+
+                      <span class="p-3">  هنوز هیج آدرسی برای شما ثبت نشده است</span>
+
+                        <div class="text-center">
+                            <x-button wire:click="registerAddress" spinner="registerAddress" icon="o-plus" label="ثبت آدرس"/>
+                        </div>
+                    @endif
+
 
                 </div>
             </div>

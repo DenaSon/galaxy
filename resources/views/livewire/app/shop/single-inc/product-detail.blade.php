@@ -7,10 +7,10 @@
                 <ul class="text-primary">
 
                     <li><a wire:navigate
-                           href="{{ route('home.index-home') }}">{{ $product?->categories?->first()?->name ?? '' }}</a>
+                           href="{{ singleCategoryUrl($product?->categories?->first()?->id,$product?->categories?->first()?->name) }}">{{ $product?->categories?->first()?->name ?? '' }}</a>
                     </li>
                     <li><a wire:navigate
-                           href="{{ route('home.index-home') }}">{{ $product?->categories?->first()?->children?->first()?->name ?? '' }}</a>
+                           href="{{ singleCategoryUrl($product?->categories?->first()?->children?->first()?->id,$product?->categories?->first()?->name) }}">{{ $product?->categories?->first()?->children?->first()?->name ?? '' }}</a>
                     </li>
 
                 </ul>

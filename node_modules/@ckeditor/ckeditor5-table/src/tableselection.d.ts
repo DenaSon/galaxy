@@ -21,6 +21,10 @@ export default class TableSelection extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     static get requires(): readonly [typeof TableUtils, typeof TableUtils];
     /**
      * @inheritDoc

@@ -33,6 +33,12 @@ export default class TableToolbar extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin() {
+        return true;
+    }
+    /**
+     * @inheritDoc
+     */
     afterInit() {
         const editor = this.editor;
         const t = editor.t;

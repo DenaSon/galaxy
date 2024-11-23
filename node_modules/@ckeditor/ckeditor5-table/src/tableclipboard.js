@@ -22,6 +22,12 @@ export default class TableClipboard extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin() {
+        return true;
+    }
+    /**
+     * @inheritDoc
+     */
     static get requires() {
         return [ClipboardMarkersUtils, ClipboardPipeline, TableSelection, TableUtils];
     }

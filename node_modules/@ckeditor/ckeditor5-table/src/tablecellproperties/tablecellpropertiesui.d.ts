@@ -48,6 +48,10 @@ export default class TableCellPropertiesUI extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     constructor(editor: Editor);
     /**
      * @inheritDoc

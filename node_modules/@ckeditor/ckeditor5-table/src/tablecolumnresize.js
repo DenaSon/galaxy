@@ -27,4 +27,10 @@ export default class TableColumnResize extends Plugin {
     static get pluginName() {
         return 'TableColumnResize';
     }
+    /**
+     * @inheritDoc
+     */
+    static get isOfficialPlugin() {
+        return true;
+    }
 }

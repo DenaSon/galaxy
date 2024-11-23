@@ -15,11 +15,11 @@ return new class extends Migration
 
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->string('address_line');
-            $table->string('city');
-            $table->unsignedSmallInteger('state');
-            $table->string('postal_code');
-            $table->string('country');
+            $table->foreignId('province_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('city_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string('country',50)->nullable();
+            $table->string('postal_code',15);
+            $table->string('address_line',250);
             $table->decimal('latitude', 10, 7)->nullable();
             $table->decimal('longitude', 10, 7)->nullable();
             $table->boolean('is_default')->default(false);

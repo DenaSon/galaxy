@@ -24,6 +24,12 @@ export default class TableCaptionEditing extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin() {
+        return true;
+    }
+    /**
+     * @inheritDoc
+     */
     constructor(editor) {
         super(editor);
         this._savedCaptionsMap = new WeakMap();

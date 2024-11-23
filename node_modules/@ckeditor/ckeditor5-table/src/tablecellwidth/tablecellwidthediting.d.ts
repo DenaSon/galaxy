@@ -21,6 +21,10 @@ export default class TableCellWidthEditing extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     static get requires(): readonly [typeof TableEditing];
     /**
      * @inheritDoc

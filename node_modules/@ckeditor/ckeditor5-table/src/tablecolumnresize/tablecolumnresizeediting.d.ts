@@ -46,6 +46,10 @@ export default class TableColumnResizeEditing extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     constructor(editor: Editor);
     /**
      * @inheritDoc

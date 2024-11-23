@@ -35,6 +35,10 @@ export default class TableCellPropertiesEditing extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     static get requires(): readonly [typeof TableEditing, typeof TableCellWidthEditing];
     /**
      * @inheritDoc

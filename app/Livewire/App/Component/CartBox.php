@@ -85,6 +85,16 @@ class CartBox extends Component
        $this->cartCost = Auth::user()->carts->sum(fn($cart) => $cart->variant->price * $cart->quantity);
        $this->totalCost = $this->cartCost + $this->shippingCost;
        $this->shippingCost =  $this->calcShippingCost();
+
+        if (session()->has('shippingCost')) {
+            session()->forget('shippingCost');
+        }
+
+
+        session()->put('shippingCost', $this->shippingCost);
+
+
+
     }
 
     private function calcShippingCost()
@@ -105,6 +115,19 @@ class CartBox extends Component
 
        // return 0;
     }
+
+
+    public function regAddress()
+    {
+        $this->dispatch('openAddressModal');
+
+    }
+
+    public function registerOrder()
+    {
+        $this->redirectRoute('panel.checkout',[],true,true);
+    }
+
 
 
     public function payment()

@@ -313,7 +313,8 @@ return [
         'additionalInfo' => 'یادداشت',
         'photo'=>'عکس',
         'phoneNumber' => 'شماره تلفن',
-        'variant' => 'نوع'
+        'variant' => 'نوع',
+        'address_line' => 'آدرس پستی'
 
 
 

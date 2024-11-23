@@ -33,6 +33,12 @@ export default class TableUI extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin() {
+        return true;
+    }
+    /**
+     * @inheritDoc
+     */
     init() {
         const editor = this.editor;
         const t = this.editor.t;

@@ -26,5 +26,9 @@ export default class TableCellProperties extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     static get requires(): readonly [typeof TableCellPropertiesEditing, typeof TableCellPropertiesUI];
 }

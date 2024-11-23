@@ -20,5 +20,9 @@ export default class TableCaption extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     static get requires(): readonly [typeof TableCaptionEditing, typeof TableCaptionUI];
 }

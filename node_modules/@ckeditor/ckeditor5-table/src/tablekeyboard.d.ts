@@ -22,6 +22,10 @@ export default class TableKeyboard extends Plugin {
     /**
      * @inheritDoc
      */
+    static get isOfficialPlugin(): true;
+    /**
+     * @inheritDoc
+     */
     static get requires(): readonly [typeof TableSelection, typeof TableUtils];
     /**
      * @inheritDoc
