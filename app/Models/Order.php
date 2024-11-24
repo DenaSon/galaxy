@@ -27,6 +27,7 @@ class Order extends Model
         'grand_total',
         'currency',
         'payment_due_date',
+        'weight'
     ];
     public  function scopeActive($query)
     {
@@ -49,5 +50,8 @@ class Order extends Model
     }
 
 
-
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 }

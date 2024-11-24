@@ -62,23 +62,19 @@ function SkuMaker(int $end = 9999): string
  * @return mixed
  */
 
-function sendSms(string $value, string $phoneNumber, int $templateID, string $parameterName)
+function sendSms(array $params, string $phoneNumber, int $templateID)
 {
-
     try {
-
         $send = Smsir::send();
-        $parameter = new Parameters($parameterName, $value);
-        $parameters = array($parameter);
-        $response = $send->Verify($phoneNumber, $templateID, $parameters);
+        $parameters = array_map(function ($key, $value) {
+            return new Parameters($key, $value);
+        }, array_keys($params), $params);
 
+        $response = $send->Verify($phoneNumber, $templateID, $parameters);
     } catch (Throwable $e) {
         $errorMessage = $e->getMessage();
-        setLog('Send-Sms', $errorMessage . ' | Source : ' . $e->getFile() . ' | Line : ' . $e->getLine(), 'danger');
-
-
+        \Illuminate\Support\Facades\Log::error($errorMessage);
     }
-
 }
 
 
@@ -374,4 +370,21 @@ function convertPersianNumbers($string): float|int|string
     }
 }
 
+ function getShippingAddress($address)
+{
+    if (!$address) {
+        throw new \Exception('Address not found.');
+    }
 
+    $shippingAddress = sprintf(
+        "%s, %s, %s, %s",
+        $address->province->name ?? 'N/A',
+        $address->city->name ?? 'N/A',
+        $address->address_line,
+
+        ' کد پستی :  '.
+        $address->postal_code ?? 'N/A'
+    );
+
+    return $shippingAddress;
+}

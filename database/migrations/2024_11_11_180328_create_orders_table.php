@@ -60,14 +60,16 @@ return new class extends Migration
 
             $table->decimal('tax', 4, 2)
                 ->comment('Tax amount for the order');
+            $table->integer('weight')
+                ->comment('Weight of Order');
 
             $table->decimal('discount_amount', 10, 2)
                 ->comment('Discount amount applied to the order');
 
-            $table->decimal('subtotal', 15, 2)
+            $table->integer('subtotal')
                 ->comment('Subtotal price of products');
 
-            $table->decimal('grand_total', 15, 2)
+            $table->integer('grand_total')
                 ->comment('Grand total including all costs');
 
             $table->string('currency')

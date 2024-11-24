@@ -2,14 +2,20 @@
 
 namespace App\Livewire\App\Component;
 use App\Models\Cart;
+use App\Models\Order;
+use App\Models\OrderItem;
 use App\Models\Payment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Mary\Traits\Toast;
+use Throwable;
+
 #[Layout('components.layouts.app')]
 
 class CartBox extends Component
@@ -79,7 +85,7 @@ class CartBox extends Component
         });
     }
 
-    public function getTotalCost()
+    public function getTotalCost(): void
     {
 
        $this->cartCost = Auth::user()->carts->sum(fn($cart) => $cart->variant->price * $cart->quantity);
@@ -90,10 +96,7 @@ class CartBox extends Component
             session()->forget('shippingCost');
         }
 
-
         session()->put('shippingCost', $this->shippingCost);
-
-
 
     }
 
@@ -101,7 +104,7 @@ class CartBox extends Component
     {
         if($this->calcWeightSum() <= 1000)
         {
-            return 49000;
+            return 1000;
         }
         elseif($this->calcWeightSum() > 1000 && $this->calcWeightSum() <= 2000)
 
@@ -123,11 +126,21 @@ class CartBox extends Component
 
     }
 
+    /**
+     * @throws \Exception
+     */
     public function registerOrder()
     {
+        $user = Auth::user();
+        $address = $user->addresses()->where('is_default', '=', 1)->with(['city', 'province'])->first();
+
+        if (!$address) {
+            throw new \Exception('User does not have a registered address.');
+        }
+        $fullAddress = getShippingAddress($address);
+
         $this->redirectRoute('panel.checkout',[],true,true);
     }
-
 
 
     public function payment()

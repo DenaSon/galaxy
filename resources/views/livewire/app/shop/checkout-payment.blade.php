@@ -1,15 +1,12 @@
 <div>
-    <div class="flex flex-col md:flex-row md:space-x-4">
+    @if($paymentStatus === 'failed')
 
-        <div class="w-full md:w-2/3 shadow-lg m-2">
+        @include('livewire.app.shop.checkout-inc.failed-payment')
+    @else
 
-        </div>
+        @include('livewire.app.shop.checkout-inc.success-payment')
 
-        <!--    Separator -->
+    @endif
 
-        <div class="w-full md:w-1/3 shadow-lg m-2">
 
-        </div>
-
-    </div>
 </div>

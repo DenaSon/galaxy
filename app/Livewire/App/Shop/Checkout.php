@@ -2,15 +2,17 @@
 
 namespace App\Livewire\App\Shop;
 
+use App\Models\Cart;
 use App\Models\Order;
+use App\Models\OrderItem;
 use App\Models\Payment;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
+use Throwable;
 
 #[Layout('components.layouts.app')]
 class Checkout extends Component
@@ -22,142 +24,248 @@ class Checkout extends Component
     public $cartTotalCost;
     public $total;
     public $totalItems;
+    public $totalWeight;
 
     public $shippingCost;
+    public $orderId;
+    public $totalCost;
+    public $grand_total;
 
+    public $order;
+    public $emptyFlag = false;
 
+    /**
+     * @throws \Exception
+     */
     public function mount()
     {
-        $authCart = Auth::user()->carts;
 
-        $this->cartTotalCost = $authCart->sum(fn($cart) => $cart->variant->price * $cart->quantity);
-        $this->totalItems = $authCart->sum('quantity');
-        $this->shippingCost = session()->get('shippingCost', 0);
+        if ($user = Auth::user()) {
+            $cartItems = $user->carts; // Load cart items only once
 
-        $this->total = ($this->cartTotalCost + $this->shippingCost);
+            if ($cartItems->isNotEmpty()) {
+                $this->addCartItems();
+                // If calcCosts() does more than just addCartItems, call it, otherwise skip
+                $this->calcCosts();
+            } else {
+                $this->emptyFlag = true;
+            }
+        }
+
+
+    }
+
+    private function addCartItems()
+    {
+        $user = Auth::user();
+
+        // Load address and related city and province in one query
+        $address = $user->addresses()->where('is_default', 1)->with(['city', 'province'])->first();
+        if (!$address) {
+            throw new \Exception('User does not have a registered address.');
+        }
+
+
+        $this->cartTotalCost = $user->carts()
+            ->with('variant')
+            ->get()
+            ->sum(fn($cart) => $cart->variant->price * $cart->quantity);
+
+
+        $this->shippingCost = $this->calcShippingCost();
+
+
+        $this->grand_total = $this->cartTotalCost + $this->shippingCost;
+
+
+        $taxRate = getSetting('tax');
+
+
+        $fullAddress = getShippingAddress($address);
+
+
+        $order = Order::create([
+            'user_id' => $user->id,
+            'address_id' => $address->id,
+            'status' => 'pending',
+            'total_price' => $this->cartTotalCost,
+            'payment_status' => 'pending',
+            'payment_method' => 'credit_card',
+            'shipping_address' => $fullAddress,
+            'shipping_tracking' => null,
+            'shipping_method' => 'post',
+            'shipping_cost' => $this->shippingCost,
+            'tax' => $taxRate,
+            'weight' => $this->calcWeightSum(),
+            'discount_amount' => 0,
+            'subtotal' => $this->cartTotalCost,
+            'payment_transaction_id' => null,
+            'grand_total' => $this->grand_total,
+            'currency' => 'IRT',
+            'payment_due_date' => now()->toDateString(),
+        ]);
+
+
+
+
+        // Update object properties
+        $this->orderId = $order->id;
+        $this->order = $order;
+        $this->totalWeight = $order->weight;
+    }
+
+
+    private function calcShippingCost()
+    {
+        if ($this->calcWeightSum() <= 1000) {
+            return 1000;
+        } elseif ($this->calcWeightSum() > 1000 && $this->calcWeightSum() <= 2000) {
+            return $this->calcWeightSum() * 40;
+        } else {
+            return $this->calcWeightSum() * 25;
+        }
+
+        // return 0;
+    }
+
+
+    private function calcWeightSum()
+    {
+        $cart = Auth::user()->carts->load('variant');
+        return $cart->sum(function ($cartItem) {
+            return $cartItem->variant->weight * $cartItem->quantity;
+
+        });
+    }
+
+
+    public function calcCosts()
+    {
+        $order = Order::find($this->orderId);
+        $this->cartTotalCost = $order->total_price ?? 0;
+        $this->totalItems = $order->orderItems->sum('quantity') ?? 0;
+        $this->totalWeight = $order->weight ?? 0;
+        $this->shippingCost = $order->shipping_cost ?? 0;
+        $this->total = $order->total_price + $order->shipping_cost; // Total cost = cart + shipping
     }
 
 
     public function startPayment()
     {
+
+
+        $this->saveOrderItems($this->order->id);
+        $this->clearCart();
+
+        $this->calcCosts();
         $this->setNewPayment();
     }
 
     private function setNewPayment()
     {
         $user = Auth::user();
+
         try {
-
-            $paymentPrice = $this->total;
+            $paymentAmount = $this->total;
             $description = 'پرداخت سفارش دناپکس';
-            $callBackUrl = route('panel.checkoutPayment');
-            $phone = Auth::user()->phone ?? '09999999999';
-            $email = Auth::user()->email ?? 'customer@denapax.com';
+            $callbackUrl = route('panel.checkoutPayment');
 
+            // Retrieve user details only once
+            $phone = $user->phone ?? '09999999999';
+            $email = $user->email ?? 'customer@denapax.com';
+
+            // Request payment from Zarinpal
             $response = zarinpal()
-                ->amount($paymentPrice)
+                ->amount($paymentAmount)
                 ->request()
-                ->description($description) // توضیحات تراکنش
-                ->callbackUrl($callBackUrl)
+                ->description($description)
+                ->callbackUrl($callbackUrl)
                 ->mobile($phone)
                 ->email($email)
                 ->send();
+
             if (!$response->success()) {
-
-                $errorMessage = $response->error()->message();
-                $this->warning('خطا', $errorMessage);
-
+                $this->warning('خطا', $response->error()->message());
                 return;
-
             }
 
+            // Retrieve frequently used data once
+            $address = $user->addresses()->where('is_default', '=', 1)->with(['city', 'province'])->first();
+
+            if (!$address) {
+                throw new \Exception('User does not have a registered address.');
+            }
+
+            // Create the order and payment in a transaction
+            DB::transaction(function () use ($user, $address, $paymentAmount, $response) {
+
+                $order = Order::find($this->orderId);
+
+                $payment = Payment::create([
+                    'user_id' => $user->id,
+                    'order_id' => $order->id,
+                    'amount' => $paymentAmount,
+                    'payment_method' => 'credit_card',
+                    'transaction_id' => $response->authority(),
+                    'status' => 'pending',
+                    'payment_date' => now(),
+                    'notes' => 'pending payment',
+                ]);
+
+                // Update order with the payment transaction ID
+                $order->update(['payment_transaction_id' => $payment->transaction_id]);
 
 
+            });
 
-            $tax_rate = getSetting('tax');
-            $orderData = [
-                'user_id' => $user->id,
-                'address_id' => $user->addresses()->first()->id,
-                'status' => 'pending',
-                'total_price' => $this->total,
-                'payment_status' => 'pending',
-                'payment_method' => 'credit_card',
-                'shipping_address' => 'nullable|string',
-                'shipping_tracking' => null,
-                'shipping_method' => 'post',
-                'shipping_cost' => $this->shippingCost,
-                'tax' => $tax_rate,
-                'discount_amount' => 0,
-                'subtotal' => $this->cartTotalCost,
-                'payment_transaction_id' => null,
-                'grand_total' => $paymentPrice,
-                'currency' => 'IRT',
-                'payment_due_date' => Carbon::now()->format('Y-m-d'),
-            ];
-            $order = Order::create($orderData);
-
-
-            //End Set Order -first order
-
-            $payment = Payment::create([
-                'user_id' => $user->id,
-                'order_id' => $order->id,
-                'amount' => $this->total,
-                'payment_method' => 'credit_card',
-                'transaction_id' => $response->authority(),
-                'status' => 'pending',
-                'payment_date' => now()->format('Y-m-d H:i:s'),
-                'notes' => 'pending payment',
-            ]);
-
-            $order->payment_transaction_id = $payment->transaction_id;
-            $order->save();
-
-
-            $callbackToken = Str::random(8);
-            session()->put('callbackToken', $callbackToken);
-
-
+            // Generate callback token and redirect to payment
+            session()->put('callbackToken', true);
             $paymentUrl = 'https://www.zarinpal.com/pg/StartPay/' . $response->authority();
-
             $this->redirect($paymentUrl);
 
-
         } catch (\Throwable $exception) {
-            // Log error and delete order/payment if they exist
-            Log::error("Payment failed: " . $exception->getMessage());
-            if (isset($order)) {
-                $order->delete();
-            }
-            if (isset($payment)) {
-                $payment->delete();
-            }
-
-
+            // Log and clean up any partial operations
+            Log::error("Payment process failed: " . $exception->getMessage());
+            $this->error('خطا', 'خطا در پرداخت');
         }
+    }
 
+    private function clearCart()
+    {
+        Auth::user()->carts()->delete();
     }
 
 
-    private function setNewOrder()
+    private function saveOrderItems($orderId)
     {
+        try {
+            $cartItems = Cart::where('user_id', auth()->id())->get();
 
-    }
 
-    private function uniqueOrderNumber()
-    {
-        do {
+            foreach ($cartItems as $cartItem) {
 
-            $orderNumber =  Carbon::now()->format('Ym') .mt_rand(10000, 99999);
-        } while (Order::where('order_number', $orderNumber)->exists());
+                OrderItem::create([
+                    'order_id' => $orderId,
+                    'product_id' => $cartItem->product_id,
+                    'variant_id' => $cartItem->variant_id,
+                    'quantity' => $cartItem->quantity,
+                    'price' => $cartItem->variant->price,
+                    'discount' => $cartItem->product->discount,
+                    'title' => $cartItem->product->name . ' | ' . $cartItem->variant->type ?? '',
+                ]);
 
-        return $orderNumber;
+
+
+            }
+        } catch (Throwable $e) {
+            Log::error($e->getMessage());
+        }
     }
 
 
     public function render()
     {
         return view('livewire.app.shop.checkout')
-            ->title('');
+            ->title('تسویه حساب | دناپکس');
     }
 }

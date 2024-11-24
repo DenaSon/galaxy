@@ -10,25 +10,18 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Mary\Traits\Toast;
 #[Layout('components.layouts.app')]
-#[Lazy]
+
 class UserOrderList extends Component
 {
     use Toast,WithPagination;
 
-
-
-
-    public function mount()
-    {
-
-    }
+    public $user;
 
     public function render()
     {
 
-
-        $order = Order::where('user_id', Auth::id())->orderBy('created_at', 'desc')->paginate(10);
-        return view('livewire.app.component.user-order-list', compact('order'));
+        $orders = Order::where('user_id', Auth::id())->orderBy('created_at', 'desc')->paginate(10);
+        return view('livewire.app.component.user-order-list', compact('orders'));
 
     }
 }

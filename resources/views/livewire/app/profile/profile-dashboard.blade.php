@@ -9,7 +9,6 @@
                     @include('livewire.app.profile.inc.sidebarMenu')
                 </div>
 
-                <!-- Main Content Area -->
                 <div class="w-full lg:w-5/6 border rounded-lg">
                     <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
                         @include('livewire.app.profile.inc.profile-statistic')

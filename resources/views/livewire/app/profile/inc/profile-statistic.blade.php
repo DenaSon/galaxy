@@ -10,7 +10,7 @@
 <x-stat
     title="ارسال شده"
     color="text-orange-500" class=""
-    value="{{ $user->orders->where('status','preparing')->count() }}"
+    value="{{ $user->orders->where('status','sended')->count() }}"
     icon="o-arrow-up-tray" tooltip=""  />
 
 
