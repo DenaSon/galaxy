@@ -16,7 +16,7 @@
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
-                            <img src="{{ asset('storage/static/category-list/nuts-cate1.jpg') }}"
+                            <img alt="nuts" src="https://denapax.com/static/denapax-image/category-list/nuts-cate1.jpg"
                                  class="w-full h-auto transform group-hover:scale-125 transition-transform duration-500 ease-in-out"/>
                         </div>
                         <div class="flex justify-center items-center mt-4">
@@ -35,7 +35,7 @@
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
-                            <img src="{{ asset('storage/static/category-list/fruits-cate2.jpg') }}"
+                            <img  alt="fruits" src="https://denapax.com/static/denapax-image/category-list/fruits-cate2.jpg"
                                  class="w-full h-auto transform group-hover:scale-125 transition-transform duration-500 ease-in-out"/>
                         </div>
                         <div class="flex justify-center items-center mt-4">
@@ -53,7 +53,7 @@
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
-                            <img src="{{ asset('storage/static/category-list/lavashak-cat3.jpg') }}"
+                            <img  alt="lavashk" src="https://denapax.com/static/denapax-image/category-list/lavashak-cat3.jpg"
                                  class="w-full h-auto transform group-hover:scale-125 transition-transform duration-500 ease-in-out"/>
                         </div>
                         <div class="flex justify-center items-center mt-4">
@@ -71,7 +71,7 @@
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
-                            <img src="{{ asset('storage/static/category-list/hand-cate6.jpg') }}"
+                            <img  alt="hand industry" src="https://denapax.com/static/denapax-image/category-list/hand-cate6.jpg"
                                  class="w-full h-auto transform group-hover:scale-125 transition-transform duration-500 ease-in-out"/>
                         </div>
                         <div class="flex justify-center items-center mt-4">
@@ -90,7 +90,7 @@
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
-                            <img src="{{ asset('storage/static/category-list/tea-cate5.jpg') }}"
+                            <img  alt="teas" src="https://denapax.com/static/denapax-image/category-list/tea-cate5.jpg"
                                  class="w-full h-auto transform group-hover:scale-125 transition-transform duration-500 ease-in-out"/>
                         </div>
                         <div class="flex justify-center items-center mt-4">
@@ -109,7 +109,7 @@
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
-                            <img src="{{ asset('storage/static/category-list/honey-cate4.jpg') }}"
+                            <img  alt="honey" src="https://denapax.com/static/denapax-image/category-list/honey-cate4.jpg"
                                  class="w-full h-auto transform group-hover:scale-125 transition-transform duration-500 ease-in-out"/>
                         </div>
                         <div class="flex justify-center items-center mt-4">
