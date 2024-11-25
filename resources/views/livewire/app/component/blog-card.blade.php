@@ -8,7 +8,7 @@
 
             <div class="relative h-56 overflow-hidden">
                 <img
-                    src="{{ asset('storage/' . $blog->images->first()->file_path) }}"
+                    src="{{ asset($blog->images->first()->file_path) }}"
                     class="w-full h-full object-cover rounded-t-lg transition-transform duration-500 ease-in-out hover:scale-110"
                     alt="{{ $blog->title }}"
                 />
