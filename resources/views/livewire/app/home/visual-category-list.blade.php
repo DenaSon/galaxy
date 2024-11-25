@@ -22,6 +22,7 @@
                         <div class="flex justify-center items-center mt-4">
                             <x-badge class="text-xs" value="خشکبار و مغزها"/>
                         </div>
+
                     </article>
 
                 </div>
@@ -29,7 +30,7 @@
 
             <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
-                target="_blank"
+                wire:navigate
                 href="{{ singleCategoryUrl(2,'میوه خشک') }}">
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
@@ -47,7 +48,7 @@
 
             <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
-                target="_blank"
+                wire:navigate
                 href="{{ singleCategoryUrl(3,'لواشک و تنقلات') }}">
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
@@ -65,7 +66,7 @@
 
             <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
-                target="_blank"
+                wire:navigate
                 href="{{ singleCategoryUrl(6,'صنایع دستی') }}">
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
@@ -84,7 +85,7 @@
 
             <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
-                target="_blank"
+                wire:navigate
                 href="{{ singleCategoryUrl(5,'دمنوش‌ها') }}">
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
@@ -103,7 +104,7 @@
 
             <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
-                target="_blank"
+                wire:navigate
                 href="{{ singleCategoryUrl(4,'شیره و عسل') }}">
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
