@@ -44,6 +44,7 @@
 
                 $categories = \Illuminate\Support\Facades\Cache::remember('layout-categories', now()->addMinutes(60), function () {
                     return Category::whereNull('parent_id')
+                    ->productType()
                         ->with(['children', 'parent'])
                         ->get(['id', 'parent_id', 'name']);
                 });
