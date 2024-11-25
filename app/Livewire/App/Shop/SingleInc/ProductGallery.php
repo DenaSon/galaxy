@@ -20,7 +20,10 @@ use Toast;
 
         $this->images = Cache::remember('slider-images-'.$this->product->id, now()->addMinutes(30), function ()
         {
-           return $this->product->images->pluck('file_path')->toArray();
+            return $this->product->images->pluck('file_path')->map(function ($filePath) {
+
+                return asset($filePath);
+            })->toArray();
         });
     }
 
