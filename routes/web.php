@@ -19,11 +19,17 @@ use App\Livewire\App\Shop\ProductList;
 use App\Livewire\App\Shop\SingleProduct;
 use Illuminate\Support\Facades\Route;
 
+Route::post('/login', [\App\Livewire\App\System\LoginPage::class, 'login']);
+
+Route::get('/login', [\App\Livewire\App\System\LoginPage::class, 'login'])->name('login');
+
 
 Route::name('home.')->group(function () {
 
     Route::get('/', HomeIndex::class)->name('index-home');
     Route::get('/logout', \App\Livewire\App\System\Logout::class)->name('logout');
+
+
 
     Route::prefix('store')->name('product.')->group(function () {
 
@@ -42,7 +48,7 @@ Route::name('home.')->group(function () {
 
 });
 
-Route::name('panel.')->group(function ()
+Route::middleware([\App\Http\Middleware\RoleMiddleware::class.':customer','auth:web'])->name('panel.')->group(function ()
 {
     Route::prefix('profile')->name('profile.')->group(function ()
     {

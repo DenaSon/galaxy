@@ -5,7 +5,7 @@
         <x-avatar image="{{ asset('static/denapax-image/nopicuser.png') }}" class="!w-16">
 
             <x-slot:title class="text-black pl-2">
-                {{ $user->first_name }}  {{ $user->last_name }}
+                {{ $user->first_name ?? '' }}  {{ $user->last_name ?? ''}}
             </x-slot:title>
 
             <x-slot:subtitle class="text-gray-500 flex flex-col gap-1 mt-2 pl-2">

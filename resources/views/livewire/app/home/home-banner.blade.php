@@ -1,4 +1,4 @@
-<div class=" card bg-base-100 image-full w-full shadow-xl ms-2 h-64 ">
+<div class=" card bg-base-100 image-full w-full shadow-xl ms-2 h-64 z-0">
     <figure class="">
         <img
             src="https://picsum.photos/600/200"

@@ -50,5 +50,16 @@ class Category extends Model
         return $this->belongsTo(Category::class, 'parent_id');
     }
 
+    protected static function booted()
+    {
+        static::saved(function () {
+            cache()->forget('layout-categories');
+        });
+
+        static::deleted(function () {
+            cache()->forget('layout-categories');
+        });
+    }
+
 
 }

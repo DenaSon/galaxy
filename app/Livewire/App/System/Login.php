@@ -32,7 +32,7 @@ class Login extends Component
 
     public bool $verifyModal = false;
 
-    public $phoneNumber = '09173434796';
+    public $phoneNumber = '';
 
     public function sendVerifySms()
     {

@@ -1,3 +1,4 @@
+@php use App\Models\Category; @endphp
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -12,7 +13,7 @@
             font-family: 'denapax-font';
             src: url('{{asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2')}}') format('woff2'),
             url('{{ asset('admin/assets/fonts/iransans/woff/IRANSansWeb(FaNum).woff') }}') format('woff');
-            url('{{ asset('admin/assets/fonts/iransans/ttf/IRANSansWeb(FaNum).ttf') }}') format('woff');
+        url('{{ asset('admin/assets/fonts/iransans/ttf/IRANSansWeb(FaNum).ttf') }}') format('woff');
             font-weight: normal;
             font-style: normal;
         }
@@ -25,32 +26,49 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
-
 </head>
 
 <body x-data class="font-sans antialiased" style="font-family: 'denapax-font',serif !important;">
 
-<x-nav class="bg-base-200">
-
-    <x-slot:brand>
-
-        <x-button link="{{ route('home.index-home') }}" class="bg-blue-700 text-xs  btn-xs text-white hover:bg-blue-500">{{ config('app.name') }}</x-button>
-    </x-slot:brand>
+<x-nav class="bg-base-200" dir="rtl">
 
 
+    <x-slot:actions>
+        <x-button class=" md:flex hidden" responsive label="جستجو..." @click.stop="$dispatch('mary-search-open')"
+                  icon="o-magnifying-glass"/>
 
 
-    <x-slot:actions dir="rtl">
-        <x-button responsive label="جستجو..." @click.stop="$dispatch('mary-search-open')" icon="o-magnifying-glass"/>
+        <x-dropdown label="دسته‌بندی" class="sm:text-sm text-xs">
+            @php
 
 
-        <x-dropdown label="دسته‌بندی" class="">
+                $categories = \Illuminate\Support\Facades\Cache::remember('layout-categories', now()->addMinutes(60), function () {
+                    return Category::whereNull('parent_id')
+                        ->with(['children', 'parent'])
+                        ->get(['id', 'parent_id', 'name']);
+                });
+            @endphp
+            <x-menu class="w-52">
 
 
-            <x-menu-item title=" محصول" link="{{ route('master.shop.create') }}" icon="o-plus"/>
-            <x-menu-item title=" بلاگ" link="{{ route('master.blog.create') }}" icon="o-plus"/>
-            <x-menu-item title=" دسته بلاگ" link="{{ route('master.blog.categories') }}" icon="o-plus"/>
-            <x-menu-item class="-z-10" title=" دسته محصول" link="{{ route('master.blog.categories') }}" icon="o-plus"/>
+                @if ($categories->isNotEmpty())
+                    <ul>
+                        @foreach ($categories as $category)
+                            <x-menu-sub title="{{ $category->name }}">
+                                @if ($category->children->isNotEmpty())
+
+                                        @include('components.layouts.inc.partials-categories', ['categories' => $category->children])
+
+                                @endif
+                            </x-menu-sub>
+                        @endforeach
+                    </ul>
+                @else
+                    <p>هیچ دسته‌ای وجود ندارد.</p>
+                @endif
+
+
+            </x-menu>
 
         </x-dropdown>
 
@@ -58,6 +76,13 @@
 
 
     </x-slot:actions>
+
+    <x-slot:brand>
+
+        <x-button link="{{ route('home.index-home') }}"
+                  class="bg-blue-700 text-xs  btn-xs text-white hover:bg-blue-500">{{ config('app.name') }}</x-button>
+    </x-slot:brand>
+
 
 </x-nav>
 

@@ -26,7 +26,7 @@
         </a>
 
         @if(!Auth::check())
-            <a role="button" href="{{ homeUrl() }}" class="hover:text-primary">
+            <a role="button" href="{{ route('panel.profile.profileDashboard') }}" class="hover:text-primary">
                 <x-icon name="o-user-plus"/>
                 <span class="text-xs"> ورود | ثبت نام</span>
             </a>
