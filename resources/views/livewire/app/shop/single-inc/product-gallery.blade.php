@@ -13,7 +13,7 @@
     </div>
 
 
-    <x-image-gallery :images="$images" class="h-40 rounded-box w-52" with-arrows="true" with-indicators="true"/>
+    <x-image-gallery :images="$images" class="h-40 rounded-box w-80" with-arrows="true" with-indicators="true"/>
 
 
 </div>
