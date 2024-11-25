@@ -51,7 +51,6 @@
             @endphp
             <x-menu class="w-52">
 
-
                 @if ($categories->isNotEmpty())
                     <ul>
                         @foreach ($categories as $category)
