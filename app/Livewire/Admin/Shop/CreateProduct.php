@@ -54,7 +54,7 @@ class CreateProduct extends Component
             $product = Product::find($this->productId);
             foreach ($this->photos as $photo) {
                 $path = $photo->store('product_images', 'public');
-                $product->images()->firstorcreate(['file_path' => '/storage/' . $path]);
+                $product->images()->firstorcreate(['file_path' =>$path]);
                 $this->photo_list = $product->images;
 
 
