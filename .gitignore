@@ -1,10 +1,11 @@
 /.phpunit.cache
-
+/node_modules
+/node_modules/@ckeditor
 /public/hot
 
 /storage/*.key
 
-
+.env
 .env.backup
 .env.production
 .phpactor.json

@@ -30,7 +30,7 @@
             <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
                 target="_blank"
-                href="">
+                href="{{ singleCategoryUrl(2,'میوه خشک') }}">
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
@@ -48,7 +48,7 @@
             <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
                 target="_blank"
-                href="">
+                href="{{ singleCategoryUrl(3,'لواشک و تنقلات') }}">
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
@@ -66,7 +66,7 @@
             <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
                 target="_blank"
-                href="">
+                href="{{ singleCategoryUrl(6,'صنایع دستی') }}">
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
@@ -85,7 +85,7 @@
             <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
                 target="_blank"
-                href="">
+                href="{{ singleCategoryUrl(5,'دمنوش‌ها') }}">
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
@@ -104,7 +104,7 @@
             <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
                 target="_blank"
-                href="">
+                href="{{ singleCategoryUrl(4,'شیره و عسل') }}">
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
