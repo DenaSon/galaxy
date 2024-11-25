@@ -41,15 +41,32 @@ class Checkout extends Component
     {
 
         if ($user = Auth::user()) {
-            $cartItems = $user->carts; // Load cart items only once
 
+
+            $cartItems = $user->carts;
             if ($cartItems->isNotEmpty()) {
+
                 $this->addCartItems();
-                // If calcCosts() does more than just addCartItems, call it, otherwise skip
+                $this->totalItems = $cartItems->sum('quantity');
                 $this->calcCosts();
-            } else {
+                $this->saveOrderItems($this->order->id);
+                $this->clearCart();
+
+            } elseif ($user->orders->isEmpty()) {
                 $this->emptyFlag = true;
+                return;
+            } else {
+                $this->order = $user->orders()
+                    ->whereStatus('pending')
+                    ->latest()
+                    ->firstorFail();
+
+                $this->calcCosts();
+
+
             }
+
+
         }
 
 
@@ -59,7 +76,7 @@ class Checkout extends Component
     {
         $user = Auth::user();
 
-        // Load address and related city and province in one query
+
         $address = $user->addresses()->where('is_default', 1)->with(['city', 'province'])->first();
         if (!$address) {
             throw new \Exception('User does not have a registered address.');
@@ -106,24 +123,25 @@ class Checkout extends Component
         ]);
 
 
-
-
         // Update object properties
         $this->orderId = $order->id;
         $this->order = $order;
         $this->totalWeight = $order->weight;
+        $this->totalItems = 0;//$order->orderItems->sum('quantity');
+
     }
 
 
     private function calcShippingCost()
     {
         if ($this->calcWeightSum() <= 1000) {
-            return 1000;
+            return 49000;
         } elseif ($this->calcWeightSum() > 1000 && $this->calcWeightSum() <= 2000) {
             return $this->calcWeightSum() * 40;
         } else {
             return $this->calcWeightSum() * 25;
         }
+
 
         // return 0;
     }
@@ -141,21 +159,30 @@ class Checkout extends Component
 
     public function calcCosts()
     {
-        $order = Order::find($this->orderId);
-        $this->cartTotalCost = $order->total_price ?? 0;
-        $this->totalItems = $order->orderItems->sum('quantity') ?? 0;
-        $this->totalWeight = $order->weight ?? 0;
-        $this->shippingCost = $order->shipping_cost ?? 0;
-        $this->total = $order->total_price + $order->shipping_cost; // Total cost = cart + shipping
+        try {
+
+            $order = $this->order;
+            $this->cartTotalCost = $order->total_price ?? 0;
+
+            $this->totalWeight = $order->weight ?? 0;
+            $this->shippingCost = $order->shipping_cost ?? 0;
+            $this->total = $order->total_price + $order->shipping_cost; // Total cost = cart + shipping
+
+            if (Auth::user()->carts?->isEmpty()) {
+                $this->totalItems = $order?->orderItems?->sum('quantity') ?? 0;
+            } else {
+                $this->totalItems = Auth::user()->carts()->sum('quantity');
+            }
+
+        } catch (Throwable $e) {
+            throw new \Exception($e->getMessage());
+        }
     }
 
 
     public function startPayment()
     {
 
-
-        $this->saveOrderItems($this->order->id);
-        $this->clearCart();
 
         $this->calcCosts();
         $this->setNewPayment();
@@ -166,15 +193,16 @@ class Checkout extends Component
         $user = Auth::user();
 
         try {
+
             $paymentAmount = $this->total;
-            $description = 'پرداخت سفارش دناپکس';
+            $description = ' پرداخت سفارش توسط : '.$user->phone;
             $callbackUrl = route('panel.checkoutPayment');
 
-            // Retrieve user details only once
+
             $phone = $user->phone ?? '09999999999';
             $email = $user->email ?? 'customer@denapax.com';
 
-            // Request payment from Zarinpal
+
             $response = zarinpal()
                 ->amount($paymentAmount)
                 ->request()
@@ -189,6 +217,7 @@ class Checkout extends Component
                 return;
             }
 
+
             // Retrieve frequently used data once
             $address = $user->addresses()->where('is_default', '=', 1)->with(['city', 'province'])->first();
 
@@ -196,14 +225,14 @@ class Checkout extends Component
                 throw new \Exception('User does not have a registered address.');
             }
 
-            // Create the order and payment in a transaction
+
             DB::transaction(function () use ($user, $address, $paymentAmount, $response) {
 
                 $order = Order::find($this->orderId);
 
                 $payment = Payment::create([
                     'user_id' => $user->id,
-                    'order_id' => $order->id,
+                    'order_id' => $this->order->id,
                     'amount' => $paymentAmount,
                     'payment_method' => 'credit_card',
                     'transaction_id' => $response->authority(),
@@ -211,10 +240,6 @@ class Checkout extends Component
                     'payment_date' => now(),
                     'notes' => 'pending payment',
                 ]);
-
-                // Update order with the payment transaction ID
-                $order->update(['payment_transaction_id' => $payment->transaction_id]);
-
 
             });
 
@@ -225,7 +250,7 @@ class Checkout extends Component
 
         } catch (\Throwable $exception) {
             // Log and clean up any partial operations
-            Log::error("Payment process failed: " . $exception->getMessage());
+            Log::error("Payment process failed: " . $exception->getMessage() . '' . $exception->getFile() . '' . $exception->getLine());
             $this->error('خطا', 'خطا در پرداخت');
         }
     }
@@ -253,7 +278,6 @@ class Checkout extends Component
                     'discount' => $cartItem->product->discount,
                     'title' => $cartItem->product->name . ' | ' . $cartItem->variant->type ?? '',
                 ]);
-
 
 
             }

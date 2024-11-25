@@ -1,5 +1,5 @@
 
-<div class="flex justify-center items-center" wire:poll.visible="calcCosts">
+<div class="flex justify-center items-center">
     <div
         class="bg-white w-full max-w-md shadow-xl group-hover:border-gray-700 rounded-lg p-4 border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-2xl relative overflow-hidden">
         <!-- Header -->
@@ -21,7 +21,7 @@
                 <span>{{ $totalItems }} </span>
             </div>
             <div class="flex justify-between text-gray-700">
-                <span>وزن کل:</span>
+                <span>وزن کل</span>
                 <span>
         @php
             $weightInKg = $totalWeight / 1000;

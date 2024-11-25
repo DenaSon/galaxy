@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'f33eca01afcb7f3d1277da95f458ba0c53a02d07',
+        'reference' => '2012844c3e1b882cdd54971be52e274e73c9d81a',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -496,7 +496,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'f33eca01afcb7f3d1277da95f458ba0c53a02d07',
+            'reference' => '2012844c3e1b882cdd54971be52e274e73c9d81a',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -716,9 +716,9 @@
             'dev_requirement' => false,
         ),
         'owenvoke/blade-fontawesome' => array(
-            'pretty_version' => 'v2.7.0',
-            'version' => '2.7.0.0',
-            'reference' => 'f43b9c6f9330db60f23ad6ea8ce211b610d340f5',
+            'pretty_version' => 'v2.8.0',
+            'version' => '2.8.0.0',
+            'reference' => 'eaac6c31336b2667fdb1f4fd66b49181124a6ec4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../owenvoke/blade-fontawesome',
             'aliases' => array(),
@@ -916,8 +916,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '3.0.0',
-                1 => '1.0|2.0|3.0',
+                0 => '1.0|2.0|3.0',
+                1 => '3.0.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1136,15 +1136,6 @@
             'reference' => '024752cba691fee3cd1800000b6aa3da3b8b2474',
             'type' => 'library',
             'install_path' => __DIR__ . '/../spatie/laravel-image-optimizer',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
-        'spatie/laravel-permission' => array(
-            'pretty_version' => '6.10.1',
-            'version' => '6.10.1.0',
-            'reference' => '8bb69d6d67387f7a00d93a2f5fab98860f06e704',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../spatie/laravel-permission',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -1426,15 +1417,6 @@
             'install_path' => __DIR__ . '/../symfony/yaml',
             'aliases' => array(),
             'dev_requirement' => true,
-        ),
-        'thecodingmachine/safe' => array(
-            'pretty_version' => 'v2.5.0',
-            'version' => '2.5.0.0',
-            'reference' => '3115ecd6b4391662b4931daac4eba6b07a2ac1f0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../thecodingmachine/safe',
-            'aliases' => array(),
-            'dev_requirement' => false,
         ),
         'theseer/tokenizer' => array(
             'pretty_version' => '1.2.3',

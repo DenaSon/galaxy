@@ -48,15 +48,15 @@ class CheckoutPayment extends Component
 
             if ($response->success()) {
 
-                $payment->update(['status' => 'completed', 'notes' => 'Paid Payment']);
+                $payment->update(['status' => 'completed', 'notes' => 'Paid Payment','reference_id' => $response->referenceId()]);
                 $payment->order->update([
                     'status' => 'preparing',
                     'payment_status' => 'paid',
                     'payment_transaction_id' => $response->referenceId(),
+
                 ]);
 
                 $this->order = $payment->order;
-
                 $this->paymentStatus = 'success';
 
                 $this->sendSuccessOrderSms($this->order->id);
@@ -65,13 +65,13 @@ class CheckoutPayment extends Component
             else
             {
                 $this->paymentStatus = 'failed';
-                $payment->update(['status' => 'failed', 'amount' => 0]);
+                $payment->update(['status' => 'pending', 'amount' => 0]);
             }
 
             session()->forget('callbackToken');
         }
         catch (Throwable $e) {
-            \Log::error('Payment callback failed', ['error' => $e->getMessage()]);
+            \Log::error('Payment callback failed', ['error' => $e->getMessage() . $e->getTraceAsString()]);
             $this->warning('خطا', 'خطایی رخ داده است، لطفا با پشتیبان تماس بگیرید');
 
         }

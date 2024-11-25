@@ -2,6 +2,8 @@
 
 namespace App\Livewire\App\System;
 
+
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
@@ -106,11 +108,13 @@ class Login extends Component
                 $user->update(['phone_verified_at' => now()]);
 
                 Auth::login($user, true);
+
 //                session()->regenerate();
 //                session()->regenerateToken();
                 session()->forget('phone_number');
                 $this->verifyModal = false;
                 Cache::forget('VerifyCode_' . $phoneNumber);
+
                 $this->warning('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
 
 
@@ -123,11 +127,16 @@ class Login extends Component
                     'phone_verified_at' => now(),
                 ]);
 
+                $customerRole = Role::where('name', 'customer')->first();
+
+
+                $user->roles()->attach($customerRole);
+
                 Auth::login($user, true);
 //                session()->regenerate();
 //                session()->regenerateToken();
                 session()->forget('phone_number');
-                $user->assignRole('customer');
+
                 Cache::forget('VerifyCode_' . $phoneNumber);
                 $this->verifyModal = false;
                 $this->info('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');

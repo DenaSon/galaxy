@@ -76,21 +76,22 @@
             <div class="absolute bottom-0 left-0 w-full bg-violet-700 text-white text-center p-4">
 
 
-                <div class="flex justify-between items-center text-sm mb-2">
+                <div class="flex justify-between items-center text-sm mb-4 mt-2">
                     <span> مبلغ سفارش</span>
-                    <span class="font-thin">{{ number_format($cartCost) }} </span>
+                    <span class="font-normal text-lg">{{ number_format($cartCost) }} </span>
+
                 </div>
 
-                <div class="flex justify-between items-center text-sm mb-2">
-                    <span>هزینه ارسال:</span>
-                    <span class="font-thin">{{ number_format($shippingCost) }} </span>
-                </div>
+{{--                <div class="flex justify-between items-center text-sm mb-2">--}}
+{{--                    <span>هزینه ارسال:</span>--}}
+{{--                    <span class="font-thin">{{ number_format($shippingCost) }} </span>--}}
+{{--                </div>--}}
 
 
-                <div class="flex justify-between items-center text-sm mb-2">
-                    <span>جمع کل:</span>
-                    <span class="font-normal">{{ number_format($totalCost) }} تومان</span>
-                </div>
+{{--                <div class="flex justify-between items-center text-sm mb-2">--}}
+{{--                    <span>جمع کل:</span>--}}
+{{--                    <span class="font-normal">{{ number_format($totalCost) }} تومان</span>--}}
+{{--                </div>--}}
 
 
                 @if(Auth::user()->addresses()->count('id') > 0)

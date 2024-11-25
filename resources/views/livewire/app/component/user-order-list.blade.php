@@ -3,9 +3,9 @@
     $headers = [
 
         ['key' => 'id', 'label' => 'شماره سفارش'],
-        ['key' => 'grand_total', 'label' => 'مبلغ پرداختی'],
+         ['key' => 'payment_transaction_id', 'label' => 'شماره پیگیری'],
+        ['key' => 'grand_total', 'label' => 'مبلغ '],
         ['key' => 'status', 'label' => 'وضعیت'],
-
 
         ];
 @endphp
@@ -16,6 +16,10 @@
              empty-text="هنوز سفارشی ثبت نکرده‌اید">
         @scope('cell_id', $order)
         <strong wire:key="{{ $order->id }}">{{ $order->id }}</strong>
+        @endscope
+
+        @scope('cell_payment_transaction_id', $order)
+        {{ $order->payment_transaction_id ?? 'N/A' }}
         @endscope
 
 
@@ -49,6 +53,8 @@
     </x-table>
 
     {{ $orders->links() }}
+
+
 
 </x-card>
 

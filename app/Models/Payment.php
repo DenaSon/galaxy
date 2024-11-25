@@ -15,6 +15,7 @@ class Payment extends Model
         'status',
         'payment_date',
         'notes',
+        'reference_id'
     ];
     public function order()
     {

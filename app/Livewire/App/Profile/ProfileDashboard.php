@@ -21,6 +21,6 @@ class ProfileDashboard extends Component
     public function render()
     {
         return view('livewire.app.profile.profile-dashboard')
-        ->title('');
+        ->title('خلاصه فعالیت ها');
     }
 }

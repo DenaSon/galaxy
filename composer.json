@@ -17,8 +17,7 @@
         "owenvoke/blade-fontawesome": "^2.7",
         "pishran/zarinpal": "*",
         "robsontenorio/mary": "^1.40",
-        "spatie/laravel-image-optimizer": "*",
-        "spatie/laravel-permission": "^6.9"
+        "spatie/laravel-image-optimizer": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.14",

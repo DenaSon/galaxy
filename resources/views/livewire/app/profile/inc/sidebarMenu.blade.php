@@ -2,7 +2,7 @@
 
     <div class="text-center">
 
-        <x-avatar image="https://picsum.photos/200?=2082266265" class="!w-16">
+        <x-avatar image="{{ asset('static/denapax-image/nopicuser.png') }}" class="!w-16">
 
             <x-slot:title class="text-black pl-2">
                 {{ $user->first_name }}  {{ $user->last_name }}
