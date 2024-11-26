@@ -2,14 +2,10 @@
 
     @if(Auth::check() && Auth::user()->carts->isNotEmpty())
         <x-drawer wire:model="cartBox" class="w-11/12 lg:w-1/4 relative p-0 py-0 m-0" left>
-            <!-- هدر سبد خرید -->
-            <div class="absolute top-0 left-0 w-full">
-
-            </div>
 
 
             <div class="mt-0 pb-10  px-2">
-                <div class="bg-white rounded overflow-y-auto max-h-[80vh] p-4">
+                <div class="bg-white rounded overflow-y-auto max-h-[70vh] p-4">
 
                     <h2 class="text-sm font-bold text-center pb-2">سبد خرید</h2>
                     <hr>
@@ -20,7 +16,7 @@
 
                     @foreach(Auth::user()->carts->load(['product.images', 'product.variants', 'variant']) as $cart)
                         <div wire:key="{{ $cart->id }}" class="divide-y divide-gray-100 mb-4 pb-4">
-                            <div class="hover:bg-gray-100 p-2 rounded">
+                            <div class="hover:border-gray-300 p-2 rounded">
 
 
                                 <div class="flex items-center justify-between">
