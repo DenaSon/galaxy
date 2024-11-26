@@ -54,7 +54,7 @@
                 @if ($categories->isNotEmpty())
 
                         @foreach ($categories as $category)
-                            <x-menu-sub title="{{ $category->name }}" icon="o-plus">
+                            <x-menu-sub title="{{ $category->name }}" icon="o-star">
                                 @if ($category->children->isNotEmpty())
 
                                         @include('components.layouts.inc.partials-categories', ['categories' => $category->children])
