@@ -8,16 +8,33 @@
             <span class="text-xs">خانه</span>
         </a>
 
+        @if(!Auth::check() || \App\Models\Cart::count() < 1)
+            <a  @click.stop="$wire.toaster" role="button"  class="hover:text-primary">
+                <div class="indicator">
+                    <span class="indicator-item badge badge-primary badge-xs">5</span>
 
-        <a role="button" href="{{ homeUrl() }}" class="hover:text-primary">
-            <div class="indicator">
-                <span class="indicator-item badge badge-primary badge-xs">5</span>
+                    <x-icon name="o-shopping-cart"/>
+                </div>
 
-                <x-icon name="o-shopping-cart"/>
-            </div>
+                <span class="text-xs">سبد خرید</span>
+            </a>
 
-            <span class="text-xs">سبد خرید</span>
-        </a>
+        @else
+
+            <a role="button"  class="hover:text-primary">
+                <div class="indicator">
+                    <span class="indicator-item badge badge-primary badge-xs">{{ \App\Models\Cart::count('id') }}</span>
+
+                    <x-icon name="o-shopping-cart"/>
+                </div>
+
+                <span class="text-xs">سبد خرید</span>
+            </a>
+
+        @endif
+
+
+
 
 
         <a @click.stop="$dispatch('mary-search-open')" role="button"  class="hover:text-primary">
@@ -26,12 +43,12 @@
         </a>
 
         @if(!Auth::check())
-            <a role="button" href="{{ route('panel.profile.profileDashboard') }}" class="hover:text-primary">
+            <a role="button"  @click.stop="$wire.loginModal = true" class="hover:text-primary">
                 <x-icon name="o-user-plus"/>
                 <span class="text-xs"> ورود | ثبت نام</span>
             </a>
         @else
-            <a  role="button" href="{{ homeUrl() }}" class="hover:text-primary">
+            <a  role="button" href="{{ route('panel.profile.profileDashboard') }}" class="hover:text-primary">
                 <x-icon name="o-user-circle"/>
                 <span class="text-xs"> پروفایل</span>
             </a>
