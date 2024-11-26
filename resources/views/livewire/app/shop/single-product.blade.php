@@ -1,4 +1,7 @@
 <div>
+    @push('SEO')
+        @include('livewire.app.shop.single-inc._seo_schema_meta')
+    @endpush
 
     <div class="container mx-auto lg:px-2 2xl:px-0 mt-2">
         <div class="flex flex-col lg:flex-row gap-4 mt-4">
