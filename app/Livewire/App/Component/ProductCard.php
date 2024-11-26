@@ -10,7 +10,7 @@ use Livewire\Component;
 use Mary\Traits\Toast;
 
 #[Layout('components.layouts.app')]
-
+#[Lazy]
 class ProductCard extends Component
 {
     use Toast;
@@ -79,13 +79,6 @@ class ProductCard extends Component
 
         }, 120);
     }
-
-
-
-
-
-
-
 
 
     public function mount(Product $product)
