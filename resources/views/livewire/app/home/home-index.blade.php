@@ -1,5 +1,9 @@
 <div class="container mx-auto">
+@push('SEO')
 
+    @include('livewire.app.home.inc._seo_schema')
+
+@endpush
     <div class="flex flex-col md:flex-row md:justify-center items-center space-y-2 md:space-y-0">
         <div class="w-full md:w-4/4 lg:w-3/4">
             @livewire('app.home.home-slider')
