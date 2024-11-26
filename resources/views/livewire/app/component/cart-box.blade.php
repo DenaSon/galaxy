@@ -38,13 +38,11 @@
                                     </div>
                                 </div>
 
-
                                 <div class="flex items-center justify-between mt-2">
 
                                     <p class="text-lg font-bold text-gray-600 flex-grow">
                                         {{ number_format($cart->variant->price * $cart->quantity) }}
                                     </p>
-
 
                                     <div class="flex items-center gap-2">
                                         <x-button spinner
@@ -61,9 +59,7 @@
                                         />
                                     </div>
 
-
                                 </div>
-
 
                             </div>
                         </div>
@@ -71,7 +67,6 @@
                 </div>
 
             </div>
-
 
             <div class="absolute bottom-0 left-0 w-full bg-violet-700 text-white text-center p-4">
 
