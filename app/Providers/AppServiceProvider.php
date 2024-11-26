@@ -22,5 +22,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
+        if (config('app.env') !== 'local') {
+            header_remove('X-Powered-By');
+        }
+
     }
 }
