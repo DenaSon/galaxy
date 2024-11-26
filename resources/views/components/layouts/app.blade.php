@@ -52,9 +52,9 @@
             <x-menu class="w-52">
 
                 @if ($categories->isNotEmpty())
-                    <ul>
+
                         @foreach ($categories as $category)
-                            <x-menu-sub title="{{ $category->name }}">
+                            <x-menu-sub title="{{ $category->name }}" icon="o-plus">
                                 @if ($category->children->isNotEmpty())
 
                                         @include('components.layouts.inc.partials-categories', ['categories' => $category->children])
@@ -62,7 +62,7 @@
                                 @endif
                             </x-menu-sub>
                         @endforeach
-                    </ul>
+
                 @else
                     <p>هیچ دسته‌ای وجود ندارد.</p>
                 @endif

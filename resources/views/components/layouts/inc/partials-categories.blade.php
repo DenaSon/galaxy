@@ -1,7 +1,7 @@
 
 @foreach ($categories as $category)
     @if ($category->children->isEmpty())
-        <x-menu-item title="{{ $category->name }}" />
+        <x-menu-item title="{{ $category->name }}" link="{{ singleCategoryUrl($category->id,$category->name) }}" />
     @else
         <x-menu-sub title="{{ $category->name }}">
 
