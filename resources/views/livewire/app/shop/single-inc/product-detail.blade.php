@@ -55,9 +55,9 @@
     <div class="flex sm:flex-nowrap flex-wrap gap-4 h-auto mt-4">
 
 
-    <div class="flex w-full sm:w-2/3 order-2 md:order-1">
+        <div class="flex w-full sm:w-2/3 order-2 md:order-1">
 
-        @include('livewire.app.shop.single-inc._productDetails')
+            @include('livewire.app.shop.single-inc._productDetails')
 
         </div>
 
@@ -89,8 +89,6 @@
         </div>
 
     </div>
-
-
 
 
 </div>

@@ -1,6 +1,6 @@
 <div>
 
-    @forelse($product->comments->take(30) as  $comment)
+    @forelse($product->comments->where('status','=','published')->take(30) as  $comment)
         <div class="chat chat-start">
             <div class="chat-image avatar">
                 <div class="w-auto mt-3">
