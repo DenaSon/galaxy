@@ -11,7 +11,7 @@
         @if(!Auth::check() || \App\Models\Cart::count() < 1)
             <a  @click.stop="$wire.toaster" role="button"  class="hover:text-primary">
                 <div class="indicator">
-                    <span class="indicator-item badge badge-primary badge-xs">5</span>
+                    <span class="indicator-item badge badge-primary badge-xs">0</span>
 
                     <x-icon name="o-shopping-cart"/>
                 </div>
@@ -23,7 +23,7 @@
 
             <a role="button"  class="hover:text-primary">
                 <div class="indicator">
-                    <span class="indicator-item badge badge-primary badge-xs">{{ \App\Models\Cart::count('id') }}</span>
+                    <span class="indicator-item badge badge-primary badge-xs">{{ Auth::user()->carts()->count('id') }}</span>
 
                     <x-icon name="o-shopping-cart"/>
                 </div>
