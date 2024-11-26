@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->id();
             $table->string('key',60)->unique();
-            $table->string('value',100)->nullable();
+            $table->string('value',200)->nullable();
             //indexes:
             $table->index('key');
 

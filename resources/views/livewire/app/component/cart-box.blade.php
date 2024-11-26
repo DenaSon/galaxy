@@ -25,7 +25,7 @@
 
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
-                                        <img src="{{ $cart->product->images->first()->file_path }}"
+                                        <img src="{{ asset($cart->product->images->first()->file_path) }}"
                                              alt="تصویر محصول"
                                              class="w-16 h-16 rounded object-cover mr-4 shadow-sm">
                                         <h3 class="text-xs font-medium text-gray-800">
