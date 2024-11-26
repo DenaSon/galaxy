@@ -16,7 +16,7 @@
 
                     @foreach(Auth::user()->carts->load(['product.images', 'product.variants', 'variant']) as $cart)
                         <div wire:key="{{ $cart->id }}" class="divide-y divide-gray-100 mb-4 pb-4">
-                            <div class="hover:border-gray-300 p-2 rounded">
+                            <div class="hover:border-b p-2 rounded">
 
 
                                 <div class="flex items-center justify-between">
