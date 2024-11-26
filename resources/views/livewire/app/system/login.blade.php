@@ -37,5 +37,9 @@
         <x-button class="sm:text-sm text-xs"  icon="o-user" label="ورود" @click="$wire.loginModal = true"/>
     @endif
 
-
+    <script>
+        Livewire.on('refreshPage', () => {
+            location.reload();
+        });
+    </script>
 </div>

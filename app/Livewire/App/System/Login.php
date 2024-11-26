@@ -116,7 +116,7 @@ class Login extends Component
                 Cache::forget('VerifyCode_' . $phoneNumber);
 
                 $this->warning('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
-                $this->redirect(url()->current());
+                $this->dispatch('refreshPage');
 
 
 
