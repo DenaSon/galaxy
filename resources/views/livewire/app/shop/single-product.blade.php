@@ -22,4 +22,10 @@
     @auth
             @livewire('app.component.address-modal')
     @endauth
+
+        <script>
+            Livewire.on('refreshPage', () => {
+                window.location.reload();
+            });
+        </script>
 </div>

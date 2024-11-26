@@ -115,8 +115,8 @@ class Login extends Component
                 $this->verifyModal = false;
                 Cache::forget('VerifyCode_' . $phoneNumber);
 
-                $this->warning('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
-                $this->redirect(route(\Illuminate\Support\Facades\Route::currentRouteName()));
+                $this->info('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
+                $this->dispatch('refreshPage');
 
 
 
@@ -143,7 +143,7 @@ class Login extends Component
                 Cache::forget('VerifyCode_' . $phoneNumber);
                 $this->verifyModal = false;
                 $this->info('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
-
+                $this->dispatch('refreshPage');
 
             }
         }
