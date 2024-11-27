@@ -260,7 +260,7 @@ class CreateProduct extends Component
 
     public function render()
     {
-        $categories_list = Category::query()->onlyParent()->where('type', 'product')->latest()->get();
+        $categories_list = Category::whereParentId('null')->where('type', 'product')->latest()->get();
         return view('livewire.admin.shop.create-product', compact('categories_list'));
 
     }
