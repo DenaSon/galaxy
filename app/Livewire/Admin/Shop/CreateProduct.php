@@ -15,6 +15,8 @@ use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Mary\Traits\Toast;
+use Random\RandomException;
+use Throwable;
 
 #[Title('محصول')]
 #[Layout('components.layouts.admin')]
@@ -250,15 +252,24 @@ class CreateProduct extends Component
     }
 
 
+    /**
+     * @throws RandomException
+     */
     private function sku()
     {
-        do {
-            $date = Carbon::now()->format('Ymd');
-            $uniqueId = rand(1000, 9999);
-            $sku = "{$date}{$uniqueId}";
-        } while (\App\Models\Product::where('sku', $sku)->exists());
+        try {
+            do {
+                $date = Carbon::now()->format('Ymv');
+                $uniqueId = random_int(1, 999999);
+                $sku = "{$date}{$uniqueId}";
+            } while (\App\Models\Product::where('sku', $sku)->exists());
 
-        return $sku;
+            return $sku;
+        }
+        catch (Throwable $e)
+        {
+            Log::error($e->getMessage());
+        }
     }
 
     public function render()
