@@ -58,7 +58,7 @@
                             @foreach($order->orderItems as $item)
                             <div class="flex items-center justify-between border-b py-3">
                                 <div class="flex items-center">
-                                    <img src="{{ $item->product->images()->first()->file_path ?? noPictureUrl() }}" alt="Product Image" class="w-12 h-12 rounded-md mr-4">
+                                    <img src="{{ asset($item->product->images()->first()->file_path ?? noPictureUrl()) }}" alt="Product Image" class="w-12 h-12 rounded-md mr-4">
                                     <div>
                                         <p class="text-xs font-medium text-gray-700 sm:text-sm">{{ $item->title }}</p>
                                         <p class="text-xs text-gray-500"> تعداد:  {{ $item->quantity }} </p>
