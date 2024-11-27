@@ -86,4 +86,4 @@
 </div>
 
 
-@include('livewire.admin.template.scripts.ckeditor-init')
+
