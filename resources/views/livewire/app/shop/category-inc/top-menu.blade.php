@@ -4,7 +4,6 @@
         <ul class="text-xs">
             <li><a wire:navigate href="{{ route('home.index-home') }}">صفحه اول</a></li>
             <li><a wire:navigate href="{{ singleCategoryUrl($category->id, $category->name) }}">{{ $category->name }}</a></li>
-
         </ul>
     </div>
 
