@@ -5,7 +5,7 @@
           {{ strip_tags(\Illuminate\Support\Str::limit($product->details,355,'......')) }}
         </span>
         <span x-show="open">
-         {!! $product->dettails !!}
+         {!! $product->details !!}
         </span>
 
         <button
