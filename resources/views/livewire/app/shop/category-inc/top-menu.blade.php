@@ -6,7 +6,6 @@
             <li><a wire:navigate href="{{ singleCategoryUrl($category->id, $category->name) }}">{{ $category->name }}</a></li>
         </ul>
     </div>
-
     <!-- بخش دوم -->
     <div class="text-sm text-right">
         <p>
