@@ -1,6 +1,5 @@
 <div>
     @push('cdn')
-        <script src="{{ asset('vendor/ckstandard/ckeditor.js') }}"></script>
         <script data-navigate-once src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @endpush
     <div class="flex flex-col md:flex-row md:space-x-4">
