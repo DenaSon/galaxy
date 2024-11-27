@@ -20,10 +20,10 @@ class UserOrderList extends Component
     public function render()
     {
 
-        $orders = Order::where('user_id', Auth::id())
-            ->whereHas('orderItems')
-            ->where('created_at', '>=', now()->subMinutes(5))->OrwhereIn('payment_status',['paid','pending'])
+        $orders = Order::whereIn('payment_status',['paid'])
             ->whereIn('status',['preparing','delivered','cancelled','refunded','sended','shipped'])
+            ->whereHas('orderItems')
+            ->where('user_id', Auth::id())
             ->orderBy('created_at', 'desc')
             ->paginate(10);
         return view('livewire.app.component.user-order-list', compact('orders'));

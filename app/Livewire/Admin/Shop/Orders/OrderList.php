@@ -28,7 +28,7 @@ class OrderList extends Component
 
     public function render()
     {
-        $order = Order::latest()->paginate(20);
+        $order = \Auth::user()->orders()->latest()->paginate(20);
         return view('livewire.admin.shop.orders.order-list', compact('order'))
         ->title('لیست سفارش ها');
     }

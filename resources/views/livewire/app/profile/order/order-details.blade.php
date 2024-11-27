@@ -7,8 +7,15 @@
 
                 <div class="w-full lg:w-6/6 border rounded-lg p-6 bg-white shadow-md">
                     <div class="border-b pb-4 mb-4">
-                        <h2 class="text-xl font-semibold text-gray-700">جزئیات سفارش</h2>
 
+
+
+                        <div class="flex justify-between mt-2">
+                            <h2 class="text-xl font-semibold text-gray-700">جزئیات سفارش</h2>
+                           @if($order->payment_status == 'paid')
+                               <x-badge class="badge-success text-white" value="پرداخت شده"/>
+                           @endif
+                        </div>
                         <!-- Order Number -->
                         <div class="flex justify-between mt-2">
                             <span class="text-sm text-gray-500">شماره سفارش:</span>
@@ -57,7 +64,8 @@
                                         <p class="text-xs text-gray-500"> تعداد:  {{ $item->quantity }} </p>
                                     </div>
                                 </div>
-                                <div class="text-sm  text-gray-700 p-2 font-bold"> {{ number_format($item->price) }} تومان
+                                <div class="text-sm  text-gray-700  font-bold"> {{ number_format($item->price) }}
+
                                 </div>
 
                             </div>
@@ -71,7 +79,7 @@
                     <!-- Total Amount -->
                     <div class="border-t pt-4">
                         <div class="flex items-center justify-between">
-                            <p class="text-lg font-medium text-gray-700">مجموع:</p>
+                            <p class="text-lg font-medium text-gray-700">مجموع</p>
                             <p class="text-lg font-semibold text-gray-900"> {{ number_format($order->grand_total) }} تومان</p>
                         </div>
                     </div>
