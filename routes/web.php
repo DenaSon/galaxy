@@ -11,6 +11,7 @@ use App\Livewire\Admin\Shop\ListProduct;
 use App\Livewire\Admin\Shop\Orders\OrderList;
 use App\Livewire\App\Blog\SingleBlog;
 use App\Livewire\App\Home\HomeIndex;
+use App\Livewire\App\Profile\Order\OrderDetails;
 use App\Livewire\App\Profile\ProfileAddress;
 use App\Livewire\App\Profile\ProfileDashboard;
 use App\Livewire\App\Shop\Checkout;
@@ -50,6 +51,9 @@ Route::name('home.')->group(function () {
 
 Route::middleware([\App\Http\Middleware\RoleMiddleware::class.':customer','auth:web'])->name('panel.')->group(function ()
 {
+
+    Route::get('/order/pax-{order}', OrderDetails::class)->name('orderDetails');
+
     Route::prefix('profile')->name('profile.')->group(function ()
     {
         Route::get('/dashboard', ProfileDashboard::class)->name('profileDashboard');

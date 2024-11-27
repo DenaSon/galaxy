@@ -6,16 +6,20 @@
          ['key' => 'payment_transaction_id', 'label' => 'شماره پیگیری'],
         ['key' => 'grand_total', 'label' => 'مبلغ '],
         ['key' => 'status', 'label' => 'وضعیت'],
+        ['key' => 'action', 'label' => 'مشاهده'],
 
         ];
 @endphp
 
 
 <x-card subtitle="سفارش‌ها" class="border-none">
-    <x-table class="border-none"  :headers="$headers" :rows="$orders" link="order-{order_number}"
+    <x-table class="border-none"  :headers="$headers" :rows="$orders"
+
              empty-text="هنوز سفارشی ثبت نکرده‌اید">
         @scope('cell_id', $order)
+        <a wire:navigate href="{{ route('panel.orderDetails',['order' => $order->id]) }}">
         <strong wire:key="{{ $order->id }}">{{ $order->id }}</strong>
+        </a>
         @endscope
 
         @scope('cell_payment_transaction_id', $order)
@@ -24,7 +28,7 @@
 
 
         @scope('cell_grand_total', $order)
-        {{ number_format($order->grand_total) }}
+        {{ number_format($order?->grand_total) }}
         @endscope
 
         @scope('cell_status', $order)
@@ -47,6 +51,14 @@
         @scope('cell_created_at', $order)
         <span class="tooltip text-xs"
               data-tip=" {{ jdate($order->created_at)->toTimeString() }}">  {{ jdate($order->created_at)->toDateString() }} </span>
+        @endscope
+
+        @scope('cell_action', $order)
+
+        <a wire:navigate href="{{ route('panel.orderDetails',['order' => $order->id]) }}">
+            <x-icon name="o-eye"></x-icon>
+        </a>
+
         @endscope
 
 

@@ -388,3 +388,8 @@ function convertPersianNumbers($string): float|int|string
 
     return $shippingAddress;
 }
+
+function noPictureUrl()
+{
+    return asset('static/denapax-image/nopicuser.png') ?? '';
+}
