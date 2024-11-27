@@ -3,11 +3,13 @@
 namespace App\Livewire\App\Shop;
 
 use App\Models\Cart;
+use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Payment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Mary\Traits\Toast;
 use Throwable;
@@ -60,6 +62,8 @@ class CheckoutPayment extends Component
                 $this->paymentStatus = 'success';
 
                 $this->sendSuccessOrderSms($this->order->id);
+                $order = Order::find($this->order->id);
+
 
             }
             else
@@ -76,6 +80,8 @@ class CheckoutPayment extends Component
 
         }
     }
+
+
 
 
 

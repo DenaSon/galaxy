@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Mary\Traits\Toast;
 use Throwable;
@@ -285,6 +286,11 @@ class Checkout extends Component
             Log::error($e->getMessage());
         }
     }
+
+
+
+
+
 
 
     public function render()
