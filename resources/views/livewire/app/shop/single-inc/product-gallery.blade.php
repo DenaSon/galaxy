@@ -7,7 +7,7 @@
     <div class="carousel carousel-vertical rounded-box h-96 ">
         @foreach($images as $image)
             <div class="carousel-item h-full">
-                <img src="{{ asset($image) }}" alt="{{ $product->name }}"/>
+                <img src="{{ asset($image) }}" alt="{{ $product->name }}" height="480"/>
             </div>
         @endforeach
     </div>
