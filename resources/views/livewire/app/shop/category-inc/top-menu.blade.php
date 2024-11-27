@@ -12,7 +12,6 @@
     <div class="text-sm text-right">
         <p>
             <x-rating disabled wire:model="ranking" class="bg-warning" total="5" />
-
         </p>
     </div>
 </div>
