@@ -252,10 +252,13 @@ class CreateProduct extends Component
 
     private function sku()
     {
-        $date = Carbon::now()->format('Ymd');
-        $uniqueId = rand(1000, 9999);
-        return "{$date}{$uniqueId}";
+        do {
+            $date = Carbon::now()->format('Ymd');
+            $uniqueId = rand(1000, 9999);
+            $sku = "{$date}{$uniqueId}";
+        } while (\App\Models\Product::where('sku', $sku)->exists());
 
+        return $sku;
     }
 
     public function render()
