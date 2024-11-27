@@ -14,7 +14,7 @@
                              wire:dirty.class="focus:border-green-700"/>
 
                     <div wire:ignore>
-                        <textarea id="editor1" wire:model.blur="content"></textarea>
+                        <textarea rows="8" wire:model.blur="content"></textarea>
                     </div>
 
                     <x-textarea wire:dirty.class="focus:border-green-700" label="توضیحات کوتاه" inline
