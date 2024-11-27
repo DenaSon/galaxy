@@ -31,7 +31,7 @@ class Order extends Model
     ];
     public  function scopeActive($query)
     {
-        return $query->where('status', '!=', 'cancelled');
+        return $query->where('status', '!=', 'cancelled')->where('payment_status', '=', 'paid');
     }
 
     public function user()

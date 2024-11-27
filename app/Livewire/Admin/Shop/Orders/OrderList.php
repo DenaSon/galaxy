@@ -14,12 +14,6 @@ class OrderList extends Component
     use Toast;
 
 
-    public function save()
-    {
-
-
-    }
-
     public function mount()
     {
 
@@ -28,7 +22,7 @@ class OrderList extends Component
 
     public function render()
     {
-        $order = \Auth::user()->orders()->latest()->paginate(20);
+        $order = Order::with(['user'])->latest()->where('payment_status','paid')->paginate(20);
         return view('livewire.admin.shop.orders.order-list', compact('order'))
         ->title('لیست سفارش ها');
     }
