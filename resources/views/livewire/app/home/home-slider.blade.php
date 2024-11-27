@@ -1,26 +1,13 @@
 @php
-    $slide1 = asset('storage/photos/slider/slider1.jpg');
+    $slide1 = asset('static/slider/slider-nuts.JPG');
     $slides = [
         [
-            'image' => 'https://picsum.photos/500/200' ,
-            'title' => 'سوغات  دنا',
+            'image' => $slide1 ,
+            'title' => 'خشکبار خوشمزه',
             'description' => 'محصولات ارگانیک و تازه، ',
-            'url' => '/docs/installation',
+            'url' => singleCategoryUrl(1,'خشکبار'),
+
             'urlText' => 'مشاهده محصولات',
-        ],
-        [
-            'image' => 'https://picsum.photos/500/300' ,
-            'title' => 'Full stack developers',
-            'description' => 'Where burnout is just a fancy term for Tuesday.',
-        ],
-        [
-            'image' => "https://picsum.photos/500/400" ,
-            'url' => '/docs/installation',
-            'urlText' => 'Let`s go!',
-        ],
-        [
-            'image' => "https://picsum.photos/400/200" ,
-            'url' => '/docs/installation',
         ],
     ];
 @endphp
