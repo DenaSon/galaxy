@@ -32,7 +32,7 @@
 
 
                     @scope('cell_order_number', $order)
-                    <a href="" wire:navigate>{{ $order->order_number }} </a>
+                    <a href="" wire:navigate>{{ $order->id }} </a>
                     @endscope
 
                     @scope('cell_created_at', $order)
