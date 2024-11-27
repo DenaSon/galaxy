@@ -1,7 +1,5 @@
 <div>
-    @push('cdn')
-        <script data-navigate-once src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    @endpush
+
     <div class="flex flex-col md:flex-row md:space-x-4">
 
         <div class="w-full md:w-2/3 shadow-lg m-2">
