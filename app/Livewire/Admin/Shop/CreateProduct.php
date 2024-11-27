@@ -259,8 +259,8 @@ class CreateProduct extends Component
     {
         try {
             do {
-                $date = Carbon::now()->format('Ymv');
-                $uniqueId = random_int(1, 999999);
+                $date = Carbon::now()->format('Ymdv');
+                $uniqueId = random_int(1, 99999);
                 $sku = "{$date}{$uniqueId}";
             } while (\App\Models\Product::where('sku', $sku)->exists());
 
