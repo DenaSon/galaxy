@@ -27,16 +27,15 @@
             </div>
 
 
-
             <div class="text-center md:text-right">
                 <p class="text-xs mb-2 sm:text-sm leading-7">
                     <b>
-                  دنا پکس
+                        دنا پکس
                     </b>
 
                     <br>
 
-                     عرضه‌کننده سوغات اصیل و خشکبار دنا با بسته‌بندی‌های شکیل و بهداشتی.
+                    عرضه‌کننده سوغات اصیل و خشکبار دنا با بسته‌بندی‌های شکیل و بهداشتی.
 
                     هدف ما حفظ طعم و اصالت محصولات بومی و ارتباط مستقیم با تولیدکنندگان محلی است.
                     دنـا پکس، یادآور طبیعت، طعم، و اصالت در هر بسته!
@@ -51,18 +50,16 @@
     </div>
 
 
-
-    <footer class="footer bg-base-50 text-base-content p-10  container mx-auto">
-
+    <footer class="footer bg-base-50 text-base-content p-10 container mx-auto">
 
 
-            <nav>
-                <h6 class="footer-title">خدمات ما</h6>
-                <a class="link link-hover">خرید عمده</a>
-                <a class="link link-hover">بسته‌بندی هدیه</a>
-                <a class="link link-hover">سفارش سفارشی</a>
-                <a class="link link-hover">ارسال سریع</a>
-            </nav>
+        <nav>
+            <h6 class="footer-title">خدمات ما</h6>
+            <a class="link link-hover">خرید عمده</a>
+            <a class="link link-hover">بسته‌بندی هدیه</a>
+            <a class="link link-hover">سفارش سفارشی</a>
+            <a class="link link-hover">ارسال سریع</a>
+        </nav>
 
 
         <nav>
@@ -81,12 +78,12 @@
         </nav>
 
         <aside>
-            <x-icon name="o-sparkles" class="h-20 w-20 text-primary"> </x-icon>
+            <x-icon name="o-sparkles" class="h-20 w-20 text-primary"></x-icon>
 
             <p>
                 دنا پکس | از دنا به خانه شما، جایی که طبیعت و اصالت به هم می‌رسند!
 
-                <br />
+                <br/>
                 <span class="text-xs text-gray-500">
                     © 2024   | همه حقوق محفوظ است. طراحی و توسعه با ❤️ توسط تیم دنـا پکس
                 </span>
@@ -96,8 +93,6 @@
         </aside>
 
     </footer>
-
-
 
 
 </div>
