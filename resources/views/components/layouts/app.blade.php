@@ -122,9 +122,6 @@
     <x-slot:content dir="rtl">
         {{ $slot }}
 
-        @if(auth()->check() && auth()->user()->carts()->count('id') > 0)
-            @livewire('app.component.cart-box')
-        @endif
         @livewire('app.home.mobile-menu')
         @include('livewire.app.layout.footer')
 
