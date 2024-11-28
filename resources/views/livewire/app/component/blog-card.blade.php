@@ -21,9 +21,9 @@
 
             <div class="p-2">
                 <div class="text-center">
-                    <h3 class="font-normal mt-2 text-lg text-gray-800 leading-snug">
+                    <h2 class="font-normal mt-2 text-sm text-gray-700 leading-snug">
                         {{ $blog->title }}
-                    </h3>
+                    </h2>
                 </div>
             </div>
         </div>
