@@ -27,8 +27,12 @@ class ProductList extends Component
 
     public function render()
     {
-        $products = $this->category->products()->where('is_active',1)->paginate(18
-        );
+        $products = $this->category
+            ->products()
+            ->with('images', 'variants')
+
+            ->where('is_active',1)
+            ->orderBy('created_at', 'desc')->paginate(18);
 
         return view('livewire.app.shop.product-list', compact('products'))
             ->title('خرید ' . ($this->category->name ?? getSetting('website_title')));
