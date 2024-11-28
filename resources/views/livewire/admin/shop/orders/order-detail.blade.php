@@ -32,7 +32,7 @@
                                     <div class="avatar">
                                         <div class="mask mask-squircle h-12 w-12">
                                             <img
-                                                src="{{ $item->product->images()->first()->file_path }}"
+                                                src="{{ asset($item->product->images()->first()->file_path ?? noPictureUrl()) }}"
                                                 alt="{{ $item->product->name }}" />
                                         </div>
                                     </div>
