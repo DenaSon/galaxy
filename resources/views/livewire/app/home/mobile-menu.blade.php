@@ -21,7 +21,7 @@
 
         @else
 
-            <a role="button"  class="hover:text-primary" @click="$wire.loginModal = true">
+            <a role="button"  class="hover:text-primary" >
                 <div class="indicator">
                     <span class="indicator-item badge badge-primary badge-xs">{{ Auth::user()->carts()->count('id') }}</span>
 
@@ -42,17 +42,7 @@
             <span class="text-xs"> جستجو</span>
         </a>
 
-        @if(!Auth::check())
-            <a role="button"  @click.stop="$wire.loginModal = true" class="hover:text-primary">
-                <x-icon name="o-user-plus"/>
-                <span class="text-xs"> ورود | ثبت نام</span>
-            </a>
-        @else
-            <a  role="button" href="{{ route('panel.profile.profileDashboard') }}" class="hover:text-primary">
-                <x-icon name="o-user-circle"/>
-                <span class="text-xs"> پروفایل</span>
-            </a>
-        @endif
+        @livewire('app.system.login')
 
 
     </div>
