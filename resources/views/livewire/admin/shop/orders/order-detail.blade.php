@@ -18,7 +18,7 @@
 
                    <x-card>
 
-                       {{ $order->shipping_address }}
+                       {{ $order }}
 
                    </x-card>
 
