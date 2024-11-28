@@ -42,7 +42,17 @@
             <span class="text-xs"> جستجو</span>
         </a>
 
-        @livewire('app.system.login')
+        @if(!Auth::check())
+            <a role="button"  class="hover:text-primary" href="{{ singleCategoryUrl(1,'خشکبار') }}" wire:navigate>
+                <x-icon name="o-user-plus"/>
+                <span class="text-xs">فروشگاه</span>
+            </a>
+        @else
+            <a  role="button" href="{{ route('panel.profile.profileDashboard') }}" class="hover:text-primary">
+                <x-icon name="o-user-circle"/>
+                <span class="text-xs"> پروفایل</span>
+            </a>
+        @endif
 
 
     </div>
