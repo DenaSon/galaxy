@@ -12,13 +12,24 @@
                    <b>{{ $order->title }}</b>
                    <x-hr/>
 
+
+
+               @endforeach
+
                    <x-card>
 
                        {{ $order->shipping_address }}
 
                    </x-card>
 
-               @endforeach
+
+
+                   <x-card>
+
+                       {{ $order->user->phone }}
+
+                   </x-card>
+
 
             </div>
 
