@@ -30,7 +30,7 @@
 
                 <span class="text-xs">سبد خرید</span>
             </a>
-
+@livewire('app.component.cart-box')
         @endif
 
 
