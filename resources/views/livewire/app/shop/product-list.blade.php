@@ -1,5 +1,7 @@
 <div class="container mx-auto">
-
+@push('SEO')
+    @include('livewire.app.shop.category-inc.seo')
+@endpush
     @include('livewire.app.shop.category-inc.top-menu')
 
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
