@@ -1,7 +1,7 @@
 <div>
 
     @if(Auth::check() && Auth::user()->carts->isNotEmpty())
-        <x-drawer wire:model="cartBox" class="w-11/12 lg:w-1/4 relative p-0 py-0 m-0" left style="z-index: 5">
+        <x-drawer wire:model="cartBox" class="w-11/12 lg:w-1/4 relative p-0 py-0 m-0" left>
 
 
             <div class="mt-0 pb-10  px-2">
