@@ -35,7 +35,7 @@
                 <div class="h-full">
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
-                            <img  alt="fruits" src="https://denapax.com/static/denapax-image/category-list/fruits-cate2.png" height="259"
+                            <img  alt="fruits" src="https://denapax.com/static/denapax-image/category-list/fruits-cate2.png" height="249" width="250"
                                  class="w-full h-auto transform group-hover:scale-125 transition-transform duration-500 ease-in-out"/>
                         </div>
                         <div class="flex justify-center items-center mt-4">
