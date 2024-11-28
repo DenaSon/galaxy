@@ -9,7 +9,7 @@
             <div class="relative h-56 overflow-hidden">
                 <img
                     src="{{ asset($blog->images->first()->file_path) }}"
-                    class="w-full h-full object-cover rounded-t-lg transition-transform duration-500 ease-in-out hover:scale-110"
+                    class="w-full h-full object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105"
                     alt="{{ $blog->title }}"
                 />
 
@@ -19,7 +19,7 @@
             </div>
 
 
-            <div class="p-2">
+            <div class="p-1">
                 <div class="text-center">
                     <h2 class="font-normal mt-2 text-sm text-gray-700 leading-snug">
                         {{ $blog->title }}
