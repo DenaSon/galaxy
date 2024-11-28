@@ -1,15 +1,15 @@
 <div>
 
     <x-modal wire:model="loginModal" class="backdrop-blur" box-class="w-96">
-        <div class="mb-5"></div>
+        <div class="flex items-center justify-center">
+        <div class="mb-2 text-gray-400">ورود | ثبتنام</div>
+        </div>
         <x-input wire:model="phoneNumber" label="شماره تلفن" inline></x-input>
 
         <div class="flex items-center justify-center">
 
-
             <x-button spinner="sendVerifySms" icon="o-arrow-left-start-on-rectangle" class="btn-primary w-2/4 mt-3"
                       label="ورود" wire:click="sendVerifySms"/>
-
         </div>
 
     </x-modal>
@@ -34,7 +34,7 @@
     @if(Auth::check())
         <x-button class="sm:text-sm text-xs"  link="{{ route('panel.profile.profileDashboard') }}"  icon="o-user-circle" label="پروفایل"/>
     @else
-        <x-button spinner="" class="sm:text-sm text-xs"  icon="o-user" label="ورود | ثبت‌نام" @click="$wire.loginModal = true"/>
+        <x-button spinner class="sm:text-sm text-xs"  icon="o-user" label="ورود | ثبت‌نام" @click="$wire.loginModal = true"/>
     @endif
 
 
