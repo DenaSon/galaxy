@@ -1,9 +1,17 @@
 <div>
 
     <x-modal wire:model="loginModal" class="backdrop-blur" box-class="w-96">
-        <div class="flex items-center justify-center">
-        <div class="mb-2 text-gray-400">ورود | ثبتنام</div>
+        <div class="flex items-center justify-center mb-2">
+
+            <x-button icon="o-information-circle" class="ms-2 bg-gray-50 btn-xs btn-ghost"
+
+                      tooltip-bottom="برای ورود یا ثبت‌نام، شماره تلفن خود را وارد کرده و کد یکبارمصرف ارسال‌شده را وارد کنید"></x-button> &nbsp;
+
+            <div class="text-gray-400 text-sm">ورود | ثبت‌نام</div>
         </div>
+
+
+
         <x-input wire:model="phoneNumber" label="شماره تلفن" inline></x-input>
 
         <div class="flex items-center justify-center">
