@@ -15,7 +15,7 @@ public Order $order;
 
     public function mount(Order $order)
     {
-
+        $this->order = $order;
     }
 
     public function render()
