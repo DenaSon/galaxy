@@ -163,6 +163,11 @@ class Login extends Component
 
     }
 
+    public function showTip()
+    {
+        $this->info('راهنما','جهت ورود و یا ثبت نام اولیه شماره تلفن خود را ثبت  کنید و کد یکبار مصرف را وارد کنید',css: 'bg-blue-500 text-white');
+    }
+
 
     public function render()
     {

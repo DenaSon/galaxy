@@ -1,9 +1,9 @@
 <div>
 
-    <x-modal wire:model="loginModal" class="backdrop-blur" box-class="w-96">
+    <x-modal wire:model="loginModal" class="backdrop-blur-0" box-class="w-96">
         <div class="flex items-center justify-center mb-2">
 
-            <x-button icon="o-information-circle" class="ms-2 bg-gray-50 btn-xs btn-ghost"
+            <x-button wire:click="showTip" icon="o-information-circle" class="ms-2 bg-gray-50 btn-xs btn-ghost"
 
                       tooltip-bottom="برای ورود یا ثبت‌نام، شماره تلفن خود را وارد کرده و کد یکبارمصرف ارسال‌شده را وارد کنید"></x-button> &nbsp;
 
