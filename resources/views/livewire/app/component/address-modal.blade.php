@@ -1,5 +1,5 @@
 <div>
-    <x-modal wire:model="addressModal" class="backdrop-blur" style="z-index: 1050">
+    <x-modal wire:model="addressModal" class="backdrop-blur">
         <div class="mb-2 text-center text-black"> ثبت آدرس </div>
         <x-hr/>
 
