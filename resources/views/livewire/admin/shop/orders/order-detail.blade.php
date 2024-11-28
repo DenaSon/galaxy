@@ -26,7 +26,7 @@
 
                    <x-card>
 
-                       {{ $order->user->phone }}
+
 
                    </x-card>
 
