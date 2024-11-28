@@ -35,17 +35,15 @@
 
 
 
-
-
         <a @click.stop="$dispatch('mary-search-open')" role="button"  class="hover:text-primary">
             <x-icon name="o-magnifying-glass"/>
             <span class="text-xs"> جستجو</span>
         </a>
 
         @if(!Auth::check())
-            <a role="button"  class="hover:text-primary" href="{{ singleCategoryUrl(1,'خشکبار') }}" wire:navigate>
+            <a role="button"  class="hover:text-primary" wire:click="openLogin">
                 <x-icon name="o-user-plus"/>
-                <span class="text-xs">فروشگاه</span>
+                <span class="text-xs">ورود | ثبت‌نام</span>
             </a>
         @else
             <a  role="button" href="{{ route('panel.profile.profileDashboard') }}" class="hover:text-primary">

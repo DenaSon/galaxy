@@ -16,6 +16,11 @@ use Toast;
         $this->title = 'Mobile Menu';
     }
 
+    public function openLogin()
+    {
+        $this->dispatch('openLoginModal');
+    }
+
 
     public function toaster()
     {
