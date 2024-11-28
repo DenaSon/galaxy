@@ -21,7 +21,7 @@
 
         @else
 
-            <a role="button"  class="hover:text-primary" >
+            <a role="button"  class="hover:text-primary" wire:click="showCart">
                 <div class="indicator">
                     <span class="indicator-item badge badge-primary badge-xs">{{ Auth::user()->carts()->count('id') }}</span>
 

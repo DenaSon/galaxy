@@ -20,7 +20,10 @@ use Toast;
     {
         $this->dispatch('openLoginModal');
     }
-
+    public function showCart()
+    {
+        $this->dispatch('openCartBox');
+    }
 
     public function toaster()
     {
