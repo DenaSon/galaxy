@@ -21,7 +21,7 @@
 
         @else
 
-            <a role="button"  class="hover:text-primary" @click.stop="$wire.loginModal = true">
+            <a role="button"  class="hover:text-primary" @click="$wire.loginModal = true">
                 <div class="indicator">
                     <span class="indicator-item badge badge-primary badge-xs">{{ Auth::user()->carts()->count('id') }}</span>
 
