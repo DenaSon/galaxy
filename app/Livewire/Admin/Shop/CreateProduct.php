@@ -76,8 +76,6 @@ class CreateProduct extends Component
 
     }
 
-
-
     public function uploadPhotos(Product $product)
     {
         if (!empty($this->photos)) {
