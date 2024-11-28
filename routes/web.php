@@ -91,6 +91,7 @@ Route::middleware(['auth:web',\App\Http\Middleware\RoleMiddleware::class.':maste
         Route::get('categories', \App\Livewire\Admin\Shop\Categories::class)->name('categories')->lazy();
         Route::get('attribute', CreateAttribute::class)->name('attribute')->lazy();
         Route::get('orders', OrderList::class)->name('orders');
+        Route::get('order-{order}', \App\Livewire\Admin\Shop\Orders\OrderDetail::class)->name('orderDetail');
     });
 });
 
