@@ -23,4 +23,4 @@
     ];
 @endphp
 
-<x-carousel :slides="$slides" class="z-0"/>
+<x-carousel without-arrows without-indicators :slides="$slides" class="z-0"/>
