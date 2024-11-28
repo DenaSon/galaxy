@@ -46,10 +46,46 @@
             -ms-overflow-style: scrollbar;
         }
 
+        .loader {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            z-index: 1000000000;
+        }
 
+        .loader svg {
+            display: block;
+            shape-rendering: auto;
+            animation: turn 1s linear infinite;
+        }
+
+        .loader svg path {
+            fill: #7286a2;
+        }
+
+        @keyframes turn {
+            0% {
+                transform: rotate(0deg)
+            }
+            100% {
+                transform: rotate(360deg)
+            }
+        }
 
     </style>
-
+    <div class="loader" role="loader">
+        <svg width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+            <path d="M35 50A15 15 0 0 0 65 50A15 16.5 0 0 1 35 50" stroke="none">
+                <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50.75;360 50 50.75"/>
+            </path>
+        </svg>
+    </div>
 
     @stack('cdn')
 
@@ -128,6 +164,18 @@
         @endif
         @livewire('app.home.mobile-menu')
         @include('livewire.app.layout.footer')
+        <script defer>
+            document.onreadystatechange = function() {
+                if (document.readyState !== "complete") {
+                    document.body.style.visibility = "hidden";
+                    document.querySelector('[role="loader"]').style.visibility = "visible";
+                } else {
+                    document.querySelector('[role="loader"]').style.display = "none";
+                    document.body.style.visibility = "visible";
+                }
+            };
+
+        </script>
     </x-slot:content>
 </x-main>
 
