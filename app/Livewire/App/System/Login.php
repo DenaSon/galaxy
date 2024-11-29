@@ -8,10 +8,12 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\RateLimiter;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
+use Throwable;
 
 #[Layout('components.layouts.app')]
 class Login extends Component
@@ -36,17 +38,23 @@ class Login extends Component
 
     public function sendVerifySms()
     {
-        $this->validate([
-            'phoneNumber' => 'required|numeric|digits:11',
-        ]);
+        try {
+            $this->validate([
+                'phoneNumber' => 'required|numeric|digits:11',
+            ]);
 
-        RateLimiter::attempt('sendVerifySms' . session()->getId(), 4, function () {
-
-
-            $this->sendSms();
+            RateLimiter::attempt('sendVerifySms' . session()->getId(), 5, function () {
 
 
-        });
+                $this->sendSms();
+
+
+            });
+        }
+        catch (Throwable $e)
+        {
+            Log::error($e->getMessage() . ' ' . $e->getFile() . ' ' . $e->getLine());
+        }
 
 
     }
@@ -74,6 +82,7 @@ class Login extends Component
 
         } catch (\Exception $e) {
             $this->error($e->getMessage());
+            Log::error($e->getMessage() . ' ' . $e->getFile() . ' ' . $e->getLine());
         }
 
     }
