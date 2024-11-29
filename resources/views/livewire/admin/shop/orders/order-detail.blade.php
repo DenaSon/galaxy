@@ -78,7 +78,7 @@
 
                         <div class="items-center mb-2">
                             <b> وزن کل : </b>
-                            <span>{{ $order->weight }}</span>
+                            <span>{{ $order->weight }} گرم</span>
                         </div>
 
                         <hr/>
