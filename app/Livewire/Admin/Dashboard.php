@@ -5,6 +5,7 @@ namespace App\Livewire\Admin;
 
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Carbon;
 use Livewire\Attributes\Title;
@@ -20,6 +21,7 @@ class Dashboard extends Component
     public $ordersCount;
     public $ordersSum;
     public $orderItemsCount;
+    public $bestProduct;
 
 
     public function overview()
@@ -30,6 +32,16 @@ class Dashboard extends Component
         $this->orderItemsCount = OrderItem::whereHas('order', function ($query) {
             $query->where('payment_status', 'paid');
         })->count('id');
+
+
+        $productWithMostOrders = OrderItem::select('product_id')
+            ->selectRaw('COUNT(*) as purchase_count')
+            ->groupBy('product_id')
+            ->orderByDesc('purchase_count')
+            ->first();
+        $this->bestProduct = Product::find($productWithMostOrders->product_id);
+
+
     }
 
     public function clearCart()
