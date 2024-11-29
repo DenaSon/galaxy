@@ -14,7 +14,7 @@
                         <tr>
                             <th>
                                 <label>
-                                    <input type="checkbox" class="checkbox"/>
+                                   محصول
                                 </label>
                             </th>
                             <th>تعداد</th>
@@ -61,32 +61,40 @@
 
                     <x-card subtitle="جزئیات سفارش" separator="">
 
-                    <div class="items-center mb-2">
-                        <b> نام و نام خانوادگی :  </b>
-                        <span>{{ $order->user->first_name }} {{ $order->user->last_name }}</span>
-                    </div>
+                        <div class="items-center mb-2">
+                            <b> نام و نام خانوادگی : </b>
+                            <span>{{ $order->user->first_name }} {{ $order->user->last_name }}</span>
+                        </div>
 
                         <div class="items-center mb-2">
-                            <b> شماره تلفن:  </b>
+                            <b> شماره تلفن: </b>
                             <span>{{ $order->user->phone }}</span>
                         </div>
 
                         <div class="items-center mb-2">
-                            <b> آدرس پستی :  </b>
+                            <b> آدرس پستی : </b>
                             <span>{{ $order->shipping_address }}</span>
+                        </div>
+
+                        <div class="items-center mb-2">
+                            <b> وزن کل : </b>
+                            <span>{{ $order->weight }}</span>
                         </div>
 
                         <hr/>
 
                         <div class="items-center mb-2">
-                            <b> هزینه پستی  </b>
+                            <b> هزینه پستی </b>
                             <span>{{ number_format($order->shipping_cost) }}</span>
                         </div>
                         <hr/>
                         <div class="items-center mb-2">
-                            <b>  پرداخت کل  </b>
+                            <b> پرداخت کل </b>
                             <span class="font-bold text-lg">{{ number_format($order->grand_total) }} تومان</span>
                         </div>
+                        <x-hr class="mb-2"/>
+                        <h4> {{ jdate($order->created_at)->toDateTimeString() }}</h4>
+
 
 
                     </x-card>
