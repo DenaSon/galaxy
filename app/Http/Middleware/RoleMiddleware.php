@@ -22,29 +22,29 @@ class RoleMiddleware
         // Check if the user is authenticated
         if (! $request->user() || ! $request->user()->hasRole($role))
         {
-            Log::warning('Unauthorized access attempt', [
-                'user_id' => $request->user()?->id,
-                'required_role' => $role,
-                'IP' => $request->ip() ?? 0,
-                'url' => $request->fullUrl(),
-                'payload' => $request->all(),
-                'User-Agent' => $request->header('User-Agent') ?? 'Unknown',
-                'timestamp' => now()->toDateTimeString(),
-                'token' => $request->bearerToken() ?? 'No Token',
-                'referrer' => $request->header('Referer') ?? 'No Referrer',
-
-
-            ]);
-
-            $details = [
-                'user_id' => $request->user()?->id,
-                'role' => $role,
-                'ip' => $request->ip(),
-                'url' => $request->fullUrl(),
-            ];
-            $master_email = getSetting('admin_email') ?? 'info@denapax.com';
-
-            Notification::route('mail', $master_email)->notify(new UnauthorizedAccessAlert($details));
+//            Log::warning('Unauthorized access attempt', [
+//                'user_id' => $request->user()?->id,
+//                'required_role' => $role,
+//                'IP' => $request->ip() ?? 0,
+//                'url' => $request->fullUrl(),
+//                'payload' => $request->all(),
+//                'User-Agent' => $request->header('User-Agent') ?? 'Unknown',
+//                'timestamp' => now()->toDateTimeString(),
+//                'token' => $request->bearerToken() ?? 'No Token',
+//                'referrer' => $request->header('Referer') ?? 'No Referrer',
+//
+//
+//            ]);
+//
+//            $details = [
+//                'user_id' => $request->user()?->id,
+//                'role' => $role,
+//                'ip' => $request->ip(),
+//                'url' => $request->fullUrl(),
+//            ];
+//            $master_email = getSetting('admin_email') ?? 'info@denapax.com';
+//
+//            Notification::route('mail', $master_email)->notify(new UnauthorizedAccessAlert($details));
 
 
             abort(403, 'Forbidden: Insufficient permissions');
