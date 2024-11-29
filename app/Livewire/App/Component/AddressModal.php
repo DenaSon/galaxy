@@ -73,7 +73,7 @@ class AddressModal extends Component
             $this->validate([
                 'province' => 'required|numeric|exists:provinces,id',
                 'city' => 'required|numeric|exists:cities,id',
-                'postal_code' => 'required|numeric|min_digits:9',
+                'postal_code' => 'required|string',
                 'address_line' => 'string|max:254|min:5',
                 'first_name' => 'required|string|max:120|min:3',
                 'last_name' => 'required|string|max:120|min:3',
