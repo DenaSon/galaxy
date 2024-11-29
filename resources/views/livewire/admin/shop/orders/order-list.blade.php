@@ -18,7 +18,7 @@
                     ];
                 @endphp
 
-                <x-table :headers="$headers" :rows="$order" selectable="true" striped="true"
+                <x-table :headers="$headers" :rows="$order"  striped="true"
                          empty-text="موردی وجود ندارد" with-pagination>
 
 
@@ -27,12 +27,13 @@
                     @endscope
 
                     @scope('cell_username', $order)
-                    {{ $order->user->first_name }} {{ $order->user->last_name }}
+                    {{ $order?->user?->first_name }} {{ $order?->user?->last_name }}
                     @endscope
 
 
                     @scope('cell_order_number', $order)
-                    <a href="{{ route('master.shop.orderDetail',['order'=>$order->id]) }}" wire:navigate>{{ $order->id }} </a>
+                    <a href="{{ route('master.shop.orderDetail',['order'=>$order->id]) }}"
+                       wire:navigate>{{ $order->id }} </a>
                     @endscope
 
                     @scope('cell_created_at', $order)
@@ -44,7 +45,6 @@
                     @scope('cell_grand_total', $order)
                     <b class="font-bold">{{ number_format($order->grand_total) }}</b>
                     @endscope
-
 
 
 

@@ -8,7 +8,7 @@
                     title="تعداد "
                     class="text-blue-700"
                     color="text-blue-500"
-                    description="شفارش‌ها"
+                    description="سفارش ها"
                     value="{{ $totalCount }}"
                     icon="o-list-bullet"
                 />

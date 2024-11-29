@@ -8,6 +8,8 @@ class Order extends Model
 {
 
 
+
+
     protected $fillable = [
         'user_id',
         'address_id',
@@ -29,6 +31,9 @@ class Order extends Model
         'payment_due_date',
         'weight'
     ];
+
+
+
     public  function scopeActive($query)
     {
         return $query->where('status', '!=', 'cancelled')->where('payment_status', '=', 'paid');
