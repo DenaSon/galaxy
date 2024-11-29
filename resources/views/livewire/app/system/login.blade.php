@@ -11,10 +11,7 @@
         </div>
 
 
-
-        <x-input  wire:model="phoneNumber" label="شماره تلفن" inline></x-input>
-
-
+        <x-input icon-right="o-phone" clearable  wire:model="phoneNumber" label="شماره تلفن" inline></x-input>
 
 
         <div class="flex items-center justify-center">
