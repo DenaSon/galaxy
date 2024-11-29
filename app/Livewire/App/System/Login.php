@@ -20,13 +20,13 @@ use Throwable;
 class Login extends Component
 {
     use Toast;
+
     protected $listeners = ['openLoginModal' => 'open'];
 
     public function open()
     {
         $this->loginModal = true;
     }
-
 
 
     public $pin;
@@ -46,19 +46,14 @@ class Login extends Component
 
             RateLimiter::attempt('sendVerifySms' . session()->getId(), 5, function () {
 
-
                 $this->sendSms();
 
-
             });
-        }
-        catch (ValidationException $e) {
+        } catch (ValidationException $e) {
 
-           $this->warning('صفحه کلید خود را به انگلیسی تغییر دهید',$e->getMessage());
+            $this->warning('صفحه کلید خود را به انگلیسی تغییر دهید', $e->getMessage());
             return;
-        }
-        catch (Throwable $e)
-        {
+        } catch (Throwable $e) {
             Log::error($e->getMessage() . ' ' . $e->getFile() . ' ' . $e->getLine());
         }
 
@@ -82,7 +77,7 @@ class Login extends Component
 
 
             sendVerifySms($phoneNumber, $template_id, $parameters);
-            sleep(0.700);
+
             $this->verifyModal = true;
 
 
@@ -130,15 +125,11 @@ class Login extends Component
                 $this->verifyModal = false;
                 Cache::forget('VerifyCode_' . $phoneNumber);
 
-                $this->info('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
+                $this->info('ثبت نام | ورود شما با موفقیت  انجام شد', '', '', 'o-check');
                 $this->dispatch('refreshPage');
 
 
-
-
-            }
-            else
-            {
+            } else {
 
                 $user = User::create([
                     'phone' => $phoneNumber,
@@ -157,14 +148,12 @@ class Login extends Component
 
                 Cache::forget('VerifyCode_' . $phoneNumber);
                 $this->verifyModal = false;
-                $this->info('ثبت نام | ورود شما با موفقیت  انجام شد','','','o-check');
+                $this->info('ثبت نام | ورود شما با موفقیت  انجام شد', '', '', 'o-check');
                 $this->dispatch('refreshPage');
 
             }
-        }
-        else
-        {
-            $this->warning('کد وارد شده صحیح نیست','','');
+        } else {
+            $this->warning('کد وارد شده صحیح نیست', '', '');
         }
 
     }
@@ -180,7 +169,7 @@ class Login extends Component
 
     public function showTip()
     {
-        $this->info('ثبت‌نام یا ورود به حساب','شماره تلفن خود را وارد کنید و منتظر دریافت کد باشید',css: 'bg-blue-500 text-white');
+        $this->info('ثبت‌نام یا ورود به حساب', 'شماره تلفن خود را وارد کنید و منتظر دریافت کد باشید', css: 'bg-blue-500 text-white');
     }
 
 
