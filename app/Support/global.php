@@ -97,7 +97,7 @@ function sendVerifySms(string $phoneNumber, int $templateID, array $parameters):
         $send = Smsir::send();
         $response = $send->Verify($phoneNumber, $templateID, $parameters);
 
-        if ($response->status == 200) {
+        if ($response->Status == 1) {
             return true;
         } else {
             \Illuminate\Support\Facades\Log::error('SMS sending failed: ' . $response->message);
@@ -105,6 +105,8 @@ function sendVerifySms(string $phoneNumber, int $templateID, array $parameters):
         }
     } catch (Throwable $e) {
         \Illuminate\Support\Facades\Log::error('Error sending SMS: ' . $e->getMessage());
+        \Illuminate\Support\Facades\Log::debug('SMS response: ' . print_r($response, true));
+
         return false;
     }
 
