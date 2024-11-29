@@ -12,7 +12,7 @@
 
 
 
-        <x-input pattern="09\d{9}" max="11" type="number" wire:model="phoneNumber" label="شماره تلفن" inline></x-input>
+        <x-input  wire:model="phoneNumber" label="شماره تلفن" inline></x-input>
 
 
 
