@@ -76,6 +76,18 @@
                             <span>{{ $order->shipping_address }}</span>
                         </div>
 
+                        <hr/>
+
+                        <div class="items-center mb-2">
+                            <b> هزینه پستی  </b>
+                            <span>{{ number_format($order->shipping_cost) }}</span>
+                        </div>
+                        <hr/>
+                        <div class="items-center mb-2">
+                            <b>  پرداخت کل  </b>
+                            <span class="font-bold text-lg">{{ number_format($order->grand_total) }} تومان</span>
+                        </div>
+
 
                     </x-card>
 
