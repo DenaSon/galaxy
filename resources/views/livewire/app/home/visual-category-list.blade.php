@@ -36,7 +36,7 @@
                     <article class="overflow-hidden flex flex-col items-stretch justify-start h-full">
                         <div class="flex grow relative flex-col">
                             <img  alt="fruits" src="https://denapax.com/static/denapax-image/category-list/fruits-cate2.png" style="height:155px" width="250"
-                                 class="w-full h-auto transform group-hover:scale-125 transition-transform duration-500 ease-in-out"/>
+                                 class="w-full  transform group-hover:scale-125 transition-transform duration-500 ease-in-out"/>
                         </div>
                         <div class="flex justify-center items-center mt-4">
                             <x-badge class="text-xs" value="میوه خشک"/>
