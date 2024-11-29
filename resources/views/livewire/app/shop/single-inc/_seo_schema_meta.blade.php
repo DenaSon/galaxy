@@ -1,4 +1,5 @@
 <link rel="canonical" href="{{  singleProductUrl($product->id, $product->name) }}" />
+<meta name="description" content="{{ $product->description }}"/>
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="product" />
 <meta property="og:title" content="{{ $product->name }}" />
