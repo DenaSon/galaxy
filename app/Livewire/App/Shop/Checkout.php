@@ -140,7 +140,7 @@ class Checkout extends Component
         } elseif ($this->calcWeightSum() > 1000 && $this->calcWeightSum() <= 2000) {
             return $this->calcWeightSum() * 45;
         } else {
-            return $this->calcWeightSum() * 35;
+            return $this->calcWeightSum() * 30;
         }
 
 
