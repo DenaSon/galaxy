@@ -138,9 +138,9 @@ class Checkout extends Component
         if ($this->calcWeightSum() <= 1000) {
             return getSetting('shipping_cost') ?? 59000;
         } elseif ($this->calcWeightSum() > 1000 && $this->calcWeightSum() <= 2000) {
-            return $this->calcWeightSum() * 45;
+            return $this->calcWeightSum() * 50;
         } else {
-            return $this->calcWeightSum() * 30;
+            return $this->calcWeightSum() * 35;
         }
 
 
