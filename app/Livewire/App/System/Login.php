@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
@@ -50,6 +51,11 @@ class Login extends Component
 
 
             });
+        }
+        catch (ValidationException $e) {
+
+           $this->warning('صفحه کلید خود را به انگلیسی تغییر دهید',$e->getMessage());
+            return;
         }
         catch (Throwable $e)
         {
