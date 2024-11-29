@@ -1,17 +1,17 @@
-<link rel="canonical" href="{{  singleProductUrl($product->id, $product->name) }}" />
+<link rel="canonical" href="{{  singleProductUrl($product->id, $product->name) }}"/>
 <meta name="description" content="{{ strip_tags($product->description) }}"/>
-<meta name="robots" content="index, follow" />
-<meta property="og:type" content="product" />
-<meta property="og:title" content="{{ $product->name }}" />
-<meta property="og:description" content="{{ Str::limit($product->description, 200) }}" />
-<meta property="og:image" content="{{ asset($product->images->first()?->file_path ?? 'default-image.jpg') }}" />
-<meta property="og:url" content="{{ singleProductUrl($product->id, $product->name) }}" />
-<meta property="og:site_name" content="{{ getSetting('website_title') ?? 'DenaPax' }}" />
-<meta property="og:locale" content="fa_IR" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{{ $product->name }}" />
-<meta name="twitter:description" content="{{ Str::limit($product->description, 160) }}" />
-<meta name="twitter:image" content="{{ asset($product->images->first()?->file_path ?? 'default-image.jpg') }}" />
+<meta name="robots" content="index, follow"/>
+<meta property="og:type" content="product"/>
+<meta property="og:title" content="{{ $product->name }}"/>
+<meta property="og:description" content="{{ Str::limit($product->description, 200) }}"/>
+<meta property="og:image" content="{{ asset($product->images->first()?->file_path ?? 'default-image.jpg') }}"/>
+<meta property="og:url" content="{{ singleProductUrl($product->id, $product->name) }}"/>
+<meta property="og:site_name" content="{{ getSetting('website_title') ?? 'DenaPax' }}"/>
+<meta property="og:locale" content="fa_IR"/>
+<meta name="twitter:card" content="{{ asset($product->images->first()?->file_path ?? 'default-image.jpg') }}"/>
+<meta name="twitter:title" content="{{ $product->name }}"/>
+<meta name="twitter:description" content="{{ Str::limit($product->description, 160) }}"/>
+<meta name="twitter:image" content="{{ asset($product->images->first()?->file_path ?? 'default-image.jpg') }}"/>
 
 
 <script type="application/ld+json">
