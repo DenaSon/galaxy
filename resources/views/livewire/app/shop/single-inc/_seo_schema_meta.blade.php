@@ -1,5 +1,5 @@
 <link rel="canonical" href="{{  singleProductUrl($product->id, $product->name) }}" />
-<meta name="description" content="{{ $product->description }}"/>
+<meta name="description" content="{{ strip_tags($product->description) }}"/>
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="product" />
 <meta property="og:title" content="{{ $product->name }}" />
@@ -19,7 +19,7 @@
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "{{ $product->name }}",
-  "description": "{{ $product->description }}",
+  "description": "{{ strip_tags($product->description) }}",
   "image": [
     "{{ asset($product->images->get(0)->file_path ?? '') }}",
     "{{ asset($product->images->get(1)->file_path ?? '') }}"
