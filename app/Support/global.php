@@ -105,7 +105,7 @@ function sendVerifySms(string $phoneNumber, int $templateID, array $parameters):
         }
     } catch (Throwable $e) {
         \Illuminate\Support\Facades\Log::error('Error sending SMS: ' . $e->getMessage());
-        \Illuminate\Support\Facades\Log::debug('SMS response: ' . print_r($response, true));
+
 
         return false;
     }
