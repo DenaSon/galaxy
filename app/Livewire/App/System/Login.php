@@ -39,7 +39,7 @@ class Login extends Component
 
     public function sendVerifySms()
     {
-        convertPersianNumbers($this->phoneNumber);
+
         try {
             $this->validate([
                 'phoneNumber' => 'required|numeric|digits:11',
