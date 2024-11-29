@@ -3,24 +3,46 @@
 namespace App\Livewire\Admin;
 
 
-use Illuminate\Support\Facades\Auth;
-use Livewire\Attributes\Title;use Livewire\Component;
+use App\Models\Order;
+use App\Models\OrderItem;
+use App\Models\User;
+use Illuminate\Support\Carbon;
+use Livewire\Attributes\Title;
+use Livewire\Component;
 use Mary\Traits\Toast;
+
 #[Title('داشبورد')]
 class Dashboard extends Component
 {
     use Toast;
 
-    public bool $myModal1 = false;
+    public $usersCount;
+    public $ordersCount;
+    public $ordersSum;
+    public $orderItemsCount;
 
 
-    public function showMe()
+    public function overview()
     {
-        $this->warning(
-            'It is working with redirect',
-            'You were redirected to another url ...',
+        $this->usersCount = User::count('id');
+        $this->ordersCount = Order::where('payment_status', 'paid')->count('id');
+        $this->ordersSum = Order::where('payment_status','paid')->sum('grand_total');
+        $this->orderItemsCount = OrderItem::whereHas('order', function ($query) {
+            $query->where('payment_status', 'paid');
+        })->count('id');
+    }
 
-        );
+    public function clearCart()
+    {
+        $orders = Order::where('payment_status','pending')->where('created_at', '<', Carbon::now()->subHours(2))->get();
+
+        foreach ($orders as $order)
+        {
+            $order->orderItems()->delete();
+
+            $order->delete();
+
+        }
     }
 
 

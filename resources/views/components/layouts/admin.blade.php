@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="font-sans antialiased" style="font-family: IRANSans,serif !important;">
+<body class="font-sans antialiased" style="font-family: denapax-font,serif !important;">
 
 
 <x-nav sticky full-width>
