@@ -66,8 +66,8 @@ try {
 
         $this->sendSuccessOrderSms($this->order->id);
         $order = Order::find($this->order->id);
-        $supportPhone  = getSetting('support_phone') ?? '09173434796';
-        $this->sendOrderSmsToMaster(number_format($order->grand_total),$order->id,$order->user?->first_name. ' '. $order->user?->last_name,$supportPhone,jdate($order->created_at));
+
+        $this->sendOrderSmsToMaster(number_format($order->grand_total),$order->id,$order->user?->first_name. ' '. $order->user?->last_name,$order->user->phone,jdate($order->created_at));
 
     }
     else
@@ -104,8 +104,9 @@ try {
         'datetime' => $datetime,
 
     ];
+    $supportPhone  = getSetting('support_phone') ?? '09173434796';
 
-    sendSms($params, \Auth::user()->phone, $template_id);
+    sendSms($params, $supportPhone, $template_id);
 }
 catch (Throwable $e) {
     Log::error('Payment callback sms failed', ['error' => $e->getMessage() . $e->getFile() . $e->getLine()]);
