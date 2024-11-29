@@ -12,7 +12,10 @@
 
 
 
-        <x-input wire:model="phoneNumber" label="شماره تلفن" inline></x-input>
+        <x-input type="number" wire:model="phoneNumber" label="شماره تلفن" inline></x-input>
+
+
+
 
         <div class="flex items-center justify-center">
 
