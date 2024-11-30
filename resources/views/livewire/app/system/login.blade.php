@@ -11,13 +11,13 @@
         </div>
 
 
-        <x-input icon-right="o-phone"   wire:model="phoneNumber" label="شماره تلفن" inline></x-input>
+        <x-input icon-right="o-phone"   wire:model="phoneNumber" label="شماره همراه" inline></x-input>
 
 
         <div class="flex items-center justify-center">
 
             <x-button spinner="sendVerifySms" icon="o-arrow-left-start-on-rectangle" class="btn-primary w-2/4 mt-3"
-                      label="ورود" wire:click="sendVerifySms"/>
+                      label="تایید و ادامه" wire:click="sendVerifySms"/>
         </div>
 
     </x-modal>
