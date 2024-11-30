@@ -16,7 +16,7 @@
 
         <div class="flex items-center justify-center">
 
-            <x-button spinner="sendVerifySms" icon="o-arrow-left-start-on-rectangle" class="btn-primary w-2/4 mt-3"
+            <x-button spinner="sendVerifySms" icon="o-arrow-left-start-on-rectangle" class="btn-primary w-2/4 mt-3 rounded-lg"
                       label="تایید و ادامه" wire:click="sendVerifySms"/>
         </div>
 
