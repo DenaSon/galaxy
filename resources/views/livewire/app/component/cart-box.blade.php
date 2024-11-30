@@ -90,7 +90,7 @@
                 <!-- Order Button -->
                 @if(Auth::user()->addresses()->count('id') > 0)
                     <x-button
-                        spinner="payment"
+                        spinner="registerOrder"
                         wire:click.debounce.250ms="registerOrder"
                         label="ثبت سفارش"
                         icon="o-shopping-bag"
@@ -98,7 +98,7 @@
                         aria-label="ثبت سفارش - خرید سبد خرید" />
                 @else
                     <x-button
-                        spinner="payment"
+                        spinner="regAddress"
                         wire:click="regAddress"
                         label="ثبت سفارش"
                         icon="o-shopping-bag"

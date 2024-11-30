@@ -1,4 +1,4 @@
-<div>
+<article>
     <div class="flex gap-4 h-full">
 
         <div class="flex-1  h-16 ">
@@ -88,4 +88,4 @@
     </div>
 
 
-</div>
+</article>
