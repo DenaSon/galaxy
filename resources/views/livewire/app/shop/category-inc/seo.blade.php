@@ -9,25 +9,26 @@
 <meta property="og:site_name" content="{{ getSetting('website_title') }}">
 
 <script type="application/ld+json">
+    @php
+        $itemList = [];
+        foreach ($category->products as $index => $product) {
+            $itemList[] = [
+                "@type" => "ListItem",
+                "position" => $index + 1,
+                "url" => singleProductUrl($product->id, $product->name),
+                "name" => $product->name,
+                "image" => asset($product->images()->first()->file_path ?? ''),
+                "price" => number_format($product->variants->min('price')),
+                "priceCurrency" => "IRT"
+            ];
+        }
+    @endphp
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "{{ $category->name }}",
-  "url": "{{ singleCategoryUrl($category->id, $category->name) }}",
-  "itemListElement": [
-    @foreach ($category->products as $index => $product)
-        {
-          "@type": "ListItem",
-          "position": {{ $index + 1 }},
-        "url": "{{ singleProductUrl($product->id,$product->name) }}",
-        "name": "{{ $product->name }}",
-        "image": "{{ asset($product->images()->first()->file_path ?? '') ?? '' }}",
-        "price": "{{ number_format($product->variants->min('price'))  }}",
-        "priceCurrency": "IRT"
-      } @if (!$loop->last)
-            ,
-        @endif
-    @endforeach
-    ]
-  }
+      "url": "{{ singleCategoryUrl($category->id, $category->name) }}",
+      "itemListElement": @json($itemList)
+    }
 </script>
+
