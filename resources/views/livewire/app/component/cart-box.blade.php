@@ -25,7 +25,7 @@
                                             src="{{ asset($cart->product->images->first()->file_path) }}"
                                             alt="تصویر محصول"
                                             class="w-16 h-16 rounded object-cover mr-4 shadow-sm"
-                                        >
+                                        > &nbsp;
                                         <h3 class="text-xs font-medium">
                                             {{ $cart->product->name }}
                                             <b class="text-xs"> ({{ $cart->variant->type }}) </b>
