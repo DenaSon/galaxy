@@ -23,6 +23,8 @@ class Dashboard extends Component
     public $orderItemsCount;
     public $bestProduct;
 
+    public $conversionRate = 0;
+
 
     public function overview()
     {
@@ -42,7 +44,24 @@ class Dashboard extends Component
         $this->bestProduct = Product::find($productWithMostOrders->product_id);
 
 
+        $this->conversionRate = $this->calcConversionRate();
+
+
     }
+
+    private function calcConversionRate(): float
+    {
+        $views = Product::sum('views') ?? 0;
+        $orders = $this->ordersCount ?? 0;
+
+        if ($views === 0) {
+            return 0;
+        }
+
+        $rate = ($orders / $views) * 100;
+        return (float) $rate;
+    }
+
 
     public function clearCart()
     {

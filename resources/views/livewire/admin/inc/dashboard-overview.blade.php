@@ -46,7 +46,7 @@
 
         <x-stat
             title="فروش"
-            description="مجموع فروش"
+            description="با نرخ تبدیل {{ $conversionRate }}%"
             value="{{ number_format($ordersSum) }}"
             icon="o-currency-dollar"
             class="text-green-500"
