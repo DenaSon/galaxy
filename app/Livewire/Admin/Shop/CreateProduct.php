@@ -20,7 +20,6 @@ use Throwable;
 
 #[Title('محصول')]
 #[Layout('components.layouts.admin')]
-
 class CreateProduct extends Component
 {
     use Toast, WithFileUploads;
@@ -82,7 +81,7 @@ class CreateProduct extends Component
             $product = Product::find($this->productId);
             foreach ($this->photos as $photo) {
                 $path = $photo->store('product_images', 'public');
-                $product->images()->firstorcreate(['file_path' =>$path]);
+                $product->images()->firstorcreate(['file_path' => $path]);
                 $this->photo_list = $product->images;
 
 
@@ -133,13 +132,10 @@ class CreateProduct extends Component
     }
 
 
-
-
-
     public function publish()
     {
         $this->validate([
-            'unit' =>'required|string',
+            'unit' => 'required|string',
             'description' => 'required|string|max:220',
             'name' => 'required|string|max:255',
             'discount' => 'numeric|nullable|max:100|min:0',
@@ -180,7 +176,15 @@ class CreateProduct extends Component
 
         $this->selectedCategories = $product->categories->where('parent_id', '=', null)->pluck('id')->toArray();
         $this->subCategories = Category::whereIn('parent_id', $this->selectedCategories)->get();
-        $this->selectedSubCategories = Category::whereIn('parent_id', $this->selectedCategories)->get()->pluck('id')->toArray();
+
+        $this->selectedSubCategories = Category::whereHas('products', function ($query) {
+            $query->where('products.id', $this->productId);
+        })
+            ->whereIn('parent_id', $this->selectedCategories)
+            ->get()
+            ->pluck('id')
+            ->toArray();
+
 
         $this->photo_list = $product->images;
 
@@ -227,7 +231,7 @@ class CreateProduct extends Component
                 'weight' => $variant['weight'],
             ]);
         }
-        $this->variants[] = ['type' => '', 'price' => '','weight' => ''];
+        $this->variants[] = ['type' => '', 'price' => '', 'weight' => ''];
 
 
         $this->variant_list = $product->variants()->get();
@@ -266,16 +270,14 @@ class CreateProduct extends Component
             } while (\App\Models\Product::where('sku', $sku)->exists());
 
             return $sku;
-        }
-        catch (Throwable $e)
-        {
+        } catch (Throwable $e) {
             Log::error($e->getMessage());
         }
     }
 
     public function render()
     {
-        $categories_list = Category::whereParentId(null)->where('type','=','product')->latest()->get();
+        $categories_list = Category::whereParentId(null)->where('type', '=', 'product')->latest()->get();
 
         return view('livewire.admin.shop.create-product', compact('categories_list'));
 
