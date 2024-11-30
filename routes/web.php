@@ -9,6 +9,7 @@ use App\Livewire\Admin\Shop\CreateAttribute;
 use App\Livewire\Admin\Shop\CreateProduct;
 use App\Livewire\Admin\Shop\ListProduct;
 use App\Livewire\Admin\Shop\Orders\OrderList;
+use App\Livewire\Admin\Shop\PriceManagement;
 use App\Livewire\App\Blog\SingleBlog;
 use App\Livewire\App\Home\HomeIndex;
 use App\Livewire\App\Profile\Order\OrderDetails;
@@ -92,6 +93,9 @@ Route::middleware(['auth:web',\App\Http\Middleware\RoleMiddleware::class.':maste
         Route::get('attribute', CreateAttribute::class)->name('attribute')->lazy();
         Route::get('orders', OrderList::class)->name('orders');
         Route::get('order-{order}', \App\Livewire\Admin\Shop\Orders\OrderDetail::class)->name('orderDetail');
+
+        //prices
+        Route::get('price-management', PriceManagement::class)->name('price-management');
     });
 });
 

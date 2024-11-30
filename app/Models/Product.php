@@ -12,6 +12,11 @@ class Product extends Model
 {
 
 
+    public function getNameSkuAttribute()
+    {
+        return $this->name . ' - ' . $this->sku;
+    }
+
     public function scopeActive(Builder $query): Builder
     {
         return $query->where('is_active', true);
