@@ -45,7 +45,8 @@ class CartBox extends Component
     public function increaseQty(Cart $cart)
     {
         Gate::authorize('access-cart', $cart);
-        $cart->increment('quantity');
+        $cart->quantity = $cart->quantity +1;
+        $cart->save();
         $this->getTotalCost();
     }
 
@@ -54,7 +55,8 @@ class CartBox extends Component
         Gate::authorize('access-cart', $cart);
 
         if ($cart->quantity > 1) {
-            $cart->decrement('quantity');
+            $cart->quantity = $cart->quantity -1;
+            $cart->save();
         } else {
             $cart->delete();
             // $this->cartBox = false;
