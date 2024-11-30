@@ -13,7 +13,7 @@
 
 
         <x-menu-item title="تامین کنندگان" icon="o-user-group" link=""/>
-
+        <x-menu-item title="صفحات" icon="o-book-open" link="{{ route('master.page.createPage') }}"/>
 
     </x-menu-sub>
 

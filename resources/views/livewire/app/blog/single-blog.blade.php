@@ -1,12 +1,12 @@
 <div>
-@push('SEO')
-    @include('livewire.app.blog.inc.schema-script')
-@endpush
+    @push('SEO')
+        @include('livewire.app.blog.inc.schema-script')
+    @endpush
     <article class="container mx-auto lg:px-2 2xl:px-0 mt-2">
 
         @include('livewire.app.blog.inc.top-menu')
 
-         <div class="flex flex-col lg:flex-row gap-4 mt-4">
+        <div class="flex flex-col lg:flex-row gap-4 mt-4">
 
 
             @include('livewire.app.blog.inc.blog-image')
@@ -21,8 +21,6 @@
 
 
             </div>
-
-
 
         </div>
     </article>

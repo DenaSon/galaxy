@@ -9,6 +9,7 @@ use App\Livewire\Admin\Shop\CreateAttribute;
 use App\Livewire\Admin\Shop\CreateProduct;
 use App\Livewire\Admin\Shop\ListProduct;
 use App\Livewire\Admin\Shop\Orders\OrderList;
+use App\Livewire\Admin\Shop\Pages\CreatePage;
 use App\Livewire\Admin\Shop\PriceManagement;
 use App\Livewire\App\Blog\SingleBlog;
 use App\Livewire\App\Home\HomeIndex;
@@ -18,6 +19,7 @@ use App\Livewire\App\Profile\ProfileDashboard;
 use App\Livewire\App\Shop\Checkout;
 use App\Livewire\App\Shop\CheckoutPayment;
 use App\Livewire\App\Shop\ProductList;
+use App\Livewire\App\Shop\SinglePage;
 use App\Livewire\App\Shop\SingleProduct;
 use Illuminate\Support\Facades\Route;
 
@@ -40,10 +42,12 @@ Route::name('home.')->group(function () {
 
     });
 
+        Route::get('page/{page}/{slug}', SinglePage::class)->name('singlePage');
 
-    Route::prefix('blog')->name('blog.')->group(function () {
+        Route::prefix('blog')->name('blog.')->group(function () {
 
         Route::get('/{blog}/{slug}', SingleBlog::class)->name('singleBlog');
+
 
     });
 
@@ -83,6 +87,11 @@ Route::middleware(['auth:web',\App\Http\Middleware\RoleMiddleware::class.':maste
         Route::get('edit/{blog}', EditBlog::class)->name('edit');
         Route::get('list', ListBlog::class)->name('list')->lazy();
         Route::get('categories', Categories::class)->name('categories')->lazy();
+    });
+
+    Route::prefix('page')->name('page.')->group(function ()
+    {
+        Route::get('create', CreatePage::class)->name('createPage');
     });
 
     // Shop subgroup
