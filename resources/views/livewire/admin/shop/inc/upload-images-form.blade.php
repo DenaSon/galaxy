@@ -18,7 +18,7 @@
             @foreach($photo_list as $photo)
 
                 <div class="relative" wire:key="{{$photo->id}}">
-                    <img src="{{ $photo->file_path }}" alt="Image" class="w-52 h-32 rounded">
+                    <img src="{{ asset($photo->file_path) }}" alt="Image" class="w-32 h-28 rounded-lg">
                     <x-button
                         spinner
                         wire:confirm="تصویر حذف شود؟"
