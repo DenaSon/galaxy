@@ -13,19 +13,39 @@ class PriceManagement extends Component
 use Toast;
     public $selectedProduct;
 
-    public $variants;
+    public $variants = [];
+    public $weight;
+    public $price;
+
+
+    public function save($index)
+    {
+
+        $variant = Variant::find($this->variants[$index]['id']);
+
+        if ($variant) {
+
+            $variant->price = $this->variants[$index]['price'];
+            $variant->weight = $this->variants[$index]['weight'];
+            $variant->save();
+
+
+            $this->warning('ذخیره', 'تغییرات ذخیره شد!');
+        }
+    }
 
 
 
     public function mount()
     {
+       // $this->variants_array = Variant::all()->toArray();
 
     }
 
 
     public function updatedSelectedProduct($value)
     {
-        $this->variants = Variant::where('product_id', $value)->get();
+        $this->variants = Variant::where('product_id', $value)->get()->toArray();
     }
 
     public function render()

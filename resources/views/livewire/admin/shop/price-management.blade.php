@@ -11,31 +11,49 @@
         no-result-text="محصول  وجود ندارد"
         single
     />
-
     @if($variants)
 
-        <h2>{{ \App\Models\Product::whereId($selectedProduct)?->first()?->name }}</h2>
+        <h2 class="text-lg font-bold mb-4">
+            {{ \App\Models\Product::whereId($selectedProduct)?->first()?->name }}
+        </h2>
 
-       @foreach($variants as $variant)
+        <div class="flex flex-wrap justify-start gap-2"> <!-- برای ردیف کنار هم در دسکتاپ -->
+            @foreach($variants as $index => $variant)
+                <x-card
+                    separator
+                    progress-indicator=""
+                    subtitle="{{ $variant['type'] }}"
+                    class="w-full sm:w-72 flex flex-col items-center border-b border-s-2 border-primary rounded-lg bg-gray-50 p-4"
+                    wire:key="variant-{{ $variant['id'] }}"
+                >
+                    <label for="price-{{ $variant['id'] }}" class="block text-sm font-medium mb-2">قیمت</label>
+                    <input
+                        id="price-{{ $variant['id'] }}"
+                        type="text"
+                        wire:model="variants.{{ $index }}.price"
+                        class="form-control input-sm w-full mb-3"
+                    >
 
-           <x-card separator progress-indicator="" subtitle="{{ $variant->type }}" class="w-96 flex flex-wrap items-center border-s rounded-lg bg-gray-200 m-3 p-1" wire:key="{{ $variant->id }}">
+                    <label for="weight-{{ $variant['id'] }}" class="block text-sm font-medium mb-2">وزن</label>
+                    <input
+                        id="weight-{{ $variant['id'] }}"
+                        type="text"
+                        wire:model="variants.{{ $index }}.weight"
+                        class="form-control input-sm w-full mb-3"
+                    >
 
+                    <x-button
+                        wire:click="save({{ $index }})"
+                        wire:confirm="اطلاعات برای نوع محصول ذخیره شود؟"
+                        label="ذخیره"
+                        class="w-full btn-xs"
+                    />
+                </x-card>
+            @endforeach
 
-               <label for="price">قیمت</label>
-               <input id="price" type="text" value="{{ $variant->price }}" class="form-control input-sm">
-
-               <label for="weight">وزن</label>
-               <input id="weight" type="text" value="{{ $variant->weight }}" class="form-control input-sm">
-
-               <x-button wire:click.debounce="save({{$variant->id}})" label="ذخیره" />
-
-
-           </x-card>
-
-       @endforeach
+        </div>
 
     @endif
-
 
 
 </div>
