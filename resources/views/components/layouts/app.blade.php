@@ -2,11 +2,13 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
+    <link rel="preload" href="https://denapax.com/admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ $title ?? config('app.name') }}</title>
     @stack('SEO')
     @stack('styles')
+
 
     <style>
         @font-face {
