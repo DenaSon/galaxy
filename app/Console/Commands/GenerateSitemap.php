@@ -50,7 +50,7 @@ class GenerateSitemap extends Command
         $blogs = \App\Models\Blog::all();
         foreach ($blogs as $blog) {
             $sitemap->add(
-                Url::create('/blog/' . $blog->id . '/' . slugMaker($blog->name))
+                Url::create('/blog/' . $blog->id . '/' . slugMaker($blog->title))
                     ->setPriority(0.9)
                     ->setLastModificationDate($blog->updated_at)
                     ->setChangeFrequency('weekly')
