@@ -1,11 +1,11 @@
 @php
-    $slide0 = asset('static/slider/slider2.jpg');
+    $slide0 = asset('static/slider/alooo-slider2.jpg');
     $slide1 = asset('static/slider/nuts_slide1.jpg');
     $slide2 = asset('static/slider/slider2.jpg');
     $slides = [
 
        [
-    'image' => $slide2,
+    'image' => $slide0,
     'title' => 'انواع لواشک',
     'description' => 'لواشک‌های خوشمزه و طبیعی دناپکس، طعمی بی‌نظیر از دل طبیعت به خانه شما',
     'url' => singleCategoryUrl(3,'لواشک'),
