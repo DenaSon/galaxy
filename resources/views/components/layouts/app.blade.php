@@ -136,6 +136,10 @@
         @livewire('app.home.mobile-menu')
         @include('livewire.app.layout.footer')
 
+        @if(!request()->routeIs('home.product.singleProduct'))
+            @livewire('app.component.cart-box')
+        @endif
+
     </x-slot:content>
 </x-main>
 
