@@ -60,7 +60,7 @@
 
 
         <div class="flex w-full sm:w-1/3 order-1 md:order-2 relative">
-            @livewire('app.component.add-to-cart-card',['product' => $product])
+
         </div>
     </div>
 
