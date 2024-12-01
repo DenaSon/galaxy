@@ -16,7 +16,7 @@ class Spotlight
         try {
             // Validate the search input
             $request->validate([
-                'search' => 'required|string|max:60|alpha_num',
+                'search' => 'required|string|max:50|alpha_num',
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
 
@@ -37,7 +37,7 @@ class Spotlight
                 return [
 
                     'name' => $product->name,
-                    'icon' => Blade::render("<x-icon name='o-bolt' />"),
+                    'avatar' => asset($product->images->first()->file_path),
                     'description' => $product->description,
                     'link' => singleProductUrl($product->id,slugMaker($product->name)),
                 ];
