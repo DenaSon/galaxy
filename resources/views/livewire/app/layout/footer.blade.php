@@ -53,9 +53,6 @@
     <footer class="footer bg-base-50 text-base-content p-10 container mx-auto">
 
 
-
-
-
         <nav>
             <h6 class="footer-title">دسترسی سریع</h6>
             <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>'درباره-ما']) }}" class="link link-hover">درباره ما</a>
