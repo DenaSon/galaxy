@@ -17,9 +17,9 @@ var __copyProps = (to, from, except, desc) => {
 };
 var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target, mod));
 
-// node_modules/alpinejs/dist/module.cjs.js
+// ../alpine/packages/alpinejs/dist/module.cjs.js
 var require_module_cjs = __commonJS({
-  "node_modules/alpinejs/dist/module.cjs.js"(exports, module) {
+  "../alpine/packages/alpinejs/dist/module.cjs.js"(exports, module) {
     var __create2 = Object.create;
     var __defProp2 = Object.defineProperty;
     var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -1484,7 +1484,7 @@ var require_module_cjs = __commonJS({
         return;
       }
       let addedNodes = [];
-      let removedNodes = [];
+      let removedNodes = /* @__PURE__ */ new Set();
       let addedAttributes = /* @__PURE__ */ new Map();
       let removedAttributes = /* @__PURE__ */ new Map();
       for (let i = 0; i < mutations.length; i++) {
@@ -1496,11 +1496,15 @@ var require_module_cjs = __commonJS({
               return;
             if (!node._x_marker)
               return;
-            removedNodes.push(node);
+            removedNodes.add(node);
           });
           mutations[i].addedNodes.forEach((node) => {
             if (node.nodeType !== 1)
               return;
+            if (removedNodes.has(node)) {
+              removedNodes.delete(node);
+              return;
+            }
             if (node._x_marker)
               return;
             addedNodes.push(node);
@@ -2871,7 +2875,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       get raw() {
         return raw;
       },
-      version: "3.14.4",
+      version: "3.14.5",
       flushAndStopDeferringMutations,
       dontAutoEvaluateFunctions,
       disableEffectScheduling,
@@ -10405,12 +10409,19 @@ document.addEventListener("livewire:navigated", () => {
 });
 globalDirective("current", ({ el, directive: directive2, cleanup }) => {
   let expression = directive2.expression;
+  let options = {
+    exact: directive2.modifiers.includes("exact"),
+    strict: directive2.modifiers.includes("strict")
+  };
   if (expression.startsWith("#"))
     return;
+  if (!el.hasAttribute("href"))
+    return;
   let href = el.getAttribute("href");
+  let hrefUrl = new URL(href, window.location.href);
   let classes = expression.split(" ").filter(String);
   let refreshCurrent = (url) => {
-    if (href === url.pathname) {
+    if (pathMatches(hrefUrl, url, options)) {
       el.classList.add(...classes);
     } else {
       el.classList.remove(...classes);
@@ -10420,6 +10431,22 @@ globalDirective("current", ({ el, directive: directive2, cleanup }) => {
   onPageChanges.set(el, refreshCurrent);
   cleanup(() => onPageChanges.delete(el));
 });
+function pathMatches(hrefUrl, actualUrl, options) {
+  if (hrefUrl.hostname !== actualUrl.hostname)
+    return false;
+  let hrefPath = options.strict ? hrefUrl.pathname : hrefUrl.pathname.replace(/\/+$/, "");
+  let actualPath = options.strict ? actualUrl.pathname : actualUrl.pathname.replace(/\/+$/, "");
+  if (options.exact) {
+    return hrefPath === actualPath;
+  }
+  let hrefPathSegments = hrefPath.split("/");
+  let actualPathSegments = actualPath.split("/");
+  for (let i = 0; i < hrefPathSegments.length; i++) {
+    if (hrefPathSegments[i] !== actualPathSegments[i])
+      return false;
+  }
+  return true;
+}
 
 // js/directives/shared.js
 function toggleBooleanStateDirective(el, directive2, isTruthy, cachedDisplay = null) {
