@@ -10,7 +10,7 @@
 
                 <img
                     src="{{ $blog->images->first()->file_path }}"
-                    class="w-full h-full object-fill rounded-t-lg"
+                    class="w-full h-full object-fit rounded-t-lg"
                     alt="{{ $blog->title }}"
                 />
 
