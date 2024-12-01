@@ -197,11 +197,19 @@ function filterProduct(string $attributeName, string $attributeValue, string $fi
  * @param string|null $key
  * @return mixed
  */
+$settingsCache = null;
+
 function getSettings(): array
 {
-    return cache()->remember('site_settings', now()->addDays(7), function () {
-        return Setting::pluck('value', 'key')->toArray();
-    });
+    global $settingsCache;
+
+    if ($settingsCache === null) {
+        $settingsCache = cache()->remember('site_settings', now()->addDays(7), function () {
+            return Setting::pluck('value', 'key')->toArray();
+        });
+    }
+
+    return $settingsCache;
 }
 
 function getSetting(string $key): mixed
