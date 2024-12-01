@@ -18,7 +18,6 @@
 
                 <span class="text-xs">سبد خرید</span>
             </a>
-
         @else
 
             <a role="button"  class="hover:text-primary" wire:click="showCart">
