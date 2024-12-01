@@ -1,4 +1,4 @@
-<div class="w-full max-w-md mx-auto m-2">
+<div class="w-full max-w-md mx-auto">
     <a
         class="block relative bg-white overflow-hidden rounded-lg shadow-lg border border-gray-200"
         wire:navigate
