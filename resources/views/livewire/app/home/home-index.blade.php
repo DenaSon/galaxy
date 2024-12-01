@@ -26,14 +26,14 @@
 
     <div class="container mx-auto lg:px-4 2xl:px-0 mt-2">
         <div
-            class="px-2 lg:px-3  bg-white lg:rounded-large border-1 border-gradient-to-r from-blue-500 to-green-500 rounded-lg shadow-lg p-6">
+            class="px-2 lg:px-3  bg-white lg:rounded-large border-1 border-gradient-to-r from-blue-500 to-green-500 rounded-lg shadow-lg p-4">
             <div class="flex items-center justify-center py-3 lg:py-4 mb-2">
 
                 <h3 class="text-h3"> خواندنی های دناپکس </h3>
 
 
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+            <div class="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-9">
                 @foreach($blogs as $blog)
 
                     @livewire('app.component.blog-card', ['blog' => $blog], key($blog->id))
