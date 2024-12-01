@@ -42,9 +42,7 @@
     "availableLanguage": ["en", "fa"]
   },
   "sameAs": [
-    "{{ getSetting('facebook_url') ?? '' }}",
-    "{{ getSetting('instagram_url') ?? '' }}",
-    "{{ getSetting('linkedin_url') ?? '' }}"
+    "https://www.instagram.com/denapax/",
   ],
   "potentialAction": {
     "@type": "SearchAction",
