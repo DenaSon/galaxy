@@ -27,7 +27,7 @@ use Toast;
 
     public function toaster()
     {
-       $this->toast('سبد خرید','هنوز محصولی به سبد خرید اضافه نکرده اید',css: 'bg-primary text-white');
+       $this->info('سبد خرید','هنوز محصولی به سبد خرید اضافه نکرده اید',css: 'bg-primary text-white');
     }
 
     public function render()
