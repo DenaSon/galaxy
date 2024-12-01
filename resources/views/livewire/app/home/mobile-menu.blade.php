@@ -8,7 +8,7 @@
             <span class="text-xs">خانه</span>
         </a>
 
-        @if(!Auth::check() || \App\Models\Cart::count() < 1)
+        @if(!Auth::check() || Cart::count() < 1)
             <a  @click.stop="$wire.toaster" role="button"  class="hover:text-primary">
                 <div class="indicator">
                     <span class="indicator-item badge badge-primary badge-xs">0</span>
