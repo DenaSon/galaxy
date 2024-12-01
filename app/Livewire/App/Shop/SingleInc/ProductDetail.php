@@ -18,7 +18,7 @@ class ProductDetail extends Component
 
 
 
-    public function mount()
+    public function mount(Product $product)
     {
 
     }
