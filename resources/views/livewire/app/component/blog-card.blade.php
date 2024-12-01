@@ -14,9 +14,9 @@
                     alt="{{ $blog->title }}"
                 />
 
-                                <x-badge
-                                    value="{{ $blog->categories->first()->name }}"
-                                    class="absolute top-3 left-3  text-xs px-3 py-1 rounded-lg shadow-md font-medium"/>
+{{--                                <x-badge--}}
+{{--                                    value="{{ $blog->categories->first()->name }}"--}}
+{{--                                    class="absolute top-3 left-3  text-xs px-3 py-1 rounded-lg shadow-md font-medium"/>--}}
             </div>
 
 
