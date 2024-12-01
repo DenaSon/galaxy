@@ -15,20 +15,10 @@
 
                     <x-icon name="o-shopping-cart"/>
                 </div>
-
                 <span class="text-xs">سبد خرید</span>
             </a>
         @else
 
-            <a role="button"  class="hover:text-primary" wire:click="showCart">
-                <div class="indicator">
-                    <span class="indicator-item badge badge-primary badge-xs">{{ Auth::user()->carts()->count('id') }}</span>
-
-                    <x-icon name="o-shopping-cart"/>
-                </div>
-
-                <span class="text-xs">سبد خرید</span>
-            </a>
 
         @endif
 
