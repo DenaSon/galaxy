@@ -42,6 +42,19 @@ class GenerateSitemap extends Command
                     ->setLastModificationDate($product->updated_at)
                     ->setChangeFrequency('weekly')
             );
+
+
+        }
+
+        // Add dynamic pages (e.g., products)
+        $blogs = \App\Models\Blog::all();
+        foreach ($blogs as $blog) {
+            $sitemap->add(
+                Url::create('/blog/' . $product->id . '/' . slugMaker($product->name))
+                    ->setPriority(0.9)
+                    ->setLastModificationDate($product->updated_at)
+                    ->setChangeFrequency('weekly')
+            );
         }
 
 
