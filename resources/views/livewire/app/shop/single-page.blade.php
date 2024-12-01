@@ -1,14 +1,12 @@
 <div>
     @push('SEO')
-        @include('livewire.app.shop.page-inc.seo')
+        {!! $page->schema !!}
     @endpush
     <article class="container mx-auto lg:px-2 2xl:px-0 mt-2">
 
         <div class="w-full border rounded-box p-2 pt-3">
 
-            <x-icon name="o-clock" label="{{ getArticleReadTime($page->content,650) }} دقیقه زمان  مطالعه" class="text-xs text-violet-400"/>
-            &nbsp;
-            <x-icon name="o-tag" label="دسته : {{ $page->categories->first()->name }} " class="text-xs text-violet-400"/>
+
 
 
         </div>
@@ -16,8 +14,6 @@
 
         <div class="flex flex-col lg:flex-row gap-4 mt-4">
 
-
-            @include('livewire.app.blog.inc.blog-image')
 
 
             <div class="w-full lg:w-5/6 h-auto  mt-5">
