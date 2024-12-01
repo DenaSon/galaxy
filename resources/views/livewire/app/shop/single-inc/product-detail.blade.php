@@ -67,7 +67,23 @@
 
     <div class="flex flex-col gap-1 h-auto mt-4">
 
+        <div class="w-full rounded-md mt-4">
+            <x-tabs wire:model="selectedTab" class="mb-5">
 
+                <x-tab name="productFeature" icon="o-queue-list" label="ویژگی‌ها">
+                    @include('livewire.app.shop.single-inc._product-features')
+                </x-tab>
+
+                <x-tab name="productComment" label="دیدگاه‌ها">
+                    <div>@include('livewire.app.shop.single-inc._product-comments')</div>
+                </x-tab>
+
+                <x-tab name="productSendComment" label="ارسال دیدگاه">
+                    @livewire('app.shop.single-inc.send-comment-form',['product' => $product],key($product->id))
+                </x-tab>
+
+            </x-tabs>
+        </div>
 
     </div>
 
