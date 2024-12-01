@@ -54,7 +54,7 @@
 
         <div class="flex w-full sm:w-2/3 order-2 md:order-1">
 
-            @include('livewire.app.shop.single-inc._productDetails')
+
 
         </div>
 
