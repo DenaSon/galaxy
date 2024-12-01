@@ -43,6 +43,7 @@
   },
   "sameAs": [
     "https://www.instagram.com/denapax/",
+    "https://www.instagram.com/sisakhtzib"
   ],
   "potentialAction": {
     "@type": "SearchAction",
