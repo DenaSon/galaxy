@@ -1,7 +1,5 @@
 <div>
-    @push('SEO')
-        {!! $page->schema !!}
-    @endpush
+
     <article class="container mx-auto lg:px-2 2xl:px-0 mt-2">
 
         <div class="flex flex-col lg:flex-row gap-4 mt-4">
@@ -19,3 +17,6 @@
     </article>
 
 </div>
+@push('SEO')
+    {!! $page->schema !!}
+@endpush
