@@ -33,7 +33,7 @@ class EditBlog extends Component
         $this->validate([
             'title' => 'required|string|max:255',
             'content' => 'string',
-            'photo' => 'nullable|image', // Photo should be nullable for updates
+            'photo' => 'nullable',
             'selectedCategories' => 'required|exists:categories,id',
             'additionalInfo' => 'nullable|string|max:224'
         ]);
