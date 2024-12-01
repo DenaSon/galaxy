@@ -1,6 +1,6 @@
-<div class="w-full max-w-md mx-auto">
+<div class="w-full max-w-md mx-auto m-1">
     <a
-        class="block relative bg-white overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-100 transition-all duration-300 border border-gray-200"
+        class="block relative bg-white overflow-hidden rounded-lg shadow-lg border border-gray-200"
         wire:navigate
         href="{{ singleBlogUrl($blog,$blog->title) }}">
         <div class="flex flex-col h-full">
