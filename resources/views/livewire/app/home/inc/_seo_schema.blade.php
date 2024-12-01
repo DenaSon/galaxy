@@ -39,7 +39,7 @@
     "telephone": "{{ getSetting('support_phone') ?? '+98-9173434796' }}",
     "contactType": "Customer Support",
     "areaServed": "IR",
-    "availableLanguage": ["en", "fa"]
+    "availableLanguage": ["fa"]
   },
   "sameAs": [
     "https://www.instagram.com/denapax/",
