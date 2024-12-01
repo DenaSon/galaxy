@@ -22,9 +22,9 @@
 <meta name="twitter:description" content="{{ getSetting('meta_description') ?? 'Discover premium-quality local souvenirs, nuts, and dried fruits from DenaPax.' }}" />
 <meta name="twitter:image" content="{{ asset('images/home-og-image.jpg') }}" />
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}" />
-<link rel="icon" type="image/png" sizes="64x64" href="{{ asset('favicon-64x64.png') }}" />
+{{--<!-- Favicon -->--}}
+{{--<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}" />--}}
+{{--<link rel="icon" type="image/png" sizes="64x64" href="{{ asset('favicon-64x64.png') }}" />--}}
 
 <!-- Structured Data -->
 <script type="application/ld+json">
