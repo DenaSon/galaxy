@@ -6,11 +6,11 @@
         <div class="flex flex-col h-full">
 
 
-            <div class="relative h-20 overflow-hidden p-2">
+            <div class="relative h-20 overflow-hidden p-0">
 
                 <img
                     src="{{ $blog->images->first()->file_path }}"
-                    class="w-full h-full object-cover rounded-t-lg "
+                    class="w-full h-full object-cover rounded-t-lg m-1 "
                     alt="{{ $blog->title }}"
                 />
 
