@@ -64,7 +64,7 @@
 
         <nav>
             <h6 class="footer-title">شرکت</h6>
-            <a wire:navigate href="{{ route('home.singlePage',['slug'=>'درباره-ما']) }}" class="link link-hover">درباره ما</a>
+            <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>'درباره-ما']) }}" class="link link-hover">درباره ما</a>
             <a class="link link-hover">تماس با ما</a>
             <a class="link link-hover">چشم انداز</a>
             <a class="link link-hover">همکاری</a>
