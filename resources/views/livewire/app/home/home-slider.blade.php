@@ -1,4 +1,5 @@
 @php
+    $slide0 = asset('static/slider/slider2.jpg');
     $slide1 = asset('static/slider/nuts_slide1.jpg');
     $slide2 = asset('static/slider/slider2.jpg');
     $slides = [
