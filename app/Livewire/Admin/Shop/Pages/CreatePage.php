@@ -5,7 +5,7 @@ use App\Models\Page;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
-#[Layout('components.layouts.app')]
+#[Layout('components.layouts.admin')]
 
 class CreatePage extends Component
 {
