@@ -53,29 +53,16 @@
     <footer class="footer bg-base-50 text-base-content p-10 container mx-auto">
 
 
-        <nav>
-            <h6 class="footer-title">خدمات ما</h6>
-            <a class="link link-hover">خرید عمده</a>
-            <a class="link link-hover">بسته‌بندی هدیه</a>
-            <a class="link link-hover">سفارش سفارشی</a>
-            <a class="link link-hover">ارسال سریع</a>
-        </nav>
+
 
 
         <nav>
-            <h6 class="footer-title">شرکت</h6>
+            <h6 class="footer-title">دسترسی سریع</h6>
             <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>'درباره-ما']) }}" class="link link-hover">درباره ما</a>
             <a class="link link-hover">تماس با ما</a>
             <a class="link link-hover">چشم انداز</a>
-            <a class="link link-hover">همکاری</a>
         </nav>
 
-        <nav>
-            <h6 class="footer-title">قانونی</h6>
-            <a class="link link-hover">شرایط استفاده</a>
-            <a class="link link-hover">سیاست حفظ حریم خصوصی</a>
-            <a class="link link-hover">سیاست ها</a>
-        </nav>
 
         <aside>
             <x-icon name="o-sparkles" class="h-20 w-20 text-primary"></x-icon>
