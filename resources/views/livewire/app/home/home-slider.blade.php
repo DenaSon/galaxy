@@ -3,6 +3,17 @@
     $slide1 = asset('static/slider/nuts_slide1.jpg');
     $slide2 = asset('static/slider/slider2.jpg');
     $slides = [
+
+       [
+    'image' => $slide2,
+    'title' => 'انواع لواشک',
+    'description' => 'لواشک‌های خوشمزه و طبیعی دناپکس، طعمی بی‌نظیر از دل طبیعت به خانه شما',
+    'url' => singleCategoryUrl(3,'لواشک'),
+    'urlText' => 'مشاهده محصولات',
+]
+,
+
+
  [
     'image' => $slide1,
     'title' => 'آجیل مغزها',
