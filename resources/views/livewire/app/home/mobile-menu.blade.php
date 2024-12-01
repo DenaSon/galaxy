@@ -22,8 +22,6 @@
 
         @endif
 
-
-
         <a @click.stop="$dispatch('mary-search-open')" role="button"  class="hover:text-primary">
             <x-icon name="o-magnifying-glass"/>
             <span class="text-xs"> جستجو</span>
