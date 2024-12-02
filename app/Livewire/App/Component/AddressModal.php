@@ -23,6 +23,8 @@ class AddressModal extends Component
 
     public User $user;
 
+    public $tipText;
+
     public $city_list = [];
     public $province_list = [];
 
@@ -43,7 +45,7 @@ class AddressModal extends Component
     public $last_name;
 
 
-    public $addressModal = false;
+    public $addressModal = true;
 
     #[On('openAddressModal')]
     public function openAddressModal(): void
@@ -144,6 +146,12 @@ class AddressModal extends Component
     {
         $this->validate(['last_name' => 'required|string|max:120']);
         $this->user->update(['last_name' => $this->last_name]);
+    }
+
+
+    public function showTip()
+    {
+        $this->tipText = 'صفحه کلید خود را در حالت انگیسی قرار دهید';
     }
 
     public function render()

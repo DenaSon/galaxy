@@ -1,6 +1,19 @@
 <div>
     <x-modal wire:model="addressModal" class="backdrop-blur-none">
-        <div class="mb-2 text-center text-black"> ثبت آدرس </div>
+        <div class="mb-2 text-center text-black">
+            ثبت آدرس
+            &nbsp;
+            <x-button icon="o-question-mark-circle" class="btn-circle btn-xs text-yellow-500" wire:click="showTip"/>
+        </div>
+
+        @if($tipText)
+            <x-alert dismissible title="" class="bg-violet-400 text-violet-50">
+                <small class="p-2">هنگام وارد کردن کد پستی صفحه کلید خود را در حالت انگلیسی قرار دهید</small>
+            </x-alert>
+        @endif
+
+
+
         <x-hr/>
 
         <div class="grid grid-cols-2 gap-4">
@@ -33,7 +46,7 @@
 
         <x-select inline label="انتخاب شهر" icon="o-user" :options="$city_list" wire:model="city" class="mb-2" />
 
-        <x-input inline label="کد پستی" clearable wire:model.live="postal_code" hint="کد پستی 10 رقمی" hint-class="font-thin text-gray-400"/>
+        <x-input type="number" inline label="کد پستی" clearable wire:model.live="postal_code" hint="کد پستی 10 رقمی" hint-class="font-thin text-gray-400"/>
 
         <x-textarea inline label="آدرس دقیق پستی" wire:model="address_line"/>
 
