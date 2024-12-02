@@ -29,6 +29,13 @@
                         <li class="flex justify-between items-center bg-gray-50 p-4 rounded-md border border-gray-200">
                             <span class="text-gray-700">{{ \Illuminate\Support\Str::limit($file->file_path,30,'...') }}</span>
                             <img class="w-20 h-25" src="{{ asset($file->file_path) }}"/>
+                            <button
+                                wire:confirm="حذف شود؟"
+                                wire:click="deleteFile({{ $file->id }})"
+                                class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 btn-sm">
+                                حذف
+                            </button>
+
                         </li>
 
                    @endforeach

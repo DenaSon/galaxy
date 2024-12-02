@@ -17,6 +17,23 @@ class UploadCenter extends Component
 
 
 
+    public function deleteFile($id)
+    {
+
+        $media = Media::findOrFail($id);
+
+
+        if (\Storage::disk('public')->exists($media->file_path)) {
+            \Storage::disk('public')->delete($media->file_path);
+        }
+
+        $media->delete();
+
+
+        $this->success('حذف شد', 'فایل با موفقیت حذف شد');
+    }
+
+
 
     public function uploadFiles()
     {
