@@ -29,7 +29,9 @@
 
                         <li class="flex justify-between items-center bg-gray-50 p-4 rounded-md border border-gray-200">
                             <span class="text-gray-700">{{ \Illuminate\Support\Str::limit($file->file_path,30,'...') }}</span>
-                            <img class="w-20 h-25" src="{{ asset($file->file_path) }}"/>
+                           <a href="{{ asset($file->file_path) }}" target="_blank">
+                               <img class="w-20 h-25" src="{{ asset($file->file_path) }}"/>
+                           </a>
                             <button
                                 wire:confirm="حذف شود؟"
                                 wire:click="deleteFile({{ $file->id }})"
