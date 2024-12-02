@@ -45,7 +45,7 @@ class AddressModal extends Component
     public $last_name;
 
 
-    public $addressModal = true;
+    public $addressModal = false;
 
     #[On('openAddressModal')]
     public function openAddressModal(): void
