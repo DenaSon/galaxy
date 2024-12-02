@@ -10,3 +10,5 @@ Artisan::command('inspire', function () {
 
 Schedule::command('app:generate-sitemap')->everyMinute()->withoutOverlapping();
 Schedule::command('app:copy-sitemap')->everyMinute()->withoutOverlapping();
+
+
