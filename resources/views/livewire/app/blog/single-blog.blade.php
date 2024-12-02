@@ -15,7 +15,7 @@
             <div class="w-full lg:w-5/6 h-auto  mt-5">
                 <h1 class="text-center font-black text-2xl mb-3"> {{ $blog->title }}</h1>
 
-                <div class="!text-sm !font-normal !leading-9 text-justify mb-5">
+                <div class="!text-sm !font-normal !leading-10 text-justify mb-5 single-blog">
                     {!! $blog->content !!}
                 </div>
 

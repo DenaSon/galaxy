@@ -1,0 +1,110 @@
+.single-blog
+{
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #e7e6f4;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.single-blog p {
+    font-size: 1.105rem; /* اندازه فونت */
+    line-height: 1.5rem; /* فاصله خطوط */
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.single-blog h1,
+.single-blog h2,
+.single-blog h3 {
+    font-family: 'denapax-font', serif;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.single-blog h1 {
+    font-size: 2.1rem;
+    border-bottom: 3px solid #491eff;
+    padding-bottom: 10px;
+}
+
+.single-blog h2 {
+    font-size: 1.7rem;
+    border-bottom: 2px solid #c6b6fd;
+    border-radius: 5px;
+    padding-bottom: 8px;
+}
+
+.single-blog h3 {
+    font-size: 1.55rem;
+}
+.single-blog img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 20px 5px;
+}
+
+.single-blog blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #491eff;
+    margin: 1.5em 20px;
+    padding: 1em 20px;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-style: italic; /* برای زیبایی بیشتر */
+    font-family: 'denapax-font', serif; /* فونت جذاب برای نقل‌قول */
+    color: #555; /* رنگ خاکی برای متن */
+    line-height: 1.6; /* فاصله خطوط برای خوانایی بهتر */
+}
+
+.single-blog blockquote:before {
+    color: #927dea; /* رنگ آبی برای علامت نقل‌قول */
+    content: open-quote;
+    font-size: 3.5em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+.single-blog blockquote p {
+    display: inline;
+    font-size: 1.25rem; /* اندازه متن نقل‌قول */
+    color: #333; /* رنگ تیره‌تر برای متن */
+}
+
+.single-blog ul,
+.single-blog ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.single-blog ul li,
+.single-blog ol li {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.single-blog ul li::before {
+    content: "•";
+    color: #3498db;
+    margin-right: 10px;
+}
+
+.single-blog ol {
+    list-style-type: decimal;
+}
+.single-blog a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.single-blog a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
