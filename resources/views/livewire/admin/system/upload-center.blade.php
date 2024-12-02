@@ -1,12 +1,12 @@
 <div>
 
-    <x-card class="container mx-auto p-6">
+    <x-card class="container mx-auto p-6" title="آپلود فایل">
 
 
 
         <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
             <x-hr target="uploadFiles"/>
-            <h2 class="text-xl font-semibold mb-4">آپلود فایل</h2>
+
             <x-file wire:model="files" label="Upload File" multiple />
 
             <x-button spinner="uploadFiles" label="Upload" wire:click="uploadFiles" class="m-4"/>
