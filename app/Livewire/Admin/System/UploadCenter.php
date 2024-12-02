@@ -21,7 +21,7 @@ class UploadCenter extends Component
     public function uploadFiles()
     {
         $this->validate([
-            'files.*' => 'required|max:2048',
+            'files.*' => 'required|max:2048|image',
         ]);
         if (!empty($this->files)) {
 
@@ -44,7 +44,7 @@ class UploadCenter extends Component
 
     public function render()
     {
-       $file_list = Media::paginate(20);
+       $file_list = Media::latest()->paginate(20);
         return view('livewire.admin.system.upload-center',compact('file_list'))
             ->title('آپلود فایل');
     }

@@ -8,6 +8,8 @@
 
             <x-button label="Upload" wire:click="uploadFiles" class="m-4"/>
 
+            <span class="m-2 font-bold" wire:loading>درحال آپلود</span>
+
         </div>
 
         <div class="clear-both">
@@ -25,7 +27,7 @@
                    @foreach($file_list as $file)
 
                         <li class="flex justify-between items-center bg-gray-50 p-4 rounded-md border border-gray-200">
-                            <span class="text-gray-700">{{ $file->file_path }}</span>
+                            <span class="text-gray-700">{{ \Illuminate\Support\Str::limit($file->file_path,30,'...') }}</span>
                             <img class="w-20 h-25" src="{{ asset($file->file_path) }}"/>
                         </li>
 
