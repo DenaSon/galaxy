@@ -67,6 +67,15 @@ class AddressModal extends Component
         $this->city_list = City::where('province_id', $value)->get();
     }
 
+    public function updatedPostalCode($value)
+    {
+        $persianNumbers = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+        $englishNumbers = ['0','1','2','3','4','5','6','7','8','9'];
+
+        $this->postal_code = str_replace($persianNumbers, $englishNumbers, $value);
+        $this->warning('Enter valid postal code');
+    }
+
     public function save()
     {
         $this->validate([
