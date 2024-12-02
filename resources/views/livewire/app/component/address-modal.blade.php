@@ -35,6 +35,7 @@
 
 
         <div x-data="{
+    postalCode: '',
     updateToEnglish(event) {
         const persianNumbers = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
         const englishNumbers = ['0','1','2','3','4','5','6','7','8','9'];
@@ -46,17 +47,23 @@
             value = value.replaceAll(persianNumbers[i], englishNumbers[i]);
         }
 
+        this.postalCode = value; // Update the Alpine.js data
         event.target.value = value; // Update the input field value
     }
 }">
             <x-input
                 placeholder="کد پستی"
-                class="input-sm p-2 mt-2 mb-3"
-                wire:model="postal_code"
+                class="input-sm p-2 mt-2 mb-2"
                 type="text"
                 @input="updateToEnglish($event)"
             />
+
+            <!-- Label to display the input value -->
+            <label class="text-gray-700 text-sm mt-2 block">
+                مقدار وارد شده: <span x-text="postalCode"></span>
+            </label>
         </div>
+
 
 
         <x-textarea inline label="آدرس دقیق پستی" wire:model="address_line"/>
