@@ -88,7 +88,6 @@ class AddressModal extends Component
             'province' => 'required|numeric|exists:provinces,id',
             'city' => 'required|numeric|exists:cities,id',
             'address_line' => 'string|max:254|min:5',
-            'postal_code' => 'required|numeric',
             'first_name' => 'required|string|max:120|min:3',
             'last_name' => 'required|string|max:120|min:3',
         ]);
