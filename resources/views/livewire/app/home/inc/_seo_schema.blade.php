@@ -45,10 +45,6 @@
     "https://www.instagram.com/denapax/",
     "https://www.instagram.com/sisakhtzib"
   ],
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "{{ url('/search?q={search_term_string}') }}",
-    "query-input": "required name=search_term_string"
-  }
+
 }
 </script>
