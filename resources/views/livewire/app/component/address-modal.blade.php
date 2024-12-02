@@ -7,7 +7,7 @@
         </div>
 
         @if($tipText)
-            <x-alert dismissible title="" class="bg-violet-400 text-violet-50">
+            <x-alert shadow dismissible title="" class="bg-violet-400 text-violet-50">
                 <small class="p-2">هنگام وارد کردن کد پستی صفحه کلید خود را در حالت انگلیسی قرار دهید</small>
             </x-alert>
         @endif
