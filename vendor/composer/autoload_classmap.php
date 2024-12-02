@@ -6,7 +6,10 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\CopySitemap' => $baseDir . '/app/Console/Commands/CopySitemap.php',
+    'App\\Console\\Commands\\DeployBuildFolder' => $baseDir . '/app/Console/Commands/DeployBuildFolder.php',
     'App\\Console\\Commands\\GenerateSitemap' => $baseDir . '/app/Console/Commands/GenerateSitemap.php',
+    'App\\Console\\Commands\\SendLogEmail' => $baseDir . '/app/Console/Commands/SendLogEmail.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Middleware\\ConvertToPersianNumbers' => $baseDir . '/app/Http/Middleware/ConvertToPersianNumbers.php',
     'App\\Http\\Middleware\\RoleMiddleware' => $baseDir . '/app/Http/Middleware/RoleMiddleware.php',
