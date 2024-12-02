@@ -8,7 +8,7 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote')->hourly();
 
 
-Schedule::command('app:generate-sitemap')->everyMinute()->withoutOverlapping();
-Schedule::command('app:copy-sitemap')->everyMinute()->withoutOverlapping();
+Schedule::command('app:generate-sitemap')->everyTwoHours()->withoutOverlapping();
+Schedule::command('app:copy-sitemap')->everyFourHours()->withoutOverlapping();
 
 
