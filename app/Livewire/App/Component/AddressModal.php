@@ -78,6 +78,12 @@ class AddressModal extends Component
 
     public function save()
     {
+
+        // Ensure postal_code is converted before validation
+        $persianNumbers = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+        $englishNumbers = ['0','1','2','3','4','5','6','7','8','9'];
+        $this->postal_code = str_replace($persianNumbers, $englishNumbers, $this->postal_code);
+
         $this->validate([
             'province' => 'required|numeric|exists:provinces,id',
             'city' => 'required|numeric|exists:cities,id',
