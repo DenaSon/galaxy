@@ -1,14 +1,15 @@
 <div>
 
     <div class="container mx-auto p-6">
+        <x-progress value="12" max="100" class="progress-warning h-3" />
 
         <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
             <h2 class="text-xl font-semibold mb-4">آپلود فایل</h2>
             <x-file wire:model="files" label="Upload File" multiple />
 
-            <x-button label="Upload" wire:click="uploadFiles" class="m-4"/>
+            <x-button spinner="uploadFiles" label="Upload" wire:click="uploadFiles" class="m-4"/>
 
-            <span class="m-2 font-bold" wire:loading>درحال آپلود</span>
+
 
         </div>
 
