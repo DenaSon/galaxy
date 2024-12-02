@@ -32,7 +32,7 @@
 
 .single-blog h2 {
     font-size: 1.7rem;
-    border-bottom: 2px solid #ded7f6;
+    border-bottom: 2px solid #d9d2e3;
     border-radius: 2px;
     padding-bottom: 8px;
 }
@@ -108,4 +108,23 @@
 .single-blog a:hover {
     color: #2980b9;
     text-decoration: underline;
+}
+
+.pax-img-thumbnail {
+
+    border: 2px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px; /* Padding around the image */
+    width: 100%; /* Makes the image responsive */
+    max-width: 250px; /* Maximum width of the thumbnail */
+    height: auto; /* Maintains aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.pax-img-thumbnail:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+
+
 }
