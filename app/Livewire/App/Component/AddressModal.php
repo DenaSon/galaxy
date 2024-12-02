@@ -68,16 +68,17 @@ class AddressModal extends Component
 
     public function save()
     {
+        $this->validate([
+            'province' => 'required|numeric|exists:provinces,id',
+            'city' => 'required|numeric|exists:cities,id',
+            'postal_code' => 'nullable|string',
+            'address_line' => 'string|max:254|min:5',
+            'first_name' => 'required|string|max:120|min:3',
+            'last_name' => 'required|string|max:120|min:3',
+        ]);
 
         try {
-            $this->validate([
-                'province' => 'required|numeric|exists:provinces,id',
-                'city' => 'required|numeric|exists:cities,id',
-                'postal_code' => 'nullable|string',
-                'address_line' => 'string|max:254|min:5',
-                'first_name' => 'required|string|max:120|min:3',
-                'last_name' => 'required|string|max:120|min:3',
-            ]);
+
 
             $address = new Address();
             $address->user_id = $this->user->id;
