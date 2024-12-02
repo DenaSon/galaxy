@@ -1,5 +1,5 @@
 <div>
-    <x-modal wire:model="addressModal" class="backdrop-blur">
+    <x-modal wire:model="addressModal" class="backdrop-blur-none">
         <div class="mb-2 text-center text-black"> ثبت آدرس </div>
         <x-hr/>
 
@@ -33,7 +33,8 @@
 
         <x-select inline label="انتخاب شهر" icon="o-user" :options="$city_list" wire:model="city" class="mb-2" />
 
-        <x-input placeholder="کد پستی" class="input-sm p-2 mt-2 mb-2" wire:model="postal_code" type="number"/>
+        <x-input inline label="کد پستی" clearable wire:model.live="postal_code" hint="کد پستی 10 رقمی" hint-class="mb-2"/>
+
         <x-textarea inline label="آدرس دقیق پستی" wire:model="address_line"/>
 
         <x-slot:actions>

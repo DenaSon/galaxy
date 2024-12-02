@@ -73,7 +73,7 @@ class AddressModal extends Component
         $englishNumbers = ['0','1','2','3','4','5','6','7','8','9'];
 
         $this->postal_code = str_replace($persianNumbers, $englishNumbers, $value);
-        $this->warning('Enter valid postal code');
+
     }
 
     public function save()
@@ -82,6 +82,7 @@ class AddressModal extends Component
             'province' => 'required|numeric|exists:provinces,id',
             'city' => 'required|numeric|exists:cities,id',
             'address_line' => 'string|max:254|min:5',
+            'postal_code' => 'required|numeric',
             'first_name' => 'required|string|max:120|min:3',
             'last_name' => 'required|string|max:120|min:3',
         ]);
