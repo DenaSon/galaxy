@@ -4,7 +4,9 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Throwable;
 
 class SendLogEmail extends Command
 {
@@ -34,22 +36,29 @@ class SendLogEmail extends Command
     public function handle()
     {
 
-        $logFile = storage_path('logs/laravel.log');
+        try {
+            $logFile = storage_path('logs/laravel.log');
 
 
-        if (File::exists($logFile)) {
+            if (File::exists($logFile)) {
 
-            $logContent = File::get($logFile);
+                $logContent = File::get($logFile);
 
 
-            Mail::raw($logContent, function ($message) {
-                $message->to(getSetting('admin_email') ?? 'info@denapax.com')
-                    ->subject('Laravel Log File');
-            });
+                Mail::raw($logContent, function ($message) {
+                    $message->to(getSetting('admin_email') ?? 'info@denapax.com')
+                        ->subject('Laravel Log File');
+                });
 
-            $this->info('Log file has been sent via email.');
-        } else {
-            $this->error('Log file does not exist.');
+                $this->info('Log file has been sent via email.');
+            } else {
+                $this->error('Log file does not exist.');
+            }
         }
+        catch (Throwable $e)
+        {
+            Log::debug($e->getMessage());
+        }
+
     }
 }
