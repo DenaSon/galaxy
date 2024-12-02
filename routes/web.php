@@ -79,7 +79,8 @@ Route::middleware([\App\Http\Middleware\RoleMiddleware::class.':customer','auth:
 Route::middleware(['auth:web',\App\Http\Middleware\RoleMiddleware::class.':master','throttle:15,2'])->prefix('master')->name('master.')->group(function () {
     // Master Dashboard route
     Route::get('/', Dashboard::class)->name('dashboard')->lazy();
-    Route::get('system/setting', \App\Livewire\Admin\System\Setting::class)->name('setting')->lazy();
+    Route::get('system/setting', \App\Livewire\Admin\System\Setting::class)->name('setting');
+    Route::get('system/upload-center',\App\Livewire\Admin\System\UploadCenter::class)->name('uploadCenter');
 
     // Blog subgroup
     Route::prefix('blog')->name('blog.')->group(function () {
