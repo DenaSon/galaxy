@@ -32,8 +32,8 @@
 
 .single-blog h2 {
     font-size: 1.7rem;
-    border-bottom: 2px solid #c6b6fd;
-    border-radius: 5px;
+    border-bottom: 2px solid #ded7f6;
+    border-radius: 2px;
     padding-bottom: 8px;
 }
 
@@ -71,8 +71,8 @@
 
 .single-blog blockquote p {
     display: inline;
-    font-size: 1.25rem; /* اندازه متن نقل‌قول */
-    color: #333; /* رنگ تیره‌تر برای متن */
+    font-size: 1.25rem;
+    color: #333;
 }
 
 .single-blog ul,
