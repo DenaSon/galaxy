@@ -78,7 +78,7 @@ class DeployBuildFolder extends Command
         return true;
     }
 
-    // تابع حذف پوشه
+
     protected function deleteDirectory($directory)
     {
         foreach (scandir($directory) as $file) {
