@@ -46,7 +46,7 @@
                 </div>
             </a>
 
-            <a rel="nofollow"
+            <a
                 class="block cursor-pointer relative bg-white overflow-hidden grow py-3 px-4 lg:px-2 h-full"
                 wire:navigate
                 href="{{ singleCategoryUrl(3,'لواشک و تنقلات') }}">
