@@ -52,6 +52,7 @@
     }
 }">
             <x-input
+                wire:model="postal_code"
                 placeholder="کد پستی"
                 class="input-sm p-2 mt-2 mb-2"
                 type="text"
