@@ -45,9 +45,10 @@ class SendLogEmail extends Command
                 $logContent = File::get($logFile);
 
 
-                Mail::raw($logContent, function ($message) {
+                Mail::send([], [], function ($message) use ($logContent) {
                     $message->to(getSetting('admin_email') ?? 'info@denapax.com')
-                        ->subject('Laravel Log File');
+                        ->subject('Laravel Log File')
+                        ->setBody('<pre>' . e($logContent) . '</pre>', 'text/html'); // HTML body
                 });
 
                 $this->info('Log file has been sent via email.');
