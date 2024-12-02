@@ -73,7 +73,7 @@ class AddressModal extends Component
             $this->validate([
                 'province' => 'required|numeric|exists:provinces,id',
                 'city' => 'required|numeric|exists:cities,id',
-                'postal_code' => 'required|string',
+                'postal_code' => 'nullable|string',
                 'address_line' => 'string|max:254|min:5',
                 'first_name' => 'required|string|max:120|min:3',
                 'last_name' => 'required|string|max:120|min:3',
@@ -84,7 +84,15 @@ class AddressModal extends Component
             $address->province_id = $this->province;
             $address->city_id = $this->city;
             $address->address_line = $this->address_line;
-            $address->postal_code = $this->postal_code;
+            if ($this->postal_code != null)
+            {
+                $address->postal_code = $this->postal_code;
+            }
+            else
+            {
+                $address->postal_code = '0000000000';
+            }
+
 
             $exists_address = $this->user->addresses()->where('is_default', '=',true)->exists();
             if (!$exists_address) {
