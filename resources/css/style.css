@@ -91,7 +91,7 @@
 
 .single-blog ul li::before {
     content: "•";
-    color: #3498db;
+    color: #681cae;
     margin-right: 10px;
 }
 
