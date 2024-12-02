@@ -1,3 +1,4 @@
+<meta name="description" content="{{ $product->description }}"/>
 @php
     $schemaData = [
         "@context" => "https://schema.org",
