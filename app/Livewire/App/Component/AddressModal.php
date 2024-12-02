@@ -106,6 +106,11 @@ class AddressModal extends Component
 
             $this->dispatch('openCartBox');
         }
+        catch (\Illuminate\Validation\ValidationException $e)
+        {
+
+            $this->warning($e->getMessage());
+        }
         catch (Throwable $e)
         {
             $this->warning('آدرس شما ذخیره نشد','لطفا مجدد تلاش کنید');
