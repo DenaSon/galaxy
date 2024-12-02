@@ -5,12 +5,11 @@
 
 
         <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+            <x-hr target="uploadFiles"/>
             <h2 class="text-xl font-semibold mb-4">آپلود فایل</h2>
             <x-file wire:model="files" label="Upload File" multiple />
 
             <x-button spinner="uploadFiles" label="Upload" wire:click="uploadFiles" class="m-4"/>
-
-            <x-progress class="progress-primary h-0.5" indeterminate wire:target="uploadFiles" />
 
         </div>
 
