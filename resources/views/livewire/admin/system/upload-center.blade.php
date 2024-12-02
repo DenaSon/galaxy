@@ -30,7 +30,7 @@
                         <li class="flex justify-between items-center bg-gray-50 p-4 rounded-md border border-gray-200">
                             <span class="text-gray-700">{{ \Illuminate\Support\Str::limit($file->file_path,30,'...') }}</span>
                            <a href="{{ asset($file->file_path) }}" target="_blank">
-                               <img class="pax-img-thumbnail" src="{{ asset($file->file_path) }}" width="35" height="35"/>
+                               <img class="pax-img-thumbnail" src="{{ asset($file->file_path) }}" style="height: 35px;width: 35px"/>
                            </a>
                             <button
                                 wire:confirm="حذف شود؟"
