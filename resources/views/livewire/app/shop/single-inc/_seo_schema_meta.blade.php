@@ -4,7 +4,7 @@
         "@context" => "https://schema.org",
         "@type" => "Product",
         "name" => $product->name,
-        "description" => strip_tags($product->description),
+        "description" => $product->description,
         "image" => [
             asset($product->images->get(0)->file_path ?? ''),
             asset($product->images->get(1)->file_path ?? '')
