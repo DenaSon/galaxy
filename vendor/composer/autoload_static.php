@@ -104,6 +104,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
             'Spatie\\ImageOptimizer\\' => 22,
             'Spatie\\Crawler\\' => 15,
             'Spatie\\Browsershot\\' => 19,
+            'Sadegh19b\\LaravelPersianValidation\\' => 35,
         ),
         'R' => 
         array (
@@ -392,6 +393,10 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Spatie\\Browsershot\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/browsershot/src',
+        ),
+        'Sadegh19b\\LaravelPersianValidation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sadegh19b/laravel-persian-validation/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -685,6 +690,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'App\\Livewire\\Admin\\Shop\\Pages\\CreatePage' => __DIR__ . '/../..' . '/app/Livewire/Admin/Shop/Pages/CreatePage.php',
         'App\\Livewire\\Admin\\Shop\\PriceManagement' => __DIR__ . '/../..' . '/app/Livewire/Admin/Shop/PriceManagement.php',
         'App\\Livewire\\Admin\\System\\Setting' => __DIR__ . '/../..' . '/app/Livewire/Admin/System/Setting.php',
+        'App\\Livewire\\Admin\\System\\UploadCenter' => __DIR__ . '/../..' . '/app/Livewire/Admin/System/UploadCenter.php',
         'App\\Livewire\\Admin\\Template\\MultiSidebar' => __DIR__ . '/../..' . '/app/Livewire/Admin/Template/MultiSidebar.php',
         'App\\Livewire\\App\\Blog\\SingleBlog' => __DIR__ . '/../..' . '/app/Livewire/App/Blog/SingleBlog.php',
         'App\\Livewire\\App\\Component\\AddToCartCard' => __DIR__ . '/../..' . '/app/Livewire/App/Component/AddToCartCard.php',
@@ -725,6 +731,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'App\\Models\\Favorite' => __DIR__ . '/../..' . '/app/Models/Favorite.php',
         'App\\Models\\Image' => __DIR__ . '/../..' . '/app/Models/Image.php',
         'App\\Models\\Log' => __DIR__ . '/../..' . '/app/Models/Log.php',
+        'App\\Models\\Media' => __DIR__ . '/../..' . '/app/Models/Media.php',
         'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
         'App\\Models\\OrderItem' => __DIR__ . '/../..' . '/app/Models/OrderItem.php',
         'App\\Models\\Page' => __DIR__ . '/../..' . '/app/Models/Page.php',
@@ -6416,6 +6423,8 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Ramsey\\Uuid\\Validator\\GenericValidator' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/GenericValidator.php',
         'Ramsey\\Uuid\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
         'SQLite3Exception' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php',
+        'Sadegh19b\\LaravelPersianValidation\\PersianValidationServiceProvider' => __DIR__ . '/..' . '/sadegh19b/laravel-persian-validation/src/PersianValidationServiceProvider.php',
+        'Sadegh19b\\LaravelPersianValidation\\PersianValidators' => __DIR__ . '/..' . '/sadegh19b/laravel-persian-validation/src/PersianValidators.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',
         'SebastianBergmann\\CliParser\\OptionDoesNotAllowArgumentException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/OptionDoesNotAllowArgumentException.php',
