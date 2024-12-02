@@ -33,7 +33,7 @@
 
         <x-select inline label="انتخاب شهر" icon="o-user" :options="$city_list" wire:model="city" class="mb-2" />
 
-        <x-input placeholder="کد پستی" class="input-sm p-2 m-3" wire:model="postal_code" type="number"/>
+        <x-input placeholder="کد پستی" class="input-sm p-4 mt-2 mb-2" wire:model="postal_code" type="number"/>
         <x-textarea inline label="آدرس دقیق پستی" wire:model="address_line"/>
 
         <x-slot:actions>
