@@ -13,7 +13,6 @@
         @endif
 
 
-
         <x-hr/>
 
         <div class="grid grid-cols-2 gap-4">
@@ -44,20 +43,19 @@
             class="mb-1"
         />
 
-        <x-select inline label="انتخاب شهر" icon="o-user" :options="$city_list" wire:model="city" class="mb-2" />
+        <x-select inline label="انتخاب شهر" icon="o-user" :options="$city_list" wire:model="city" class="mb-2"/>
 
-        <x-input type="number" inline label="کد پستی" clearable wire:model.live="postal_code" hint="کد پستی 10 رقمی" hint-class="font-thin text-gray-400"/>
+        <x-input type="number" inline label="کد پستی" clearable wire:model.live="postal_code" hint="کد پستی 10 رقمی"
+                 hint-class="font-thin text-gray-400"/>
 
         <x-textarea inline label="آدرس دقیق پستی" wire:model="address_line"/>
 
         <x-slot:actions>
-            <x-button icon="o-home-modern" spinner="save" wire:click.debounce.250ms="save" label="ثبت آدرس" class="btn-primary"/>
+            <x-button icon="o-home-modern" spinner="save" wire:click.debounce.250ms="save" label="ثبت آدرس"
+                      class="btn-primary"/>
         </x-slot:actions>
 
     </x-modal>
-
-
-
 
 
 </div>
