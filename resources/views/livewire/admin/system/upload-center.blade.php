@@ -1,6 +1,6 @@
 <div>
 
-    <div class="container mx-auto p-6">
+    <x-card class="container mx-auto p-6">
         <x-progress value="12" max="100" class="progress-warning h-3" />
 
         <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
@@ -46,7 +46,7 @@
 
             </ul>
         </div>
-    </div>
+    </x-card>
 
 
 
