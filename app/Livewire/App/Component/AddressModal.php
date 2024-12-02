@@ -83,7 +83,6 @@ class AddressModal extends Component
 
         try {
 
-
             $address = new Address();
             $address->user_id = $this->user->id;
             $address->province_id = $this->province;
