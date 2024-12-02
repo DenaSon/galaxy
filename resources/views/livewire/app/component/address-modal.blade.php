@@ -33,40 +33,7 @@
 
         <x-select inline label="انتخاب شهر" icon="o-user" :options="$city_list" wire:model="city" class="mb-2" />
 
-
-        <div x-data="{
-    postalCode: '',
-    updateToEnglish(event) {
-        const persianNumbers = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
-        const englishNumbers = ['0','1','2','3','4','5','6','7','8','9'];
-
-        let value = event.target.value;
-
-        // Replace Persian numbers with English numbers
-        for (let i = 0; i < persianNumbers.length; i++) {
-            value = value.replaceAll(persianNumbers[i], englishNumbers[i]);
-        }
-
-        this.postalCode = value; // Update the Alpine.js data
-        event.target.value = value; // Update the input field value
-    }
-}">
-            <x-input
-                wire:model="postal_code"
-                placeholder="کد پستی"
-                class="input-sm p-2 mt-2 mb-2"
-                type="text"
-                @input="updateToEnglish($event)"
-            />
-
-            <!-- Label to display the input value -->
-            <label class="text-gray-700 text-sm mt-2 block">
-                مقدار وارد شده: <span x-text="postalCode"></span>
-            </label>
-        </div>
-
-
-
+        <x-input placeholder="کد پستی" class="input-sm p-2 mt-2 mb-2" wire:model="postal_code" type="number"/>
         <x-textarea inline label="آدرس دقیق پستی" wire:model="address_line"/>
 
         <x-slot:actions>
