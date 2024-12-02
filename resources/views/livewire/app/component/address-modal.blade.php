@@ -28,7 +28,7 @@
             icon="o-user"
             :options="$province_list"
             wire:model.live.debounce.2ms="province"
-            class="mb-2"
+            class="mb-1"
         />
 
         <x-select inline label="انتخاب شهر" icon="o-user" :options="$city_list" wire:model="city" class="mb-2" />
