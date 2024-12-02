@@ -33,7 +33,32 @@
 
         <x-select inline label="انتخاب شهر" icon="o-user" :options="$city_list" wire:model="city" class="mb-2" />
 
-        <x-input placeholder="کد پستی" class="input-sm p-2 mt-2 mb-2" wire:model="postal_code" type="number"/>
+
+        <div x-data="{
+    updateToEnglish(event) {
+        const persianNumbers = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+        const englishNumbers = ['0','1','2','3','4','5','6','7','8','9'];
+
+        let value = event.target.value;
+
+        // Replace Persian numbers with English numbers
+        for (let i = 0; i < persianNumbers.length; i++) {
+            value = value.replaceAll(persianNumbers[i], englishNumbers[i]);
+        }
+
+        event.target.value = value; // Update the input field value
+    }
+}">
+            <x-input
+                placeholder="کد پستی"
+                class="input-sm p-2 mt-2 mb-3"
+                wire:model="postal_code"
+                type="text"
+                @input="updateToEnglish($event)"
+            />
+        </div>
+
+
         <x-textarea inline label="آدرس دقیق پستی" wire:model="address_line"/>
 
         <x-slot:actions>
