@@ -27,17 +27,23 @@ class UserList extends Component
 
     public function render()
     {
-        $users = User::withCount('orders')
-            ->withMax('orders', 'created_at')
-            ->withSum('orders', 'grand_total')
+        $users = User::withCount(['orders' => function ($query) {
+            $query->where('payment_status', 'paid'); // فقط سفارش‌های پرداخت‌شده
+        }])
+            ->withMax(['orders' => function ($query) {
+                $query->where('payment_status', 'paid'); // آخرین تاریخ سفارش‌های پرداخت‌شده
+            }], 'created_at')
+            ->withSum(['orders' => function ($query) {
+                $query->where('payment_status', 'paid'); // مجموع مبلغ سفارش‌های پرداخت‌شده
+            }], 'grand_total')
             ->with(['orders' => function ($query) {
-                $query->withSum('orderItems', 'quantity');
-
+                $query->where('payment_status', 'paid') // فقط سفارش‌های پرداخت‌شده
+                ->withSum('orderItems', 'quantity'); // مجموع تعداد آیتم‌های هر سفارش
             }])
-
             ->orderBy('orders_count', $this->sortBy)
             ->latest()
             ->get();
+
 
 
         return view('livewire.admin.component.user-list', compact('users'));
