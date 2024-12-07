@@ -8,6 +8,7 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use Mary\Traits\Toast;
@@ -41,7 +42,7 @@ class Dashboard extends Component
             ->groupBy('product_id')
             ->orderByDesc('purchase_count')
             ->first();
-        $this->bestProduct = Product::find($productWithMostOrders->product_id);
+        $this->bestProduct = Product::find($productWithMostOrders?->product_id);
 
 
         $this->conversionRate = $this->calcConversionRate();
@@ -65,15 +66,20 @@ class Dashboard extends Component
 
     public function clearCart()
     {
-        $orders = Order::where('payment_status','pending')->where('created_at', '<', Carbon::now()->subHours(2))->get();
+        $orderIds = Order::where('payment_status', 'pending')
+            ->where('created_at', '<', Carbon::now()->subHours(2))
+            ->pluck('id');
 
-        foreach ($orders as $order)
-        {
-            $order->orderItems()->delete();
-
-            $order->delete();
-
+        if ($orderIds->isEmpty()) {
+            return;
         }
+
+
+        DB::table('order_items')->whereIn('order_id', $orderIds)->delete();
+
+        Order::whereIn('id', $orderIds)->delete();
+
+
     }
 
 
