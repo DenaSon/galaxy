@@ -3,8 +3,13 @@
 
     <br/>
 
-    <div class="flex flex-row">
-        @livewire('admin.component.user-list')
+    <div class="flex flex-row flex-wrap md:flex-nowrap">
+        <div class="w-full md:w-auto">
+            @livewire('admin.component.user-list')
+        </div>
+        <div class="w-full md:w-auto">
+
+        </div>
     </div>
 
 
