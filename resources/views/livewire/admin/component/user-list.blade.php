@@ -16,8 +16,6 @@
                         <a role="button" wire:click="toggleSort">#</a>
                     </th>
                     <th>
-                        <a role="button" wire:click="toggleSortByGrandTotal">#</a>
-
                         مبلغ سفارش‌ها</th>
                     <th>زمان آخرین خرید</th>
                     <th>تاریخ ثبت‌نام</th>
