@@ -5,12 +5,13 @@ namespace App\Livewire\Admin\Component;
 use App\Models\User;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
+use Livewire\Features\SupportPagination\WithoutUrlPagination;
 use Mary\Traits\Toast;
 
 #[Layout('components.layouts.app')]
 class UserList extends Component
 {
-    use Toast;
+    use Toast,WithoutUrlPagination;
 
     public $sortBy;
 
@@ -43,7 +44,7 @@ class UserList extends Component
 
             ->orderBy('orders_count', $this->sortBy)
             ->latest()
-            ->get();
+            ->paginate(20);
 
 
 
