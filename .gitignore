@@ -4,7 +4,7 @@
 /public/hot
 /storage/*.key
 .env
-resources/views/components/layouts/app.blade.php
+resources/views/components/layouts/inc/analytics-code.blade.php
 .env.backup
 .env.production
 .phpactor.json
