@@ -19,7 +19,7 @@
                         $featuredImageUrl = $media['source_url'] ?? '';
                     @endphp
                     @if($featuredImageUrl)
-                        <img src="{{ $featuredImageUrl }}" alt="Featured Image" />
+                        <img src="{{ $featuredImageUrl }}" alt="Featured Image Blog" />
                     @endif
                 @endif
 
