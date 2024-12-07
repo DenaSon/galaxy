@@ -5,9 +5,7 @@
 
     <br/>
 
-    <b>
-        {{ $bestProduct?->name ?? '' }}
-    </b>
+    @livewire('admin.component.user-list')
 
 
 </div>

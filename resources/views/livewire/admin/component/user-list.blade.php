@@ -1,15 +1,65 @@
 <div>
-    <div class="flex flex-col md:flex-row md:space-x-4">
 
-        <div class="w-full md:w-2/3 shadow-lg m-2">
+    <div class="overflow-x-auto">
+        <table class="table">
 
-        </div>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>نام</th>
+                <th>شماره</th>
 
-        <!--    Separator -->
+                <th>
+                    تعداد خرید
+                    <a role="button"  wire:click="toggleSort">#</a>
+                </th>
+                <th>مبلغ سفارش‌ها</th>
+                <th>زمان آخرین خرید</th>
+                <th>تاریخ ثبت‌نام</th>
 
-        <div class="w-full md:w-1/3 shadow-lg m-2">
+            </tr>
+            </thead>
+            <tbody>
 
-        </div>
+          @foreach($users as $index => $user)
 
+              <tr>
+                  <th>{{ $index }}</th>
+                  <td>{{ $user?->first_name ?? 'N/A' }} {{ $user?->last_name ?? 'N/A' }}</td>
+                  <td>{{ $user?->phone }}</td>
+                  <td class="text-xs font-thin">
+                      {{ $user?->orders_count ?? 0 }} سفارش
+                      <br>
+                      {{ $user->orders->sum('order_items_sum_quantity') }}  محصول
+
+                  </td>
+
+                  <td>
+                      {{ number_format($user?->orders_sum_grand_total) }} تومان
+                  </td>
+                  <td class="text-xs" title="{{ jdate($user->orders_max_created_at) }}">
+
+                      @if ($user->orders_max_created_at)
+                          {{ jdate($user->orders_max_created_at)->ago()  }}
+                      @else
+                          N/A
+                      @endif
+
+                  </td>
+
+                  <td>
+                      {{ jdate($user->created_at)->toFormattedDateTimeString() }}
+                  </td>
+              </tr>
+
+
+          @endforeach
+
+
+            </tbody>
+        </table>
     </div>
+
+
+
 </div>

@@ -36,7 +36,8 @@
         </label>
 
 
-        <a wire:navigate href="{{ route('home.index-home') }}" class="badge bg-blue-700 text-xs text-white">{{ config('app.name') }}</a>
+        <a wire:navigate href="{{ route('home.index-home') }}"
+           class="badge bg-blue-700 text-xs text-white">{{ config('app.name') }}</a>
     </x-slot:brand>
 
     {{-- Right side actions --}}
@@ -67,12 +68,10 @@
 
     <x-slot:sidebar drawer="main-drawer" collapsible class="bg-base-200" right dir="rtl">
 
-        {{-- User --}}
         @if($user = auth()->user())
 
-
-        <x-list-item :item="$user" value="phone"  no-separator no-hover class="pt-2">
-            <x-slot:subValue>{{ $user->first_name }} {{ $user->last_name }}</x-slot:subValue>
+            <x-list-item :item="$user" value="phone" no-separator no-hover class="pt-2">
+                <x-slot:subValue>{{ $user->first_name }} {{ $user->last_name }}</x-slot:subValue>
                 <x-slot:actions>
                     <x-button icon="o-power" class="btn-circle btn-ghost btn-xs" tooltip="خروج" no-wire-navigate
                               link="/logout"/>

@@ -82,6 +82,7 @@ Route::middleware(['auth:web',\App\Http\Middleware\RoleMiddleware::class.':maste
     Route::get('system/setting', \App\Livewire\Admin\System\Setting::class)->name('setting');
     Route::get('system/upload-center',\App\Livewire\Admin\System\UploadCenter::class)->name('uploadCenter');
 
+
     // Blog subgroup
     Route::prefix('blog')->name('blog.')->group(function () {
         Route::get('create', CreateBlog::class)->name('create');

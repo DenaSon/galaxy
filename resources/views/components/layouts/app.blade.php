@@ -1,8 +1,9 @@
 @php use App\Models\Category; @endphp
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <link rel="preload" href="{{asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2')}}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2')}}" as="font"
+          type="font/woff2" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ $title ?? config('app.name') }}</title>
@@ -66,10 +67,15 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "pa3r8en4m1");
     </script>
 
@@ -100,15 +106,15 @@
 
                 @if ($categories->isNotEmpty())
 
-                        @foreach ($categories as $category)
-                            <x-menu-sub title="{{ $category->name }}" icon="o-star">
-                                @if ($category->children->isNotEmpty())
+                    @foreach ($categories as $category)
+                        <x-menu-sub title="{{ $category->name }}" icon="o-star">
+                            @if ($category->children->isNotEmpty())
 
-                                        @include('components.layouts.inc.partials-categories', ['categories' => $category->children])
+                                @include('components.layouts.inc.partials-categories', ['categories' => $category->children])
 
-                                @endif
-                            </x-menu-sub>
-                        @endforeach
+                            @endif
+                        </x-menu-sub>
+                    @endforeach
 
                 @else
                     <p>هیچ دسته‌ای وجود ندارد.</p>
@@ -134,14 +140,13 @@
 </x-nav>
 
 
-<x-main with-nav full-width collapse-text="">
+<x-main with-nav full-width collapse-text="" >
 
     <x-slot:content dir="rtl">
         {{ $slot }}
 
         @livewire('app.home.mobile-menu')
         @include('livewire.app.layout.footer')
-
 
 
     </x-slot:content>
