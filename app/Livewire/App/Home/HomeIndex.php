@@ -1,22 +1,44 @@
 <?php
 
 namespace App\Livewire\App\Home;
-use App\Models\Blog;
+
 use App\Models\Product;
+use Illuminate\Support\Facades\Http;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
-#[Layout('components.layouts.app')]
 
+#[Layout('components.layouts.app')]
 class HomeIndex extends Component
 {
     use Toast;
+
+    public $blogs = [];
+
+
     public $showDrawer = false;
 
     public function mount()
     {
-
+        $this->blogs = [];
     }
+
+
+    public function blogList()
+    {
+        $response = Http::get('http://your-wordpress-site.com/wp-json/wp/v2/posts');
+        if ($response->successful())
+        {
+            $this->blogs = $response->json();
+
+        }
+        else
+        {
+            $this->blogs = [];
+        }
+        $this->blogs = $this->blogs ?? [];
+    }
+
 
     public function render()
     {
@@ -29,15 +51,8 @@ class HomeIndex extends Component
                 ->get();
         });
 
-        $blogs = cache()->remember('home_blogs', now()->addHours(24), function () {
-            return Blog::active()
-                ->latest()
-                ->take(4)
-                ->with(['categories', 'images'])
-                ->get();
-        });
 
-        return view('livewire.app.home.home-index', compact('products','blogs'))
+        return view('livewire.app.home.home-index', compact('products'))
             ->title($websiteTitle ?? 'Home');
     }
 }

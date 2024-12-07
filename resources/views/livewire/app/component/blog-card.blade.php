@@ -23,7 +23,7 @@
             <div class="p-1">
                 <div class="text-center">
                     <h2 class="font-normal mt-2 text-xs text-gray-700 leading-snug">
-                        {{ $blog->title }}
+                        {{ $blog['title']['rendered'] }}
                     </h2>
                 </div>
             </div>

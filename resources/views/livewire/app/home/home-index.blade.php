@@ -33,10 +33,10 @@
 
 
             </div>
-            <div class="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-9 gap-2">
+            <div class="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-9 gap-2" wire:init="blogList">
                 @foreach($blogs as $blog)
 
-                    @livewire('app.component.blog-card', ['blog' => $blog], key($blog->id))
+                    @livewire('app.component.blog-card')
 
                 @endforeach
             </div>
