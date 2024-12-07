@@ -9,14 +9,29 @@
         <div class="flex flex-col lg:flex-row gap-4 mt-4">
 
 
-            @include('livewire.app.blog.inc.blog-image')
+            <x-card class="w-full lg:w-1/6 text-center h-72">
+
+                @if(isset($post['featured_media']))
+                    @php
+                        // Get the media URL for the featured image
+                        $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $article['featured_media']);
+                        $media = $mediaResponse->json();
+                        $featuredImageUrl = $media['source_url'] ?? '';
+                    @endphp
+                    @if($featuredImageUrl)
+                        <img src="{{ $featuredImageUrl }}" alt="Featured Image" />
+                    @endif
+                @endif
+
+            </x-card>
 
 
             <div class="w-full lg:w-5/6 h-auto  mt-5">
-                <h1 class="text-center font-black text-2xl mb-3"> {{ $blog->title }}</h1>
+                <h1 class="text-center font-black text-2xl mb-3"> </h1>
 
                 <div class="!text-sm !font-normal !leading-10 text-justify mb-5 single-blog">
-                    {!! $blog->content !!}
+                    {!! $article['content']['rendered'] !!}
+
                 </div>
 
 
