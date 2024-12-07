@@ -9,7 +9,7 @@
         <div class="flex flex-col lg:flex-row gap-4 mt-4">
 
 
-            <x-card class="w-full lg:w-1/6 text-center h-72">
+            <x-card class="w-full lg:w-1/6 text-center h-auto">
 
                 @if(isset($post['featured_media']))
                     @php
