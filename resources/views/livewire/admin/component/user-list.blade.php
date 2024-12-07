@@ -1,69 +1,72 @@
 <div>
 
-   <x-card subtitle="لیست کاربران" separator="">
+    <x-card subtitle="لیست کاربران" separator="">
 
-       <div class="overflow-x-auto">
-           <table class="table table-zebra">
+        <div class="overflow-x-auto">
+            <table class="table table-zebra">
 
-               <thead>
-               <tr>
-                   <th>#</th>
-                   <th>نام</th>
-                   <th>شماره</th>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>نام</th>
+                    <th>شماره</th>
 
-                   <th>
-                       تعداد خرید
-                       <a role="button" wire:click="toggleSort">#</a>
-                   </th>
-                   <th>مبلغ سفارش‌ها</th>
-                   <th>زمان آخرین خرید</th>
-                   <th>تاریخ ثبت‌نام</th>
+                    <th>
+                        تعداد خرید
+                        <a role="button" wire:click="toggleSort">#</a>
+                    </th>
+                    <th>
+                        <a role="button" wire:click="toggleSortByGrandTotal">#</a>
 
-               </tr>
-               </thead>
-               <tbody>
+                        مبلغ سفارش‌ها</th>
+                    <th>زمان آخرین خرید</th>
+                    <th>تاریخ ثبت‌نام</th>
 
-               @foreach($users as $index => $user)
+                </tr>
+                </thead>
+                <tbody>
 
-                   <tr wire:key="{{ $user->id }}" @if($user->created_at->isToday())) class="bg-pink-200" @endif>
-                       <th>{{ $loop->iteration }}</th>
-                       <td>{{ $user?->first_name ?? 'N/A' }} {{ $user?->last_name ?? 'N/A' }}</td>
-                       <td>{{ $user?->phone }}</td>
-                       <td class="text-xs font-thin">
-                           {{ $user?->orders_count ?? 0 }} سفارش
-                           <br>
-                           {{ $user->orders->sum('order_items_sum_quantity') }} محصول
+                @foreach($users as $index => $user)
 
-                       </td>
+                    <tr wire:key="{{ $user->id }}" @if($user->created_at->isToday())) class="bg-pink-200" @endif>
+                        <th>{{ $loop->iteration }}</th>
+                        <td>{{ $user?->first_name ?? 'N/A' }} {{ $user?->last_name ?? 'N/A' }}</td>
+                        <td>{{ $user?->phone }}</td>
+                        <td class="text-xs font-thin">
+                            {{ $user?->orders_count ?? 0 }} سفارش
+                            <br>
+                            {{ $user->orders->sum('order_items_sum_quantity') }} محصول
 
-                       <td>
-                           {{ number_format($user?->orders_sum_grand_total) }} تومان
-                       </td>
-                       <td class="text-xs" title="{{ jdate($user->orders_max_created_at) }}">
+                        </td>
 
-                           @if ($user->orders_max_created_at)
-                               {{ jdate($user->orders_max_created_at)->ago()  }}
-                           @else
-                               N/A
-                           @endif
+                        <td>
+                            {{ number_format($user?->orders_sum_grand_total) }} تومان
+                        </td>
+                        <td class="text-xs" title="{{ jdate($user->orders_max_created_at) }}">
 
-                       </td>
+                            @if ($user->orders_max_created_at)
+                                {{ jdate($user->orders_max_created_at)->ago()  }}
+                            @else
+                                N/A
+                            @endif
 
-                       <td>
-                           {{ jdate($user->created_at)->toFormattedDateTimeString() }}
-                       </td>
-                   </tr>
+                        </td>
 
-               @endforeach
+                        <td>
+                            {{ jdate($user->created_at)->toFormattedDateTimeString() }}
+                        </td>
+                    </tr>
+
+                @endforeach
 
 
-               </tbody>
-           </table>
+                </tbody>
+            </table>
 
-           {{ $users->links() }}
-       </div>
+            {{ $users->links() }}
+        </div>
 
-   </x-card>
+    </x-card>
 
 
 </div>

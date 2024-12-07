@@ -14,6 +14,8 @@ class UserList extends Component
     use Toast,WithoutUrlPagination;
 
     public $sortBy;
+    public $sortByGrandTotal = false;
+
 
     public function mount()
     {
@@ -24,6 +26,10 @@ class UserList extends Component
     public function toggleSort()
     {
         $this->sortBy = $this->sortBy === 'asc' ? 'desc' : 'asc';
+    }
+    public function toggleSortByGrandTotal()
+    {
+        $this->sortByGrandTotal = !$this->sortByGrandTotal;
     }
 
     public function render()
@@ -41,6 +47,10 @@ class UserList extends Component
                 $query->where('payment_status', 'paid')
                 ->withSum('orderItems', 'quantity');
             }])
+            ->when($this->sortByGrandTotal, function ($query) {
+                // When sortByGrandTotal is true, order by the grand_total sum in orders
+                $query->orderBy('orders_sum_grand_total', $this->sortBy);
+            })
 
             ->orderBy('orders_count', $this->sortBy)
             ->latest()
