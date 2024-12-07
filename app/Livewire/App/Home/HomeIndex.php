@@ -38,6 +38,10 @@ class HomeIndex extends Component
 
             }
         }
+        else
+        {
+            $this->blogs = [];
+        }
     }
 
 
