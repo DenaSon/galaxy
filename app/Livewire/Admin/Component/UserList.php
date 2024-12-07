@@ -29,17 +29,17 @@ class UserList extends Component
     public function render()
     {
         $users = User::withCount(['orders' => function ($query) {
-            $query->where('payment_status', 'paid'); // فقط سفارش‌های پرداخت‌شده
+            $query->where('payment_status', 'paid');
         }])
             ->withMax(['orders' => function ($query) {
-                $query->where('payment_status', 'paid'); // آخرین تاریخ سفارش‌های پرداخت‌شده
+                $query->where('payment_status', 'paid');
             }], 'created_at')
             ->withSum(['orders' => function ($query) {
-                $query->where('payment_status', 'paid'); // مجموع مبلغ سفارش‌های پرداخت‌شده
+                $query->where('payment_status', 'paid');
             }], 'grand_total')
             ->with(['orders' => function ($query) {
-                $query->where('payment_status', 'paid') // فقط سفارش‌های پرداخت‌شده
-                ->withSum('orderItems', 'quantity'); // مجموع تعداد آیتم‌های هر سفارش
+                $query->where('payment_status', 'paid')
+                ->withSum('orderItems', 'quantity');
             }])
 
             ->orderBy('orders_count', $this->sortBy)
