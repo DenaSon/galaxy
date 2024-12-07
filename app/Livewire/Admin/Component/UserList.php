@@ -40,6 +40,7 @@ class UserList extends Component
                 $query->where('payment_status', 'paid') // فقط سفارش‌های پرداخت‌شده
                 ->withSum('orderItems', 'quantity'); // مجموع تعداد آیتم‌های هر سفارش
             }])
+
             ->orderBy('orders_count', $this->sortBy)
             ->latest()
             ->get();

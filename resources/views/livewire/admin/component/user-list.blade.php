@@ -23,7 +23,7 @@
 
           @foreach($users as $index => $user)
 
-              <tr>
+              <tr @if($user->created_at->isToday())) class="bg-pink-200" @endif>
                   <th>{{ $index }}</th>
                   <td>{{ $user?->first_name ?? 'N/A' }} {{ $user?->last_name ?? 'N/A' }}</td>
                   <td>{{ $user?->phone }}</td>
