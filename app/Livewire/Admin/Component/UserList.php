@@ -5,13 +5,14 @@ namespace App\Livewire\Admin\Component;
 use App\Models\User;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
-use Livewire\WithoutUrlPagination;
+
+use Livewire\WithPagination;
 use Mary\Traits\Toast;
 
 #[Layout('components.layouts.app')]
 class UserList extends Component
 {
-    use Toast,WithoutUrlPagination;
+    use Toast,WithPagination;
 
     public $sortBy;
     public $sortByGrandTotal = false;
