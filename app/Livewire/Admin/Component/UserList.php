@@ -48,7 +48,6 @@ class UserList extends Component
 
 
             ->orderBy('orders_count', $this->sortBy)
-            ->latest('created_at')
             ->paginate(20);
 
 
