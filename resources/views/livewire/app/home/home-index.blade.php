@@ -1,9 +1,9 @@
 <div class="container mx-auto">
-@push('SEO')
+    @push('SEO')
 
-    @include('livewire.app.home.inc._seo_schema')
+        @include('livewire.app.home.inc._seo_schema')
 
-@endpush
+    @endpush
     <div class="flex flex-col md:flex-row md:justify-center items-center space-y-2 md:space-y-0">
         <div class="w-full md:w-4/4 lg:w-3/4">
             @livewire('app.home.home-slider')
@@ -16,7 +16,7 @@
     @livewire('app.home.visual-category-list')
 
     <h1 class="text-center mt-5 mb-6">
-       {{ getSetting('website_title') }}
+        {{ getSetting('website_title') }}
     </h1>
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
         @foreach($products as $product)
@@ -33,13 +33,13 @@
 
 
             </div>
-            <div class="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-9 gap-2">
-                @foreach($blogs as $blog)
+{{--            <div class="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-9 gap-2">--}}
+{{--                @foreach($blogs as $blog)--}}
 
-                    @livewire('app.component.blog-card',['blog'=>$blog])
+{{--                    @livewire('app.component.blog-card',['blog'=>$blog])--}}
 
-                @endforeach
-            </div>
+{{--                @endforeach--}}
+{{--            </div>--}}
         </div>
 
 
