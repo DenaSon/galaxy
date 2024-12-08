@@ -26,7 +26,7 @@ function startSwiper() {
             enabled: true, // Allow navigation using keyboard arrows
         },
         autoplay: {
-            delay: 3000, // Auto-slide every 3 seconds
+            delay: 4500, // Auto-slide every 3 seconds
             disableOnInteraction: false, // Keeps autoplay running after manual navigation
         },
         flipEffect: {
