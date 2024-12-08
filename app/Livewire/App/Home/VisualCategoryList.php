@@ -12,6 +12,7 @@ class VisualCategoryList extends Component
 {
 use Toast;
 
+
     public function mount()
     {
 

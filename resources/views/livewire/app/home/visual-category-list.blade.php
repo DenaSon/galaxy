@@ -6,9 +6,13 @@
         <div class="swiper-wrapper">
 
             @foreach($products as $product)
+
                 <div class="swiper-slide">
+
                     @livewire('app.component.product-card',['product' => $product],key($product->id))
+
                 </div>
+
             @endforeach
 
         </div>

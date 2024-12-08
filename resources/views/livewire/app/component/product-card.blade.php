@@ -9,15 +9,8 @@
                      class="w-full h-52 md:h-64 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-all duration-300 ease-in-out opacity-95 group-hover:opacity-100"
                      alt="{{ $product->name }}"/>
 
-                <div class="absolute inset-0 bg-black opacity-5">
+                <div class="absolute inset-0 bg-black opacity-5"></div>
 
-                </div>
-                <x-button
-                wire:transition
-                    label="خرید"
-                    icon="o-shopping-cart"
-                    class="hover:bg-violet-500 hover:border-violet-700 absolute opacity-50 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 btn-outline border-white bg-gray-50   btn-sm z-10"
-                    link="{{ singleProductUrl($product->id,$product->name) }}"/>
                 <div class="absolute top-0 right-0 p-3 flex space-x-2">
                     @if(Auth::check() && !Auth::user()->favorites->pluck('id')->contains($product->id))
                         <x-button data-tip="موردعلاقه" spinner="addFavorite" wire:click="addFavorite({{$product->id}})"
