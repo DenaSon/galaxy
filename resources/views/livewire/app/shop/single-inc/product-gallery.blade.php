@@ -23,6 +23,7 @@
     </div>
 
 </section>
+    <x-image-gallery class="mt-3" :images="$images" class="h-20 rounded-box w-70" with-arrows with-indicators/>
 </div>
 
 
@@ -44,8 +45,7 @@
 {{--        @endforeach--}}
 {{--    </div>--}}
 
-
-{{--    <x-image-gallery :images="$images" class="h-20 rounded-box w-70" with-arrows with-indicators/>--}}
+}
 
 
 {{--</div>--}}
