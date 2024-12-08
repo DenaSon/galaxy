@@ -11,7 +11,7 @@ function startSwiper() {
     // init Swiper:
     const swiper = new Swiper('.swiper', {
 
-        effect: 'flip',
+        effect: 'creative',
         cubeEffect: {
             shadow: true,
             slideShadows: true,
