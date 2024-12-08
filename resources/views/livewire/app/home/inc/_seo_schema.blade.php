@@ -34,17 +34,19 @@
       "name": "{{ getSetting('website_title') ?? 'DenaPax' }}",
   "url": "{{ url('/') }}",
   "logo": "{{ asset('static/denapax-image/nopicuser.png') }}",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "{{ getSetting('support_phone') ?? '+98-9173434796' }}",
-    "contactType": "Customer Support",
-    "areaServed": "IR",
-    "availableLanguage": ["fa"]
-  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "{{ getSetting('support_phone') ?? '+98-9173434796' }}",
+      "contactType": "Customer Support",
+      "areaServed": "IR",
+      "availableLanguage": ["fa"]
+    }
+  ],
   "sameAs": [
     "https://www.instagram.com/denapax/",
     "https://www.instagram.com/sisakhtzib"
-  ],
-
+  ]
 }
 </script>
+

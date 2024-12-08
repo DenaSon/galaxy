@@ -68,7 +68,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
-
 </head>
 
 <body x-data class="font-sans antialiased" style="font-family: 'denapax-font',serif !important;">
@@ -130,7 +129,7 @@
 </x-nav>
 
 
-<x-main with-nav full-width collapse-text="" >
+<x-main with-nav full-width collapse-text="">
 
     <x-slot:content dir="rtl">
         {{ $slot }}
