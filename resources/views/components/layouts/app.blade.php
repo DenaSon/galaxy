@@ -92,7 +92,7 @@
                         ->get();
                 });
             @endphp
-            <x-menu class="w-52">
+            <x-menu class="w-52 z-50">
 
                 @if ($categories->isNotEmpty())
 
