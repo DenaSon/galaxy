@@ -2,11 +2,11 @@ function startSwiper() {
     // init Swiper:
     const swiper = new Swiper('.swiper', {
 
-        effect: 'flip',
-        // cubeEffect: {
-        //     shadow: true,
-        //     slideShadows: true,
-        // },
+        effect: 'cube',
+        cubeEffect: {
+            shadow: true,
+            slideShadows: true,
+        },
 
         navigation: {
             nextEl: '.swiper-button-next',
