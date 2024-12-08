@@ -1,5 +1,5 @@
 <div class="w-full lg:w-2/6 text-center">
-<section class="container mx-auto  sm:block md:hidden" style="z-index: 0 !important;">
+<section class="container mx-auto" style="z-index: 0 !important;">
 
     <div class="swiper m-3">
 
