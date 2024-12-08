@@ -32,6 +32,8 @@
 
     <style>
         .swiper {
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
             margin-bottom: 10px;
             width: 368px;
             height: 386px;
