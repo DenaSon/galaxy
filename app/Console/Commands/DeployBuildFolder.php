@@ -50,10 +50,10 @@ class DeployBuildFolder extends Command
         }
 
         $this->info("Build folder successfully deployed to: $destinationPath");
-        return 0; // موفقیت‌آمیز
+        return 0;
     }
 
-    // تابع کپی پوشه
+
     protected function copyDirectory($source, $destination)
     {
         if (!is_dir($destination)) {

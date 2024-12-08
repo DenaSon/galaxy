@@ -2,7 +2,7 @@
     <!DOCTYPE html>
 <html lang="fa">
 <head>
-    @include('components.layouts.inc.analytics-code')
+{{--    @include('components.layouts.inc.analytics-code')--}}
     <link rel="preload" href="{{asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2')}}" as="font"
           type="font/woff2" crossorigin="anonymous">
     <meta charset="UTF-8">
