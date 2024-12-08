@@ -32,13 +32,18 @@
 
     <style>
         .swiper {
-            border-bottom-right-radius: 5px;
-            border-bottom-left-radius: 5px;
+
             margin-bottom: 10px;
             width: 368px;
             height: 386px;
             position: relative;
             z-index: 0 !important;
+        }
+
+        .swiper-slide
+        {
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
         }
     </style>
     </div>
