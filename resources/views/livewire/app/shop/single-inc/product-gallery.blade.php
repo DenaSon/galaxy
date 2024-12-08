@@ -33,7 +33,7 @@
     <style>
         .swiper {
             width: 368px;
-            height: 400px;
+            height: 386px;
             position: relative;
             z-index: 0 !important;
         }
