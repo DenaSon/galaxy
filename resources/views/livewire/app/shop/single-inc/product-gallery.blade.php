@@ -32,6 +32,8 @@
 
     <style>
         .swiper {
+            width: 368px;
+            height: 400px;
             position: relative;
             z-index: 0 !important;
         }
