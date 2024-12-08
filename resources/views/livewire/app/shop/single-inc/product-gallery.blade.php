@@ -13,7 +13,7 @@
 
                         @foreach($images as $image)
                             <div class="swiper-slide">
-                                <img src="{{ asset($image) }}" alt="{{ $product->name }}" height="480"/>
+                                <img src="{{ asset($image) }}" alt="{{ $product->name }}" height="380"/>
                             </div>
                         @endforeach
 
