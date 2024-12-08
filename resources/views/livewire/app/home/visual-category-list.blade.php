@@ -24,5 +24,10 @@
         <div class="swiper-button-next"></div>
 
     </div>
-
+    <style>
+        .swiper {
+            position: relative;
+            z-index: 0 !important;
+        }
+    </style>
 </section>
