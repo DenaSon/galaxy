@@ -36,4 +36,4 @@
     ];
 @endphp
 
-<x-carousel without-indicators :slides="$slides" class="z-0 hidden sm:block"/>
+<x-carousel without-indicators :slides="$slides" class="z-0"/>
