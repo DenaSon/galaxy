@@ -80,7 +80,7 @@
                   icon="o-magnifying-glass"/>
 
 
-        <x-dropdown label="دسته‌بندی" class="sm:text-sm text-xs z-50" style="z-index: 1000 !important;">
+        <x-dropdown label="دسته‌بندی" class="sm:text-sm text-xs z-50" style="z-index: 1000 !important;position: relative !important;">
             @php
 
 

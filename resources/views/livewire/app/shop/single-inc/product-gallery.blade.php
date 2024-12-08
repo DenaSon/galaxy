@@ -9,7 +9,7 @@
         <div class="swiper m-3">
 
 
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" style="z-index: 0 !important;">
 
                         @foreach($images as $image)
                             <div class="swiper-slide">
@@ -29,6 +29,13 @@
 
     </section>
         <x-image-gallery class="mt-3" :images="$images" class="h-20 rounded-box w-70" with-arrows with-indicators/>
+
+    <style>
+        .swiper {
+            position: relative;
+            z-index: 0 !important;
+        }
+    </style>
     </div>
 
 
