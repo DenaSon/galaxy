@@ -48,7 +48,7 @@ class UserList extends Component
 
 
             ->orderBy('orders_count', $this->sortBy)
-            ->paginate(20);
+            ->paginate(50);
 
 
 
