@@ -11,17 +11,24 @@
 
             <x-card class="w-full lg:w-1/6 text-center h-auto">
 
-                @if(isset($post['featured_media']))
-                    @php
-                        // Get the media URL for the featured image
-                        $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $article['featured_media']);
-                        $media = $mediaResponse->json();
-                        $featuredImageUrl = $media['source_url'] ?? '';
-                    @endphp
-                    @if($featuredImageUrl)
-                        <img src="{{ $featuredImageUrl }}" alt="Featured Image Blog" />
-                    @endif
-                @endif
+                @foreach($productList as $product)
+
+                    @livewire('app.component.product-card',['product' => $product])
+
+                @endforeach
+
+
+{{--                @if(isset($post['featured_media']))--}}
+{{--                    @php--}}
+{{--                        // Get the media URL for the featured image--}}
+{{--                        $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $article['featured_media']);--}}
+{{--                        $media = $mediaResponse->json();--}}
+{{--                        $featuredImageUrl = $media['source_url'] ?? '';--}}
+{{--                    @endphp--}}
+{{--                    @if($featuredImageUrl)--}}
+{{--                        <img src="{{ $featuredImageUrl }}" alt="Featured Image Blog"/>--}}
+{{--                    @endif--}}
+{{--                @endif--}}
 
             </x-card>
 
