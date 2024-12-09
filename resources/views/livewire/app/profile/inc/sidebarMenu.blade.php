@@ -22,8 +22,17 @@
                  class="{{ request()->routeIs('panel.profile.profileDashboard') ? 'active' : '' }}"/>
 
 
+    @if(Auth::user()->first_name == null || Auth::user()->last_name == null)
+        <x-menu-item link="{{ route('panel.profile.profileInformation') }}"
+                     title="پروفایل" icon="o-user-circle"
+                     class="{{ request()->routeIs('panel.profile.profileInformation') ? 'active' : 'border-b border-red-600' }}"/>
+    @endif
+
+
     <x-menu-item link="{{ route('panel.profile.profileAddress') }}"
-        title="آدرس‌ها" icon="o-link-slash" class="{{ request()->routeIs('panel.profile.profileAddress') ? 'active' : '' }}"/>
+                 title="آدرس‌ها" icon="o-link-slash"
+                 class="{{ request()->routeIs('panel.profile.profileAddress') ? 'active' : '' }}"/>
+
 
     <x-menu-item title="پیام‌ها" icon="o-envelope"/>
 

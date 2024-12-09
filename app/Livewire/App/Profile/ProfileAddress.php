@@ -33,6 +33,6 @@ class ProfileAddress extends Component
     public function render()
     {
         return view('livewire.app.profile.profile-address')
-            ->title('');
+            ->title('آدرس ها');
     }
 }

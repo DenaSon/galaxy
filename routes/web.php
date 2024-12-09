@@ -16,6 +16,7 @@ use App\Livewire\App\Home\HomeIndex;
 use App\Livewire\App\Profile\Order\OrderDetails;
 use App\Livewire\App\Profile\ProfileAddress;
 use App\Livewire\App\Profile\ProfileDashboard;
+use App\Livewire\App\Profile\ProfileInformation;
 use App\Livewire\App\Shop\Checkout;
 use App\Livewire\App\Shop\CheckoutPayment;
 use App\Livewire\App\Shop\ProductList;
@@ -64,6 +65,7 @@ Route::middleware([\App\Http\Middleware\RoleMiddleware::class.':customer','auth:
     {
         Route::get('/dashboard', ProfileDashboard::class)->name('profileDashboard');
         Route::get('/address', ProfileAddress::class)->name('profileAddress');
+        Route::get('/information', ProfileInformation::class)->name('profileInformation');
 
     });
 
