@@ -32,9 +32,9 @@ class SingleBlog extends Component
     {
         $articleTitle = $this->article['title']['rendered'];
 
-        $productList = Product::where('name', 'like', "%$articleTitle%")->take(6)->get();
+        $productList = Product::where('name', 'like', "%$articleTitle%")->take(4)->get();
         if ($productList->isEmpty()) {
-            $productList = Product::inRandomOrder()->take(6)->get();
+            $productList = Product::inRandomOrder()->take(4)->get();
         }
 
         return view('livewire.app.blog.single-blog', compact('productList'))
