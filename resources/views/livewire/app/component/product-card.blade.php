@@ -39,11 +39,11 @@
             </x-slot:figure>
 
 
-            <x-slot:menu class="hidden sm:flex">
-            <span class="tooltip font-bold" data-tip="تومان">
-                {{ number_format($product->variants->min('price') ?? 0) }}</span>
-                <x-icon name="o-check-badge"></x-icon>
-            </x-slot:menu>
+{{--            <x-slot:menu class="hidden sm:flex">--}}
+{{--            <span class="tooltip font-bold" data-tip="تومان">--}}
+{{--                {{ number_format($product->variants->min('price') ?? 0) }}</span>--}}
+{{--                <x-icon name="o-check-badge"></x-icon>--}}
+{{--            </x-slot:menu>--}}
 
             <div class="sm:hidden text-center p-0">
             <span class=" tooltip font-bold" data-tip="تومان">
