@@ -32,7 +32,7 @@ class ContactUs extends Component
         // Send the email
         Mail::to($supportMail)->send(new ContactUsMail($this->name, $this->email, $this->phone, $this->text));
 
-        $this->info('پیام شما ارسال شد','بزودی کارشناسان دناپکس با شما تماس خواهند گرفت',css: 'text-white bg-primary');
+        $this->info('پیام شما ارسال شد','به زودی کارشناسان دناپکس با شما تماس خواهند گرفت',css: 'text-white bg-primary');
 
         $this->reset();
 
