@@ -11,13 +11,36 @@
 
             <x-card class="w-full lg:w-1/6 text-center h-auto hidden sm:block">
 
-                @foreach($productList as $product)
+                <div class="swiper m-3">
 
-                   <div class="mt-2">
-                       @livewire('app.component.product-card',['product' => $product])
-                   </div>
 
-                @endforeach
+                    <div class="swiper-wrapper">
+
+                        @foreach($productList as $product)
+
+                            <div class="swiper-slide">
+
+                                @livewire('app.component.product-card',['product' => $product],key($product->id))
+
+                            </div>
+
+                        @endforeach
+
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                </div>
+                <style>
+                    .swiper {
+                        position: relative;
+                        z-index: 0 !important;
+                    }
+                </style>
 
 
 {{--                @if(isset($post['featured_media']))--}}
