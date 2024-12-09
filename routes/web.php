@@ -26,11 +26,12 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [\App\Livewire\App\System\LoginPage::class, 'login']);
 
 Route::get('/login', [\App\Livewire\App\System\LoginPage::class, 'login'])->name('login');
+Route::get('/contact-us', \App\Livewire\App\Shop\ContactUs::class)->name('contact-us');
 
 
 Route::name('home.')->group(function () {
 
-    Route::get('/', HomeIndex::class)->name('index-home');
+    Route::get('', HomeIndex::class)->name('index-home');
     Route::get('/logout', \App\Livewire\App\System\Logout::class)->name('logout');
 
 
