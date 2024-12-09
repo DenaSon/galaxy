@@ -45,9 +45,7 @@ class UserList extends Component
                 $query->where('payment_status', 'paid')
                 ->withSum('orderItems', 'quantity');
             }])
-
-
-            ->orderBy('orders_count', $this->sortBy)
+            ->latest('created_at')
             ->paginate(50);
 
 
