@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
+use Throwable;
 
 #[Layout('components.layouts.app')]
 class ContactUs extends Component
@@ -28,13 +29,20 @@ class ContactUs extends Component
 
         ]);
 
-        $supportMail = getSetting('support_mail') ?? 'support@denapax.com';
-        // Send the email
-        Mail::to($supportMail)->send(new ContactUsMail($this->name, $this->email, $this->phone, $this->text));
+        try {
+            $supportMail = getSetting('support_mail') ?? 'support@denapax.com';
+            // Send the email
+            Mail::to($supportMail)->send(new ContactUsMail($this->name, $this->email, $this->phone, $this->text));
 
-        $this->info('پیام شما ارسال شد','به زودی کارشناسان دناپکس با شما تماس خواهند گرفت',css: 'text-white bg-primary');
+            $this->info('پیام شما ارسال شد','به زودی کارشناسان دناپکس با شما تماس خواهند گرفت',css: 'text-white bg-primary');
 
-        $this->reset();
+            $this->reset();
+        }
+        catch (Throwable $e)
+        {
+            $this->warning('خطا در ارسال',$e->getMessage());
+            \Illuminate\Log\log()->error($e->getMessage());
+        }
 
     }
 
