@@ -76,6 +76,14 @@
             .setLngLat([51.462307047441186,30.85529215575906])
             .addTo(neshanMap);
 
+        var popup = new nmp_mapboxgl.Popup({ offset: 25 }).setText(
+            'دناپکس | فروشگاه آنلاین محصولات ارگانیک دنا'
+        );
+
+        var marker_with_popup = new nmp_mapboxgl.Marker({ color: "#00F955", draggable: true }).setPopup(popup)
+            .setLngLat([51.462307047441186,30.85529215575906])
+            .addTo(neshanMap).togglePopup();
+
     </script>
 
 </div>
