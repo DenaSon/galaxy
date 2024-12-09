@@ -57,20 +57,24 @@
         const neshanMap = new nmp_mapboxgl.Map({
             mapType: nmp_mapboxgl.Map.mapTypes.neshanVector,
             container: "map",
-            zoom: 11,
-            pitch: 0,
-            center: [51.389, 35.6892],
+            zoom: 14,
+            pitch: 1,
+            center: [51.46224308672768,30.855207885088163],
             minZoom: 2,
             maxZoom: 21,
             trackResize: true,
-            mapKey: "web.0d990bbf44524f1fbe55bfc787f691a1", // Get your own API Key on https://platform.neshan.org/panel
+            mapKey: "{{config('neshan.map_box_key')}}", // Get your own API Key on https://platform.neshan.org/panel
             poi: false,
             traffic: false,
             mapTypeControllerOptions: {
                 show: true,
                 position: 'bottom-left'
             }
+
         });
+        var marker = new nmp_mapboxgl.Marker()
+            .setLngLat([51.462307047441186,30.85529215575906])
+            .addTo(neshanMap);
 
     </script>
 

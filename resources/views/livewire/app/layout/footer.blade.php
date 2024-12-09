@@ -56,7 +56,7 @@
         <nav>
             <h6 class="footer-title">دسترسی سریع</h6>
             <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>'درباره-ما']) }}" class="link link-hover">درباره ما</a>
-            <a class="link link-hover">تماس با ما</a>
+            <a wire:navigate href="{{ route('contact-us') }}" class="link link-hover">تماس با ما</a>
             <a class="link link-hover">چشم انداز</a>
         </nav>
 
