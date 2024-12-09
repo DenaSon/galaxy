@@ -63,7 +63,7 @@
             minZoom: 2,
             maxZoom: 21,
             trackResize: true,
-            mapKey: "service.1e8200e931894c2ca0f2c691038196d6", // Get your own API Key on https://platform.neshan.org/panel
+            mapKey: "web.0d990bbf44524f1fbe55bfc787f691a1", // Get your own API Key on https://platform.neshan.org/panel
             poi: false,
             traffic: false,
             mapTypeControllerOptions: {
