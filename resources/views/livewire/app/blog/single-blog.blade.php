@@ -9,11 +9,13 @@
         <div class="flex flex-col lg:flex-row gap-4 mt-4">
 
 
-            <x-card class="w-full lg:w-1/6 text-center h-auto">
+            <x-card class="w-full lg:w-1/6 text-center h-auto hidden sm:block">
 
                 @foreach($productList as $product)
 
-                    @livewire('app.component.product-card',['product' => $product])
+                   <div class="mt-2">
+                       @livewire('app.component.product-card',['product' => $product])
+                   </div>
 
                 @endforeach
 
