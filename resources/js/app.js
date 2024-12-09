@@ -7,7 +7,6 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 import '../js/libs/swiper.js'
-
 function startSwiper() {
     // init Swiper:
     const swiper = new Swiper('.swiper', {
@@ -39,28 +38,12 @@ function startSwiper() {
 
 }
 
-
-
-function startSupportWidget() {
-    !function () {
-        var i = "qcNyHg", a = window, d = document;
-
-        function g() {
-            var g = d.createElement("script"), s = "https://www.goftino.com/widget/" + i,
-                l = localStorage.getItem("goftino_" + i);
-            g.async = !0, g.src = l ? s + "?o=" + l : s;
-            d.getElementsByTagName("head")[0].appendChild(g);
-        }
-
-        "complete" === d.readyState ? g() : a.attachEvent ? a.attachEvent("onload", g) : a.addEventListener("load", g, !1);
-    }();
-
-}
-
-startSupportWidget();
 startSwiper();
+
+
+
 document.addEventListener('livewire:navigated', (event) => {
 
     startSwiper();
-    startSupportWidget();
+
 }, {once: false});
