@@ -73,6 +73,7 @@ return array(
     'Mary\\' => array($vendorDir . '/robsontenorio/mary/src'),
     'Livewire\\Volt\\' => array($vendorDir . '/livewire/volt/src'),
     'Livewire\\' => array($vendorDir . '/livewire/livewire/src'),
+    'League\\Uri\\' => array($vendorDir . '/league/uri-interfaces', $vendorDir . '/league/uri'),
     'League\\MimeTypeDetection\\' => array($vendorDir . '/league/mime-type-detection/src'),
     'League\\Flysystem\\Local\\' => array($vendorDir . '/league/flysystem-local'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
