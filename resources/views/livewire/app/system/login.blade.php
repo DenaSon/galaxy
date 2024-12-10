@@ -40,9 +40,9 @@
 
 
     @if(Auth::check())
-        <x-button class="sm:text-sm text-xs"  link="{{ route('panel.profile.profileDashboard') }}"  icon="o-user-circle" label="پروفایل"/>
+        <x-button class="sm:text-xs text-xs"  link="{{ route('panel.profile.profileDashboard') }}"  icon="o-user-circle" label="پروفایل"/>
     @else
-        <x-button spinner class="sm:text-sm text-xs"  icon="o-user" label="ورود | ثبت‌نام" @click="$wire.loginModal = true"/>
+        <x-button spinner class="sm:text-xs text-xs"  icon="o-user" label="ورود | ثبت‌نام" @click="$wire.loginModal = true"/>
     @endif
 
 

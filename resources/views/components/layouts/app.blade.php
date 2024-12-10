@@ -89,7 +89,7 @@
                   icon="o-magnifying-glass"/>
 
 
-        <x-dropdown label="دسته‌بندی" class="sm:text-sm text-xs z-50"
+        <x-dropdown label="محصولات" class="sm:text-sm text-xs z-50 font-bold"
                     style="z-index: 1000 !important;position: relative !important;">
             @php
 
