@@ -2,9 +2,9 @@
     <!DOCTYPE html>
 <html lang="fa">
 <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('static/small-d-logo.png') }}" />
+    <link rel="icon" type="image/png" sizes="64x64" href="{{ asset('static/small-d-logo.png') }}" />
     @include('components.layouts.inc.analytics-code')
-
-
 
     <link rel="preload" href="{{asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2')}}" as="font"
           type="font/woff2" crossorigin="anonymous">
