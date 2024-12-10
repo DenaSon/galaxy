@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    <url>
+        <loc>http://localhost</loc>
+    
+            </url>
+    <url>
+        <loc>http://localhost/page/1/درباره-ما</loc>
+    
+            </url>
+    <url>
+        <loc>http://localhost/store/product/1/آلو-ارگانیک-سی-سخت</loc>
+        <lastmod>2024-12-10T08:39:00+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://localhost/store/product/2/شیره-انگور-مرغوب</loc>
+        <lastmod>2024-12-10T13:14:13+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://localhost/blog/25/بهترین-روش-های-نگهداری-خشکبار</loc>
+        <lastmod>2024-12-09T21:10:37+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://localhost/blog/22/طرز-تهیه-فسنجان-با-مغز-گردوی-سی-سخت</loc>
+        <lastmod>2024-12-07T23:06:10+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://localhost/blog/17/سی-سخت-نگین-درخشان-دامنه-های-دنا</loc>
+        <lastmod>2024-12-07T20:24:47+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://localhost/blog/1/چرا-محصولات-محلی-بهتر-از-محصولات-صنعتی-هستند</loc>
+        <lastmod>2024-12-07T20:32:42+00:00</lastmod>
+
+            </url>
+</urlset>
