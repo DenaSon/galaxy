@@ -5,7 +5,7 @@
     @include('components.layouts.inc.analytics-code')
 
     @if(!request()->routeIs('panel.shop.cart'))
-        <script defer type="text/javascript" data-navigate-track>
+        <script  type="text/javascript" data-navigate-track>
             !function () {
                 var i = "qcNyHg", a = window, d = document;
 
