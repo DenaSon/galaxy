@@ -80,7 +80,7 @@ class GenerateSitemap extends Command
         $categories = \App\Models\Category::where('type','=','product')->get();
         foreach ($categories as $category) {
             $sitemap->add(
-                Url::create('/category/' . $category->id.'/'.slugMaker($category->name))
+                Url::create('/store/category/' . $category->id.'/'.slugMaker($category->name))
                     ->setPriority(0.7)
                     ->setLastModificationDate($category->updated_at)
                     ->setChangeFrequency('weekly')
