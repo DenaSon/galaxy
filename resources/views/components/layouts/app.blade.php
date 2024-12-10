@@ -131,8 +131,10 @@
 
     <x-slot:brand>
 
-        <x-button link="{{ route('home.index-home') }}"
-                  class="bg-blue-700 text-xs  btn-xs text-white hover:bg-blue-500">{{ config('app.name') }}</x-button>
+        <a href="{{ route('home.index-home') }}" wire:navigate>
+            <img src="{{ asset('static/small-d-logo.png') }}" alt="DenaPax" style="height: 40px"/>
+        </a>
+
     </x-slot:brand>
 
 
