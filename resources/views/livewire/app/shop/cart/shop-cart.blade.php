@@ -90,6 +90,10 @@
                     </div>
 
                 @endforeach
+
+                <div class="h-32"></div>
+
+
             </div>
 
             <div class="md:flex-[0.3]   p-0 sm:-2 rounded hidden md:block">
