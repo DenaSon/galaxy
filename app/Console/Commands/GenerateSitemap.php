@@ -64,7 +64,7 @@ class GenerateSitemap extends Command
 
                 $sitemap->add(
                     Url::create('/blog/' . $blogId . '/' . $blogSlug)
-                        ->setPriority(0.9)
+                        ->setPriority(0.8)
                         ->setLastModificationDate($lastModifiedDate)
                         ->setChangeFrequency('weekly')
                 );
@@ -72,6 +72,21 @@ class GenerateSitemap extends Command
         } else {
             // Log an error or handle the failed API response
             \Log::error('Failed to fetch blogs from API', ['status' => $response->status()]);
+        }
+
+
+
+        // Add dynamic pages (e.g., products)
+        $categories = \App\Models\Category::where('type','=','product')->get();
+        foreach ($categories as $category) {
+            $sitemap->add(
+                Url::create('/category/' . $category->id.'/'.slugMaker($category->name))
+                    ->setPriority(0.7)
+                    ->setLastModificationDate($category->updated_at)
+                    ->setChangeFrequency('weekly')
+            );
+
+
         }
 
 
