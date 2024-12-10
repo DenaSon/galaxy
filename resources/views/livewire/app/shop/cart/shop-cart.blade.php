@@ -18,8 +18,12 @@
 
                         <div class="flex items-start gap-4">
 
-                            <img src="https://denapax.com/product_images/EytMlTEO3K8cGDytna78Jhyo6GvFJZZP76NJ2yNo.webp"
-                                 alt="تصویر محصول" class="w-24 h-24 rounded">
+
+                                <img src="{{ asset($cart->product->images->first()?->file_path) }}"
+                                     alt="تصویر محصول" class="w-24 h-24 rounded">
+
+
+
 
 
                             <div class="flex-1">
