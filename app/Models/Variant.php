@@ -24,4 +24,17 @@ class Variant extends Model
     }
 
 
+    //Handle Cache
+    protected static function booted()
+    {
+        static::saved(function () {
+            cache()->forget('home_products');
+        });
+
+        static::deleted(function () {
+            cache()->forget('home_products');
+        });
+    }
+
+
 }

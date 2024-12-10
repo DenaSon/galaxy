@@ -45,7 +45,7 @@
   ],
   "sameAs": [
     "https://www.instagram.com/denapax/",
-    "https://www.instagram.com/sisakhtzib"
+    "https://www.instagram.com/sisakhtziba"
   ]
 }
 </script>
