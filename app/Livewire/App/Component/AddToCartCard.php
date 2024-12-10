@@ -46,7 +46,7 @@ class AddToCartCard extends Component
             return;
         }
 
-        $this->dispatch('openCartBox');
+        $this->dispatch('cartUpdated');
 
         $cartItem = Cart::where('product_id', $this->product->id)
             ->where('variant_id', $this->selectedVariant->id)

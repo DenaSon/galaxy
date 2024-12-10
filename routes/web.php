@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\RoleMiddleware;
 use App\Livewire\Admin\Blog\Categories;
 use App\Livewire\Admin\Blog\CreateBlog;
 use App\Livewire\Admin\Blog\EditBlog;
@@ -17,6 +18,7 @@ use App\Livewire\App\Profile\Order\OrderDetails;
 use App\Livewire\App\Profile\ProfileAddress;
 use App\Livewire\App\Profile\ProfileDashboard;
 use App\Livewire\App\Profile\ProfileInformation;
+use App\Livewire\App\Shop\Cart\ShopCart;
 use App\Livewire\App\Shop\Checkout;
 use App\Livewire\App\Shop\CheckoutPayment;
 use App\Livewire\App\Shop\ProductList;
@@ -36,7 +38,6 @@ Route::name('home.')->group(function () {
     Route::get('/logout', \App\Livewire\App\System\Logout::class)->name('logout');
 
 
-
     Route::prefix('store')->name('product.')->group(function () {
 
         Route::get('product/{product}/{slug}', SingleProduct::class)->name('singleProduct');
@@ -44,9 +45,9 @@ Route::name('home.')->group(function () {
 
     });
 
-        Route::get('page/{page}/{slug}', SinglePage::class)->name('singlePage');
+    Route::get('page/{page}/{slug}', SinglePage::class)->name('singlePage');
 
-        Route::prefix('blog')->name('blog.')->group(function () {
+    Route::prefix('blog')->name('blog.')->group(function () {
 
         Route::get('/{blog}/{slug}', SingleBlog::class)->name('singleBlog');
 
@@ -56,34 +57,30 @@ Route::name('home.')->group(function () {
 
 });
 
-Route::middleware([\App\Http\Middleware\RoleMiddleware::class.':customer','auth:web'])->name('panel.')->group(function ()
-{
+Route::middleware([RoleMiddleware::class . ':customer', 'auth:web'])->name('panel.')->group(function () {
 
     Route::get('/order/pax-{order}', OrderDetails::class)->name('orderDetails');
 
-    Route::prefix('profile')->name('profile.')->group(function ()
-    {
+    Route::prefix('profile')->name('profile.')->group(function () {
         Route::get('/dashboard', ProfileDashboard::class)->name('profileDashboard');
         Route::get('/address', ProfileAddress::class)->name('profileAddress');
         Route::get('/information', ProfileInformation::class)->name('profileInformation');
 
     });
 
+    Route::get('/cart', ShopCart::class)->name('shop.cart');
     Route::get('/checkout', Checkout::class)->name('checkout');
-    Route::get('/checkout/payment',CheckoutPayment::class)->name('checkoutPayment');
-
+    Route::get('/checkout/payment', CheckoutPayment::class)->name('checkoutPayment');
 
 });
 
 
-
-
 // Master group
-Route::middleware(['auth:web',\App\Http\Middleware\RoleMiddleware::class.':master','throttle:15,2'])->prefix('master')->name('master.')->group(function () {
+Route::middleware(['auth:web',RoleMiddleware::class . ':master', 'throttle:15,2'])->prefix('master')->name('master.')->group(function () {
     // Master Dashboard route
     Route::get('/', Dashboard::class)->name('dashboard')->lazy();
     Route::get('system/setting', \App\Livewire\Admin\System\Setting::class)->name('setting');
-    Route::get('system/upload-center',\App\Livewire\Admin\System\UploadCenter::class)->name('uploadCenter');
+    Route::get('system/upload-center', \App\Livewire\Admin\System\UploadCenter::class)->name('uploadCenter');
 
 
     // Blog subgroup
@@ -94,8 +91,7 @@ Route::middleware(['auth:web',\App\Http\Middleware\RoleMiddleware::class.':maste
         Route::get('categories', Categories::class)->name('categories')->lazy();
     });
 
-    Route::prefix('page')->name('page.')->group(function ()
-    {
+    Route::prefix('page')->name('page.')->group(function () {
         Route::get('create', CreatePage::class)->name('createPage');
     });
 

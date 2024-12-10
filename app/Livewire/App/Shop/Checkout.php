@@ -96,7 +96,7 @@ class Checkout extends Component
         $this->grand_total = $this->cartTotalCost + $this->shippingCost;
 
 
-        $taxRate = getSetting('tax');
+        $taxRate = getSetting('tax') ?? 0;
 
 
         $fullAddress = getShippingAddress($address);

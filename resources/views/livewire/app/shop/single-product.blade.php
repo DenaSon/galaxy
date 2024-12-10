@@ -18,7 +18,7 @@
 
         </div>
     </div>
-    @livewire('app.component.cart-box')
+
     @auth
             @livewire('app.component.address-modal')
     @endauth

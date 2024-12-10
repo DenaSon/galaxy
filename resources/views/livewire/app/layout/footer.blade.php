@@ -1,4 +1,6 @@
-<div class="text-gray-600 sm:mb-1 mb-4">
+<div class="text-gray-600 sm:mb-1 mb-4 @if(request()->routeIs('panel.shop.cart'))
+hidden md:block
+@endif">
     @include('livewire.app.layout.inc.footer-icons')
 
     <div class="container mx-auto px-4 py-8">

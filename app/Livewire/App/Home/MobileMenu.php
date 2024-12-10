@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Livewire\App\Home;
+use App\Models\Cart;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Mary\Traits\Toast;
 #[Layout('components.layouts.app')]
@@ -11,9 +13,19 @@ class MobileMenu extends Component
 use Toast;
 
     public $title;
+
+    public $cartCount;
+
+    #[On('cartUpdated')]
+    public function getCartCount()
+    {
+        $this->cartCount = auth()?->user()?->carts()?->count() ?? 0;
+    }
+
     public function mount()
     {
         $this->title = 'Mobile Menu';
+        $this->cartCount = auth()?->user()?->carts()?->count() ?? 0;
     }
 
     public function openLogin()

@@ -19,7 +19,7 @@ class CartBox extends Component
     public $products = [];
     public $variant;
 
-    public Cart $cart;
+
 
     public $shippingCost = 0;
     public $totalCost;

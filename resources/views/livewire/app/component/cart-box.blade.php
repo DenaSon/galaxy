@@ -55,7 +55,7 @@
                 @if(Auth::user()->addresses()->count('id') > 0)
                     <x-button spinner="payment" wire:click.debounce.250ms="registerOrder" label="ثبت سفارش" icon="o-shopping-bag" class="text-white bg-violet-800 hover:bg-violet-900 w-full py-2 rounded-md shadow-md text-sm font-medium"/>
                 @else
-                    <x-button spinner="payment" wire:click="regAddress" label="ثبت سفارش" icon="o-shopping-bag" class="text-white bg-violet-800 hover:bg-violet-900 w-full py-2 rounded-md shadow-md text-sm font-medium"/>
+                    <x-button  wire:click="regAddress" label="ثبت سفارش" icon="o-shopping-bag" class="text-white bg-violet-800 hover:bg-violet-900 w-full py-2 rounded-md shadow-md text-sm font-medium"/>
                 @endif
             </div>
         </x-drawer>

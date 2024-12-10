@@ -3,16 +3,20 @@
 <html lang="fa">
 <head>
     @include('components.layouts.inc.analytics-code')
-    <script defer type="text/javascript">
-        !function(){var i="qcNyHg",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
 
-        document.addEventListener('livewire:navigated', (event) => {
-
+    @if(!request()->routeIs('panel.shop.cart'))
+        <script defer type="text/javascript">
             !function(){var i="qcNyHg",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
 
+            document.addEventListener('livewire:navigated', (event) => {
 
-        }, {once: false});
-    </script>
+                !function(){var i="qcNyHg",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
+
+
+            }, {once: false});
+        </script>
+    @endif
+
     <link rel="preload" href="{{asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2')}}" as="font"
           type="font/woff2" crossorigin="anonymous">
     <meta charset="UTF-8">
@@ -86,6 +90,11 @@
 
 
     <x-slot:actions>
+
+
+        <x-button responsive icon="o-shopping-cart" link="{{ route('panel.shop.cart') }}" label="سبد خرید" class="text-primary"/>
+
+
         <x-button class=" md:flex hidden" responsive label="جستجو..." @click.stop="$dispatch('mary-search-open')"
                   icon="o-magnifying-glass"/>
 

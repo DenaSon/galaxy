@@ -1,6 +1,6 @@
 <div>
 
-    <div class="btm-nav md:hidden border border-gray-100 rounded">
+    <div class="btm-nav md:hidden border border-gray-100 rounded" style="z-index: 10001">
 
 
         <a wire:navigate role="button" href="{{ homeUrl() }}" class="hover:text-primary">
@@ -18,7 +18,13 @@
                 <span class="text-xs">سبد خرید</span>
             </a>
         @else
-
+            <a wire:navigate href="{{ route('panel.shop.cart') }}" role="button" class="hover:text-primary">
+                <div x-data="{ cartCount: @entangle('cartCount') }" class="indicator">
+                    <span x-text="cartCount" class="indicator-item badge badge-primary badge-xs"></span>
+                    <x-icon name="o-shopping-cart"/>
+                </div>
+                <span class="text-xs">سبد خرید</span>
+            </a>
 
         @endif
 

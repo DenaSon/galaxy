@@ -121,7 +121,9 @@ class AddressModal extends Component
             $this->info('آدرس ثبت شد', css: 'text-white bg-blue-500');
             $this->addressModal = false;
 
-            $this->dispatch('openCartBox');
+
+                $this->redirectRoute('panel.checkout', [], true, true);
+
         }
 
         catch (Throwable $e)
