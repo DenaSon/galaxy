@@ -48,11 +48,11 @@ class AddToCartCard extends Component
 
         $this->dispatch('cartUpdated');
 
-        $this->warning(
+        $this->success(
             'محصول به سبد خرید اضافه شد',
-            position: 'bottom-end',
-            icon: 'o-heart',
-            css: 'bg-pink-500 text-base-100'
+            position: 'toast-top toast-start',
+            icon: 'o-check',
+            css: 'bg-success text-white', timeout: 1500
         );
 
         $cartItem = Cart::where('product_id', $this->product->id)
