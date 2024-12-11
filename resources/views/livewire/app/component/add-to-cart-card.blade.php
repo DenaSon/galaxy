@@ -32,6 +32,26 @@
 
                 <div class="clear-both"></div>
 
+                <div class="mt-4">
+
+                    <div class="flex items-center border border-primary rounded overflow-hidden">
+                        <x-button spinner icon="o-plus"
+                                  class="w-10 text-primary font-bold bg-white border-none rounded-none hover:bg-gray-50">
+
+                        </x-button>
+
+                        <span
+                            class="w-12 h-10 flex items-center justify-center bg-white text-primary font-semibold">2</span>
+
+                        <x-button spinner icon="o-minus"
+                                  class="w-10    text-primary font-bold bg-white border-none rounded-none hover:bg-gray-50">
+
+                        </x-button>
+
+                    </div>
+
+                </div>
+
             </div>
 
 
