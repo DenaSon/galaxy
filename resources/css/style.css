@@ -4,7 +4,7 @@
     border-radius: 10px;
     border: 1px solid #e7e6f4;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    padding: 18px;
 }
 
 .single-blog p {
@@ -87,9 +87,9 @@
 .single-blog ol li {
     font-size: 1rem;
     color: #333;
-    line-height: 1.5rem;
+    line-height: 1.6rem;
     margin-bottom: 11px;
-
+    padding: 2px;
 }
 
 .single-blog ul li::before {
