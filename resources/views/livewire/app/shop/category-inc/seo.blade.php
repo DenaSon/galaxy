@@ -7,6 +7,9 @@
       content="مشاهده لیست محصولات دسته‌بندی شده در سایت DenaPax. انتخاب {{ $category->name }} با بهترین کیفیت.">
 <meta property="og:url" content="{{singleCategoryUrl($category->id,$category->name)}}">
 <meta property="og:site_name" content="{{ getSetting('website_title') }}">
+
+
+
 <script type="application/ld+json">
     @php
         $itemList = [];
@@ -15,7 +18,7 @@
             $itemList[] = [
                 "@type" => "ListItem",
                 "position" => $index + 1,
-                "url" => rawurlencode(singleProductUrl($product->id, $product->name)), // Encoding properly
+                "url" => singleProductUrl($product->id, $product->name), // No encoding here
                 "name" => $product->name,
                 "image" => $productImage ? asset($productImage->file_path) : '',  // Make sure the image exists
                 "price" => number_format($product->variants->min('price')),
@@ -27,9 +30,10 @@
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "{{ $category->name }}",
-      "url": rawurlencode(singleCategoryUrl($category->id, $category->name)), // Encoding properly
+      "url": singleCategoryUrl($category->id, $category->name), // No encoding here
       "itemListElement": @json($itemList)
     }
 </script>
+
 
 
