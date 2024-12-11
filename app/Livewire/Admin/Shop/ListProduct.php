@@ -10,7 +10,6 @@ use Livewire\WithPagination;
 use Mary\Traits\Toast;
 
 #[Title('لیست محصولات')]
-
 #[Layout('components.layouts.admin')]
 #[Lazy]
 
