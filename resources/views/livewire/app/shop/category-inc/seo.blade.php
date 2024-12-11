@@ -29,8 +29,7 @@
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "{{ $category->name }}",
-      "url": "{{ singleCategoryUrl($category->id, $category->name) }}", // Direct URL output
-      "itemListElement": {!! json_encode($itemList, JSON_UNESCAPED_SLASHES) !!} // Disable slash escaping here
+      "itemListElement": {!! json_encode($itemList, JSON_UNESCAPED_SLASHES) !!}
     }
 </script>
 
