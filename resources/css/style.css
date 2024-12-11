@@ -59,7 +59,7 @@
     font-style: italic; /* برای زیبایی بیشتر */
     font-family: 'denapax-font', serif; /* فونت جذاب برای نقل‌قول */
     color: #555; /* رنگ خاکی برای متن */
-    line-height: 1.6; /* فاصله خطوط برای خوانایی بهتر */
+    line-height: 1.8; /* فاصله خطوط برای خوانایی بهتر */
 }
 
 .single-blog blockquote:before {
