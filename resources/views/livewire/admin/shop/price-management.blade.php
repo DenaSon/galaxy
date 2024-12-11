@@ -17,7 +17,7 @@
             {{ \App\Models\Product::whereId($selectedProduct)?->first()?->name }}
         </h2>
 
-        <div class="flex flex-wrap justify-start gap-2"> <!-- برای ردیف کنار هم در دسکتاپ -->
+        <div class="flex flex-wrap justify-start gap-2">
             @foreach($variants as $index => $variant)
                 <x-card
                     separator
