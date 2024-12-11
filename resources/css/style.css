@@ -9,7 +9,7 @@
 
 .single-blog p {
     font-size: 1.105rem; /* اندازه فونت */
-    line-height: 1.5rem; /* فاصله خطوط */
+    line-height: 1.9rem; /* فاصله خطوط */
     color: #333;
     margin-bottom: 2rem;
     text-align: justify;
@@ -94,6 +94,7 @@
     content: "•";
     color: #681cae;
     margin-right: 10px;
+    padding: 2px;
 }
 
 .single-blog ol {
@@ -128,3 +129,4 @@
 
 
 }
+
