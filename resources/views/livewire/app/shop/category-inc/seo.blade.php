@@ -30,10 +30,11 @@
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "{{ $category->name }}",
-      "url": singleCategoryUrl($category->id, $category->name), // No encoding here
-      "itemListElement": @json($itemList)
+      "url": "{{ singleCategoryUrl($category->id, $category->name) }}", // Direct output
+      "itemListElement": {!! json_encode($itemList) !!}
     }
 </script>
+
 
 
 
