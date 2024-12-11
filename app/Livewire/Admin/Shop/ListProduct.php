@@ -6,6 +6,7 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Lazy;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\WithPagination;
 use Mary\Traits\Toast;
 
 #[Title('لیست محصولات')]
@@ -16,7 +17,7 @@ use Mary\Traits\Toast;
 class ListProduct extends Component
 {
 
-    use  Toast;
+    use  Toast,WithPagination;
 
     public array $sortBy = ['column' => 'views', 'direction' => 'asc' ];
 
