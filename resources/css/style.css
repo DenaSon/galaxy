@@ -38,7 +38,9 @@
 }
 
 .single-blog h3 {
-    font-size: 1.55rem;
+    font-size: 1.45rem;
+    font-weight: bold;
+    line-height: 2rem;
 }
 .single-blog img {
     max-width: 100%;
