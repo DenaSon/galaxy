@@ -9,7 +9,6 @@
 <meta property="og:site_name" content="{{ getSetting('website_title') }}">
 
 
-
 <script type="application/ld+json">
     @php
         $itemList = [];
@@ -18,9 +17,9 @@
             $itemList[] = [
                 "@type" => "ListItem",
                 "position" => $index + 1,
-                "url" => singleProductUrl($product->id, $product->name), // No encoding here
+                "url" => singleProductUrl($product->id, $product->name), // Direct URL output
                 "name" => $product->name,
-                "image" => $productImage ? asset($productImage->file_path) : '',  // Make sure the image exists
+                "image" => $productImage ? asset($productImage->file_path) : '', // Ensure image exists
                 "price" => number_format($product->variants->min('price')),
                 "priceCurrency" => "IRT"
             ];
@@ -30,10 +29,11 @@
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "{{ $category->name }}",
-      "url": "{{ singleCategoryUrl($category->id, $category->name) }}", // Direct output
-      "itemListElement": {!! json_encode($itemList) !!}
+      "url": "{{ singleCategoryUrl($category->id, $category->name) }}", // Direct URL output
+      "itemListElement": {!! json_encode($itemList, JSON_UNESCAPED_SLASHES) !!} // Disable slash escaping here
     }
 </script>
+
 
 
 
