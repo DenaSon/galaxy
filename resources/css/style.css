@@ -1,15 +1,43 @@
-.single-blog
-{
+:root {
+    --primary: #491eff !important;
+    --primary-color: var(--primary) !important; /* Your custom primary color */
+}
+.single-blog {
     display: block;
     border-radius: 10px;
     border: 1px solid #e7e6f4;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 18px;
+    padding: 22px;
+}
+
+.single-blog strong {
+    font-weight: bold;
+    color: #2c3e50; /* Dark color for better contrast */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: text-shadow 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+
+/* Link style using the primary color */
+.single-blog a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for links */
+.single-blog a:hover {
+    color: #2980b9; /* Slightly darker shade for hover */
+    text-decoration: underline;
+}
+.single-blog strong:hover {
+    color: #491eff; /* Change color on hover */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 .single-blog p {
-    font-size: 1.105rem; /* اندازه فونت */
-    line-height: 1.9rem; /* فاصله خطوط */
+    font-size: 1.105rem;
+    line-height: 1.9rem;
     color: #333;
     margin-bottom: 2rem;
     text-align: justify;
@@ -24,6 +52,7 @@
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
+
 .single-blog h1 {
     font-size: 2.1rem;
     border-bottom: 3px solid #491eff;
@@ -39,8 +68,22 @@
 
 .single-blog h3 {
     font-size: 1.15rem;
-    font-weight: bold;
     line-height: 2rem;
+}
+
+/* Add a subtle shadow to headings for emphasis */
+.single-blog h1, .single-blog h2, .single-blog h3 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .single-blog h1 {
+        font-size: 1.8rem;
+    }
+
+    .single-blog p {
+        font-size: 1rem;
+    }
 }
 .single-blog img {
     max-width: 100%;
@@ -56,17 +99,16 @@
     margin: 1.5em 20px;
     padding: 1em 20px;
     quotes: "\201C""\201D""\2018""\2019";
-    font-style: italic; /* برای زیبایی بیشتر */
-    font-family: 'denapax-font', serif; /* فونت جذاب برای نقل‌قول */
-    color: #555; /* رنگ خاکی برای متن */
-    line-height: 1.8; /* فاصله خطوط برای خوانایی بهتر */
+    font-style: italic;
+    font-family: 'denapax-font', serif;
+    color: #555;
+    line-height: 1.6;
 }
 
 .single-blog blockquote:before {
-    color: #927dea; /* رنگ آبی برای علامت نقل‌قول */
+    color: #927dea;
     content: open-quote;
     font-size: 3.5em;
-    line-height: 0.1em;
     margin-right: 0.25em;
     vertical-align: -0.4em;
 }
@@ -82,50 +124,53 @@
     margin-left: 1.4rem;
     margin-bottom: 1.2rem;
 }
-
-.single-blog ul li,
-.single-blog ol li {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.6rem;
-    margin-bottom: 11px;
-    padding: 2px;
+/* Style for unordered lists */
+.single-blog ul {
+    margin-left: 1.5rem; /* Indentation for the list */
+    margin-bottom: 1.5rem; /* Space after the list */
+    padding-left: 1rem; /* Space between bullet and text */
 }
 
+.single-blog ul li {
+    font-size: 1.1rem; /* Slightly larger font size */
+    line-height: 1.8rem; /* Increase line height for readability */
+    color: #333; /* Dark color for readability */
+    margin-bottom: 10px; /* Space between list items */
+    position: relative;
+}
+
+/* Custom bullets for unordered lists */
 .single-blog ul li::before {
-    content: "•";
-    color: #681cae;
-    margin-right: 10px;
-    padding: 2px;
+    content: "★"; /* Custom bullet point */
+    color: #381eac; /* Use the primary color for the bullet */
+    font-size: 1.1rem; /* Size of the bullet */
+    position: absolute;
+    right: -1.5rem; /* Move the bullet to the left */
+    top: 0; /* Align with the text */
+    padding: 3px;
+    opacity: 25%;
 }
 
+/* Style for ordered lists */
 .single-blog ol {
-    list-style-type: decimal;
+    margin-left: 2rem; /* Indentation for the list */
+    margin-bottom: 1.5rem; /* Space after the list */
 }
+
+.single-blog ol li {
+    font-size: 1.1rem; /* Slightly larger font size */
+    line-height: 1.8rem; /* Increase line height for readability */
+    color: #333; /* Dark color for readability */
+    margin-bottom: 10px; /* Space between list items */
+}
+
+
+
+
 .single-blog a {
-    color: #3498db;
+    color: var(--primary);
     text-decoration: none;
     transition: color 0.3s ease;
-}
-
-.single-blog .alignright {
-    float: right;
-    margin-left: 15px;  /* Optional: Adds space between the image and text */
-    margin-bottom: 10px;  /* Optional: Adds space below the image */
-}
-
-
-.single-blog .alignleft {
-    float: left;
-    margin-right: 15px;  /* Optional: Adds space between the image and text */
-    margin-bottom: 10px;  /* Optional: Adds space below the image */
-}
-
-.single-blog .aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;  /* Optional: Adds space below the image */
 }
 
 .single-blog a:hover {
@@ -133,22 +178,38 @@
     text-decoration: underline;
 }
 
-.pax-img-thumbnail {
+.single-blog .alignright,
+.single-blog .alignleft {
+    margin-bottom: 10px;
+}
 
-    border: 2px solid #ddd; /* Light border */
-    border-radius: 10px; /* Rounded corners */
-    padding: 5px; /* Padding around the image */
-    width: 100%; /* Makes the image responsive */
-    max-width: 250px; /* Maximum width of the thumbnail */
-    height: auto; /* Maintains aspect ratio */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+.single-blog .alignright {
+    float: right;
+    margin-left: 15px;
+}
+
+.single-blog .alignleft {
+    float: left;
+    margin-right: 15px;
+}
+
+.single-blog .aligncenter {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.pax-img-thumbnail {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pax-img-thumbnail:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
-
-
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-
