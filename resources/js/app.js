@@ -21,6 +21,11 @@ function startSwiper() {
                 el: ".swiper-pagination",
                 clickable: true,
             },
+            // Navigation configuration
+            navigation: {
+                nextEl: ".swiper-button-next", // Next arrow container
+                prevEl: ".swiper-button-prev", // Prev arrow container
+            },
 
             breakpoints: {
                 // When the viewport is 320px or larger
@@ -42,6 +47,11 @@ function startSwiper() {
                 1024: {
                     slidesPerView: 6,
                     spaceBetween: 25,
+                },
+
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
                 },
             },
 
