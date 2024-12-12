@@ -1,9 +1,9 @@
 <div class="w-full max-w-md mx-auto">
     <a
         class="block relative bg-white overflow-hidden rounded-lg shadow-lg border border-gray-200"
-        wire:navigate
+
         href="{{ singleBlogUrl($blog['id'],$blog['title']['rendered']) }}">
-        <div class="flex flex-col h-full">
+        <div class="flex flex-col h-24">
 
 
             <div class="relative h-20 overflow-hidden p-0">

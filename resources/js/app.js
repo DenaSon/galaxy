@@ -2,12 +2,55 @@ import "./libs/trix";
 import './bootstrap';
 import '../css/app.css';
 import '../css/style.css';
+
+
 import Swiper from 'swiper/bundle';
 // import styles bundle
 import 'swiper/css/bundle';
 
 import '../js/libs/swiper.js'
 function startSwiper() {
+
+
+        const swiper_blog = new Swiper('.swiperBlog', {
+            slidesPerView: 6,
+            spaceBetween: 20,
+
+            freeMode: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+
+            breakpoints: {
+                // When the viewport is 320px or larger
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                // When the viewport is 480px or larger
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                },
+                // When the viewport is 768px or larger
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+                // When the viewport is 1024px or larger
+                1024: {
+                    slidesPerView: 6,
+                    spaceBetween: 25,
+                },
+            },
+
+
+
+        });
+
+
+
     // init Swiper:
     const swiper = new Swiper('.swiper', {
 
@@ -38,9 +81,7 @@ function startSwiper() {
 
 }
 
-startSwiper();
-
-
+document.addEventListener('DOMContentLoaded', startSwiper);
 
 document.addEventListener('livewire:navigated', (event) => {
 
