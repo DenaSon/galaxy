@@ -17,6 +17,7 @@ class ListProduct extends Component
 {
 
     use  Toast,WithPagination;
+    public $searchTerm;
 
     public array $sortBy = ['column' => 'views', 'direction' => 'asc' ];
 
@@ -41,7 +42,10 @@ class ListProduct extends Component
 
     public function render()
     {
-        $product = Product::latest('created_at')  ->orderBy(...array_values($this->sortBy))->paginate(20);
+        $product = Product::latest('created_at')
+            ->where('name','like','%'.$this->searchTerm.'%')
+            ->orderBy(...array_values($this->sortBy))
+            ->paginate(20);
         return view('livewire.admin.shop.list-product',compact('product'))
         ->title('');
     }

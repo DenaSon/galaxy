@@ -2,7 +2,7 @@
     @php
         $carts = Auth::check() ? Auth::user()->carts()->with(['product.images', 'product.variants', 'variant'])->get() : collect();
     @endphp
-    <section class="container mx-auto p-0 sm:p-4">
+    <section class="container mx-auto p-0 sm:p-4  ">
         <h3 class="p-3">
             <span class="font-black text-sm">سبد خرید شما </span>
             <x-badge class="text-xs badge badge-primary" value="{{ $carts->count() }}"/>

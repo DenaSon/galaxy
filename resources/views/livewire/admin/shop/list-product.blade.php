@@ -4,7 +4,19 @@
 
 
     <div>
+
+        <section id="search" class="flex flex-1m-2 p-4">
+            <x-input wire:model.live.debounce.500ms="searchTerm" label="جستجو" inline/>
+            <br/>
+
+
+        </section>
+
+
+
         <div class="flex flex-col md:flex-row md:space-x-4">
+
+
 
             <div class="w-full md:w-full shadow-lg m-2">
                 @php
@@ -19,7 +31,7 @@
                         ['key' => 'actions', 'label' => 'اقدامات']
                     ];
                 @endphp
-
+                <x-progress indeterminate wire:loading value="10" max="100" class="progress-primary h-2" />
                 <x-table :headers="$headers" :rows="$product" selectable="true" striped="true"
                          empty-text="موردی وجود ندارد" with-pagination :sort-by="$sortBy">
 

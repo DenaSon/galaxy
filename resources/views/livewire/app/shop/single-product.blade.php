@@ -19,9 +19,6 @@
         </div>
     </div>
 
-    @auth
-            @livewire('app.component.address-modal')
-    @endauth
 
         <script>
             Livewire.on('refreshPage', () => {
