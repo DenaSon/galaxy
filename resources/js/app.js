@@ -66,7 +66,7 @@ function startSwiper() {
 
         effect: 'flip', // Flip effect for a unique visual
         grabCursor: true, // Adds a cursor style for better user experience
-        loop: true, // Enables infinite looping
+        loop: false, // Enables infinite looping
         navigation: {
             nextEl: '.swiper-button-next', // Customizable next button
             prevEl: '.swiper-button-prev', // Customizable previous button
