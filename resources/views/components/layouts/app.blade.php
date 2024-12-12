@@ -18,11 +18,12 @@
     <style>
         @font-face {
             font-family: 'denapax-font';
-            src: url('{{asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2')}}') format('woff2'),
-            url('{{ asset('admin/assets/fonts/iransans/woff/IRANSansWeb(FaNum).woff') }}') format('woff');
-        url('{{ asset('admin/assets/fonts/iransans/ttf/IRANSansWeb(FaNum).ttf') }}') format('woff');
+            src: url('{{ asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2') }}') format('woff2'),
+            url('{{ asset('admin/assets/fonts/iransans/woff/IRANSansWeb(FaNum).woff') }}') format('woff'),
+            url('{{ asset('admin/assets/fonts/iransans/ttf/IRANSansWeb(FaNum).ttf') }}') format('truetype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
 
         ::-webkit-scrollbar {

@@ -108,6 +108,26 @@
     transition: color 0.3s ease;
 }
 
+.single-blog .alignright {
+    float: right;
+    margin-left: 15px;  /* Optional: Adds space between the image and text */
+    margin-bottom: 10px;  /* Optional: Adds space below the image */
+}
+
+
+.single-blog .alignleft {
+    float: left;
+    margin-right: 15px;  /* Optional: Adds space between the image and text */
+    margin-bottom: 10px;  /* Optional: Adds space below the image */
+}
+
+.single-blog .aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;  /* Optional: Adds space below the image */
+}
+
 .single-blog a:hover {
     color: #2980b9;
     text-decoration: underline;
