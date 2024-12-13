@@ -120,8 +120,8 @@ class Login extends Component
 
                 Auth::login($user, true);
 
-//                session()->regenerate();
-//                session()->regenerateToken();
+              //  session()->regenerate();
+              //  session()->regenerateToken();
                 session()->forget('phone_number');
                 $this->verifyModal = false;
                 Cache::forget('VerifyCode_' . $phoneNumber);
@@ -150,6 +150,7 @@ class Login extends Component
                 Cache::forget('VerifyCode_' . $phoneNumber);
                 $this->verifyModal = false;
                 $this->info('ثبت نام | ورود شما با موفقیت  انجام شد', '', '', 'o-check');
+
                 $this->dispatch('refreshPage');
 
             }
