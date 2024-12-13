@@ -20,8 +20,10 @@ class Store extends Component
     public $perPage = 4;
     public function loadMore()
     {
-        $this->perPage += 2;
         sleep(1);
+
+        $this->perPage += 2;
+
 
     }
 
