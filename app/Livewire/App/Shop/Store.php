@@ -14,6 +14,9 @@ class Store extends Component
     use Toast,WithPagination;
     public $categories = [];
     protected $paginationTheme = 'tailwind';
+    protected $listeners = [
+        'loadMore' => 'loadMore',
+    ];
 
     public function loadMore()
     {
