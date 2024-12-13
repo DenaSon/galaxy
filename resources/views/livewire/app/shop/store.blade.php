@@ -20,12 +20,13 @@
     @push('scripts')
 
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                window.onscroll = function () {
-                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                        Livewire.dispatch('loadMore'); // متد loadMore اجرا می‌شود
-                    }
-                };
+            document.addEventListener('scroll', function () {
+                const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
+
+                // بررسی اینکه کاربر به انتهای صفحه نزدیک است
+                if (scrollTop + clientHeight >= scrollHeight - 5) {
+                    Livewire.dispatch('loadMore'); // فراخوانی متد loadMore
+                }
             });
         </script>
     @endpush
