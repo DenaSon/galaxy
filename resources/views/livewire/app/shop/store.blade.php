@@ -7,12 +7,12 @@
     </div>
 
     <br/>
-    <!-- Loading Spinner -->
-    <div class="flex justify-center my-4 text-center origin-center" wire:loading>
 
-        <x-progress class="progress-primary h-0.8" indeterminate />
+    <br/><br/>
 
-    </div>
+
+        <x-progress class="progress-primary h-0.8" indeterminate  wire:loading/>
+
 
     <br/><br/>
 
