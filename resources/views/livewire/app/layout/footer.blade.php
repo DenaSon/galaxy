@@ -1,4 +1,4 @@
-<div class="text-gray-600 sm:mb-1 mb-4 @if(request()->routeIs('panel.shop.cart'))
+<div class="text-gray-600 sm:mb-1 mb-4 @if(request()->routeIs('panel.shop.cart') || request()->routeIs('home.product.indexStore'))
 hidden md:block
 @endif">
     @include('livewire.app.layout.inc.footer-icons')

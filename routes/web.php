@@ -40,7 +40,7 @@ Route::name('home.')->group(function () {
 
     Route::prefix('store')->name('product.')->group(function () {
 
-        Route::get('/',\App\Livewire\App\Shop\Store::class)->name('index');
+        Route::get('/',\App\Livewire\App\Shop\Store::class)->name('indexStore');
         Route::get('product/{product}/{slug}', SingleProduct::class)->name('singleProduct');
         Route::get('category/{category}/{slug}', ProductList::class)->name('singleCategory');
 
