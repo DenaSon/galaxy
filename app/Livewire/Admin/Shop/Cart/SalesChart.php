@@ -22,7 +22,7 @@ class SalesChart extends Component
             ->orderBy('date')
             ->get();
         $labels = $ordersPerDay->pluck('date')->map(function ($date) {
-            return Jalalian::fromCarbon($date)->format('Y/m/d'); // Format to Jalali date (e.g., 1403/10/22)
+            return jdate($date)->toDateString(); // Format to Jalali date (e.g., 1403/10/22)
         })->toArray();
         $orderCounts = $ordersPerDay->pluck('order_count')->toArray();
 
