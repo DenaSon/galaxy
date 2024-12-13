@@ -11,7 +11,9 @@
     <br/><br/>
 
 
-        <x-progress class="progress-primary h-0.8" indeterminate  wire:loading/>
+       <div class="text-center">
+           <div class="font-black text-sm">درحال بارگذاری...</div>
+       </div>
 
 
     <br/><br/>
