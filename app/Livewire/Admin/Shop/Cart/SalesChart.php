@@ -29,12 +29,12 @@ class SalesChart extends Component
 
 
         return [
-            'type' => 'line',
+            'type' => 'bar',
             'data' => [
                 'labels' => $labels, // Dates as labels
                 'datasets' => [
                     [
-                        'label' => 'نمودار سفارش ها',
+                        'label' => 'سفارش‌ها',
                         'data' => $orderCounts,
                         'borderColor' => 'rgba(75,192,192,1)',
                         'backgroundColor' => 'rgba(75,192,192,0.2)',
