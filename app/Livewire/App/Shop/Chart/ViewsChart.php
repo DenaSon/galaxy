@@ -47,10 +47,7 @@ class ViewsChart extends Component
     public function getViewsData()
     {
 
-        $todayViews = Product::whereBetween('updated_at', [
-            Carbon::today()->startOfDay(),
-            Carbon::today()->endOfDay(),
-        ])->sum('views');
+        $todayViews = Product::whereDate('created_at', Carbon::today())->sum('views');
 
         $yesterdayViews = Product::whereBetween('updated_at', [
             Carbon::yesterday()->startOfDay(),
