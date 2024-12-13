@@ -22,7 +22,7 @@ class SalesChart extends Component
             ->groupBy('date')
             ->orderBy('date')
             ->take(10)
-            ->latest()
+
             ->get();
         $labels = $ordersPerDay->pluck('date')->map(function ($date) {
             return jdate($date)->toDateString();
