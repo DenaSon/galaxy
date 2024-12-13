@@ -15,11 +15,12 @@ class Store extends Component
     public $categories = [];
     protected $paginationTheme = 'tailwind';
 
-    public $selectedCategory = null;
-    public $priceRange = ['min' => null, 'max' => null];
+    public function loadMore()
+    {
+        $this->perPage += 12;
+    }
 
-
-
+    public $perPage = 10;
 
 
 
@@ -32,7 +33,7 @@ class Store extends Component
     public function render()
     {
         return view('livewire.app.shop.store',[
-            'products' => Product::latest()->paginate(10),
+            'products' => Product::latest()->paginate($this->perPage),
         ])
             ->title('دناپکس | فروشگاه خرید خشکبار و سوغات');
     }

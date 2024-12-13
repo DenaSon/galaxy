@@ -21,7 +21,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             window.onscroll = function () {
                 if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                    Livewire.dispatch('loadMore');
+                    Livewire.emit('loadMore'); // متد loadMore اجرا می‌شود
                 }
             };
         });
