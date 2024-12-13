@@ -1,21 +1,20 @@
 <?php
 
 namespace App\Livewire\App\Shop\Chart;
+
 use App\Models\Product;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
-#[Layout('components.layouts.app')]
 
+#[Layout('components.layouts.app')]
 class ViewsChart extends Component
 {
-use Toast;
+    use Toast;
 
 
-
-  public $viewsChart;
+    public $viewsChart;
 
 
     public function loadViewsChart()
@@ -48,11 +47,15 @@ use Toast;
     public function getViewsData()
     {
 
-        $todayViews = Product::whereDate('created_at', Carbon::today())->sum('views');
+        $todayViews = Product::whereBetween('updated_at', [
+            Carbon::today()->startOfDay(),
+            Carbon::today()->endOfDay()
+        ])->sum('views');
 
-
-        $yesterdayViews = Product::whereDate('created_at', Carbon::yesterday())->sum('views');
-
+        $yesterdayViews = Product::whereBetween('updated_at', [
+            Carbon::yesterday()->startOfDay(),
+            Carbon::yesterday()->endOfDay()
+        ])->sum('views');
 
         $lastWeekViews = Product::whereBetween('created_at', [Carbon::now()->subDays(7), Carbon::now()])->sum('views');
 
@@ -63,12 +66,9 @@ use Toast;
     }
 
 
-
-
-
     public function render()
     {
         return view('livewire.app.shop.chart.views-chart')
-        ->title('');
+            ->title('');
     }
 }
