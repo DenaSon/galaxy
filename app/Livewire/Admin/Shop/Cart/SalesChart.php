@@ -18,6 +18,7 @@ class SalesChart extends Component
     {
         $ordersPerDay = \DB::table('orders')
             ->selectRaw('DATE(created_at) as date, COUNT(*) as order_count')
+            ->where('payment_status', 'paid')
             ->groupBy('date')
             ->orderBy('date')
             ->get();
