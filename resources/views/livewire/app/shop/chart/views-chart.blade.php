@@ -1,5 +1,5 @@
 <div>
 
-    <x-chart wire:model="viewsChart" />
+    <x-chart wire:model="ordersChart" />
 
 </div>

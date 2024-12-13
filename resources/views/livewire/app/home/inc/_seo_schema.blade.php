@@ -1,7 +1,8 @@
 <!-- Basic Meta Tags -->
 <meta name="robots" content="index, follow" />
 @if (Request::is('/'))
-    <link rel="canonical" href="https://denapax.com" />
+    <link rel="canonical" href="https://denapax.com/" />
+
 @endif
 <!-- SEO Meta Tags -->
 <meta name="description" content="{{ getSetting('meta_description') ?? 'DenaPax is your trusted source for high-quality local souvenirs, nuts, and dried fruits. Discover the perfect mix for your taste!' }}" />

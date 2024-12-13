@@ -2,6 +2,7 @@
 
 namespace App\Livewire\App\Shop\Chart;
 
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Carbon;
 use Livewire\Attributes\Layout;
@@ -14,62 +15,25 @@ class ViewsChart extends Component
     use Toast;
 
 
-    public $viewsChart;
+    public $ordersChart =[];
 
 
-    public function loadViewsChart()
+    public function getOrdersChart()
     {
-        $viewsData = $this->getViewsData();
-
-        $this->viewsChart = [
-            'type' => 'bar',
-            'data' => [
-                'labels' => $viewsData['labels'],
-                'datasets' => [
-                    [
-                        'label' => 'تعداد بازدیدها',
-                        'data' => $viewsData['data'],
-                        'backgroundColor' => ['#FF6384', '#36A2EB', '#FFCE56'],
-                    ],
-                ],
-            ],
-            'options' => [
-                'responsive' => true,
-            ],
+        return [
+            'labels' => ['امروز', 'دیروز', 'پریروز'],
+            'data' => [50, 58, 65],
         ];
     }
 
     public function mount()
     {
-        $this->loadViewsChart();
+       $this->ordersChart =  $this->getOrdersChart();
     }
-
-    public function getViewsData()
-    {
-
-        $todayViews = Product::whereDate('created_at', Carbon::today())->sum('views');
-
-        $yesterdayViews = Product::whereBetween('updated_at', [
-            Carbon::yesterday()->startOfDay(),
-            Carbon::yesterday()->endOfDay(),
-        ])->sum('views');
-
-        $twoDaysAgoViews = Product::whereBetween('updated_at', [
-            Carbon::yesterday()->subDay()->startOfDay(),
-            Carbon::yesterday()->subDay()->endOfDay(),
-        ])->sum('views');
-
-        return [
-            'labels' => ['امروز', 'دیروز', 'پریروز'],
-            'data' => [$todayViews, $yesterdayViews, $twoDaysAgoViews],
-        ];
-
-    }
-
 
     public function render()
     {
-        return view('livewire.app.shop.chart.views-chart')
-            ->title('');
+        return view('livewire.app.shop.chart.views-chart');
+
     }
 }
