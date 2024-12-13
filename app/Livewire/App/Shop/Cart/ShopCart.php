@@ -111,7 +111,8 @@ class ShopCart extends Component
         if (!Auth::user()->carts()->exists())
         {
             $this->info('سبد خرید شما خالی است');
-            $this->redirectRoute('home.index-home', [], true, true);
+            return redirect()->route('home.index-home');
+
         }
 
         $this->getTotalCost();
