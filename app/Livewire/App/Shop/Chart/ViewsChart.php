@@ -50,12 +50,12 @@ class ViewsChart extends Component
         $todayViews = Product::whereBetween('updated_at', [
             Carbon::today()->startOfDay(),
             Carbon::today()->endOfDay(),
-        ])->sum('views');;
+        ])->sum('views');
 
         $yesterdayViews = Product::whereBetween('updated_at', [
             Carbon::yesterday()->startOfDay(),
             Carbon::yesterday()->endOfDay(),
-        ])->sum('views');;
+        ])->sum('views');
 
         $twoDaysAgoViews = Product::whereBetween('updated_at', [
             Carbon::yesterday()->subDay()->startOfDay(),
@@ -63,9 +63,10 @@ class ViewsChart extends Component
         ])->sum('views');
 
         return [
-            'labels' => ['امروز', 'دیروز', 'هفته گذشته'],
+            'labels' => ['امروز', 'دیروز', 'پریروز'],
             'data' => [$todayViews, $yesterdayViews, $twoDaysAgoViews],
         ];
+
     }
 
 
