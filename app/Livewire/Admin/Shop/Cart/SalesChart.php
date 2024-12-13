@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\Shop\Cart;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
+use Morilog\Jalali\Jalalian;
 
 #[Layout('components.layouts.app')]
 class SalesChart extends Component
@@ -20,7 +21,9 @@ class SalesChart extends Component
             ->groupBy('date')
             ->orderBy('date')
             ->get();
-        $labels = $ordersPerDay->pluck('date')->toArray();
+        $labels = $ordersPerDay->pluck('date')->map(function ($date) {
+            return Jalalian::fromCarbon($date)->format('Y/m/d'); // Format to Jalali date (e.g., 1403/10/22)
+        })->toArray();
         $orderCounts = $ordersPerDay->pluck('order_count')->toArray();
 
 
