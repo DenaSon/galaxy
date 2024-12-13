@@ -17,15 +17,18 @@
             </div>
         @endif
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            window.onscroll = function () {
-                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                    Livewire.dispatch('loadMore'); // متد loadMore اجرا می‌شود
-                }
-            };
-        });
-    </script>
+    @push('scripts')
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                window.onscroll = function () {
+                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                        Livewire.dispatch('loadMore'); // متد loadMore اجرا می‌شود
+                    }
+                };
+            });
+        </script>
+    @endpush
 
 
 </div>
