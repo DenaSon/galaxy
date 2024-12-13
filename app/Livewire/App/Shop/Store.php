@@ -24,7 +24,7 @@ class Store extends Component
 
     }
 
-    public $perPage = 6;
+    public $perPage = 2;
 
 
 
