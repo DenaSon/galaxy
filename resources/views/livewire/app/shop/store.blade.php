@@ -21,9 +21,9 @@
         document.addEventListener('scroll', function () {
             const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
 
-            // بررسی اینکه کاربر به انتهای صفحه نزدیک است
+
             if (scrollTop + clientHeight >= scrollHeight - 5) {
-                Livewire.dispatch('loadMore'); // فراخوانی متد loadMore
+                Livewire.dispatch('loadMore');
             }
         });
     </script>
