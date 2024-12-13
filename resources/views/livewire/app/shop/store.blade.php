@@ -17,7 +17,7 @@
             </div>
         @endif
     </div>
-    @push('scripts')
+
 
         <script>
             document.addEventListener('scroll', function () {
@@ -29,7 +29,7 @@
                 }
             });
         </script>
-    @endpush
+
 
 
 </div>
