@@ -7,29 +7,27 @@
     </div>
 
     <div>
-        @if ($products->hasMorePages())
-            <div
-                wire:loading
-                wire:target="loadMore"
-                class="text-center text-gray-500 mt-4"
-            >
-                در حال بارگذاری...
-            </div>
-        @endif
+        <div
+            wire:loading
+            wire:target="loadMore"
+            class="text-center text-gray-500 mt-4">
+
+            در حال بارگذاری...
+        </div>
+
     </div>
 
 
-        <script>
-            document.addEventListener('scroll', function () {
-                const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
+    <script>
+        document.addEventListener('scroll', function () {
+            const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
 
-                // بررسی اینکه کاربر به انتهای صفحه نزدیک است
-                if (scrollTop + clientHeight >= scrollHeight - 5) {
-                    Livewire.dispatch('loadMore'); // فراخوانی متد loadMore
-                }
-            });
-        </script>
-
+            // بررسی اینکه کاربر به انتهای صفحه نزدیک است
+            if (scrollTop + clientHeight >= scrollHeight - 5) {
+                Livewire.dispatch('loadMore'); // فراخوانی متد loadMore
+            }
+        });
+    </script>
 
 
 </div>
