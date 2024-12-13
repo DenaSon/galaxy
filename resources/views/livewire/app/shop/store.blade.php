@@ -8,19 +8,11 @@
 
     <br/>
     <!-- Loading Spinner -->
-    <div class="flex justify-center my-4" wire:loading>
-        <svg class="animate-spin h-5 w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
-        </svg>
-        <span class="ml-2 text-gray-500">Loading...</span>
-    </div>
+    <div class="flex justify-center my-4 text-center origin-center" wire:loading>
 
-    <!-- Placeholder while more products are loading -->
-    <div class="text-center text-gray-500" wire:loading wire:target="loadMore">
-        <p>Loading more products...</p>
+        <x-progress class="progress-primary h-0.8" indeterminate />
+
     </div>
-</div>
 
     <br/><br/>
 
