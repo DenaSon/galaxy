@@ -23,7 +23,7 @@ class SalesChart extends Component
             ->orderBy('date')
             ->get();
         $labels = $ordersPerDay->pluck('date')->map(function ($date) {
-            return jdate($date)->toDateString(); // Format to Jalali date (e.g., 1403/10/22)
+            return jdate($date)->toDateString();
         })->toArray();
         $orderCounts = $ordersPerDay->pluck('order_count')->toArray();
 
@@ -34,7 +34,7 @@ class SalesChart extends Component
                 'labels' => $labels, // Dates as labels
                 'datasets' => [
                     [
-                        'label' => 'Orders per day',
+                        'label' => 'نمودار سفارش ها',
                         'data' => $orderCounts,
                         'borderColor' => 'rgba(75,192,192,1)',
                         'backgroundColor' => 'rgba(75,192,192,0.2)',
