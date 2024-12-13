@@ -6,7 +6,7 @@
     <div>
 
         <section id="search" class="flex flex-1m-2 p-4">
-            <x-input wire:model.live.debounce.500ms="searchTerm" label="جستجو" inline/>
+            <x-input wire:model.live.debounce.1500ms="searchTerm" label="جستجو" inline/>
             <br/>
 
 
