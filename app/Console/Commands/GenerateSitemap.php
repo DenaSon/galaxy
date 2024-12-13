@@ -31,14 +31,15 @@ class GenerateSitemap extends Command
         $sitemap = Sitemap::create();
         // Add static pages
         $sitemap->add(Url::create('/')->setPriority(1.0)->setChangeFrequency('daily'));
-        $sitemap->add(Url::create('/page/1/درباره-ما')->setPriority(0.8)->setChangeFrequency('monthly'));
+        $sitemap->add(Url::create('/page/1/درباره-ما')->setPriority(0.7)->setChangeFrequency('monthly'));
+        $sitemap->add(Url::create('/page/1/درباره-ما')->setPriority(0.7)->setChangeFrequency('monthly'));
 
 
         // Add dynamic pages (e.g., products)
         $products = \App\Models\Product::all();
         foreach ($products as $product) {
             $sitemap->add(
-                Url::create('/store/product/' . $product->id.'/'.slugMaker($product->name))
+                Url::create('/store/product/' . $product->id . '/' . slugMaker($product->name))
                     ->setPriority(0.9)
                     ->setLastModificationDate($product->updated_at)
                     ->setChangeFrequency('weekly')
@@ -75,12 +76,11 @@ class GenerateSitemap extends Command
         }
 
 
-
         // Add dynamic pages (e.g., products)
-        $categories = \App\Models\Category::where('type','=','product')->get();
+        $categories = \App\Models\Category::where('type', '=', 'product')->get();
         foreach ($categories as $category) {
             $sitemap->add(
-                Url::create('/store/category/' . $category->id.'/'.slugMaker($category->name))
+                Url::create('/store/category/' . $category->id . '/' . slugMaker($category->name))
                     ->setPriority(0.7)
                     ->setLastModificationDate($category->updated_at)
                     ->setChangeFrequency('weekly')
