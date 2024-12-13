@@ -40,6 +40,7 @@ Route::name('home.')->group(function () {
 
     Route::prefix('store')->name('product.')->group(function () {
 
+        Route::get('/',\App\Livewire\App\Shop\Store::class)->name('index');
         Route::get('product/{product}/{slug}', SingleProduct::class)->name('singleProduct');
         Route::get('category/{category}/{slug}', ProductList::class)->name('singleCategory');
 
@@ -76,7 +77,7 @@ Route::middleware([RoleMiddleware::class . ':customer', 'auth:web'])->name('pane
 
 
 // Master group
-Route::middleware(['auth:web',RoleMiddleware::class . ':master', 'throttle:15,2'])->prefix('master')->name('master.')->group(function () {
+Route::middleware(['auth:web', RoleMiddleware::class . ':master', 'throttle:15,2'])->prefix('master')->name('master.')->group(function () {
     // Master Dashboard route
     Route::get('/', Dashboard::class)->name('dashboard')->lazy();
     Route::get('system/setting', \App\Livewire\Admin\System\Setting::class)->name('setting');
