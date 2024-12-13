@@ -17,16 +17,13 @@ class Store extends Component
     protected $listeners = [
         'loadMore' => 'loadMore',
     ];
-
+    public $perPage = 4;
     public function loadMore()
     {
         $this->perPage += 2;
+        sleep(1);
 
     }
-
-    public $perPage = 2;
-
-
 
 
     public function mount()
