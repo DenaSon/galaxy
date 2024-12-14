@@ -21,12 +21,12 @@ class Store extends Component
     protected $listeners = [
         'loadMore' => 'loadMore',
     ];
-    public $perPage = 4;
+    public $perPage = 6;
 
     public function loadMore()
     {
 
-        $this->perPage += 2;
+        $this->perPage += 6;
 
     }
 
