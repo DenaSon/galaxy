@@ -14,13 +14,22 @@ class Store extends Component
 {
     use Toast, WithPagination;
 
-
+    protected $rules = [
+        'selectedCategories' => 'array',
+        'selectedCategories.*' => 'numeric|exists:categories,id',
+    ];
     public $categories = [];
     public $selectedCategories = [];
     protected $paginationTheme = 'tailwind';
     protected $listeners = [
         'loadMore' => 'loadMore',
     ];
+
+    public function updatedSelectedCategories()
+    {
+        // Validate only when selectedCategories is updated
+        $this->validate();
+    }
     public $perPage = 6;
 
     public function loadMore()
@@ -39,12 +48,13 @@ class Store extends Component
 
     public function render()
     {
+        $this->validate([
+            'selectedCategories' => 'array',
+            'selectedCategories.*' => 'numeric|exists:categories,id',
+        ]);
         $productsQuery = Product::active()->latest();
         if (!empty($this->selectedCategories) && is_array($this->selectedCategories)) {
-            $this->validate([
-                'selectedCategories' => 'array', // Ensure it's an array
-                'selectedCategories.*' => 'numeric|exists:categories,id', // Validate each item in the array
-            ]);
+
 
             $productsQuery->whereHas('categories', function ($query) {
                 $query->whereIn('categories.id', $this->selectedCategories);
@@ -56,6 +66,17 @@ class Store extends Component
         }
 
 
+        // Initialize query
+        $productsQuery = Product::active()->latest();
+
+        // Apply category filters if any
+        if (!empty($this->selectedCategories)) {
+            $productsQuery->whereHas('categories', function ($query) {
+                $query->whereIn('categories.id', $this->selectedCategories);
+            });
+        }
+
+        // Render view
         return view('livewire.app.shop.store', [
             'products' => $productsQuery->paginate($this->perPage),
             'categories' => $this->categories,
