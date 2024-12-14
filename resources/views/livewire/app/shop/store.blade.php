@@ -31,18 +31,18 @@
             </div>
         </x-slot:actions>
 
+
+
     </x-nav>
 
-
+    <x-progress class="progress-primary h-0.5" indeterminate wire:loading/>
 
 
 
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
 
 
-        <div class="flex justify-center items-center text-center h-screen" wire:loading>
-            <x-loading class="text-primary loading-lg" />
-        </div>
+
 
 
     @foreach ($products as $product)
