@@ -1,22 +1,27 @@
-<div>
+<div class="container mx-auto">
+
+
+    <x-nav class="h-24">
+        <x-slot:actions>
+
+            <x-dropdown label="دسته‌ها" class="btn-outline">
+                @foreach ($categories as $category)
+                    <x-menu-item @click.stop="">
+                        <x-checkbox
+                            wire:model.live="selectedCategories"
+                            value="{{ $category->id }}"
+                            label="{{ $category->name }}" />
+                    </x-menu-item>
+                @endforeach
+            </x-dropdown>
+        </x-slot:actions>
+    </x-nav>
 
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
         @foreach ($products as $product)
             @livewire('app.component.product-card',['product' => $product],key($product->id))
         @endforeach
     </div>
-
-    <br/>
-
-    <br/><br/>
-
-
-       <div class="text-center">
-           <div class="font-black text-sm">درحال بارگذاری...</div>
-       </div>
-
-
-    <br/><br/>
 
 
     <script>
