@@ -40,7 +40,12 @@ class Store extends Component
     public function render()
     {
         $productsQuery = Product::active()->latest();
-        if ($this->selectedCategories) {
+        if (!empty($this->selectedCategories) && is_array($this->selectedCategories)) {
+            $this->validate([
+                'selectedCategories' => 'array', // Ensure it's an array
+                'selectedCategories.*' => 'numeric|exists:categories,id', // Validate each item in the array
+            ]);
+
             $productsQuery->whereHas('categories', function ($query) {
                 $query->whereIn('categories.id', $this->selectedCategories);
             });
