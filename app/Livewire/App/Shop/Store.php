@@ -32,7 +32,9 @@ class Store extends Component
 
     public function mount()
     {
-        $this->categories = Category::where('type', '=', 'product')->get();
+        $this->categories = Category::where('type', '=', 'product')
+            ->where('parent_id', '=', null)
+            ->get();
     }
 
     public function render()
