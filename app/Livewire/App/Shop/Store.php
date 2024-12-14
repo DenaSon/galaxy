@@ -45,6 +45,11 @@ class Store extends Component
                 $query->whereIn('categories.id', $this->selectedCategories);
             });
         }
+        else
+        {
+            $productsQuery = Product::active()->latest();
+        }
+
 
         return view('livewire.app.shop.store', [
             'products' => $productsQuery->paginate($this->perPage),
