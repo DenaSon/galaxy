@@ -26,7 +26,7 @@
 
 
             <div class="flex ms-4">
-                <x-input icon="o-magnifying-glass" placeholder="جستجو..." inline=""/>
+                <x-input wire:model.live.debounce="searchTerm" icon="o-magnifying-glass" placeholder="جستجو..." inline=""/>
             </div>
         </x-slot:actions>
 

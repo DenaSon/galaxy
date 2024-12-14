@@ -14,72 +14,69 @@ class Store extends Component
 {
     use Toast, WithPagination;
 
-    protected $rules = [
-        'selectedCategories' => 'array',
-        'selectedCategories.*' => 'numeric|exists:categories,id',
-    ];
     public $categories = [];
+    public $searchTerm;
     public $selectedCategories = [];
+    public $perPage = 6;
+
     protected $paginationTheme = 'tailwind';
+
     protected $listeners = [
         'loadMore' => 'loadMore',
     ];
 
-    public function updatedSelectedCategories()
-    {
-        // Validate only when selectedCategories is updated
-        $this->validate();
-    }
-    public $perPage = 6;
-
-    public function loadMore()
-    {
-
-        $this->perPage += 6;
-
-    }
+    protected $rules = [
+        'selectedCategories' => 'array',
+        'selectedCategories.*' => 'numeric|exists:categories,id',
+        'searchTerm' => 'string|nullable|max:15',
+    ];
 
     public function mount()
     {
-        $this->categories = Category::where('type', '=', 'product')
-            ->where('parent_id', '=', null)
+        // Fetch all parent categories of type 'product'
+        $this->categories = Category::where('type', 'product')
+            ->whereNull('parent_id')
             ->get();
+    }
+
+    public function updatedSelectedCategories()
+    {
+        // Validate when selectedCategories is updated
+        $this->validate();
+    }
+
+    public function updatedSearchTerm()
+    {
+        // Validate when searchTerm is updated
+        $this->validate();
+    }
+
+    public function loadMore()
+    {
+        $this->perPage += 6;
     }
 
     public function render()
     {
-        $this->validate([
-            'selectedCategories' => 'array',
-            'selectedCategories.*' => 'numeric|exists:categories,id',
-        ]);
-        $productsQuery = Product::active()->latest();
-        if (!empty($this->selectedCategories) && is_array($this->selectedCategories)) {
-
-
-            $productsQuery->whereHas('categories', function ($query) {
-                $query->whereIn('categories.id', $this->selectedCategories);
+        $productsQuery = Product::query()
+            ->active()
+            ->latest()
+            ->when(!empty($this->selectedCategories), function ($query) {
+                $query->whereHas('categories', function ($query) {
+                    $query->whereIn('categories.id', $this->selectedCategories);
+                });
+            })
+            ->when(!empty($this->searchTerm), function ($query) {
+                $query->where(function ($query) {
+                    $query->where('name', 'like', '%' . $this->searchTerm . '%')
+                        ->orWhere('description', 'like', '%' . $this->searchTerm . '%');
+                });
             });
-        }
-        else
-        {
-            $productsQuery = Product::active()->latest();
-        }
 
-
-        // Initialize query
-        $productsQuery = Product::active()->latest();
-
-        // Apply category filters if any
-        if (!empty($this->selectedCategories)) {
-            $productsQuery->whereHas('categories', function ($query) {
-                $query->whereIn('categories.id', $this->selectedCategories);
-            });
-        }
-
-        // Render view
         return view('livewire.app.shop.store', [
             'products' => $productsQuery->paginate($this->perPage),
             'categories' => $this->categories,
         ])->title('دناپکس | فروشگاه خرید خشکبار و سوغات');
     }
+
 }
