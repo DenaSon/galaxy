@@ -13,7 +13,7 @@
                                 <x-checkbox
                                     wire:model.live="selectedCategories"
                                     value="{{ $category->id }}"
-                                    label="{{ $category->name }}" />
+                                    label="{{ $category->name }}"/>
                             </x-menu-item>
                         @endforeach
                     </x-dropdown>
@@ -26,15 +26,26 @@
 
 
             <div class="flex ms-4">
-                <x-input wire:model.live.debounce="searchTerm" icon="o-magnifying-glass" placeholder="جستجو..." inline=""/>
+                <x-input wire:model.live.debounce="searchTerm" icon="o-magnifying-glass" placeholder="جستجو..."
+                         inline=""/>
             </div>
         </x-slot:actions>
 
     </x-nav>
 
 
+
+
+
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
-        @foreach ($products as $product)
+
+
+        <div class="flex justify-center items-center text-center h-screen" wire:loading>
+            <x-loading class="text-primary loading-lg" />
+        </div>
+
+
+    @foreach ($products as $product)
             @livewire('app.component.product-card',['product' => $product],key($product->id))
         @endforeach
     </div>
