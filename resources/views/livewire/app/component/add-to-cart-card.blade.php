@@ -33,6 +33,8 @@
                 <div class="clear-both"></div>
 
 
+                @include('livewire.app.component.inc.add-to-cart-card-footer')
+
 
             </div>
 

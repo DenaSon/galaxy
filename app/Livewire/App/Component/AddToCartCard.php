@@ -4,7 +4,6 @@ namespace App\Livewire\App\Component;
 
 use App\Models\Cart;
 use App\Models\Product;
-use App\Models\Variant;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -22,12 +21,14 @@ class AddToCartCard extends Component
 
     #[Validate('numeric|exists:variants,id')]
     public $selectedVariant;
+    public $showCartButton  = false;
 
 
     public function mount()
     {
 
-        $this->selectedVariant = $this->product->variants()->orderBy('price')->first();
+        $this->selectedVariant = $this->product->variants()->orderBy('price')->first() ?? 0;
+
 
     }
 
@@ -45,6 +46,7 @@ class AddToCartCard extends Component
         {
             return;
         }
+        $this->showCartButton = true;
 
         $this->dispatch('cartUpdated');
 
