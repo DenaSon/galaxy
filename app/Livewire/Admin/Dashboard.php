@@ -67,7 +67,7 @@ class Dashboard extends Component
     public function clearCart()
     {
         $orderIds = Order::where('payment_status', 'pending')
-            ->where('created_at', '<', Carbon::now()->subHours(2))
+            ->where('created_at', '<', Carbon::now()->subMinutes(1))
             ->pluck('id');
 
         if ($orderIds->isEmpty()) {
