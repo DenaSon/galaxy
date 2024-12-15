@@ -51,7 +51,7 @@ class Checkout extends Component
                 $this->totalItems = $cartItems->sum('quantity');
                 $this->calcCosts();
                 $this->saveOrderItems($this->order->id);
-                $this->clearCart();
+               // $this->clearCart();
 
             } elseif ($user->orders->isEmpty()) {
                 $this->emptyFlag = true;
@@ -184,7 +184,7 @@ class Checkout extends Component
     public function startPayment()
     {
 
-
+        $this->clearCart();
         $this->calcCosts();
         $this->setNewPayment();
     }
