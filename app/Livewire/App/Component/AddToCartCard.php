@@ -36,6 +36,7 @@ class AddToCartCard extends Component
     {
 
         $this->selectedVariant = $this->product->variants->find($this->variant);
+        $this->showCartButton  = false;
 
     }
 
