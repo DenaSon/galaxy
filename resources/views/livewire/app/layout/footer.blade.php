@@ -57,7 +57,7 @@ hidden md:block
 
         <nav>
             <h6 class="footer-title">صفحات</h6>
-            <a wire:navigate href="{{ route('contact-us',['slug'=>'تماس-باما'])  }}"
+            <a wire:navigate href="{{ route('contact-us')  }}"
                class="link link-hover">تماس باما</a>
             <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>'درباره-ما']) }}"
                class="link link-hover">درباره ما</a>
