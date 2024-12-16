@@ -56,8 +56,11 @@ hidden md:block
 
 
         <nav>
-            <h6 class="footer-title">دسترسی سریع</h6>
-            <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>'درباره-ما']) }}" class="link link-hover">درباره ما</a>
+            <h6 class="footer-title">صفحات</h6>
+            <a wire:navigate href="{{ route('contact-us',['slug'=>'تماس-باما'])  }}"
+               class="link link-hover">تماس باما</a>
+            <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>'درباره-ما']) }}"
+               class="link link-hover">درباره ما</a>
             <a wire:navigate href="{{ route('contact-us') }}" class="link link-hover">تماس با ما</a>
             <a class="link link-hover">چشم انداز</a>
         </nav>
@@ -79,7 +82,6 @@ hidden md:block
         </aside>
 
     </footer>
-
 
 
 </div>
