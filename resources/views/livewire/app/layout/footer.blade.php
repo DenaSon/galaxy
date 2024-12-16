@@ -62,8 +62,8 @@ hidden md:block
             <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>'درباره-ما']) }}"
                class="link link-hover">درباره ما</a>
 
-            <a wire:navigate href="{{ route('home.product.indexStore')  }}"
-               class="link link-hover"> لیست محصولات </a>
+            <a wire:navigate href="{{ route('home.singlePage',['id'=>2,'slug', 'slug'=>slugMaker('قوانین و مقررات')])  }}"
+               class="link link-hover"> قوانین و مقررات </a>
 
             <a wire:navigate href="{{ route('panel.shop.cart')  }}"
                class="link link-hover">سبد خرید </a>
@@ -72,6 +72,9 @@ hidden md:block
 
         <nav>
             <h6 class="footer-title">دسترسی سریع</h6>
+
+            <a wire:navigate href="{{ route('home.product.indexStore')  }}"
+               class="link link-hover"> لیست محصولات </a>
 
             <a wire:navigate href="https://denapax.com"
                class="link link-hover">   دناپکس </a>
