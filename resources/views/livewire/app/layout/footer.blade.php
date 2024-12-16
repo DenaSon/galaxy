@@ -61,9 +61,23 @@ hidden md:block
                class="link link-hover">تماس باما</a>
             <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>'درباره-ما']) }}"
                class="link link-hover">درباره ما</a>
-            <a wire:navigate href="{{ route('contact-us') }}" class="link link-hover">تماس با ما</a>
-            <a class="link link-hover">چشم انداز</a>
+
         </nav>
+
+        <nav>
+            <h6 class="footer-title">دسترسی سریع</h6>
+
+            <a wire:navigate href="{{ route('home.product.indexStore')  }}"
+               class="link link-hover"> لیست محصولات </a>
+
+            <a wire:navigate href="{{ route('panel.shop.cart')  }}"
+               class="link link-hover">سبد خرید </a>
+
+            <a wire:navigate href="https://denapax.com/store/category/1/%D8%AE%D8%B4%DA%A9%D8%A8%D8%A7%D8%B1-%D9%88-%D9%85%D8%BA%D8%B2%D9%87%D8%A7"
+               class="link link-hover"> خرید خشکبار </a>
+
+        </nav>
+
 
 
         <aside>
