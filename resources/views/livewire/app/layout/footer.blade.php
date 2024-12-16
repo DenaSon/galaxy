@@ -76,11 +76,15 @@ hidden md:block
             <a wire:navigate href="https://denapax.com"
                class="link link-hover">   دناپکس </a>
 
+            <a wire:navigate href="https://denapax.com/blog/17/%D8%B3%DB%8C-%D8%B3%D8%AE%D8%AA-%D9%86%DA%AF%DB%8C%D9%86-%D8%AF%D8%B1%D8%AE%D8%B4%D8%A7%D9%86-%D8%AF%D8%A7%D9%85%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AF%D9%86%D8%A7"
+               class="link link-hover"> سی سخت </a>
+
+
             <a wire:navigate href="https://denapax.com/store/category/2/%D9%85%DB%8C%D9%88%D9%87-%D8%AE%D8%B4%DA%A9"
                class="link link-hover"> خرید میوه خشک </a>
 
             <a wire:navigate href="https://denapax.com/store/category/1/%D8%AE%D8%B4%DA%A9%D8%A8%D8%A7%D8%B1-%D9%88-%D9%85%D8%BA%D8%B2%D9%87%D8%A7"
-               class="link link-hover"> خرید خشکبار </a>
+               class="link link-hover"> خرید خشکبار و مغزها </a>
 
         </nav>
 
