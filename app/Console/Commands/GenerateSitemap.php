@@ -30,7 +30,7 @@ class GenerateSitemap extends Command
     {
         $sitemap = Sitemap::create();
 
-
+        $sitemap->add(Url::create('/')->setPriority(1.0)->setChangeFrequency('daily'));
 
         // Add dynamic pages (e.g., products)
         $products = \App\Models\Product::all();
@@ -86,7 +86,7 @@ class GenerateSitemap extends Command
 
         }
         // Add static pages
-        $sitemap->add(Url::create('/')->setPriority(1.0)->setChangeFrequency('daily'));
+
         $sitemap->add(Url::create('/page/1/درباره-ما')->setPriority(0.7)->setChangeFrequency('monthly'));
         $sitemap->add(Url::create('contact-us')->setPriority(0.7)->setChangeFrequency('monthly'));
 
