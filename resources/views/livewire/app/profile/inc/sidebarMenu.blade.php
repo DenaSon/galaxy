@@ -34,7 +34,7 @@
                  class="{{ request()->routeIs('panel.profile.profileAddress') ? 'active' : '' }}"/>
 
 
-    <x-menu-item title="پیام‌ها" icon="o-envelope"/>
+    <x-menu-item href="{{ route('panel.profile.user.orders.list') }}" wire:navigate wire:current="active" title="سفارش ها" icon="o-envelope"/>
 
     <x-menu-item title="خروج" icon="o-power" link="{{ route('home.logout') }}"/>
 </x-menu>

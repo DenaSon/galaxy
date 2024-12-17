@@ -63,6 +63,7 @@ Route::middleware([RoleMiddleware::class . ':customer', 'auth:web'])->name('pane
     Route::get('/order/pax-{order}', OrderDetails::class)->name('orderDetails');
 
     Route::prefix('profile')->name('profile.')->group(function () {
+        Route::get('/orders', \App\Livewire\App\Profile\Order\OrderList::class)->name('user.orders.list');
         Route::get('/dashboard', ProfileDashboard::class)->name('profileDashboard');
         Route::get('/address', ProfileAddress::class)->name('profileAddress');
         Route::get('/information', ProfileInformation::class)->name('profileInformation');
