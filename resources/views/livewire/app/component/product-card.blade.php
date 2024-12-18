@@ -14,11 +14,11 @@
 
                 <div class="absolute top-0 right-0 p-3 flex space-x-2">
                     @if(Auth::check() && !Auth::user()->favorites->pluck('id')->contains($product->id))
-                        <x-button data-tip="موردعلاقه" spinner="addFavorite" wire:click="addFavorite({{ $product->id }})"
+                        <x-button role="button" data-tip="موردعلاقه" spinner="addFavorite" wire:click="addFavorite({{ $product->id }})"
                                   icon="o-heart"
                                   class="tooltip tooltip-left btn-circle btn-xs bg-opacity-10 text-white" />
                     @else
-                        <x-button data-tip="حذف از مورد علاقه" spinner="removeFavorite"
+                        <x-button role="button" data-tip="حذف از مورد علاقه" spinner="removeFavorite"
                                   wire:click="removeFavorite({{ $product->id }})"
                                   icon="o-heart"
                                   class="tooltip tooltip-left btn-circle btn-xs bg-opacity-10 text-white" />
