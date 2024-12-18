@@ -62,7 +62,7 @@ class GenerateSitemap extends Command
 
                 $sitemap->add(
                     Url::create('/blog/' . $blogId . '/' . $blogSlug)
-                        ->setPriority(0.8)
+                        ->setPriority(0.4)
                         ->setLastModificationDate($lastModifiedDate)
                         ->setChangeFrequency('weekly')
                 );
