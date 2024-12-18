@@ -128,6 +128,20 @@
 
         font-size: 1.10rem !important;
     }
+
+    .single-blog blockquote {
+
+        border-left: 3px solid #491eff;
+        margin: 1.5em 20px;
+
+
+        font-style: normal;
+        font-family: 'denapax-font', serif;
+        color: #555;
+        line-height: 1.8;
+    }
+
+
 }
 
 
