@@ -125,15 +125,7 @@
 
 @media (max-width: 768px) {
     .single-blog blockquote p {
-        background: #f9f9f9;
-        border-left: 3px solid #491eff;
-        margin: 1.5em 20px;
-        padding: 1em 20px;
-        quotes: "\201C""\201D""\2018""\2019";
-        font-style: normal;
-        font-family: 'denapax-font', serif;
-        color: #555;
-        line-height: 1.2;
+
         font-size: 1.10rem !important;
     }
 }
