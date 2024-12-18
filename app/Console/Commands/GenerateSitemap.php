@@ -31,7 +31,7 @@ class GenerateSitemap extends Command
         $sitemap = Sitemap::create();
 
         $sitemap->add(Url::create('/')->setPriority(1.0)->setChangeFrequency('daily'));
-
+        $sitemap->add(Url::create('store')->setPriority(9.0)->setChangeFrequency('daily'));
         // Add dynamic pages (e.g., products)
         $products = \App\Models\Product::all();
         foreach ($products as $product) {
