@@ -52,7 +52,7 @@ hidden md:block
     </div>
 
 
-    <footer class="footer bg-base-50 text-base-content p-10 container mx-auto">
+    <footer class="footer bg-base-50 text-base-content grid-rows-2 p-10">
 
 
         <nav>

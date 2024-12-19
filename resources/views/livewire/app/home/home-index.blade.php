@@ -42,7 +42,7 @@
 
                     @endforeach
 
-                        <div class="swiper-pagination mt-5"></div>
+
 
 
 

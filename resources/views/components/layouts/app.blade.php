@@ -82,9 +82,42 @@
 
     <x-slot:actions>
 
+@php
 
-        <x-button responsive icon="o-shopping-cart" link="{{ route('panel.shop.cart') }}" label="سبد خرید"
-                  class="text-primary"/>
+$cartCount = auth()->user()->carts()->count();
+$subtotal = Auth::user()->carts()
+            ->with('variant')
+            ->get()
+            ->sum(fn($cart) => $cart->variant->price * $cart->quantity);
+
+
+@endphp
+
+
+
+            <div class="flex-none">
+                <div class="dropdown dropdown-start">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <div class="indicator">
+                         <x-icon name="o-shopping-cart"/>
+                            <span class="badge badge-sm indicator-item text-xs font-normal">{{ $cartCount  }}</span>
+                        </div>
+                    </div>
+                    <div
+                        tabindex="0"
+                        class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-64 shadow-lg">
+                        <div class="card-body">
+                            <span class="text-lg font-bold">{{ $cartCount  }}  محصول </span>
+                            <span class="text-info">جمع : {{ number_format($subtotal)  }}</span>
+                            <div class="card-actions">
+                               <x-button link="{{ route('panel.shop.cart') }}" label="مشاهده سبد" class="btn btn-primary btn-outline btn-block"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
 
 
         <x-button class=" md:flex hidden" responsive label="جستجو..." @click.stop="$dispatch('mary-search-open')"
