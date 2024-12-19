@@ -167,7 +167,9 @@ $subtotal = Auth::user()->carts()
     <x-slot:brand>
 
         <a href="{{ route('home.index-home') }}" wire:navigate>
-            <img src="{{ asset('static/small-d-logo.png') }}" alt="DenaPax" style="height: 40px"/>
+            <div class="badge bg-primary text-white">
+                DenaPax
+            </div>
         </a>
 
     </x-slot:brand>
