@@ -85,10 +85,10 @@
 @php
 
 $cartCount = auth()->user()->carts()->count();
-$subtotal = Auth::user()->carts()
-            ->with('variant')
-            ->get()
-            ->sum(fn($cart) => $cart->variant->price * $cart->quantity);
+$subtotal = Auth::user()?->carts()
+            ?->with('variant')
+            ?->get()
+            ?->sum(fn($cart) => $cart->variant->price * $cart->quantity) ?? 0;
 
 
 @endphp
@@ -107,8 +107,8 @@ $subtotal = Auth::user()->carts()
                         tabindex="0"
                         class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-64 shadow-lg">
                         <div class="card-body">
-                            <span class="text-lg font-bold">{{ $cartCount  }}  محصول </span>
-                            <span class="text-info">جمع : {{ number_format($subtotal)  }} تومان </span>
+                            <span class="text-lg font-bold">{{ $cartCount ?? 0 }}  محصول </span>
+                            <span class="text-info">جمع : {{ number_format($subtotal ?? 0)  }} تومان </span>
                             <div class="card-actions">
                                <x-button icon="o-eye" link="{{ route('panel.shop.cart') }}" label="مشاهده سبد" class="btn btn-primary btn-block"/>
                             </div>
