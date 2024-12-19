@@ -93,8 +93,8 @@ hidden md:block
 
 
 
-        <aside>
-            <x-icon name="o-sparkles" class="h-25 w-20 text-primary"></x-icon>
+        <aside class="mb-10">
+            <x-icon name="o-sparkles" class="h-20 w-20 text-primary"></x-icon>
 
             <p>
                 دنا پکس | از دنا به خانه شما، جایی که طبیعت و اصالت به هم می‌رسند!
