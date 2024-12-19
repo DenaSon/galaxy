@@ -100,7 +100,7 @@ $subtotal = Auth::user()->carts()
                     <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
                         <div class="indicator">
                          <x-icon name="o-shopping-cart"/>
-                            <span class="badge badge-sm indicator-item text-xs font-normal">{{ $cartCount  }}</span>
+                            <span class="badge badge-sm indicator-item text-xs font-normal badge-primary text-white">{{ $cartCount  }}</span>
                         </div>
                     </div>
                     <div
@@ -108,9 +108,9 @@ $subtotal = Auth::user()->carts()
                         class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-64 shadow-lg">
                         <div class="card-body">
                             <span class="text-lg font-bold">{{ $cartCount  }}  محصول </span>
-                            <span class="text-info">جمع : {{ number_format($subtotal)  }}</span>
+                            <span class="text-info">جمع : {{ number_format($subtotal)  }} تومان </span>
                             <div class="card-actions">
-                               <x-button link="{{ route('panel.shop.cart') }}" label="مشاهده سبد" class="btn btn-primary btn-outline btn-block"/>
+                               <x-button icon="o-eye" link="{{ route('panel.shop.cart') }}" label="مشاهده سبد" class="btn btn-primary btn-block"/>
                             </div>
                         </div>
                     </div>
