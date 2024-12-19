@@ -58,14 +58,14 @@ class HomeIndex extends Component
         $websiteTitle = getSetting('website_title');
 
 
-        $specialProduct = Product::active()
+        $specialProduct = Product::where('is_active','=',1)
             ->where('id', 18)
             ->with(['variants', 'images'])
             ->first();
 
 
         $products = cache()->remember('home_products', now()->addHours(12), function () {
-            return Product::active()
+            return Product::where('is_active', '=',1)
                 ->latest()
                 ->take(23)
                 ->with(['variants', 'images'])

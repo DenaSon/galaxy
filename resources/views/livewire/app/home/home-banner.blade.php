@@ -11,7 +11,7 @@
             سلامت شما.
         </p>
         <div class="card-actions justify-end">
-            <x-button link="{{ singleProductUrl(17,'گردو اصیل دنا') }}" icon="o-shopping-cart" label="خرید" class="btn-outline  btn-warning text-white"></x-button>
+            <x-button role="link"  link="{{ singleProductUrl(17,'گردو اصیل دنا') }}" icon="o-shopping-cart" label="خرید" class="btn-outline  btn-warning text-white"></x-button>
         </div>
     </div>
 
