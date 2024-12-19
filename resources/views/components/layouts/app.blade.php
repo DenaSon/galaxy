@@ -136,11 +136,6 @@
 
     <x-slot:brand>
 
-        <a href="{{ route('home.index-home') }}" wire:navigate>
-            <div class="badge bg-primary text-white badge-xs">
-                DenaPax
-            </div>
-        </a>
 
     </x-slot:brand>
 
