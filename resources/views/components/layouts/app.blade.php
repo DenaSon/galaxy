@@ -84,7 +84,7 @@
 
 @php
 
-$cartCount = auth()->user()->carts()->count();
+$cartCount = auth()->user()?->carts()?->count() ?? 0;
 $subtotal = Auth::user()?->carts()
             ?->with('variant')
             ?->get()
