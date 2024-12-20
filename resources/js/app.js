@@ -16,6 +16,7 @@ function startSwiper() {
 
 
             loop: true,
+            autoplay: true,
 
 
             slidesPerView: 4,
