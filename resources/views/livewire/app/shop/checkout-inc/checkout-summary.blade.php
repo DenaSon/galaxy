@@ -4,7 +4,7 @@
         class="bg-white w-full max-w-md shadow-xl group-hover:border-gray-700 rounded-lg p-4 border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-2xl relative overflow-hidden">
         <!-- Header -->
         <div class="flex  mb-6  justify-center items-center">
-            <div class="text-orange-600 text-2xl mr-2 mt-2">
+            <div class="text-green-600 text-2xl mr-2 mt-2">
                 <x-icon name="o-shopping-cart" class="text-lg font-bold" label="خلاصه سفارش"/>
             </div>
 
