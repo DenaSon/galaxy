@@ -21,7 +21,8 @@ class SalesChart extends Component
             ->where('payment_status', 'paid')
             ->groupBy('date')
             ->orderBy('date')
-            ->take(10)
+            ->latest('created_at')
+            ->take(15)
 
             ->get();
         $labels = $ordersPerDay->pluck('date')->map(function ($date) {
