@@ -12,7 +12,7 @@
             @livewire('admin.component.user-list')
         </div>
 
-        <div class="w-full md:w-2/3 border mt-4 md:mt-0">
+        <div class="w-full md:w-3/3 border mt-4 md:mt-0">
 
            @livewire('admin.shop.cart.sales-chart')
 
