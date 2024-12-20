@@ -15,7 +15,7 @@ function startSwiper() {
         const swiper_blog = new Swiper('.swiperBlog', {
 
 
-
+            loop: true,
 
 
             slidesPerView: 4,
