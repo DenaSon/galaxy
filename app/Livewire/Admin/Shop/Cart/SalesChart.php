@@ -21,7 +21,7 @@ class SalesChart extends Component
             ->where('payment_status', 'paid')
             ->groupBy('date')
             ->orderBy('date')
-            ->latest('created_at')
+            ->latest('date')
             ->take(15)
 
             ->get();
