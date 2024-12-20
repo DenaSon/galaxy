@@ -13,14 +13,22 @@ function startSwiper() {
 
 
         const swiper_blog = new Swiper('.swiperBlog', {
-            slidesPerView: 6,
-            spaceBetween: 20,
+
+
+
+
+
+            slidesPerView: 4,
+            spaceBetween: 10,
 
             freeMode: true,
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
             },
+
+
+
             // Navigation configuration
             navigation: {
                 nextEl: ".swiper-button-next", // Next arrow container
@@ -45,7 +53,7 @@ function startSwiper() {
                 },
                 // When the viewport is 1024px or larger
                 1024: {
-                    slidesPerView: 6,
+                    slidesPerView: 4,
                     spaceBetween: 25,
                 },
 

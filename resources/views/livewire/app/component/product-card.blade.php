@@ -6,7 +6,7 @@
             </x-slot:title>
 
             <x-slot:figure class="relative group">
-                <img src="{{ asset($product->images->first()->file_path ?? 'https://picsum.photos/500/200') }}"
+                <img src="{{ asset('static/denapax-image/nopicuser.png') }}"
                      class="w-full h-52 md:h-64 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-all duration-300 ease-in-out opacity-95 group-hover:opacity-100"
                      alt="{{ $product->name }}" />
 

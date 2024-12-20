@@ -3,10 +3,10 @@
         class="block relative bg-white overflow-hidden rounded-lg shadow-lg border border-gray-200"
 
         href="{{ singleBlogUrl($blog['id'],$blog['title']['rendered']) }}">
-        <div class="flex flex-col h-24">
+        <div class="flex flex-col h-48 shadow-xl">
 
 
-            <div class="relative h-20 overflow-hidden p-0">
+            <div class="relative h-40 overflow-hidden p-0">
 
                 @if(isset($blog['featured_image_url']))
                     <img src="{{ $blog['featured_image_url'] }}" alt="{{ $blog['title']['rendered'] }}"
