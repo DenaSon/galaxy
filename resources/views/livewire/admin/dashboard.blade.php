@@ -8,7 +8,7 @@
     <br/>
 
     <div class="flex flex-col md:flex-row">
-        <div class="w-full md:w-1/3">
+        <div class="w-full md:w-3/3">
             @livewire('admin.component.user-list')
         </div>
 
