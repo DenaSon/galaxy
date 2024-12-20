@@ -73,5 +73,13 @@
                 bg-primary text-white py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-green-600 focus:ring-4 focus:ring-green-300">
 
         </x-button>
+
+
+        <x-alert title="توجه" description="لطفا قبل از پرداخت فیلتر/شکن خود را خاموش کنید" icon="o-shield-exclamation" dismissible class="mt-3 text-primary" />
+
+
+
     </div>
+
+
 </div>
