@@ -9,65 +9,65 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 import '../js/libs/swiper.js'
+
 function startSwiper() {
 
 
-        const swiper_blog = new Swiper('.swiperBlog', {
+    const swiper_blog = new Swiper('.swiperBlog', {
 
 
-            loop: true,
-            autoplay: true,
+        loop: true,
+        autoplay: true,
 
 
-            slidesPerView: 4,
-            spaceBetween: 10,
+        slidesPerView: 4,
+        spaceBetween: 10,
 
-            freeMode: true,
+        freeMode: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+
+
+        // Navigation configuration
+        navigation: {
+            nextEl: ".swiper-button-next", // Next arrow container
+            prevEl: ".swiper-button-prev", // Prev arrow container
+
+        },
+
+        breakpoints: {
+            // When the viewport is 320px or larger
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+            // When the viewport is 480px or larger
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+            },
+            // When the viewport is 768px or larger
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            // When the viewport is 1024px or larger
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 25,
+            },
+
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
+                type: "progressbar",
             },
+        },
 
 
-
-            // Navigation configuration
-            navigation: {
-                nextEl: ".swiper-button-next", // Next arrow container
-                prevEl: ".swiper-button-prev", // Prev arrow container
-            },
-
-            breakpoints: {
-                // When the viewport is 320px or larger
-                320: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                },
-                // When the viewport is 480px or larger
-                480: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                // When the viewport is 768px or larger
-                768: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
-                },
-                // When the viewport is 1024px or larger
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 25,
-                },
-
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-            },
-
-
-
-        });
-
+    });
 
 
     // init Swiper:
