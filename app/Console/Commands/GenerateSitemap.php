@@ -66,7 +66,9 @@ class GenerateSitemap extends Command
                         ->setLastModificationDate($lastModifiedDate)
                         ->setChangeFrequency('weekly')
                 );
+
             }
+            $sitemap->add(Url::create('https://denapax.com/blog/17/%D8%B3%DB%8C-%D8%B3%D8%AE%D8%AA-%D9%86%DA%AF%DB%8C%D9%86-%D8%AF%D8%B1%D8%AE%D8%B4%D8%A7%D9%86-%D8%AF%D8%A7%D9%85%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AF%D9%86%D8%A7')->setPriority(0.4)->setChangeFrequency('weekly'));
         } else {
             // Log an error or handle the failed API response
             \Log::error('Failed to fetch blogs from API', ['status' => $response->status()]);
