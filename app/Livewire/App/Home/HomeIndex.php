@@ -3,6 +3,7 @@
 namespace App\Livewire\App\Home;
 
 use App\Models\Product;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
@@ -22,37 +23,39 @@ class HomeIndex extends Component
 
     public function mount()
     {
+        try {
 
-        try
-        {
-            $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts?_embed&per_page=10&_fields=id,title,featured_media');
-            if ($response->successful()) {
-                $this->blogs = $response->json();
+            $this->blogs = Cache::remember('blogs_cache', now()->addMinutes(60), function () {
+                $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts?_embed&per_page=10&_fields=id,title,featured_media');
+                if ($response->successful()) {
+                    $blogs = $response->json();
 
-                foreach ($this->blogs as &$blog) {
-                    if (isset($blog['featured_media']) && $blog['featured_media']) {
+                    foreach ($blogs as &$blog) {
+                        if (isset($blog['featured_media']) && $blog['featured_media']) {
 
-                        $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $blog['featured_media'] . '?_fields=id,source_url');
+                            $mediaCacheKey = 'media_' . $blog['featured_media'];
+                            $media = Cache::remember($mediaCacheKey, now()->addMinutes(60), function () use ($blog) {
+                                $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $blog['featured_media'] . '?_fields=id,source_url');
+                                return $mediaResponse->successful() ? $mediaResponse->json() : null;
+                            });
 
-                        if ($mediaResponse->successful()) {
-                            $media = $mediaResponse->json();
-
-                            $blog['featured_image_url'] = $media['source_url'];
+                            if ($media) {
+                                $blog['featured_image_url'] = $media['source_url'];
+                            } else {
+                                $blog['featured_image_url'] = null;
+                            }
                         } else {
                             $blog['featured_image_url'] = null;
                         }
-                    } else {
-                        $blog['featured_image_url'] = null;
                     }
+                    return $blogs;
+                } else {
+                    return [];
                 }
-            } else {
-                $this->blogs = [];
-            }
-        }
-        catch (Throwable $e)
-        {
+            });
+        } catch (Throwable $e) {
             $this->blogs = [];
-            Log::error('API : Get Blog in Home Index Error : '.$e->getMessage());
+            Log::error('API : Get Blog in Home Index Error : ' . $e->getMessage());
         }
 
 
