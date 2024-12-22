@@ -22,7 +22,8 @@ class HomeIndex extends Component
 
     public function mount()
     {
-        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts?_embed&per_page=10&orderby=date&order=desc');
+        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts?_embed&per_page=10&orderby=date&order=desc&_fields=id,title,featured_media');
+
         if ($response->successful()) {
             $this->blogs = $response->json();
 
