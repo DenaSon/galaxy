@@ -5,10 +5,12 @@ namespace App\Livewire\App\Home;
 use App\Models\Product;
 use Illuminate\Support\Facades\Http;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Lazy;
 use Livewire\Component;
 use Mary\Traits\Toast;
 
 #[Layout('components.layouts.app')]
+#[Lazy]
 class HomeIndex extends Component
 {
     use Toast;
