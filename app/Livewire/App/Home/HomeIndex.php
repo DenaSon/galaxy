@@ -10,7 +10,7 @@ use Livewire\Component;
 use Mary\Traits\Toast;
 
 #[Layout('components.layouts.app')]
-#[Lazy]
+
 class HomeIndex extends Component
 {
     use Toast;
