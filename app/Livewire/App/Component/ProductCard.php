@@ -9,9 +9,8 @@ use Livewire\Attributes\Lazy;
 use Livewire\Component;
 use Mary\Traits\Toast;
 
-#[Layout('components.layouts.app')]
 #[Lazy]
-
+#[Layout('components.layouts.app')]
 class ProductCard extends Component
 {
     use Toast;
