@@ -5,12 +5,10 @@ namespace App\Livewire\App\Home;
 use App\Models\Product;
 use Illuminate\Support\Facades\Http;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\Lazy;
 use Livewire\Component;
 use Mary\Traits\Toast;
 
 #[Layout('components.layouts.app')]
-
 class HomeIndex extends Component
 {
     use Toast;
@@ -22,14 +20,22 @@ class HomeIndex extends Component
 
     public function mount()
     {
-        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts?_embed&per_page=10&orderby=date&order=desc&_fields=id,title,featured_media');
 
+        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts?_embed&per_page=10&_fields=id,title,featured_media');
         if ($response->successful()) {
             $this->blogs = $response->json();
 
             foreach ($this->blogs as &$blog) {
-                if (isset($blog['_embedded']['wp:featuredmedia'][0]['source_url'])) {
-                    $blog['featured_image_url'] = $blog['_embedded']['wp:featuredmedia'][0]['source_url'];
+                if (isset($blog['featured_media']) && $blog['featured_media']) {
+
+                    $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $blog['featured_media']);
+                    if ($mediaResponse->successful()) {
+                        $media = $mediaResponse->json();
+
+                        $blog['featured_image_url'] = $media['source_url'];
+                    } else {
+                        $blog['featured_image_url'] = null;
+                    }
                 } else {
                     $blog['featured_image_url'] = null;
                 }
@@ -40,7 +46,6 @@ class HomeIndex extends Component
 
 
     }
-
 
 
     public function blogList()
@@ -55,14 +60,14 @@ class HomeIndex extends Component
         $websiteTitle = getSetting('website_title');
 
 
-        $specialProduct = Product::where('is_active','=',1)
+        $specialProduct = Product::where('is_active', '=', 1)
             ->where('id', 18)
             ->with(['variants', 'images'])
             ->first();
 
 
         $products = cache()->remember('home_products', now()->addHours(12), function () {
-            return Product::where('is_active', '=',1)
+            return Product::where('is_active', '=', 1)
                 ->latest()
                 ->take(23)
                 ->with(['variants', 'images'])
