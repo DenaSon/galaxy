@@ -22,28 +22,21 @@ class HomeIndex extends Component
 
     public function mount()
     {
-        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts');
+        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts?_embed');
         if ($response->successful()) {
-
             $this->blogs = $response->json();
 
             foreach ($this->blogs as &$blog) {
-                if (isset($blog['featured_media']) && $blog['featured_media']) {
-                    // Fetch the featured image details
-                    $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $blog['featured_media']);
-                    if ($mediaResponse->successful()) {
-                        $media = $mediaResponse->json();
-                        // Get the image URL from the media data
-                        $blog['featured_image_url'] = $media['source_url']; // Featured image URL
-                    }
+                if (isset($blog['_embedded']['wp:featuredmedia'][0]['source_url'])) {
+                    $blog['featured_image_url'] = $blog['_embedded']['wp:featuredmedia'][0]['source_url'];
+                } else {
+                    $blog['featured_image_url'] = null; // جایگزین پیش‌فرض
                 }
-
             }
-        }
-        else
-        {
+        } else {
             $this->blogs = [];
         }
+
     }
 
 
