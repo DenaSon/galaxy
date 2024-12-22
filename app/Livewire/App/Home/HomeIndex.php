@@ -4,9 +4,11 @@ namespace App\Livewire\App\Home;
 
 use App\Models\Product;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
+use Throwable;
 
 #[Layout('components.layouts.app')]
 class HomeIndex extends Component
@@ -21,27 +23,36 @@ class HomeIndex extends Component
     public function mount()
     {
 
-        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts?_embed&per_page=10&_fields=id,title,featured_media');
-        if ($response->successful()) {
-            $this->blogs = $response->json();
+        try
+        {
+            $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts?_embed&per_page=10&_fields=id,title,featured_media');
+            if ($response->successful()) {
+                $this->blogs = $response->json();
 
-            foreach ($this->blogs as &$blog) {
-                if (isset($blog['featured_media']) && $blog['featured_media']) {
+                foreach ($this->blogs as &$blog) {
+                    if (isset($blog['featured_media']) && $blog['featured_media']) {
 
-                    $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $blog['featured_media']);
-                    if ($mediaResponse->successful()) {
-                        $media = $mediaResponse->json();
+                        $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $blog['featured_media'] . '?_fields=id,source_url');
 
-                        $blog['featured_image_url'] = $media['source_url'];
+                        if ($mediaResponse->successful()) {
+                            $media = $mediaResponse->json();
+
+                            $blog['featured_image_url'] = $media['source_url'];
+                        } else {
+                            $blog['featured_image_url'] = null;
+                        }
                     } else {
                         $blog['featured_image_url'] = null;
                     }
-                } else {
-                    $blog['featured_image_url'] = null;
                 }
+            } else {
+                $this->blogs = [];
             }
-        } else {
+        }
+        catch (Throwable $e)
+        {
             $this->blogs = [];
+            Log::error('API : Get Blog in Home Index Error : '.$e->getMessage());
         }
 
 
