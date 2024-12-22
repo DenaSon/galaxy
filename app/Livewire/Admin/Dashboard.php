@@ -8,6 +8,7 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -78,6 +79,7 @@ class Dashboard extends Component
         DB::table('order_items')->whereIn('order_id', $orderIds)->delete();
 
         Order::whereIn('id', $orderIds)->delete();
+        Cache::flush();
 
 
     }
