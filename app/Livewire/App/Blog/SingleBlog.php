@@ -15,10 +15,13 @@ class SingleBlog extends Component
 
     public $blog;
     public $article;
+    public $suggestedArticles = [];
+
 
     public function mount()
     {
-        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts/' . $this->blog.'?_fields=id,title,content,yoast_head_json,excerpt,date,modified');
+        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts/' .
+            $this->blog.'?_fields=id,title,content,yoast_head_json,excerpt,date,modified,categories,tags');
 
         if ($response->successful()) {
             $this->article = $response->json();
@@ -26,7 +29,45 @@ class SingleBlog extends Component
         } else {
             abort(404);
         }
+
+
+
+        //get suggest articles
+        $this->getSuggestedArticles();
+
+
     }
+
+
+    private function getSuggestedArticles()
+    {
+        // Fetch suggested articles based on categories or tags
+        $categoryIds = $this->article['categories'] ?? [];
+        $tagIds = $this->article['tags'] ?? [];
+
+        // Build query parameters for fetching suggested articles
+        $queryParams = [
+            '_fields' => 'id,title',
+            'per_page' => 5, // Limit to 5 suggested articles
+            'exclude' => [$this->article['id']], // Exclude the current article
+        ];
+
+        if (!empty($categoryIds)) {
+            $queryParams['categories'] = implode(',', $categoryIds);
+        } elseif (!empty($tagIds)) {
+            $queryParams['tags'] = implode(',', $tagIds);
+        }
+
+        $suggestedResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts', $queryParams);
+
+        if ($suggestedResponse->successful())
+        {
+            $this->suggestedArticles = $suggestedResponse->json();
+        }
+
+    }
+
+
 
     public function render()
     {
