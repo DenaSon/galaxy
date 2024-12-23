@@ -18,7 +18,7 @@ class SingleBlog extends Component
 
     public function mount()
     {
-        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts/' . $this->blog);
+        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts/' . $this->blog.'?_fields=id,title,content,yoast_head_json,excerpt,date,modified');
 
         if ($response->successful()) {
             $this->article = $response->json();
