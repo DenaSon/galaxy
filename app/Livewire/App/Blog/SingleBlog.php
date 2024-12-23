@@ -4,9 +4,11 @@ namespace App\Livewire\App\Blog;
 
 use App\Models\Product;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
+use Throwable;
 
 #[Layout('components.layouts.app')]
 class SingleBlog extends Component
@@ -20,16 +22,23 @@ class SingleBlog extends Component
 
     public function mount()
     {
-        $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts/' .
-            $this->blog.'?_fields=id,title,content,yoast_head_json,excerpt,date,modified,categories,tags');
 
-        if ($response->successful()) {
-            $this->article = $response->json();
+        try {
 
-        } else {
-            abort(404);
+            $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts/' .
+                $this->blog . '?_fields=id,title,content,yoast_head_json,excerpt,date,modified,categories,tags');
+
+            if ($response->successful()) {
+                $this->article = $response->json();
+
+            } else {
+                abort(404);
+            }
+        } catch (Throwable $e) {
+
+            Log::error($e->getMessage());
+            $this->article = [];
         }
-
 
 
         //get suggest articles
@@ -41,36 +50,41 @@ class SingleBlog extends Component
 
     private function getSuggestedArticles()
     {
-        // Fetch suggested articles based on categories or tags
-        $categoryIds = $this->article['categories'] ?? [];
-        $tagIds = $this->article['tags'] ?? [];
+        try {
+            // Fetch suggested articles based on categories or tags
+            $categoryIds = $this->article['categories'] ?? [];
+            $tagIds = $this->article['tags'] ?? [];
 
-        // Build query parameters for fetching suggested articles
-        $queryParams = [
-            '_fields' => 'id,title',
-            'per_page' => 5, // Limit to 5 suggested articles
-            'exclude' => [$this->article['id']], // Exclude the current article
-        ];
+            // Build query parameters for fetching suggested articles
+            $queryParams = [
+                '_fields' => 'id,title',
+                'per_page' => 5, // Limit to 5 suggested articles
+                'exclude' => [$this->article['id']], // Exclude the current article
+            ];
 
-        if (!empty($categoryIds)) {
-            $queryParams['categories'] = implode(',', $categoryIds);
-        } elseif (!empty($tagIds)) {
-            $queryParams['tags'] = implode(',', $tagIds);
+            if (!empty($categoryIds)) {
+                $queryParams['categories'] = implode(',', $categoryIds);
+            } elseif (!empty($tagIds)) {
+                $queryParams['tags'] = implode(',', $tagIds);
+            }
+
+            $suggestedResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts', $queryParams);
+
+            if ($suggestedResponse->successful()) {
+                $this->suggestedArticles = $suggestedResponse->json();
+            } else {
+                $this->suggestedArticles = [];
+            }
+
         }
+        catch (Throwable $e) {
 
-        $suggestedResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts', $queryParams);
-
-        if ($suggestedResponse->successful())
-        {
-            $this->suggestedArticles = $suggestedResponse->json();
-        }
-        else
-        {
+            Log::error($e->getMessage());
             $this->suggestedArticles = [];
+
         }
 
     }
-
 
 
     public function render()

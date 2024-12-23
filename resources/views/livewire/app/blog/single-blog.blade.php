@@ -13,24 +13,24 @@
 
                 @foreach($productList as $product)
 
-                   <div class="mt-2">
-                       @livewire('app.component.product-card',['product' => $product])
-                   </div>
+                    <div class="mt-2">
+                        @livewire('app.component.product-card',['product' => $product])
+                    </div>
 
                 @endforeach
 
 
-{{--                @if(isset($post['featured_media']))--}}
-{{--                    @php--}}
-{{--                        // Get the media URL for the featured image--}}
-{{--                        $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $article['featured_media']);--}}
-{{--                        $media = $mediaResponse->json();--}}
-{{--                        $featuredImageUrl = $media['source_url'] ?? '';--}}
-{{--                    @endphp--}}
-{{--                    @if($featuredImageUrl)--}}
-{{--                        <img src="{{ $featuredImageUrl }}" alt="Featured Image Blog"/>--}}
-{{--                    @endif--}}
-{{--                @endif--}}
+                {{--                @if(isset($post['featured_media']))--}}
+                {{--                    @php--}}
+                {{--                        // Get the media URL for the featured image--}}
+                {{--                        $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $article['featured_media']);--}}
+                {{--                        $media = $mediaResponse->json();--}}
+                {{--                        $featuredImageUrl = $media['source_url'] ?? '';--}}
+                {{--                    @endphp--}}
+                {{--                    @if($featuredImageUrl)--}}
+                {{--                        <img src="{{ $featuredImageUrl }}" alt="Featured Image Blog"/>--}}
+                {{--                    @endif--}}
+                {{--                @endif--}}
 
             </x-card>
 
@@ -43,7 +43,6 @@
                     {!! $article['content']['rendered'] !!}
 
 
-
                     <div class="bg-gray-50 p-6 rounded-lg shadow-lg mt-4">
                         <h2 class="text-xl font-bold text-gray-400 border-b-2 border-indigo-500 pb-2 mb-4">
                             مقالات پیشنهادی
@@ -51,7 +50,8 @@
                         <ul class="space-y-3">
                             @foreach ($suggestedArticles as $suggestedArticle)
                                 <li>
-                                    <a wire:navigate href="{{ route('home.blog.singleBlog', ['blog' => $suggestedArticle['id'], 'slug' => slugMaker( $suggestedArticle['title']['rendered']) ]) }}"
+                                    <a wire:navigate
+                                       href="{{ route('home.blog.singleBlog', ['blog' => $suggestedArticle['id'], 'slug' => slugMaker( $suggestedArticle['title']['rendered']) ]) }}"
                                        class="block text-sm text-indigo-600 hover:text-indigo-800 hover:underline transition">
                                         {{ $suggestedArticle['title']['rendered'] }}
                                     </a>
@@ -61,13 +61,7 @@
                     </div>
 
 
-
-
                 </div>
-
-
-
-
 
 
             </div>
