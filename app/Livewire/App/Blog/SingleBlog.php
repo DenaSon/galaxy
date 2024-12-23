@@ -64,6 +64,10 @@ class SingleBlog extends Component
         {
             $this->suggestedArticles = $suggestedResponse->json();
         }
+        else
+        {
+            $this->suggestedArticles = [];
+        }
 
     }
 
