@@ -51,7 +51,7 @@
                         <ul class="space-y-3">
                             @foreach ($suggestedArticles as $suggestedArticle)
                                 <li>
-                                    <a href="{{ route('home.blog.singleBlog', ['blog' => $suggestedArticle['id'], 'slug' => $suggestedArticle['title']['rendered']]) }}"
+                                    <a href="{{ route('home.blog.singleBlog', ['blog' => $suggestedArticle['id'], 'slug' => slugMaker( $suggestedArticle['title']['rendered']) ]) }}"
                                        class="block text-sm text-indigo-600 hover:text-indigo-800 hover:underline transition">
                                         {{ $suggestedArticle['title']['rendered'] }}
                                     </a>
