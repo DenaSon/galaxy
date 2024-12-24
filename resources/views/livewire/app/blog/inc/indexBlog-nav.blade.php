@@ -12,7 +12,7 @@
 
     <x-slot:actions>
 
-        <x-input label="جستجو" inline wire:model.live.debounce.500ms="searchTerm"/>
+        <x-input label="جستجو در دانشنامه" inline wire:model.live.debounce.500ms="searchTerm"/>
 
 
 
