@@ -11,7 +11,10 @@
 
             @empty
 
-                <p class="text-center text-gray-500">هیچ بلاگی پیدا نشد.</p>
+                <div class="flex items-center justify-center h-52 border border-gray-300 rounded-md bg-gray-100">
+                    <p class="text-center text-black font-semibold">هیچ مقاله ای پیدا نشد.</p>
+                </div>
+
 
             @endforelse
 
