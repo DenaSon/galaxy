@@ -38,6 +38,8 @@ class IndexBlog extends Component
                 'per_page' => $this->per_page,
                 '_fields' => 'id,title,featured_media',
                 'search' => $this->searchTerm ?? '',
+                'orderby' => 'date',
+                'order' => 'desc',
             ];
 
             $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts', $params);
