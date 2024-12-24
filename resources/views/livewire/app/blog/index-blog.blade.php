@@ -11,11 +11,12 @@
 
             @empty
 
-                <div class="flex items-center justify-center min-h-screen">
-                    <div class="flex items-center justify-center h-52 border border-gray-300 rounded-md bg-gray-100 px-4">
+                <div class="flex justify-center">
+                    <div class="flex items-center justify-center h-36 w-full max-w-lg border border-gray-300 rounded-md bg-gray-100 px-4">
                         <p class="text-center text-black font-semibold">هیچ مقاله‌ای پیدا نشد.</p>
                     </div>
                 </div>
+
 
 
 
