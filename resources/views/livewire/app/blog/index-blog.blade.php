@@ -14,12 +14,13 @@
 
 
         @if (count($blogs) >= $per_page)
-        <x-button label="مشاهده مقالات بیشتر" wire:click="addBlogs" class="mt-5 text-center items-center"/>
+            <div class="flex justify-center mt-8">
+                <x-button label="مشاهده مقالات بیشتر" wire:click="addBlogs" class="mt-5" class="btn-primary" />
+            </div>
         @endif
 
-        <div wire:loading>
-            <span>Loading...</span> <!-- Show loading spinner if needed -->
-        </div>
+
+        <x-progress wire:loading class="progress-primary h-0.5" indeterminate/>
 
 
     </div>
