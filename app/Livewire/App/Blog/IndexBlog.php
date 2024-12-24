@@ -17,7 +17,7 @@ class IndexBlog extends Component
     public $searchTerm;
 
     #[Url]
-    public $per_page = 9;
+    public $per_page = 18;
 
     public function addBlogs()
     {
