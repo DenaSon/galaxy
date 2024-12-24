@@ -21,6 +21,9 @@
 
         </div>
 
+        <div class="flex justify-center mt-8">
+        <x-button link="{{ route('home.blog.indexBlog') }}" icon="o-list-bullet" label="مشاهده همه" class="btn-sm btn-outline btn-primary"/>
+        </div>
 
     </div>
 
