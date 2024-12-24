@@ -2,7 +2,7 @@
 
     <x-slot:brand>
 
-        <h1 class="sm:text-lg font-black text-sm">
+        <h1 class="font-black text-lg">
            دانشنامه
         </h1>
 
@@ -12,7 +12,7 @@
 
     <x-slot:actions>
 
-        <x-input label="جستجو + Enter" inline wire:model.live.debounce.500ms="searchTerm"/>
+        <x-input label="جستجو" inline wire:model.live.debounce.500ms="searchTerm"/>
 
 
 
