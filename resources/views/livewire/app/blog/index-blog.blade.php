@@ -5,11 +5,16 @@
         @include('livewire.app.blog.inc.indexBlog-nav')
 
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mt-6">
-            @foreach($blogs as $blog)
+            @forelse($blogs as $blog)
 
                 @include('livewire.app.component.blog-card')
 
-            @endforeach
+            @empty
+
+                <p class="text-center text-gray-500">هیچ بلاگی پیدا نشد.</p>
+
+            @endforelse
+
         </div>
 
 
