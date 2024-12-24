@@ -314,7 +314,8 @@ return [
         'photo'=>'عکس',
         'phoneNumber' => 'شماره تلفن',
         'variant' => 'نوع',
-        'address_line' => 'آدرس پستی'
+        'address_line' => 'آدرس پستی',
+        'searchTerm' => 'جستجو'
 
 
 
