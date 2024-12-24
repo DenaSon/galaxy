@@ -10,15 +10,9 @@
                 @include('livewire.app.component.blog-card')
 
             @empty
-
-                <div class="flex justify-center">
-                    <div class="flex items-center justify-center h-36 w-full max-w-lg border border-gray-300 rounded-md bg-gray-100 px-4">
-                        <p class="text-center text-black font-semibold">هیچ مقاله‌ای پیدا نشد.</p>
-                    </div>
+                <div class="flex items-center justify-center">
+                    <x-alert title="مقاله ای پیدا نشد" icon="o-eye" class="bg-error text-white"/>
                 </div>
-
-
-
 
             @endforelse
 

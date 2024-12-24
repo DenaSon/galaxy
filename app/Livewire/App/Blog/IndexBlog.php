@@ -21,11 +21,12 @@ class IndexBlog extends Component
 
     public function addBlogs()
     {
-        $this->per_page += 6; // Livewire will handle reactivity and re-render
+        $this->per_page += 18; // Livewire will handle reactivity and re-render
     }
 
     public function updatedSearchTerm($value)
     {
+        $this->validate(['searchTerm' => 'string|max:45|min:1']);
         $this->searchTerm = $value;
     }
 

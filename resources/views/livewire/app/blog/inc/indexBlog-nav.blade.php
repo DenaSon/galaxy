@@ -18,3 +18,4 @@
 
     </x-slot:actions>
 </x-nav>
+<x-progress wire:loading class="progress-primary h-0.5" indeterminate/>
