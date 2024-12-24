@@ -2,8 +2,8 @@
 
     <x-slot:brand>
 
-        <h1 class="text-lg font-black">
-            پایگاه دانستنی های دناپکس
+        <h1 class="sm:text-lg font-black text-sm">
+           دانشنامه
         </h1>
 
 

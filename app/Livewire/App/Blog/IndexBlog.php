@@ -72,6 +72,6 @@ class IndexBlog extends Component
         }
 
         return view('livewire.app.blog.index-blog', compact('blogs'))
-            ->title('پایگاه دانستنی های دناپکس');
+            ->title('دانشنامه دناپکس');
     }
 }
