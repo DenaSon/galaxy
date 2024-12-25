@@ -1,5 +1,7 @@
 <div>
-
+@push('SEO')
+    @include('livewire.app.blog.inc.index-blog-schema')
+@endpush
     <div class="container mx-auto">
 
         @include('livewire.app.blog.inc.indexBlog-nav')

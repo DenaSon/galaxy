@@ -41,7 +41,7 @@ class IndexBlog extends Component
             $params = [
                 '_embed' => true,
                 'per_page' => $this->per_page,
-                '_fields' => 'id,title,featured_media',
+                '_fields' => 'id,title,featured_media,excerpt,date,modified',
                 'search' => $this->searchTerm ?? '',
                 'orderby' => 'date',
                 'order' => 'desc',
