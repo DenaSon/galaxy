@@ -88,6 +88,13 @@ class ProductCard extends Component
 
     }
 
+    public function openSingleProduct($id)
+    {
+       $this->redirect(route('home.product.singleProduct',['product' => $id,'slug' => slugMaker('dena')]));
+    }
+
+
+
     public function render()
     {
         return view('livewire.app.component.product-card')

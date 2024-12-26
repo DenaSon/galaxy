@@ -13,6 +13,9 @@ class BlogCard extends Component
     use Toast;
     public $blog;
 
+
+
+
     public function mount()
     {
 
