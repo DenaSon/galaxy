@@ -94,7 +94,10 @@ hidden md:block
 
 
         <aside class="mb-10">
-            <x-icon name="o-sparkles" class="h-20 w-20 text-primary"></x-icon>
+
+            <a href="{{ route('home.index-home') }}" wire:navigate>
+                <img src="{{ asset('static/small-d-logo.png') }}" alt="DenaPax" width="100" height="45" style="height: 40px;width: 110px"/>
+            </a>
 
             <p>
                 دنا پکس | از دنا به خانه شما، جایی که طبیعت و اصالت به هم می‌رسند!

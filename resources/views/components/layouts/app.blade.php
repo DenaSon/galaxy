@@ -83,7 +83,7 @@
     <x-slot:actions>
 
 
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle hidden sm:block">
             <div class="indicator">
                 <x-button link="{{ route('panel.shop.cart') }}" icon="o-shopping-cart"/>
             </div>
@@ -137,9 +137,7 @@
     <x-slot:brand>
 
         <a href="{{ route('home.index-home') }}" wire:navigate>
-            <div class="badge bg-primary text-white badge-sm">
-                DenaPax
-            </div>
+           <img src="{{ asset('static/small-d-logo.png') }}" alt="DenaPax" width="100" height="45" style="height: 40px;width: 110px"/>
         </a>
 
     </x-slot:brand>
