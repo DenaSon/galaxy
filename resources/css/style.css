@@ -59,6 +59,19 @@
     padding-bottom: 10px;
 }
 
+.single-blog h4 {
+    h4 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #333333;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+}
+
+
 .single-blog h2 {
     font-size: 1.7rem;
     border-bottom: 2px solid #d9d2e3;
