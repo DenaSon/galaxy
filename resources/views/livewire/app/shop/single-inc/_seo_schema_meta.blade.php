@@ -19,6 +19,7 @@
             "priceCurrency" => "IRR", // ISO 4217 currency code
             "price" => $product->variants->first()->price * 10 ?? '0', // Convert to Rials
             "itemCondition" => "https://schema.org/NewCondition",
+            "priceValidUntil" => now()->addMonths(6)->format('Y-m-d'), // معتبر تا 6 ماه از امروز
             "availability" => "https://schema.org/InStock",
             "seller" => [
                 "@type" => "Organization",
