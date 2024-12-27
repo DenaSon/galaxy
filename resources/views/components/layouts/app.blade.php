@@ -137,7 +137,7 @@
     <x-slot:brand>
 
         <a href="{{ route('home.index-home') }}" wire:navigate>
-           <img src="{{ asset('static/small-d-logo.png') }}" alt="DenaPax" width="100" height="45" style="height: 40px;width: 110px"/>
+           <img loading="lazy" src="{{ asset('static/small-d-logo.png') }}" alt="DenaPax" width="100" height="45" style="height: 40px;width: 110px"/>
         </a>
 
     </x-slot:brand>
