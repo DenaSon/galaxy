@@ -9,19 +9,15 @@ hidden md:block
 
             <div class="flex space-x-6 mb-6 md:mb-0 ">
 
-                <div class="w-20 h-24  rounded flex items-center justify-center p-1">
 
-                    <script defer src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>
-
-                </div>
 
                 <div class="w-20 h-24 rounded flex items-center justify-center p-0">
 
-                    <a  referrerpolicy='origin'
+                    <a
                        target='_blank'
-                       href='https://trustseal.enamad.ir/?id=548145&Code=9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'>
-                        <img loading="lazy" referrerpolicy='origin'
-                             src='https://trustseal.enamad.ir/logo.aspx?id=548145&Code=9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'
+                       href='{{ route('home.singlePage',['page' =>3 ,'slug' => 'trust-denapax-com']) }}'>
+                        <img loading="lazy"
+                             src='{{ asset('static/enamad-logo.png') }}'
                              alt='' style='cursor:pointer' code='9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'></a>
 
                 </div>
