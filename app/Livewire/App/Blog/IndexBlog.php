@@ -117,9 +117,9 @@ class IndexBlog extends Component
             Log::error('Error fetching blogs: ' . $e->getMessage());
         }
 
-        $title = $category_name ?? '';
+
 
         return view('livewire.app.blog.index-blog', compact('blogs','categories_list'))
-            ->title($title);
+            ->title($category_name ?? 'دانشنامه');
     }
 }
