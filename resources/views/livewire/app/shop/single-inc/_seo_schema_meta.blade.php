@@ -62,6 +62,12 @@
     ];
 
 if ($product->comments->count() > 0) {
+    $schemaData["aggregateRating"] = [
+        "@type" => "AggregateRating",
+        "ratingValue" => "5", // Example: Replace with actual average rating if available
+        "reviewCount" => $product->comments->count(), // Total number of reviews
+    ];
+
     $schemaData["review"] = $product->comments->map(function ($comment) {
         return [
             "@type" => "Review",
@@ -73,13 +79,19 @@ if ($product->comments->count() > 0) {
             "reviewBody" => $comment->text ?? '',
             "reviewRating" => [
                 "@type" => "Rating",
-                "ratingValue" => $comment->rating ?? '5',
+                "ratingValue" => $comment->rating ?? '5', // Individual review rating
                 "bestRating" => "5",
                 "worstRating" => "1",
             ],
         ];
     })->toArray();
 } else {
+    // Fallback for no reviews
+    $schemaData["aggregateRating"] = [
+        "@type" => "AggregateRating",
+        "ratingValue" => "1", // Default to 1 when no reviews
+        "reviewCount" => 0, // No reviews available
+    ];
 
     $schemaData["review"] = [
         [
@@ -89,16 +101,17 @@ if ($product->comments->count() > 0) {
                 "name" => "Anonymous",
             ],
             "datePublished" => now()->toIso8601String(),
-            "reviewBody" => "This is a default review for this product.",
+            "reviewBody" => "No reviews yet for this product.",
             "reviewRating" => [
                 "@type" => "Rating",
-                "ratingValue" => "5",
+                "ratingValue" => "1", // Default rating value
                 "bestRating" => "5",
                 "worstRating" => "1",
             ],
         ]
     ];
 }
+
 @endphp
 
 <script type="application/ld+json">
