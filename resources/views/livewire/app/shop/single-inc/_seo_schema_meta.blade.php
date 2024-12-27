@@ -92,7 +92,7 @@ if ($product->comments->count() > 0) {
     $schemaData["aggregateRating"] = [
         "@type" => "AggregateRating",
         "ratingValue" => "1", // Default to 1 when no reviews
-        "reviewCount" => 0, // No reviews available
+        "reviewCount" =>1, // No reviews available
     ];
 
     $schemaData["review"] = [
