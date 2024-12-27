@@ -76,8 +76,7 @@ hidden md:block
             <a wire:navigate href="{{ route('home.product.indexStore')  }}"
                class="link link-hover"> لیست محصولات </a>
 
-            <a wire:navigate href="https://denapax.com"
-               class="link link-hover">   دناپکس </a>
+
 
             <a wire:navigate href="https://denapax.com/blog/17/%D8%B3%DB%8C-%D8%B3%D8%AE%D8%AA-%D9%86%DA%AF%DB%8C%D9%86-%D8%AF%D8%B1%D8%AE%D8%B4%D8%A7%D9%86-%D8%AF%D8%A7%D9%85%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AF%D9%86%D8%A7"
                class="link link-hover"> سی سخت </a>
