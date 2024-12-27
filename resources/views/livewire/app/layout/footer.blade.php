@@ -48,7 +48,7 @@ hidden md:block
     </div>
 
 
-    <footer class="footer bg-base-50 text-base-content mx-auto container mx-auto">
+    <footer class="footer bg-base-50 text-base-content mx-auto container">
 
 
         <nav>
