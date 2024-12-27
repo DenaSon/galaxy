@@ -88,16 +88,23 @@ class IndexBlog extends Component
                 $categories_list = [];
             }
 
-            $category_name_url = 'https://denapax.com/blogpress/wp-json/wp/v2/categories/'.$this->category;
-            $category_name_response = Http::get($category_name_url);
-            if ($category_name_response->successful()) {
+                if (isset($this->category))
+                {
+                    $category_name_url = 'https://denapax.com/blogpress/wp-json/wp/v2/categories/'.$this->category;
+                    $category_name_response = Http::get($category_name_url);
+                    if ($category_name_response->successful()) {
 
-                $category_data = $category_name_response->json();
+                        $category_data = $category_name_response->json();
 
 
-                $category_name = $category_data['name'];
+                        $category_name = $category_data['name'];
 
-            }
+                    }
+                    else
+                    {
+                        $category_name = null;
+                    }
+                }
 
 
 
