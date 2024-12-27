@@ -1,4 +1,3 @@
-<meta name="description" content="{{ $product->description }}"/>
 @php
     $schemaData = [
         "@context" => "https://schema.org",
@@ -17,18 +16,21 @@
         "offers" => [
             "@type" => "Offer",
             "url" => singleProductUrl($product->id, $product->name),
-            "priceCurrency" => "IRR",
-            "price" => $product->variants->first()->price ?? '0',
+            "priceCurrency" => "IRR", // ISO 4217 currency code
+            "price" => $product->variants->first()->price * 10 ?? '0', // Convert to Rials if stored in Tomans
             "itemCondition" => "https://schema.org/NewCondition",
             "availability" => "https://schema.org/InStock",
             "seller" => [
                 "@type" => "Organization",
                 "name" => getSetting('website_title') ?? 'دناپکس',
             ],
-            "unitText" => "تومان"
+            "hasMerchantReturnPolicy" => [
+                "@type" => "MerchantReturnPolicy",
+                "url" => route('home.singlePage',['page'=>4,'slug' => 'return-policy']), // Link to your return policy page
+                "returnPolicyCategory" => "https://schema.org/RefundPolicy", // Options: RefundPolicy, ExchangePolicy, StoreCreditPolicy
+            ],
         ],
     ];
-
 
     if ($product->comments->count() > 0) {
         $schemaData["aggregateRating"] = [
