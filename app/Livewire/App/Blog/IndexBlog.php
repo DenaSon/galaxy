@@ -104,7 +104,7 @@ class IndexBlog extends Component
                     }
                     else
                     {
-                        $this->category_name = '';
+                        $this->category_name = 'دانشنامه';
                     }
                 }
 
@@ -117,7 +117,9 @@ class IndexBlog extends Component
             Log::error('Error fetching blogs: ' . $e->getMessage());
         }
 
+        $title = $category_name ?? '';
+
         return view('livewire.app.blog.index-blog', compact('blogs','categories_list'))
-            ->title('دانشنامه دناپکس');
+            ->title($title);
     }
 }
