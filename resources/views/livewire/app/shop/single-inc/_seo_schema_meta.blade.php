@@ -2,6 +2,7 @@
     $schemaData = [
         "@context" => "https://schema.org",
         "@type" => "Product",
+         "inLanguage" => "fa",
         "name" => $product->name,
         "description" => $product->description,
         "image" => [
