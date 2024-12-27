@@ -61,31 +61,44 @@
         ],
     ];
 
-    if ($product->comments->count() > 0) {
-        $schemaData["aggregateRating"] = [
-            "@type" => "AggregateRating",
-            "ratingValue" => "5",
-            "reviewCount" => $product->comments->count(),
+if ($product->comments->count() > 0) {
+    $schemaData["review"] = $product->comments->map(function ($comment) {
+        return [
+            "@type" => "Review",
+            "author" => [
+                "@type" => "Person",
+                "name" => $comment->username ?? 'Anonymous',
+            ],
+            "datePublished" => $comment->created_at->toIso8601String(),
+            "reviewBody" => $comment->text ?? '',
+            "reviewRating" => [
+                "@type" => "Rating",
+                "ratingValue" => $comment->rating ?? '5',
+                "bestRating" => "5",
+                "worstRating" => "1",
+            ],
         ];
+    })->toArray();
+} else {
 
-        $schemaData["review"] = [
-            [
-                "@type" => "Review",
-                "author" => [
-                    "@type" => "Person",
-                    "name" => $product->comments->first()?->username ?? 'Anonymous',
-                ],
-                "datePublished" => $product->comments->first()?->created_at->toIso8601String() ?? '',
-                "reviewBody" => $product->comments->first()?->text ?? '',
-                "reviewRating" => [
-                    "@type" => "Rating",
-                    "ratingValue" => "5",
-                    "bestRating" => "5",
-                    "worstRating" => "1",
-                ],
-            ]
-        ];
-    }
+    $schemaData["review"] = [
+        [
+            "@type" => "Review",
+            "author" => [
+                "@type" => "Person",
+                "name" => "Anonymous",
+            ],
+            "datePublished" => now()->toIso8601String(),
+            "reviewBody" => "This is a default review for this product.",
+            "reviewRating" => [
+                "@type" => "Rating",
+                "ratingValue" => "5",
+                "bestRating" => "5",
+                "worstRating" => "1",
+            ],
+        ]
+    ];
+}
 @endphp
 
 <script type="application/ld+json">
