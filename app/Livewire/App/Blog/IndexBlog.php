@@ -120,6 +120,6 @@ class IndexBlog extends Component
 
 
         return view('livewire.app.blog.index-blog', compact('blogs','categories_list'))
-            ->title($category_name ?? 'دانشنامه');
+            ->title($this->category_name ?? 'دانشنامه');
     }
 }
