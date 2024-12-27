@@ -17,7 +17,7 @@
             "@type" => "Offer",
             "url" => singleProductUrl($product->id, $product->name),
             "priceCurrency" => "IRR", // ISO 4217 currency code
-            "price" => $product->variants->first()->price * 10 ?? '0', // Convert to Rials if stored in Tomans
+            "price" => $product->variants->first()->price * 10 ?? '0', // Convert to Rials
             "itemCondition" => "https://schema.org/NewCondition",
             "availability" => "https://schema.org/InStock",
             "seller" => [
@@ -26,8 +26,37 @@
             ],
             "hasMerchantReturnPolicy" => [
                 "@type" => "MerchantReturnPolicy",
-                "url" => route('home.singlePage',['page'=>4,'slug' => 'return-policy']), // Link to your return policy page
-                "returnPolicyCategory" => "https://schema.org/RefundPolicy", // Options: RefundPolicy, ExchangePolicy, StoreCreditPolicy
+                "url" => "https://denapax.com/page/4/return-policy",
+                "returnPolicyCategory" => "https://schema.org/RefundPolicy",
+            ],
+            "shippingDetails" => [
+                "@type" => "OfferShippingDetails",
+                "shippingRate" => [
+                    [
+                        "@type" => "MonetaryAmount",
+                        "value" => 590000, // هزینه ارسال به ریال
+                        "currency" => "IRR", // کد ارز
+                    ],
+                ],
+                "deliveryTime" => [
+                    "@type" => "ShippingDeliveryTime",
+                    "handlingTime" => [
+                        "@type" => "QuantitativeValue",
+                        "minValue" => 1, // حداقل زمان آماده‌سازی
+                        "maxValue" => 3, // حداکثر زمان آماده‌سازی
+                        "unitText" => "Day", // واحد زمان
+                    ],
+                    "transitTime" => [
+                        "@type" => "QuantitativeValue",
+                        "minValue" => 3, // حداقل زمان ارسال
+                        "maxValue" => 6, // حداکثر زمان ارسال
+                        "unitText" => "Day", // واحد زمان
+                    ],
+                ],
+                "shippingDestination" => [
+                    "@type" => "DefinedRegion",
+                    "addressCountry" => "IR", // کد کشور ایران
+                ],
             ],
         ],
     ];
