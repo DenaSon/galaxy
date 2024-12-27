@@ -15,58 +15,6 @@
     @stack('SEO')
     @stack('styles')
 
-    <style>
-        @font-face {
-            font-family: 'denapax-font';
-            src: url('{{ asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2') }}') format('woff2'),
-            url('{{ asset('admin/assets/fonts/iransans/woff/IRANSansWeb(FaNum).woff') }}') format('woff'),
-            url('{{ asset('admin/assets/fonts/iransans/ttf/IRANSansWeb(FaNum).ttf') }}') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #888;
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background-color: #555;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-
-        * {
-            scrollbar-width: thin;
-            scrollbar-color: #888 #f1f1f1;
-        }
-
-
-        body {
-            -ms-overflow-style: scrollbar;
-        }
-
-        input[type="number"]::-webkit-outer-spin-button,
-        input[type="number"]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        input[type="number"] {
-            -moz-appearance: textfield;
-        }
-
-    </style>
-
-
     @stack('cdn')
 
     <meta name="csrf-token" content="{{ csrf_token() }}">

@@ -1,7 +1,58 @@
+@font-face {
+    font-family: 'denapax-font';
+    src: url('https://denapax.com/admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2') format('woff2'),
+    url('https://denapax.com/admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff') format('woff'),
+    url('https://denapax.com/admin/assets/fonts/iransans/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+
+body {
+    -ms-overflow-style: scrollbar;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
 :root {
     --primary: #491eff !important;
     --primary-color: var(--primary) !important; /* Your custom primary color */
 }
+
 .single-blog {
     display: block;
     border-radius: 10px;
@@ -30,6 +81,7 @@
     color: #2980b9; /* Slightly darker shade for hover */
     text-decoration: underline;
 }
+
 .single-blog strong:hover {
     color: #491eff; /* Change color on hover */
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
@@ -61,12 +113,12 @@
 
 .single-blog h4 {
 
-        font-size: 1.38rem;
-        font-weight: 700;
-        color: #333333;
-        margin-top: 1rem;
-        margin-bottom: 0.5rem;
-        padding-bottom: 0.5rem;
+    font-size: 1.38rem;
+    font-weight: 700;
+    color: #333333;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
 
 }
 
@@ -98,6 +150,7 @@
         font-size: 1rem;
     }
 }
+
 .single-blog img {
     max-width: 100%;
     height: auto;
@@ -111,14 +164,12 @@
     border-left: 10px solid #491eff;
     margin: 1.5em 20px;
     padding: 1em 20px;
-    quotes: "\201C""\201D""\2018""\2019";
+    quotes: "\201C" "\201D" "\2018" "\2019";
     font-style: normal;
     font-family: 'denapax-font', serif;
     color: #555;
     line-height: 1.6;
 }
-
-
 
 
 .single-blog blockquote:before {
@@ -157,12 +208,12 @@
 }
 
 
-
 .single-blog ul,
 .single-blog ol {
     margin-left: 1.4rem;
     margin-bottom: 1.2rem;
 }
+
 /* Style for unordered lists */
 .single-blog ul {
     margin-left: 1.5rem; /* Indentation for the list */
@@ -202,8 +253,6 @@
     color: #333; /* Dark color for readability */
     margin-bottom: 10px; /* Space between list items */
 }
-
-
 
 
 .single-blog a {
@@ -252,3 +301,4 @@
     transform: scale(1.08);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
+
