@@ -17,7 +17,7 @@
         "offers" => [
             "@type" => "Offer",
             "url" => singleProductUrl($product->id, $product->name),
-            "priceCurrency" => "INR", // ISO 4217 currency code
+            "priceCurrency" => "IRR", // ISO 4217 currency code
             "price" => $product->variants->first()->price * 10 ?? '0', // Convert to Rials
             "itemCondition" => "https://schema.org/NewCondition",
             "priceValidUntil" => now()->addMonths(6)->format('Y-m-d'), // معتبر تا 6 ماه از امروز
