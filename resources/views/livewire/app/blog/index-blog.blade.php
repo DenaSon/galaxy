@@ -6,6 +6,11 @@
 
         @include('livewire.app.blog.inc.indexBlog-nav')
 
+       <h1>
+           مقالات  {{ $category_name }}
+       </h1>
+
+
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mt-6">
             @forelse($blogs as $blog)
 

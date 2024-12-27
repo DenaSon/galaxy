@@ -35,6 +35,9 @@ class IndexBlog extends Component
         $this->searchTerm = $value;
     }
 
+
+
+
     public function render()
     {
         try {
@@ -85,13 +88,25 @@ class IndexBlog extends Component
                 $categories_list = [];
             }
 
+            $category_name_url = 'https://denapax.com/blogpress/wp-json/wp/v2/categories/'.$this->category;
+            $category_name_response = Http::get($category_name_url);
+            if ($category_name_response->successful()) {
+
+                $category_data = $category_name_response->json();
+
+
+                $category_name = $category_data['name'];
+
+            }
+
+
 
         } catch (\Throwable $e) {
             $blogs = [];
             Log::error('Error fetching blogs: ' . $e->getMessage());
         }
 
-        return view('livewire.app.blog.index-blog', compact('blogs','categories_list'))
+        return view('livewire.app.blog.index-blog', compact('blogs','categories_list','category_name'))
             ->title('دانشنامه دناپکس');
     }
 }
