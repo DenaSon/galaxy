@@ -6,11 +6,13 @@
 
         @include('livewire.app.blog.inc.indexBlog-nav')
 
-        <h1 class="text-xl font-bold text-center py-4 text-primary bg-gray-50 rounded-lg shadow-md">
-          <a href="{{ url()->full() }}" wire:navigate>
-              مقالات {{ $category_name }}
-          </a>
-        </h1>
+       @if(isset($category))
+            <h1 class="text-xl font-bold text-center py-4 text-primary bg-gray-50 rounded-lg shadow-md">
+                <a href="{{ url()->full() }}" wire:navigate>
+                    مقالات {{ $category_name }}
+                </a>
+            </h1>
+       @endif
 
 
 
