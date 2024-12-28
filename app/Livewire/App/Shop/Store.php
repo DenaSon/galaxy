@@ -34,13 +34,16 @@ class Store extends Component
 
     public function mount()
     {
-        // Fetch all parent categories of type 'product'
-        $this->categories = Cache::remember('categories_list', now()->addMinutes(900), function () {
-            return Category::where('type', 'product')
+        $this->categories = Cache::get('layout-categories');
+        if (! $this->categories) {
+
+            $this->categories = Category::where('type', 'product')
                 ->whereNull('parent_id')
                 ->whereHas('products')
                 ->get();
-        });
+
+        }
+
     }
 
     public function updatedSelectedCategories()
