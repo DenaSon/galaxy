@@ -36,6 +36,7 @@ class Store extends Component
         // Fetch all parent categories of type 'product'
         $this->categories = Category::where('type', 'product')
             ->whereNull('parent_id')
+            ->whereHas('products')
             ->get();
     }
 
