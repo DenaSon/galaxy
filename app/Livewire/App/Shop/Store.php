@@ -4,6 +4,7 @@ namespace App\Livewire\App\Shop;
 
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Support\Facades\Cache;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -34,10 +35,12 @@ class Store extends Component
     public function mount()
     {
         // Fetch all parent categories of type 'product'
-        $this->categories = Category::where('type', 'product')
-            ->whereNull('parent_id')
-            ->whereHas('products')
-            ->get();
+        $this->categories = Cache::remember('categories_list', now()->addMinutes(900), function () {
+            return Category::where('type', 'product')
+                ->whereNull('parent_id')
+                ->whereHas('products')
+                ->get();
+        });
     }
 
     public function updatedSelectedCategories()
@@ -54,7 +57,7 @@ class Store extends Component
 
     public function loadMore()
     {
-        $this->perPage += 6;
+        $this->perPage += 12;
     }
 
     public function render()
