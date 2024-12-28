@@ -32,7 +32,6 @@ Route::post('/login', [\App\Livewire\App\System\LoginPage::class, 'login']);
 Route::get('/login', [\App\Livewire\App\System\LoginPage::class, 'login'])->name('login');
 Route::get('/contact-us', \App\Livewire\App\Shop\ContactUs::class)->name('contact-us');
 
-Route::get('api',\App\Livewire\App\Ai\Gemini::class);
 
 Route::name('home.')->group(function () {
 
