@@ -1,3 +1,5 @@
+<link rel="canonical" href="{{ url()->current() }}" />
+
 @php
     $schemaData = [
         "@context" => "https://schema.org",
