@@ -1,3 +1,7 @@
+@if(request()->has('category'))
+    <link rel="canonical" href="{{ route('home.blog.indexBlog') }}" />
+
+@endif
 <script type="application/ld+json">
     @php
         $blogList = [];
