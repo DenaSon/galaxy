@@ -47,15 +47,16 @@
         <x-button spinner class="sm:text-xs text-xs"  icon="o-user" label="ورود | ثبت‌نام" @click="$wire.loginModal = true"/>
     @endif
 
-    @script
+
     <script>
         document.addEventListener('livewire:init', () => {
             Livewire.on('reload', (event) => {
-                location.reload();  // This will reload the page
+
+                location.reload();
 
             });
         });
     </script>
 
-    @endscript
+ t
 </div>
