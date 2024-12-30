@@ -19,11 +19,8 @@
                         <div class="flex items-start gap-4">
 
 
-                                <img src="{{ asset($cart->product->images->first()?->file_path) }}"
-                                     alt="تصویر محصول" class="w-24 h-24 rounded">
-
-
-
+                            <img src="{{ asset($cart->product->images->first()?->file_path) }}"
+                                 alt="تصویر محصول" class="w-24 h-24 rounded">
 
 
                             <div class="flex-1">

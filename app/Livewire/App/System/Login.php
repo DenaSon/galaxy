@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Mary\Traits\Toast;
 use Throwable;
@@ -172,6 +173,12 @@ class Login extends Component
     public function showTip()
     {
         $this->info('ثبت‌نام یا ورود به حساب', 'شماره تلفن خود را وارد کنید و منتظر دریافت کد باشید', css: 'bg-blue-500 text-white');
+    }
+
+    #[On('refreshPage')]
+    public function refreshPage()
+    {
+        return redirect()->to(url()->current());
     }
 
 
