@@ -178,7 +178,8 @@ class Login extends Component
     #[On('refreshPage')]
     public function refreshPage()
     {
-        return redirect()->to(url()->current());
+        $this->redirect(url()->current());
+
     }
 
 
