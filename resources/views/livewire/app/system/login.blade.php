@@ -1,4 +1,6 @@
 <div>
+@if(Auth::check())
+
 
     <x-modal wire:model="loginModal" class="backdrop-blur-0" box-class="w-96" style="z-index: 1000">
         <div class="flex items-center justify-center mb-2">
@@ -38,7 +40,7 @@
 
     </x-modal>
 
-
+    @endif
     @if(Auth::check())
         <x-button class="sm:text-xs text-xs"  link="{{ route('panel.profile.profileDashboard') }}"  icon="o-user-circle" label="پروفایل"/>
     @else
