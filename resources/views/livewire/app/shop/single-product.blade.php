@@ -22,7 +22,7 @@
 
     <script>
 
-        Livewire.on('refreshPage', () => {
+        Livewire.on('$refresh', () => {
             window.location.reload();
         });
 
