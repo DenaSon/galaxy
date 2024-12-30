@@ -14,7 +14,7 @@
             <div class="flex-1  rounded border-b">
                 @foreach($carts as $index => $cart)
 
-                    <div class="flex flex-col p-4 rounded  shadow-lg border-t">
+                    <div class="flex flex-col p-4 rounded  shadow-lg border-t" wire:key="{{$cart->id}}">
 
                         <div class="flex items-start gap-4">
 
