@@ -128,7 +128,8 @@ class Login extends Component
                 Cache::forget('VerifyCode_' . $phoneNumber);
 
                 $this->info('ثبت نام | ورود شما با موفقیت  انجام شد', 'اکنون می توانید سفارش های خود را ثبت کنید', '', 'o-check');
-                $this->dispatch('reload');
+                $currentUrl = url()->current();
+                $this->redirect($currentUrl);
 
 
             } else {
@@ -152,7 +153,8 @@ class Login extends Component
                 $this->verifyModal = false;
                 $this->info('ثبت نام | ورود شما با موفقیت  انجام شد', 'اکنون می توانید سفارش های خود را ثبت کنید', '', 'o-check');
 
-                $this->dispatch('reload');
+                $currentUrl = url()->current();
+                $this->redirect($currentUrl);
 
             }
         } else {
