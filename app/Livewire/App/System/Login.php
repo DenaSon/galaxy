@@ -161,7 +161,6 @@ class Login extends Component
 
     }
 
-
     private function UserExists(): bool
     {
         $phoneNumber = session()->get('phoneNumber') ?? 0;
