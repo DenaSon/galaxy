@@ -21,8 +21,10 @@
 
 
         <script>
-            Livewire.on('refreshPage', () => {
-                window.location.reload();
+            document.addEventListener('livewire:load', () => {
+                Livewire.on('refreshPage', () => {
+                    window.location.reload();
+                });
             });
         </script>
 </div>
