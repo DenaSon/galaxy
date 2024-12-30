@@ -127,7 +127,7 @@ class Login extends Component
                 $this->verifyModal = false;
                 Cache::forget('VerifyCode_' . $phoneNumber);
 
-                $this->info('ثبت نام | ورود شما با موفقیت  انجام شد', '', '', 'o-check');
+                $this->info('ثبت نام | ورود شما با موفقیت  انجام شد', 'اکنون می توانید سفارش های خود را ثبت کنید', '', 'o-check',redirectTo:  url()->current());
                 $this->dispatch('refreshPage');
 
 
@@ -150,7 +150,7 @@ class Login extends Component
 
                 Cache::forget('VerifyCode_' . $phoneNumber);
                 $this->verifyModal = false;
-                $this->info('ثبت نام | ورود شما با موفقیت  انجام شد', '', '', 'o-check');
+                $this->info('ثبت نام | ورود شما با موفقیت  انجام شد', 'اکنون می توانید سفارش های خود را ثبت کنید', '', 'o-check',redirectTo:  url()->current());
 
                 $this->dispatch('refreshPage');
 
