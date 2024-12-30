@@ -1,5 +1,5 @@
 <div>
-@if(Auth::check())
+@if(!Auth::check())
 
 
     <x-modal wire:model="loginModal" class="backdrop-blur-0" box-class="w-96" style="z-index: 1000">

@@ -20,11 +20,11 @@
     </div>
 
 
-        <script>
+    <script>
 
-                Livewire.on('refreshPage', () => {
-                    window.location.reload();
-                });
+        Livewire.on('refreshPage', () => {
+            window.location.reload();
+        });
 
-        </script>
+    </script>
 </div>
