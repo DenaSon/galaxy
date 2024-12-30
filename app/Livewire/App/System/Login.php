@@ -128,7 +128,7 @@ class Login extends Component
                 Cache::forget('VerifyCode_' . $phoneNumber);
 
                 $this->info('ثبت نام | ورود شما با موفقیت  انجام شد', 'اکنون می توانید سفارش های خود را ثبت کنید', '', 'o-check');
-                $this->dispatch('$refresh');
+                $this->dispatch('reload');
 
 
             } else {
@@ -152,7 +152,7 @@ class Login extends Component
                 $this->verifyModal = false;
                 $this->info('ثبت نام | ورود شما با موفقیت  انجام شد', 'اکنون می توانید سفارش های خود را ثبت کنید', '', 'o-check');
 
-                $this->dispatch('$refresh');
+                $this->dispatch('reload');
 
             }
         } else {
@@ -175,12 +175,7 @@ class Login extends Component
         $this->info('ثبت‌نام یا ورود به حساب', 'شماره تلفن خود را وارد کنید و منتظر دریافت کد باشید', css: 'bg-blue-500 text-white');
     }
 
-    #[On('refreshPage')]
-    public function refreshPage()
-    {
-        $this->redirectIntended('');
 
-    }
 
 
     public function render()

@@ -20,11 +20,14 @@
     </div>
 
 
-    <script>
+@push('scripts')
+            <script>
 
-        Livewire.on('$refresh', () => {
-            window.location.reload();
-        });
+                window.addEventListener('reload', () => {
+                    location.reload();
+                });
 
-    </script>
+            </script>
+
+@endpush
 </div>
