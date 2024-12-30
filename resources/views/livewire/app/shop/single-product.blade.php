@@ -20,14 +20,15 @@
     </div>
 
 
-@push('scripts')
-            <script>
+@script
+        <script>
+            document.addEventListener('livewire:init', () => {
+                Livewire.on('reload', (event) => {
+                    location.reload();  // This will reload the page
 
-                window.addEventListener('reload', () => {
-                    location.reload();
                 });
+            });
+        </script>
 
-            </script>
-
-@endpush
+@endscript
 </div>
