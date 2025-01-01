@@ -102,7 +102,17 @@ hidden md:block
                     © 2024   | همه حقوق محفوظ است. طراحی و توسعه با ❤️ توسط تیم دنـا پکس
                 </span>
 
+            <div class="flex space-x-4 justify-center">
 
+                <a href="https://www.instagram.com/yourprofile" target="_blank" class="text-gray-800 hover:text-pink-600">
+
+                   <a target="_blank" href="https://www.instagram.com/denapax/">  <x-icon name="fab.instagram" /> </a>
+                    <a target="_blank" href="https://www.instagram.com/sisakhtziba/?hl=fa">  <x-icon name="fab.instagram" /> </a>
+
+                </a>
+
+
+            </div>
             </p>
         </aside>
 
