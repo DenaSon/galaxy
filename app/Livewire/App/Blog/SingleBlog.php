@@ -89,13 +89,13 @@ class SingleBlog extends Component
 
     public function render()
     {
-        $articleTitle = $this->article['title']['rendered'];
+        $articleTitle = $this->article['title']['rendered'] ?? '';
 
         $productList = Product::where('name', 'like', "%$articleTitle%")
             ->where('is_active', 1)
             ->take(4)->get();
         if ($productList->isEmpty()) {
-            $productList = Product::inRandomOrder()->take(4)->get();
+            $productList = Product::inRandomOrder()->take(2)->get();
         }
 
         return view('livewire.app.blog.single-blog', compact('productList'))
