@@ -1,5 +1,5 @@
 <div class="text-center mx-auto">
-    <div class="rounded-md w-full  overflow-hidden mb-2 shadow-md sticky top-5">
+    <div class="rounded-md w-full  overflow-hidden mb-2 shadow-md  top-5">
 
         <x-card
             class="bg-gray-50 border border-b-2 h-auto p-1"
