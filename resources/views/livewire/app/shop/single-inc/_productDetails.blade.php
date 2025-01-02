@@ -16,5 +16,14 @@
         </button>
 
     </p>
-    @livewire('app.component.cart-modal',['product'=>$product])
+
+    @if($product->related_article_id != null)
+    <x-collapse wire:model="show" separator class="bg-base-50">
+        <x-slot:heading>اطلاعات مرتبط</x-slot:heading>
+        <x-slot:content>
+            @livewire('app.shop.related-blog',['product' => $product])
+        </x-slot:content>
+    </x-collapse>
+    @endif
+
 </div>
