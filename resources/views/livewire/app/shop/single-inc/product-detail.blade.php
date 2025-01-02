@@ -70,13 +70,14 @@
         <div class="w-full rounded-md mt-4">
             <x-tabs wire:model="selectedTab" class="mb-5">
 
+                @if($product->blog_article_id != null)
+                    <x-tab name="relatedBlog" label="توضیحات">
+                        <div>@livewire('app.shop.related-blog',['product' => $product])</div>
+                    </x-tab>
+                @endif
+
                 <x-tab name="productFeature" icon="o-queue-list" label="ویژگی‌ها">
                     @include('livewire.app.shop.single-inc._product-features')
-                </x-tab>
-
-
-                <x-tab name="relatedBlog" label="توضیحات">
-                    <div>@livewire('app.shop.related-blog',['product' => $product])</div>
                 </x-tab>
 
 
