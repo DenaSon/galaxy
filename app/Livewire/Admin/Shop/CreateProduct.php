@@ -47,6 +47,7 @@ class CreateProduct extends Component
     #[Validate('required|string')]
     public $unit = "";
     public $discount = 0;
+    public $related_article_id;
 
     public function mount()
     {
@@ -151,6 +152,8 @@ class CreateProduct extends Component
 
         $product->unit = $this->unit;
         $product->discount = $this->discount;
+
+        $product->related_article_id = $this->related_article_id ?? null;
 
         if ($product->save()) {
             $this->success(

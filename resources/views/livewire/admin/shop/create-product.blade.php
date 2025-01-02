@@ -73,7 +73,8 @@
                 <x-input label="واحد" inline wire:model="unit"/>
                 <x-menu-separator/>
                 <x-input hint="درصد تخفیف" label="تخفیف" inline wire:model="discount"/>
-
+                <x-menu-separator/>
+                <x-input hint="شماره مقاله مرتبط" label="مقاله مرتبط" inline wire:model="related_article_id"/>
                 <x-slot:actions>
                     <x-button wire:confirm="محصول منتشر شود؟" wire:click="publish" label="ذخیره"/>
                 </x-slot:actions>
