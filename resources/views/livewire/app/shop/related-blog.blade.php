@@ -2,9 +2,16 @@
     @if (!empty($blogContent) && isset($blogContent['content']))
         <div class="mt-4 single-blog">
 
-            {!! \Illuminate\Support\Str::limit($blogContent['content']['rendered'] ,3500,'...') !!}
+            {!! \Illuminate\Support\Str::limit($blogContent['content']['rendered'] ,2500,'...') !!}
 
-            <x-button external=""  link="{{ singleBlogUrl($blogContent['id'],$blogContent['title']['rendered']) }}" label="ادامه مطلب"/>
+            <div class="flex justify-center">
+                <x-button
+                    external=""
+                    link="{{ singleBlogUrl($blogContent['id'],$blogContent['title']['rendered']) }}"
+                    label="ادامه مطلب"
+                />
+            </div>
+
 
         </div>
     @else
