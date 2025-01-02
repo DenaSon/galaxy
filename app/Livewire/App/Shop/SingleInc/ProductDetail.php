@@ -20,14 +20,7 @@ class ProductDetail extends Component
 
     public function mount(Product $product)
     {
-        if($product->related_article_id != null)
-        {
-            $this->selectedTab = 'relatedBlog';
-        }
-        else
-        {
-            $this->selectedTab = 'productFeature';
-        }
+
     }
 
 

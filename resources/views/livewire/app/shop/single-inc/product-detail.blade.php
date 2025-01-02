@@ -67,6 +67,15 @@
 
     <div class="flex flex-col gap-1 h-auto mt-4">
 
+        @if($product->related_article_id != null)
+            <x-collapse wire:model="show" separator class="bg-base-50 mt-5">
+                <x-slot:heading>اطلاعات مرتبط</x-slot:heading>
+                <x-slot:content>
+                    @livewire('app.shop.related-blog',['product' => $product])
+                </x-slot:content>
+            </x-collapse>
+        @endif
+
         <div class="w-full rounded-md mt-4">
             <x-tabs wire:model="selectedTab" class="mb-5">
 
