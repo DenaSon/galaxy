@@ -12,7 +12,7 @@
 
                 </ul>
             </div>
-            <h1 class=" font-black text-lg"><a wire:navigate class="decoration-white"
+            <h1 class="font-black text-lg"><a wire:navigate class="decoration-white"
                                                href="{{ singleProductUrl($product->id,$product->name)}}"> {{ $product->name }} </a>
             </h1>
         </div>
