@@ -93,7 +93,7 @@ if ($product->comments->count() > 0) {
     // Fallback for no reviews
     $schemaData["aggregateRating"] = [
         "@type" => "AggregateRating",
-        "ratingValue" => "1", // Default to 1 when no reviews
+        "ratingValue" => "4", // Default to 1 when no reviews
         "reviewCount" =>1, // No reviews available
     ];
 
