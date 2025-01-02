@@ -12,7 +12,7 @@ class ProductDetail extends Component
     use Toast;
     public Product $product;
     public $ranking = 4;
-    public $selectedTab =  'productFeature' ?? 'relatedBlog';
+    public $selectedTab =   'relatedBlog' ?? 'productFeature';
 
     public $rating = 0;
 
