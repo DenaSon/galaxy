@@ -6,7 +6,8 @@
 
             <div class="flex justify-center">
                 <x-button
-                    external=""
+                    external
+                    icon="o-ellipsis-horizontal-circle"
                     link="{{ singleBlogUrl($blogContent['id'],$blogContent['title']['rendered']) }}"
                     label="ادامه مطلب"
                 />
@@ -15,6 +16,6 @@
 
         </div>
     @else
-        <p class="text-gray-500">توضیحات مرتبط با این محصول در حال حاضر در دسترس نیست</p>
+
     @endif
 </div>
