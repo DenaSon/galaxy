@@ -4,12 +4,21 @@
         <div class="flex-1  h-16 ">
 
             <div class="breadcrumbs text-xs">
-                <ul class="text-primary">
-
-                    <li><a wire:navigate
-                           href="{{ singleCategoryUrl($product?->categories?->first()?->id,$product?->categories?->first()?->name) }}">{{ $product?->categories?->first()?->name ?? '' }}</a>
+                <ul class="text-primary" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a wire:navigate
+                           href="{{ singleCategoryUrl($product?->categories?->first()?->id, $product?->categories?->first()?->name) }}"
+                           itemprop="item">
+                            <span itemprop="name">{{ $product?->categories?->first()?->name ?? '' }}</span>
+                        </a>
+                        <meta itemprop="position" content="1" />
                     </li>
-
+                    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="{{ request()->url() }}" itemprop="item">
+                            <span itemprop="name">{{ $product?->name ?? '' }}</span>
+                        </a>
+                        <meta itemprop="position" content="2" />
+                    </li>
                 </ul>
             </div>
             <h1 class="font-black text-lg"><a wire:navigate class="decoration-white"
