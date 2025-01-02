@@ -74,6 +74,12 @@
                     @include('livewire.app.shop.single-inc._product-features')
                 </x-tab>
 
+
+                <x-tab name="relatedBlog" label="توضیحات">
+                    <div>@livewire('app.shop.related-blog',['product' => $product])</div>
+                </x-tab>
+
+
                 <x-tab name="productComment" label="دیدگاه‌ها">
                     <div>@include('livewire.app.shop.single-inc._product-comments')</div>
                 </x-tab>
