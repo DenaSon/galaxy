@@ -32,7 +32,7 @@ class RelatedBlog extends Component
         try {
             $articleId = $this->relatedBlog;
 
-            $response = Http::get("https://denapax.com/blogpress/wp-json/wp/v2/posts/{$articleId}?_fields=content");
+            $response = Http::get("https://denapax.com/blogpress/wp-json/wp/v2/posts/{$articleId}?_fields=content,id,title");
 
             if ($response->successful()) {
                 $blogContent = $response->json();

@@ -2,7 +2,9 @@
     @if (!empty($blogContent) && isset($blogContent['content']))
         <div class="mt-4 single-blog">
 
-            {!! \Illuminate\Support\Str::limit($blogContent['content']['rendered'] ,1000,'...') !!}
+            {!! \Illuminate\Support\Str::limit($blogContent['content']['rendered'] ,3500,'...') !!}
+
+            <x-button external=""  link="{{ singleBlogUrl($blogContent['id'],$blogContent['title']['rendered']) }}" label="ادامه مطلب"/>
 
         </div>
     @else
