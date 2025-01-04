@@ -8,7 +8,7 @@
             <div class="flex justify-center">
                 <x-button
                     external
-                    class="btn-block btn-primary"
+                    class="btn-block btn-primary text-white "
                     icon="o-ellipsis-horizontal-circle"
                     link="{{ singleBlogUrl($blogContent['id'],$blogContent['title']['rendered']) }}"
                     label="ادامه مطلب"
