@@ -2,7 +2,8 @@
     @if (!empty($blogContent) && isset($blogContent['content']))
         <div class="mt-4 single-blog">
 
-            {!! \Illuminate\Support\Str::limit(preg_replace('/<img[^>]*>/i', '', $blogContent['content']['rendered']), 2500, '...') !!}
+            {!! \Illuminate\Support\Str::limit(preg_replace(['/<img[^>]*>/i', '/<a[^>]*>.*?<\/a>/i'], '', $blogContent['content']['rendered']), 2500, '...') !!}
+
 
 
             <div class="flex justify-center">
