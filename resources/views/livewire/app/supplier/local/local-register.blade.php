@@ -17,15 +17,15 @@
                         <x-button wire:click="loginAction" label="ثبت‌نام" class="btn btn-primary btn-block"/>
                     @endif
                 </x-step>
-                <x-step step="2" text="Payment">
+                <x-step step="2" text="اطلاعات">
                     <x-form>
                         <x-input inline="" placeholder="نام" wire:model.live="name"/>
                         <x-input placeholder="نام خانوادگی" wire:model.live="last_name"/>
-                        <x-tags placeholder="محصولات" wire:model="tags" icon="o-tag" hint="محصولات خود را اضافه کنید"/>
+                        <x-textarea inline="" placeholder="محصولات قابل تامین"/>
 
                     </x-form>
                 </x-step>
-                <x-step step="3" text="Receive Product" class="bg-orange-500/20">
+                <x-step step="3" text="تایید نهایی" class="bg-orange-500/20">
                     Receive Product
                 </x-step>
             </x-steps>
