@@ -90,7 +90,8 @@ class ProductCard extends Component
 
     public function openSingleProduct(Product $product)
     {
-       $this->redirect(route('home.product.singleProduct',['product' => $product,'slug' => slugMaker($product->name)]));
+      singleProductUrl($product->id,$product->name);
+
     }
 
 
