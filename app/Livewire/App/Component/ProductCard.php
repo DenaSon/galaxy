@@ -90,7 +90,7 @@ class ProductCard extends Component
 
     public function openSingleProduct(Product $product)
     {
-      singleProductUrl($product->id,$product->name);
+      return singleProductUrl($product->id,$product->name);
 
     }
 
