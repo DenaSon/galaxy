@@ -1,7 +1,7 @@
 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
     <a
         wire:navigate
-        href="">
+        href="{{ singleProductUrl($product->id, $product->name) }}">
         <x-card>
             <x-slot:title class="text-sm font-thin hidden sm:block">
                 {{ $product->name }}
