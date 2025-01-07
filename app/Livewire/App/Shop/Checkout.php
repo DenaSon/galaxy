@@ -173,6 +173,8 @@ class Checkout extends Component
             ->where('city_id', '=',839)->exists())
             {
                 $this->shippingCost = 0;
+                $order->shipping_cost = 0;
+                $order->save();
             }
 
             $this->total = $order->total_price + $order->shipping_cost; // Total cost = cart + shipping
