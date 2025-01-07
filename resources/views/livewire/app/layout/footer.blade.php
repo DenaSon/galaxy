@@ -18,7 +18,7 @@ hidden md:block
                        href='{{ route('home.singlePage',['page' =>3 ,'slug' => 'trust-denapax-com']) }}'>
                         <img loading="lazy"
                              src='{{ asset('static/enamad-logo.png') }}'
-                             alt='' style='cursor:pointer' code='9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'></a>
+                             alt='نماد اعتماد الکترونیک' style='cursor:pointer' code='9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'></a>
 
                 </div>
 
