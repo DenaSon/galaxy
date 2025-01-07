@@ -331,7 +331,7 @@ function imageOptimizer($directory, $imageName, $rectangleWidth, $rectangleHeigh
 /**
  * @throws Exception
  */
-function singleProductUrl($productId, $slug)
+function singleProductUrl($productId, $slug='slug')
 {
     return route('home.product.singleProduct',['product'=>$productId,'slug'=>slugMaker($slug)]) ?? '';
 }
