@@ -20,7 +20,7 @@ use Toast;
 
     public function render()
     {
-        $products = Product::inRandomOrder()->limit(12)->get();
+        $products = Product::latest()->where('is_active','=',1)->limit(12)->get();
         return view('livewire.app.home.visual-category-list',['products'=>$products]);
 
     }
