@@ -42,7 +42,13 @@
 
             <div class="flex justify-between text-gray-700">
                 <span>هزینه ارسال</span>
-                <span>{{ number_format($shippingCost) }}  </span>
+                <span>
+                @if($shippingCost == 0)
+                      <b>رایگان</b>
+                    @else
+                        {{ number_format($shippingCost) }}
+                @endif
+                </span>
 
             </div>
         </div>
