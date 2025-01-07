@@ -1,7 +1,7 @@
 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
     <a
         wire:navigate
-        href="{{ singleProductUrl($product->id, $product->name) }}" wire:click="openSingleProduct({{$product->id}})">
+        href="{{ singleProductUrl($product->id, $product->name) }}">
         <x-card>
             <x-slot:title class="text-sm font-thin hidden sm:block">
                 {{ $product->name }}
