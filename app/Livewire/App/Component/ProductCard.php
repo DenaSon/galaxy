@@ -84,7 +84,7 @@ class ProductCard extends Component
     public function mount(Product $product)
     {
 
-
+        $this->product = $product;
 
     }
 
