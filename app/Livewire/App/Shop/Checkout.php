@@ -167,6 +167,14 @@ class Checkout extends Component
 
             $this->totalWeight = $order->weight ?? 0;
             $this->shippingCost = $order->shipping_cost ?? 0;
+
+            if (Auth::user()->addresses()
+                ->where('is_default', 1)
+            ->where('city_id', '=',839)->exists())
+            {
+                $this->shippingCost = 0;
+            }
+
             $this->total = $order->total_price + $order->shipping_cost; // Total cost = cart + shipping
 
             if (Auth::user()->carts?->isEmpty()) {
