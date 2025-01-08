@@ -96,7 +96,9 @@
                       <i> اطلاعات مرتبط بیشتری وجود ندارد </i>
                     @else
                        <div class="single-blog">
-                           {{ getWikipediaInfo($product->wiki) }}
+                          <p>
+                              {{ getWikipediaInfo($product->wiki) }}
+                          </p>
                        </div>
                      <br/>
                     <span class="font-thin text-xs text-gray-400 mt-2">
