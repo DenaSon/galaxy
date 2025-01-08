@@ -28,7 +28,7 @@
     @include('livewire.app.home.inc.blog-section')
 
 
-    {{ getWikipediaInfo('سیب') }}
+
 
 
 </div>
