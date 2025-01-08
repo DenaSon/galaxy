@@ -95,7 +95,9 @@
                   @if($product->wiki == null)
                       <i> اطلاعات مرتبط بیشتری وجود ندارد </i>
                     @else
-                        {{ getWikipediaInfo($product->wiki) }}
+                       <div class="single-blog">
+                           {{ getWikipediaInfo($product->wiki) }}
+                       </div>
                      <br/>
                     <span class="font-thin text-xs text-gray-400 mt-2">
                      استخراج شده از :  <a href="https://fa.wikipedia.org/" target="_blank" rel="noopener">ویکی پدیا </a>
