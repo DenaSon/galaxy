@@ -87,7 +87,11 @@
             <x-collapse wire:model="show" separator class="bg-base-50 mt-5">
                 <x-slot:heading>اطلاعات مرتبط</x-slot:heading>
                 <x-slot:content>
-                   {{ getWikipediaInfo($product->wiki) }}
+                  @if($product->wiki == null)
+                      <b> اطلاعات مرتبط برای این محصول در دسترس نیست </b>
+                    @else
+                        {{ getWikipediaInfo($product->wiki) }}
+                  @endif
                 </x-slot:content>
             </x-collapse>
 
