@@ -96,7 +96,10 @@
                       <i> اطلاعات مرتبط بیشتری وجود ندارد </i>
                     @else
                         {{ getWikipediaInfo($product->wiki) }}
-                  @endif
+                     <br/>
+                        استخراج شده از :  <a href="https://example.com/reference-article" target="_blank" rel="nofollow noopener">ویکی پدیا </a>
+
+                    @endif
                 </x-slot:content>
             </x-collapse>
 
