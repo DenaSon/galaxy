@@ -7,7 +7,7 @@ use App\Models\Setting;
 use Cryptommer\Smsir\Objects\Parameters;
 use Cryptommer\Smsir\Smsir;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Number;
 use Illuminate\Support\Str;
 use Intervention\Image\Drivers\Imagick\Driver;
@@ -61,9 +61,6 @@ function SkuMaker(int $end = 9999): string
  * @param string $parameterName
  * @return mixed
  */
-
-
-
 
 
 function sendSms(array $params, string $phoneNumber, int $templateID)
@@ -331,18 +328,19 @@ function imageOptimizer($directory, $imageName, $rectangleWidth, $rectangleHeigh
 /**
  * @throws Exception
  */
-function singleProductUrl($productId, $slug='slug')
+function singleProductUrl($productId, $slug = 'slug')
 {
-    return route('home.product.singleProduct',['product'=>$productId,'slug'=>slugMaker($slug)]) ?? '';
+    return route('home.product.singleProduct', ['product' => $productId, 'slug' => slugMaker($slug)]) ?? '';
 }
+
 function singleBlogUrl($blogId, $slug)
 {
-    return route('home.blog.singleBlog',['blog'=>$blogId,'slug'=>slugMaker($slug)]) ?? '';
+    return route('home.blog.singleBlog', ['blog' => $blogId, 'slug' => slugMaker($slug)]) ?? '';
 }
 
 function singleCategoryUrl($categoryId, $slug)
 {
-    return route('home.product.singleCategory',['category'=>$categoryId,'slug'=>slugMaker($slug)]) ?? '';
+    return route('home.product.singleCategory', ['category' => $categoryId, 'slug' => slugMaker($slug)]) ?? '';
 }
 
 function homeUrl()
@@ -361,8 +359,6 @@ function formatPhoneNumber($phoneNumber)
         return $phoneNumber;
     }
 }
-
-
 
 
 /**
@@ -384,7 +380,7 @@ function convertPersianNumbers($string): float|int|string
     }
 }
 
- function getShippingAddress($address)
+function getShippingAddress($address)
 {
     if (!$address) {
         throw new \Exception('Address not found.');
@@ -396,7 +392,7 @@ function convertPersianNumbers($string): float|int|string
         $address->city->name ?? 'N/A',
         $address->address_line,
 
-        ' کد پستی :  '.
+        ' کد پستی :  ' .
         $address->postal_code ?? 'N/A'
     );
 
@@ -406,4 +402,54 @@ function convertPersianNumbers($string): float|int|string
 function noPictureUrl()
 {
     return asset('static/denapax-image/nopicuser.png') ?? '';
+}
+
+
+function getWikipediaInfo($title=''): string
+{
+
+    try
+    {
+        $response = Http::get('https://fa.wikipedia.org/w/api.php', [
+            'action' => 'query',
+            'format' => 'json',
+            'titles' => $title,
+            'prop' => 'extracts',
+            'exintro' => true,
+        ]);
+
+
+        if ($response->successful()) {
+
+            $data = $response->json();
+
+            $page = current($data['query']['pages']);
+
+            if (isset($page['extract'])) {
+
+                $description = $page['extract'];
+
+
+                $cleanDescription = strip_tags($description);
+
+
+                return $cleanDescription;
+
+            }
+            else
+            {
+                return 'توضیحات موجود نیست';
+            }
+        }
+
+
+        return 'خطا در دریافت اطلاعات';
+
+    }
+    catch (THrowable $e)
+    {
+        \Illuminate\Log\log($e->getMessage());
+        return 'توضیحات موجود نیست';
+    }
+
 }

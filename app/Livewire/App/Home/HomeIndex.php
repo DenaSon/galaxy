@@ -16,6 +16,8 @@ class HomeIndex extends Component
 {
     use Toast;
 
+    public $price = 0;
+
     public $blogs = [];
 
 
@@ -96,5 +98,9 @@ class HomeIndex extends Component
         return view('livewire.app.home.home-index', compact('products'))
             ->title($websiteTitle ?? 'Home');
     }
+
+
+
+
 
 }
