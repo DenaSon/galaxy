@@ -97,8 +97,10 @@
                     @else
                         {{ getWikipediaInfo($product->wiki) }}
                      <br/>
-                        استخراج شده از :  <a href="https://example.com/reference-article" target="_blank" rel="nofollow noopener">ویکی پدیا </a>
+                    <span class="font-thin text-xs">
+                     استخراج شده از :  <a href="https://example.com/reference-article" target="_blank" rel="nofollow noopener">ویکی پدیا </a>
 
+                    </span>
                     @endif
                 </x-slot:content>
             </x-collapse>
