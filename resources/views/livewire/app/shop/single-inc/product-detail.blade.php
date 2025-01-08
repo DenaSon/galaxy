@@ -85,10 +85,15 @@
             </x-collapse>
         @else
             <x-collapse wire:model="show" separator class="bg-base-50 mt-5">
-                <x-slot:heading>اطلاعات مرتبط</x-slot:heading>
+                <x-slot:heading>
+                    اطلاعات مرتبط
+                    @if($product->wiki != null)
+                        با {{ $product->wiki }}
+                    @endif
+                </x-slot:heading>
                 <x-slot:content>
                   @if($product->wiki == null)
-                      <b> اطلاعات مرتبط برای این محصول در دسترس نیست </b>
+                      <i> اطلاعات مرتبط بیشتری وجود ندارد </i>
                     @else
                         {{ getWikipediaInfo($product->wiki) }}
                   @endif
