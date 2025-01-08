@@ -101,7 +101,7 @@
                           </p>
                        </div>
                      <br/>
-                    <span class="font-thin text-xs text-gray-400 mt-2 badge badge-warning">
+                    <span class="font-thin text-xs text-gray-50 mt-2 badge badge-warning">
                      استخراج شده از :  <a href="https://fa.wikipedia.org/" target="_blank" rel="noopener">ویکی پدیا </a>
 
                     </span>
