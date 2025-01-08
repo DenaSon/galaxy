@@ -414,7 +414,7 @@ function getWikipediaInfo($title=''): string
             'action' => 'query',
             'format' => 'json',
             'titles' => $title,
-            'prop' => 'text',
+            'prop' => 'extracts',
             'exintro' => true,
         ]);
 
