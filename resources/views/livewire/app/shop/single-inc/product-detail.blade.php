@@ -87,7 +87,7 @@
             <x-collapse wire:model="show" separator class="bg-base-50 mt-5">
                 <x-slot:heading>اطلاعات مرتبط</x-slot:heading>
                 <x-slot:content>
-                   {{ getWikipediaInfo($product->name) }}
+                   {{ getWikipediaInfo($product->wiki) }}
                 </x-slot:content>
             </x-collapse>
 
