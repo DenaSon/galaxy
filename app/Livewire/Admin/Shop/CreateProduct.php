@@ -48,6 +48,7 @@ class CreateProduct extends Component
     public $unit = "";
     public $discount = 0;
     public $related_article_id;
+    public $wiki;
 
     public function mount()
     {
@@ -154,6 +155,7 @@ class CreateProduct extends Component
         $product->discount = $this->discount;
 
         $product->related_article_id = $this->related_article_id ?? null;
+        $product->wiki = $this->wiki ?? null;
 
         if ($product->save()) {
             $this->success(
@@ -176,7 +178,8 @@ class CreateProduct extends Component
         $this->description = $product->description;
         $this->unit = $product->unit;
         $this->discount = $product->discount;
-
+        $this->related_article_id = $product->related_article_id;
+        $this->wiki = $product->wiki;
         $this->selectedCategories = $product->categories->where('parent_id', '=', null)->pluck('id')->toArray();
         $this->subCategories = Category::whereIn('parent_id', $this->selectedCategories)->get();
 

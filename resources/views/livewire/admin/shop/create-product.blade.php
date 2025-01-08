@@ -75,6 +75,11 @@
                 <x-input hint="درصد تخفیف" label="تخفیف" inline wire:model="discount"/>
                 <x-menu-separator/>
                 <x-input hint="شماره مقاله مرتبط" label="مقاله مرتبط" inline wire:model="related_article_id"/>
+
+                <x-menu-separator/>
+                <x-input hint="کلمه مقاله مرتبط" label="کلمه مرتبط" inline wire:model="wiki"/>
+
+
                 <x-slot:actions>
                     <x-button wire:confirm="محصول منتشر شود؟" wire:click="publish" label="ذخیره"/>
                 </x-slot:actions>
