@@ -119,7 +119,7 @@ hidden md:block
 
 
         <a href="https://wa.me/989173434796"
-           data-tip="پشتیبانی در واتساپ"
+           data-tip="پشتیبانی "
            class="tooltip fixed bottom-20 left-4 bg-green-500 text-white rounded-full p-2 shadow-lg hover:bg-violet-600 transition"
            target="_blank"
            rel="noopener noreferrer">
