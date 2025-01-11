@@ -99,7 +99,8 @@ hidden md:block
 
                 <br/>
                 <span class="text-xs text-gray-500">
-                    © 2024   | همه حقوق محفوظ است. طراحی و توسعه با ❤️ توسط تیم دنـا پکس
+                    © 2024   | همه حقوق محفوظ است. طراحی و توسعه با ❤️ توسط
+                    <a target="_blank" rel="nofollow noopener" href="https://wa.me/989173434796">تیم دنا پکس</a>
                 </span>
 
             <div class="flex space-x-4 justify-center">
