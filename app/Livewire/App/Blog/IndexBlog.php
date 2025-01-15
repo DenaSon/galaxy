@@ -2,7 +2,6 @@
 
 namespace App\Livewire\App\Blog;
 
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
@@ -24,6 +23,7 @@ class IndexBlog extends Component
 
     public $category_name;
 
+
     public function addBlogs()
     {
         $this->per_page += 18; // Livewire will handle reactivity and re-render
@@ -35,11 +35,10 @@ class IndexBlog extends Component
         $this->searchTerm = $value;
     }
 
-    private function fetchBlogs()
-    {
-        $cacheKey = "blogs_{$this->per_page}_{$this->searchTerm}_" . implode(',', $this->category);
 
-        return Cache::remember($cacheKey, 300, function () {
+    public function render()
+    {
+        try {
             $params = [
                 '_embed' => true,
                 'per_page' => $this->per_page,
@@ -48,85 +47,62 @@ class IndexBlog extends Component
                 'orderby' => 'date',
                 'order' => 'desc',
                 'categories' => $this->category,
+
             ];
 
             $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts', $params);
 
-            if (!$response->successful()) {
-                return [];
-            }
-
-            $blogs = $response->json();
-
-            foreach ($blogs as &$blog) {
-                $blog['featured_image_url'] = $this->fetchFeaturedImage($blog['featured_media'] ?? null);
-            }
-
-            return $blogs;
-        });
-    }
-
-    private function fetchFeaturedImage($mediaId)
-    {
-        if (!$mediaId) {
-            return null;
-        }
-
-        $cacheKey = "featured_image_{$mediaId}";
-
-        return Cache::remember($cacheKey, 3600, function () use ($mediaId) {
-            $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $mediaId, [
-                '_fields' => 'id,source_url'
-            ]);
-
-            if ($mediaResponse->successful()) {
-                $media = $mediaResponse->json();
-                return $media['source_url'] ?? null;
-            }
-
-            return null;
-        });
-    }
-
-    private function fetchCategories()
-    {
-        return Cache::remember('categories_list', 3600, function () {
-            $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/categories?_fields=id,name,count');
-
-            return $response->successful() ? $response->json() : [];
-        });
-    }
-
-    private function fetchCategoryName()
-    {
-        if (!$this->category) {
-            return 'دانشنامه';
-        }
-
-        $cacheKey = "category_name_{$this->category}";
-
-        return Cache::remember($cacheKey, 3600, function () {
-            $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/categories/' . $this->category);
-
             if ($response->successful()) {
-                $categoryData = $response->json();
-                return $categoryData['name'] ?? 'دانشنامه';
+                $blogs = $response->json();
+
+                foreach ($blogs as &$blog) {
+                    if (isset($blog['featured_media']) && $blog['featured_media']) {
+                        $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $blog['featured_media'], [
+                            '_fields' => 'id,source_url'
+                        ]);
+
+                        if ($mediaResponse->successful()) {
+                            $media = $mediaResponse->json();
+                            $blog['featured_image_url'] = $media['source_url'] ?? null;
+                        } else {
+                            $blog['featured_image_url'] = null;
+                        }
+                    } else {
+                        $blog['featured_image_url'] = null;
+                    }
+                }
+
+            } else {
+                $blogs = [];
             }
 
-            return 'دانشنامه';
-        });
-    }
+            $category_response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/categories?_fields=id,name,count');
+            if ($category_response->successful()) {
+                $categories_list = $category_response->json();
+            } else {
+                $categories_list = [];
+            }
 
-    public function render()
-    {
-        try {
-            $blogs = $this->fetchBlogs();
-            $categories_list = $this->fetchCategories();
-            $this->category_name = $this->fetchCategoryName();
+            if ($this->category) {
+                $category_name_url = 'https://denapax.com/blogpress/wp-json/wp/v2/categories/' . $this->category;
+                $category_name_response = Http::get($category_name_url);
+                if ($category_name_response->successful()) {
+
+                    $category_data = $category_name_response->json();
+
+
+                    $this->category_name = $category_data['name'];
+
+                } else {
+                    $this->category_name = 'دانشنامه';
+                }
+            }
+
+
         } catch (\Throwable $e) {
             $blogs = [];
+            $category_name = '';
             $categories_list = [];
-            $this->category_name = 'دانشنامه';
             Log::error('Error fetching blogs: ' . $e->getMessage());
         }
 
