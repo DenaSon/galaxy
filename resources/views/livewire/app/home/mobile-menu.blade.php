@@ -18,7 +18,7 @@
                 <span class="text-xs">سبد خرید</span>
             </a>
         @else
-            <a wire:navigate href="{{ route('panel.shop.cart') }}" role="button" class="hover:text-primary">
+            <a rel="noopener nofollow" wire:navigate href="{{ route('panel.shop.cart') }}" role="button" class="hover:text-primary">
                 <div x-data="{ cartCount: @entangle('cartCount') }" class="indicator">
                     <span x-text="cartCount" class="indicator-item badge badge-primary badge-xs"></span>
                     <x-icon name="o-shopping-cart"/>

@@ -61,7 +61,7 @@ hidden md:block
             <a wire:navigate href="{{ route('home.singlePage',['page'=>2,'slug'=>slugMaker('قوانین و مقررات')])  }}"
                class="link link-hover"> قوانین و مقررات </a>
 
-            <a wire:navigate href="{{ route('panel.shop.cart')  }}"
+            <a wire:navigate href="{{ route('panel.shop.cart')  }}" rel="noopener nofollow"
                class="link link-hover">سبد خرید </a>
 
         </nav>
