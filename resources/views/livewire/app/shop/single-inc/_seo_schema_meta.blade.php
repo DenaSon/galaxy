@@ -4,7 +4,7 @@
     $schemaData = [
         "@context" => "https://schema.org",
         "@type" => "Product",
-         "inLanguage" => "fa",
+         "inLanguage" => "fa-IR",
         "name" => $product->name,
         "description" => $product->description,
         "image" => [
@@ -17,10 +17,12 @@
             "name" => $product->categories->first()->name ?? 'Generic',
         ],
         "offers" => [
-            "@type" => "Offer",
+
+            "@type" => "AggregateOffer",
             "url" => singleProductUrl($product->id, $product->name),
             "priceCurrency" => "IRR", // ISO 4217 currency code
-            "price" => $product->variants->first()->price * 10 ?? '0', // Convert to Rials
+            "lowPrice" => $product->variants->min('price') * 10 ?? 0,
+            "highPrice" => $product->variants->max('price') * 10 ?? 0,
             "itemCondition" => "https://schema.org/NewCondition",
             "priceValidUntil" => now()->addMonths(6)->format('Y-m-d'), // معتبر تا 6 ماه از امروز
             "availability" => "https://schema.org/InStock",
@@ -63,6 +65,10 @@
                 ],
             ],
         ],
+
+
+
+
     ];
 
 if ($product->comments->count() > 0) {
