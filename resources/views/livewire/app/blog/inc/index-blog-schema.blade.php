@@ -6,11 +6,11 @@
     @php
         $blogList = [];
         foreach ($blogs as $index => $blog) {
-            $imageUrl = isset($blog['featured_media']['source_url']) ? $blog['featured_media']['source_url'] : ''; // بررسی وجود تصویر
+            $imageUrl = isset($blog['featured_media']['source_url']) ? $blog['featured_media']['source_url'] : '';
             $blogList[] = [
                 "@type" => "ListItem",
                 "position" => $index + 1,
-                "url" => route('home.blog.singleBlog', ['blog' => $blog['id'], 'slug' => slugMaker($blog['title']['rendered'])]), // URL مستقیم
+                "url" => route('home.blog.singleBlog', ['blog' => $blog['id'], 'slug' => slugMaker($blog['title']['rendered'])]),
                 "name" => $blog['title']['rendered'],
                 "image" => $imageUrl,
                 "description" => strip_tags(Str::limit($blog['excerpt']['rendered'], 160)), // محدود کردن توضیحات
