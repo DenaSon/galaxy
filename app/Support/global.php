@@ -330,7 +330,7 @@ function imageOptimizer($directory, $imageName, $rectangleWidth, $rectangleHeigh
  */
 function singleProductUrl($productId, $slug = 'slug')
 {
-    return route('home.product.singleProduct', ['product' => $productId, 'slug' => slugMaker($slug)]) ?? '';
+    return route('home.product.singleProduct', ['product' => $productId, 'slug' => slugMaker($slug ?? 'product')]) ?? '';
 }
 
 function singleBlogUrl($blogId, $slug)
