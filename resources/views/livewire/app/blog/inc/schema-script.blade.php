@@ -7,7 +7,7 @@
             "@id": "{{ singleBlogUrl($article['id'], $article['title']['rendered']) }}"
     },
     "headline": "{{ e($article['title']['rendered']) }}",
-    "description": "{{ $article['yoast_head_json']['description']  }}",
+    "description": "{{ $article['yoast_head_json']['description'] ?? $article['excerpt']['rendered']   }}",
     "image": "{{ $featuredImageUrl ?? '' }}", {{-- Update with the actual featured image --}}
     "author": {
         "@type": "Person",
