@@ -15,7 +15,7 @@ class ProductCard extends Component
 {
     use Toast;
 
-    public Product $product;
+    public  $product;
 
     public function addFavorite(Product $product)
     {
@@ -84,7 +84,7 @@ class ProductCard extends Component
     public function mount(Product $product)
     {
 
-        $this->product = $product;
+        $this->product = Product::where('is_active', 1)->find($product->id);
 
     }
 
