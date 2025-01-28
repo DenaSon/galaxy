@@ -84,7 +84,7 @@ class ProductCard extends Component
     public function mount(Product $product)
     {
 
-        $this->product = $product;
+        $this->product = $product->where('is_active','=',1)->first();
 
     }
 
