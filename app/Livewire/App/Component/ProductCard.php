@@ -15,7 +15,7 @@ class ProductCard extends Component
 {
     use Toast;
 
-    public  $product;
+    public Product $product;
 
     public function addFavorite(Product $product)
     {
