@@ -83,9 +83,12 @@ class ProductCard extends Component
 
     public function mount(Product $product)
     {
-
         $this->product = Product::where('is_active', 1)->find($product->id);
 
+        if (!$this->product) {
+            $product = [];
+            throw new \Exception(__('The product is either inactive or does not exist.'));
+        }
     }
 
     public function openSingleProduct(Product $product)
