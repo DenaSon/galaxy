@@ -92,7 +92,7 @@ class SingleBlog extends Component
         $articleTitle = $this->article['title']['rendered'] ?? '';
 
         $productList = Product::where('name', 'like', "%$articleTitle%")
-            ->where('is_active', 1)
+            ->where('is_active', '=',1)
             ->take(4)->get();
         if ($productList->isEmpty()) {
             $productList = Product::inRandomOrder()->take(2)->get();
