@@ -2876,7 +2876,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       get raw() {
         return raw;
       },
-      version: "3.14.7",
+      version: "3.14.8",
       flushAndStopDeferringMutations,
       dontAutoEvaluateFunctions,
       disableEffectScheduling,
@@ -7154,8 +7154,13 @@ var require_module_cjs9 = __commonJS({
           } else {
             processInputValue(el, false);
           }
-          if (el._x_model)
+          if (el._x_model) {
+            if (el._x_model.get() === el.value)
+              return;
+            if (el._x_model.get() === null && el.value === "")
+              return;
             el._x_model.set(el.value);
+          }
         });
         const controller = new AbortController();
         cleanup(() => {
@@ -7495,6 +7500,9 @@ function handleFileUpload(el, property, component, cleanup) {
     if (!el.isConnected)
       return;
     if (value === null || value === "") {
+      el.value = "";
+    }
+    if (el.multiple && Array.isArray(value) && value.length === 0) {
       el.value = "";
     }
   });
@@ -9103,6 +9111,7 @@ var attributesExemptFromScriptTagHashing = [
 ];
 function swapCurrentPageWithNewHtml(html, andThen) {
   let newDocument = new DOMParser().parseFromString(html, "text/html");
+  let newHtml = newDocument.documentElement;
   let newBody = document.adoptNode(newDocument.body);
   let newHead = document.adoptNode(newDocument.head);
   oldBodyScriptTagHashes = oldBodyScriptTagHashes.concat(Array.from(document.body.querySelectorAll("script")).map((i) => {
@@ -9110,6 +9119,7 @@ function swapCurrentPageWithNewHtml(html, andThen) {
   }));
   let afterRemoteScriptsHaveLoaded = () => {
   };
+  replaceHtmlAttributes(newHtml);
   mergeNewHead(newHead).finally(() => {
     afterRemoteScriptsHaveLoaded();
   });
@@ -9127,6 +9137,21 @@ function prepNewBodyScriptTagsToRun(newBody, oldBodyScriptTagHashes2) {
         return;
     }
     i.replaceWith(cloneScriptTag(i));
+  });
+}
+function replaceHtmlAttributes(newHtmlElement) {
+  let currentHtmlElement = document.documentElement;
+  Array.from(newHtmlElement.attributes).forEach((attr) => {
+    const name = attr.name;
+    const value = attr.value;
+    if (currentHtmlElement.getAttribute(name) !== value) {
+      currentHtmlElement.setAttribute(name, value);
+    }
+  });
+  Array.from(currentHtmlElement.attributes).forEach((attr) => {
+    if (!newHtmlElement.hasAttribute(attr.name)) {
+      currentHtmlElement.removeAttribute(attr.name);
+    }
   });
 }
 function mergeNewHead(newHead) {
@@ -10438,8 +10463,10 @@ globalDirective("current", ({ el, directive: directive2, cleanup }) => {
   let refreshCurrent = (url) => {
     if (pathMatches(hrefUrl, url, options)) {
       el.classList.add(...classes);
+      el.setAttribute("data-current", "");
     } else {
       el.classList.remove(...classes);
+      el.removeAttribute("data-current");
     }
   };
   refreshCurrent(new URL(window.location.href));
