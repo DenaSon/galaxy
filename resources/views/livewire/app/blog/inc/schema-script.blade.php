@@ -39,5 +39,5 @@
 <meta property="article:modified_time" content="{{ \Carbon\Carbon::parse($article['modified'])->format('c') }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $article['title']['rendered'] }}">
-<meta name="twitter:description" content="{{ $article['yoast_head_json']['description'] ?? '' }}">
+<meta name="twitter:description" content="{{ $article['yoast_head_json']['description'] ?? $article['excerpt']['rendered'] }}">
 <meta name="twitter:image" content="{{ $article['yoast_head_json']['og_image'][0]['url'] }}">
