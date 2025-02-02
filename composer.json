@@ -17,7 +17,6 @@
         "owenvoke/blade-fontawesome": "^2.7",
         "pishran/zarinpal": "*",
         "robsontenorio/mary": "^1.40",
-        "sadegh19b/laravel-persian-validation": "^1.5",
         "spatie/laravel-image-optimizer": "*",
         "spatie/laravel-sitemap": "^7.2"
     },
