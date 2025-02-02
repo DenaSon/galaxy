@@ -8,6 +8,8 @@ class RobotsTxt
 
     protected array $disallowsPerUserAgent = [];
 
+    protected array $allowsPerUserAgent = [];
+
     protected bool $matchExactly = true;
 
     protected bool $includeGlobalGroup = true;
