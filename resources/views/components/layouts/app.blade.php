@@ -9,14 +9,7 @@
 <head>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script>
-        window.livewire_token = document.head.querySelector('meta[name="csrf-token"]').content;
-        document.addEventListener("livewire:load", function() {
-            Livewire.on('csrf-refresh', token => {
-                window.livewire_token = token;
-            });
-        });
-    </script>
+
 
 
     @include('components.layouts.inc.fav-icons')
