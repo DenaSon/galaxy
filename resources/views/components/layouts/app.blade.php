@@ -10,7 +10,18 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<script>
+    sendRequest: async function() {
+        try {
+            const response = await fetch(requestUrl, { /* your fetch options */ });
+            const data = await response.json();  // بررسی داده‌های دریافتی
+            console.log(data);  // لاگ کردن داده‌های دریافتی
+        } catch (error) {
+            console.error('Error parsing JSON response:', error);
+        }
+    }
 
+</script>
 
     @include('components.layouts.inc.fav-icons')
     @include('components.layouts.inc.analytics-code')
