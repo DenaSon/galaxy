@@ -50,7 +50,6 @@ return array(
     'Spatie\\ImageOptimizer\\' => array($vendorDir . '/spatie/image-optimizer/src'),
     'Spatie\\Crawler\\' => array($vendorDir . '/spatie/crawler/src'),
     'Spatie\\Browsershot\\' => array($vendorDir . '/spatie/browsershot/src'),
-    'Sadegh19b\\LaravelPersianValidation\\' => array($vendorDir . '/sadegh19b/laravel-persian-validation/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Ramsey\\Collection\\' => array($vendorDir . '/ramsey/collection/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src'),

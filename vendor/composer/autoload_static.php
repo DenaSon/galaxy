@@ -105,7 +105,6 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
             'Spatie\\ImageOptimizer\\' => 22,
             'Spatie\\Crawler\\' => 15,
             'Spatie\\Browsershot\\' => 19,
-            'Sadegh19b\\LaravelPersianValidation\\' => 35,
         ),
         'R' => 
         array (
@@ -395,10 +394,6 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Spatie\\Browsershot\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/browsershot/src',
-        ),
-        'Sadegh19b\\LaravelPersianValidation\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/sadegh19b/laravel-persian-validation/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -6538,8 +6533,6 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Ramsey\\Uuid\\Validator\\GenericValidator' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/GenericValidator.php',
         'Ramsey\\Uuid\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
         'SQLite3Exception' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php',
-        'Sadegh19b\\LaravelPersianValidation\\PersianValidationServiceProvider' => __DIR__ . '/..' . '/sadegh19b/laravel-persian-validation/src/PersianValidationServiceProvider.php',
-        'Sadegh19b\\LaravelPersianValidation\\PersianValidators' => __DIR__ . '/..' . '/sadegh19b/laravel-persian-validation/src/PersianValidators.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',
         'SebastianBergmann\\CliParser\\OptionDoesNotAllowArgumentException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/OptionDoesNotAllowArgumentException.php',

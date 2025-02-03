@@ -27,8 +27,8 @@
     @stack('cdn')
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @livewireStyles
-    <i>1</i>
+
+
 
 </head>
 
@@ -98,7 +98,7 @@
 <!-- Additional Components -->
 <x-spotlight dir="rtl" search-text="جستجو در محصولات" no-results-text="محصول مشابه وجود ندارد" />
 <x-toast />
-@livewireScripts
+
 
 </body>
 
