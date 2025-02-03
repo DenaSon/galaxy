@@ -125,3 +125,9 @@ Route::middleware(['auth:web', RoleMiddleware::class . ':master', 'throttle:15,2
     });
 });
 
+Route::get('/session', function () {
+    return response()->json([
+        'session' => session()->all(),
+        'csrf' => csrf_token(),
+    ]);
+});
