@@ -2,6 +2,14 @@
 
 return [
 
+
+    'asset_url' => '/shop', // مسیر اصلی برای فایل‌های Livewire
+    'update_route' => '/shop/livewire/update', // مسیر به‌روزرسانی Livewire
+    'manifest_path' => '/shop', // مسیر manifest
+
+
+
+
     /*
     |---------------------------------------------------------------------------
     | Class Namespace
