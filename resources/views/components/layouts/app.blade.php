@@ -7,6 +7,18 @@
 <html lang="fa">
 
 <head>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script>
+        window.livewire_token = document.head.querySelector('meta[name="csrf-token"]').content;
+        document.addEventListener("livewire:load", function() {
+            Livewire.on('csrf-refresh', token => {
+                window.livewire_token = token;
+            });
+        });
+    </script>
+
+
     @include('components.layouts.inc.fav-icons')
     @include('components.layouts.inc.analytics-code')
 
@@ -16,7 +28,7 @@
     <meta charset="UTF-8">
     <meta name="theme-color" content="#662D91"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
