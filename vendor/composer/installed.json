@@ -1519,17 +1519,17 @@
         },
         {
             "name": "guzzlehttp/uri-template",
-            "version": "v1.0.3",
-            "version_normalized": "1.0.3.0",
+            "version": "v1.0.4",
+            "version_normalized": "1.0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/uri-template.git",
-                "reference": "ecea8feef63bd4fef1f037ecb288386999ecc11c"
+                "reference": "30e286560c137526eccd4ce21b2de477ab0676d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/uri-template/zipball/ecea8feef63bd4fef1f037ecb288386999ecc11c",
-                "reference": "ecea8feef63bd4fef1f037ecb288386999ecc11c",
+                "url": "https://api.github.com/repos/guzzle/uri-template/zipball/30e286560c137526eccd4ce21b2de477ab0676d2",
+                "reference": "30e286560c137526eccd4ce21b2de477ab0676d2",
                 "shasum": ""
             },
             "require": {
@@ -1541,7 +1541,7 @@
                 "phpunit/phpunit": "^8.5.36 || ^9.6.15",
                 "uri-template/tests": "1.0.0"
             },
-            "time": "2023-12-03T19:50:20+00:00",
+            "time": "2025-02-03T10:55:03+00:00",
             "type": "library",
             "extra": {
                 "bamarni-bin": {
@@ -1588,7 +1588,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/uri-template/issues",
-                "source": "https://github.com/guzzle/uri-template/tree/v1.0.3"
+                "source": "https://github.com/guzzle/uri-template/tree/v1.0.4"
             },
             "funding": [
                 {
@@ -5976,17 +5976,17 @@
         },
         {
             "name": "robsontenorio/mary",
-            "version": "1.41.5",
-            "version_normalized": "1.41.5.0",
+            "version": "1.41.8",
+            "version_normalized": "1.41.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/robsontenorio/mary.git",
-                "reference": "a92f65bf3b8565ba93338955f3bc5418ed7f8deb"
+                "reference": "364708bbed8a954bb9072957cc7cbcd8b3301c09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/robsontenorio/mary/zipball/a92f65bf3b8565ba93338955f3bc5418ed7f8deb",
-                "reference": "a92f65bf3b8565ba93338955f3bc5418ed7f8deb",
+                "url": "https://api.github.com/repos/robsontenorio/mary/zipball/364708bbed8a954bb9072957cc7cbcd8b3301c09",
+                "reference": "364708bbed8a954bb9072957cc7cbcd8b3301c09",
                 "shasum": ""
             },
             "require": {
@@ -5999,7 +5999,7 @@
                 "orchestra/testbench": "^8.21",
                 "phpunit/phpunit": "^10.5"
             },
-            "time": "2025-01-01T14:48:44+00:00",
+            "time": "2025-02-03T22:09:17+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -6054,7 +6054,7 @@
             ],
             "support": {
                 "issues": "https://github.com/robsontenorio/mary/issues",
-                "source": "https://github.com/robsontenorio/mary/tree/1.41.5"
+                "source": "https://github.com/robsontenorio/mary/tree/1.41.8"
             },
             "funding": [
                 {
