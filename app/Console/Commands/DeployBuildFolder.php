@@ -37,6 +37,7 @@ class DeployBuildFolder extends Command
             return 1; // کد خطا
         }
 
+
         // حذف پوشه build قبلی در مقصد (اختیاری)
         if (is_dir($destinationPath)) {
             $this->deleteDirectory($destinationPath);
