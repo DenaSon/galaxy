@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'denapax-font';
-    src: url('https://liftpal.ir/shop/admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2') format('woff2'),
-    url('https://liftpal.ir/shop/admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff') format('woff'),
-    url('https://liftpal.ir/shop/admin/assets/fonts/iransans/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+    src: url('https://liftpal.ir/admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2') format('woff2'),
+    url('https://liftpal.ir/admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff') format('woff'),
+    url('https://liftpal.ir/admin/assets/fonts/iransans/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
