@@ -3,7 +3,7 @@
     <div class="container mx-auto flex flex-wrap items-center justify-between px-4 lg:px-8">
 
         <div class="flex items-center space-x-2">
-            <x-badge value="DenaPax" class="bg-blue-700 text-white"/>
+            <x-badge value="LiftPal" class="bg-blue-700 text-white"/>
         </div>
 
 
@@ -21,7 +21,7 @@
         <div class="flex flex-col items-center text-center">
             <x-icon name="o-check-badge" class="w-10 h-10 text-bold text-orange-500"/>
 
-            <span class="text-gray-700 font-medium mt-2 text-xs">ضمانت کیفیت ارگانیک</span>
+            <span class="text-gray-700 font-medium mt-2 text-xs">ضمانت کیفیت اصالت</span>
         </div>
 
 

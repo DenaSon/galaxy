@@ -17,7 +17,7 @@
         <section class="mb-8 text-center">
             <h2 class="text-3xl font-bold text-gray-800 mb-4">ارتباط با ما</h2>
             <p class="text-lg text-gray-600">
-                برای هرگونه سوال یا پیشنهاد، لطفاً از طریق فرم زیر با ما در تماس باشید. تیم دناپکس آماده پاسخگویی به
+                برای هرگونه سوال یا پیشنهاد، لطفاً از طریق فرم زیر با ما در تماس باشید. تیم لیفت‌پال آماده پاسخگویی به
                 شماست.
             </p>
         </section>
@@ -60,9 +60,9 @@
         const neshanMap = new nmp_mapboxgl.Map({
             mapType: nmp_mapboxgl.Map.mapTypes.neshanVector,
             container: "map",
-            zoom: 14,
+            zoom: 15,
             pitch: 1,
-            center: [51.46224308672768,30.855207885088163],
+            center: [51.604016,30.66978],
             minZoom: 2,
             maxZoom: 21,
             trackResize: true,
@@ -76,15 +76,15 @@
 
         });
         var marker = new nmp_mapboxgl.Marker()
-            .setLngLat([51.462307047441186,30.85529215575906])
+            .setLngLat([51.604016,30.66978])
             .addTo(neshanMap);
 
         var popup = new nmp_mapboxgl.Popup({ offset: 25 }).setText(
-            'دناپکس | فروشگاه آنلاین محصولات ارگانیک دنا'
+            'لیفت‌پال | خدمات آسانسور'
         );
 
         var marker_with_popup = new nmp_mapboxgl.Marker({ color: "#00F955", draggable: true }).setPopup(popup)
-            .setLngLat([51.462307047441186,30.85529215575906])
+            .setLngLat([51.604002,30.669724])
             .addTo(neshanMap).togglePopup();
     }
 

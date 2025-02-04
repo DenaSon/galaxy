@@ -28,11 +28,11 @@
             "availability" => "https://schema.org/InStock",
             "seller" => [
                 "@type" => "Organization",
-                "name" => getSetting('website_title') ?? 'دناپکس',
+                "name" => getSetting('website_title') ?? 'liftpal',
             ],
             "hasMerchantReturnPolicy" => [
                 "@type" => "MerchantReturnPolicy",
-                "url" => "https://denapax.com/page/4/return-policy",
+                "url" => "return-policy",
                 "returnPolicyCategory" => "https://schema.org/RefundPolicy",
             ],
             "shippingDetails" => [

@@ -32,7 +32,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
-
 </head>
 
 <body x-data class="font-sans antialiased" style="font-family: 'denapax-font', serif !important;">
@@ -44,13 +43,13 @@
         <!-- Cart Button -->
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle hidden sm:block">
             <div class="indicator">
-                <x-button link="{{ route('panel.shop.cart') }}" icon="o-shopping-cart" />
+                <x-button link="{{ route('panel.shop.cart') }}" icon="o-shopping-cart"/>
             </div>
         </div>
 
         <!-- Search Button -->
         <x-button class="md:flex hidden" responsive label="جستجو..."
-                  @click.stop="$dispatch('mary-search-open')" icon="o-magnifying-glass" />
+                  @click.stop="$dispatch('mary-search-open')" icon="o-magnifying-glass"/>
 
         <!-- Products Dropdown -->
         <x-dropdown label="محصولات" class="sm:text-sm text-xs z-50 font-bold">
@@ -84,7 +83,7 @@
     <x-slot:brand>
         <a href="{{ route('home.index-home') }}" wire:navigate>
             <img loading="lazy" src="{{ asset('static/small-d-logo.png') }}" alt="DenaPax"
-                 width="110" height="40" style="height: 40px; width: 110px;" />
+                 width="110" height="40" style="height: 40px; width: 110px;"/>
         </a>
     </x-slot:brand>
 </x-nav>
@@ -99,8 +98,8 @@
 </x-main>
 
 <!-- Additional Components -->
-<x-spotlight dir="rtl" search-text="جستجو در محصولات" no-results-text="محصول مشابه وجود ندارد" />
-<x-toast />
+<x-spotlight dir="rtl" search-text="جستجو در محصولات" no-results-text="محصول مشابه وجود ندارد"/>
+<x-toast/>
 
 
 </body>

@@ -3,7 +3,7 @@
         class="px-2 lg:px-3  bg-white lg:rounded-large border-1 border-gradient-to-r from-blue-500 to-green-500 rounded-lg p-4">
         <div class="flex items-center justify-center py-3 lg:py-4 mb-2">
 
-            <h3 class="text-h3"> خواندنی های دناپکس </h3>
+            <h3 class="text-h3"> خواندنی های لیفت‌پال </h3>
         </div>
 
         <div class="swiperBlog" id="spr">

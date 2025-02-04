@@ -15,7 +15,7 @@ hidden md:block
 
                     <a
                        target='_blank'
-                       href='{{ route('home.singlePage',['page' =>3 ,'slug' => 'trust-denapax-com']) }}'>
+                       href=''>
                         <img loading="lazy"
                              src='{{ asset('static/enamad-logo.png') }}'
                              alt='نماد اعتماد الکترونیک' style='cursor:pointer' code='9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'></a>
@@ -28,15 +28,12 @@ hidden md:block
             <div class="text-center md:text-right">
                 <p class="text-xs mb-2 sm:text-sm leading-7">
                     <b>
-                        دنا پکس
+                        لیفت‌پال
                     </b>
 
                     <br>
 
-                    عرضه‌کننده سوغات اصیل و خشکبار دنا با بسته‌بندی‌های شکیل و بهداشتی.
-
-                    هدف ما حفظ طعم و اصالت محصولات بومی و ارتباط مستقیم با تولیدکنندگان محلی است.
-                    دنـا پکس، یادآور طبیعت، طعم، و اصالت در هر بسته!
+                    فروشگاه معتبر قطعات و لوازم آسانسور، خدمات تخصصی نصب، تعمیر و نگهداری – همه در یک پلتفرم حرفه‌ای!
 
                 </p>
                 <x-hr/>
@@ -74,14 +71,13 @@ hidden md:block
 
 
 
-            <a wire:navigate href="https://denapax.com/blog/17/%D8%B3%DB%8C-%D8%B3%D8%AE%D8%AA-%D9%86%DA%AF%DB%8C%D9%86-%D8%AF%D8%B1%D8%AE%D8%B4%D8%A7%D9%86-%D8%AF%D8%A7%D9%85%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AF%D9%86%D8%A7"
+            <a wire:navigate href=""
                class="link link-hover"> سی سخت </a>
 
-
-            <a wire:navigate href="https://denapax.com/store/category/2/%D9%85%DB%8C%D9%88%D9%87-%D8%AE%D8%B4%DA%A9"
+            <a wire:navigate href=""
                class="link link-hover"> خرید میوه خشک </a>
 
-            <a wire:navigate href="https://denapax.com/store/category/1/%D8%AE%D8%B4%DA%A9%D8%A8%D8%A7%D8%B1-%D9%88-%D9%85%D8%BA%D8%B2%D9%87%D8%A7"
+            <a wire:navigate href=""
                class="link link-hover"> خرید خشکبار و مغزها </a>
 
         </nav>
@@ -91,24 +87,24 @@ hidden md:block
         <aside class="mb-10">
 
             <a href="{{ route('home.index-home') }}" wire:navigate>
-                <img src="{{ asset('static/small-d-logo.png') }}" alt="DenaPax" width="100" height="45" style="height: 40px;width: 110px"/>
+                <img src="{{ asset('static/small-d-logo.png') }}" alt="LiftPal" width="100" height="45" style="height: 40px;width: 110px"/>
             </a>
 
             <p>
-                دنا پکس | از دنا به خانه شما، جایی که طبیعت و اصالت به هم می‌رسند!
+                 لیفت‌پال | همراه مطمئن شما برای اطمینان، ایمنی و کیفیت در صنعت آسانسور!
 
                 <br/>
                 <span class="text-xs text-gray-500">
                     © 2024   | همه حقوق محفوظ است. طراحی و توسعه با ❤️ توسط
-                    <a title="تیم دناپکس"  class="link text-pink-800 tooltip" data-tip="ارتباط با طراح" target="_blank" rel="nofollow noopener" href="https://wa.me/989173434796">تیم دنا پکس</a>
+                    <a title="تیم لیفت‌پال"  class="link text-pink-800 tooltip" data-tip="ارتباط با طراح" target="_blank" rel="nofollow noopener" href="https://wa.me/989173434796">تیم لیفت‌پال </a>
                 </span>
 
             <div class="flex space-x-4 justify-center">
 
                 <a href="https://www.instagram.com/yourprofile" target="_blank" class="text-gray-800 hover:text-pink-600">
 
-                   <a target="_blank" href="https://www.instagram.com/denapax/">  <x-icon name="fab.instagram" /> </a>
-                    <a target="_blank" href="https://www.instagram.com/sisakhtziba/?hl=fa">  <x-icon name="fab.instagram" /> </a>
+                   <a target="_blank" href="">  <x-icon name="fab.instagram" /> </a>
+                    <a target="_blank" href="">  <x-icon name="fab.instagram" /> </a>
 
                 </a>
 
@@ -119,7 +115,7 @@ hidden md:block
 
 
 
-        <a href="https://wa.me/989173434796"
+        <a href="https://wa.me/989179420677"
            data-tip="پشتیبانی "
            class="tooltip fixed bottom-20 left-4 bg-green-500 text-white rounded-full p-2 shadow-lg hover:bg-violet-600 transition"
            target="_blank"

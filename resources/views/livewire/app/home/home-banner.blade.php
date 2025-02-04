@@ -1,17 +1,17 @@
 <div class=" card bg-base-100 image-full w-full shadow-xl ms-2 h-64 z-0">
     <figure class="">
         <img
-            src="{{ asset('static/slider/gerdoo-banner.png') }}"
+            src="{{ asset('static/slider/top-banner.jpg') }}"
             alt="Product Banner"/>
     </figure>
     <div class="card-body">
-        <h2 class="card-title text-2xl text-white">گردوی اصیل دنا</h2>
+        <h2 class="card-title text-2xl text-white">خرید آسان قطعات آسانسور</h2>
         <p class="text-xs leading-6">
-            گردوی کوهستانی دنا، تازه و پرمغز، طعمی اصیل و طبیعی از دل کوهستان‌های سرسبز دنا. مناسب برای تقویت انرژی و
-            سلامت شما.
+            خرید آسان و سریع قطعات آسانسور با بهترین قیمت و تضمین کیفیت، ویژه تکنسین‌ها و مدیران ساختمان! 🚀🛠️
+
         </p>
         <div class="card-actions justify-end">
-            <x-button role="link"  link="{{ singleProductUrl(17,'گردو اصیل دنا') }}" icon="o-shopping-cart" label="خرید" class="btn-outline  btn-warning text-white"></x-button>
+            <x-button role="link"  link="{{ route('home.product.indexStore') }}" icon="o-shopping-cart" label="مشاهده" class="btn-outline  btn-warning text-white"></x-button>
         </div>
     </div>
 
