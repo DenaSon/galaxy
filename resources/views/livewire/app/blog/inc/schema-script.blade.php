@@ -32,12 +32,12 @@
 <meta property="og:title" content="{{ $article['title']['rendered'] }}">
 <meta property="og:description" content="{{ $article['yoast_head_json']['description'] ?? $article['excerpt']['rendered']  }}">
 <meta property="og:url" content="{{ singleBlogUrl($article['id'], $article['title']['rendered']) }}">
-<meta property="og:image" content="{{ $article['yoast_head_json']['og_image'][0]['url']  }}">
-<meta property="og:site_name" content="{{ getSetting('website_title') }}">
+<meta property="og:image" content="{{ $article['yoast_head_json']['og_image'][0]['url'] ?? ''  }}">
+<meta property="og:site_name" content="{{ getSetting('website_title') ?? '' }}">
 <meta property="article:author" content="DenaPax">
 <meta property="article:published_time" content="{{ \Carbon\Carbon::parse($article['date'])->format('c') }}">
 <meta property="article:modified_time" content="{{ \Carbon\Carbon::parse($article['modified'])->format('c') }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $article['title']['rendered'] }}">
 <meta name="twitter:description" content="{{ $article['yoast_head_json']['description'] ?? $article['excerpt']['rendered']  }}">
-<meta name="twitter:image" content="{{ $article['yoast_head_json']['og_image'][0]['url'] }}">
+<meta name="twitter:image" content="{{ $article['yoast_head_json']['og_image'][0]['url'] ?? '' }}">
