@@ -45,7 +45,7 @@ class SitemapGenerator
 
         $this->sitemaps = new Collection([new Sitemap]);
 
-        $this->hasCrawled = fn (Url $url, ResponseInterface $response = null) => $url;
+        $this->hasCrawled = fn (Url $url, ?ResponseInterface $response = null) => $url;
     }
 
     public function configureCrawler(Closure $closure): static
@@ -119,7 +119,7 @@ class SitemapGenerator
 
         $this->crawler
             ->setCrawlProfile($this->getCrawlProfile())
-            ->setCrawlObserver($this->getCrawlObserver())
+            ->addCrawlObserver($this->getCrawlObserver())
             ->setConcurrency($this->concurrency)
             ->startCrawling($this->urlToBeCrawled);
 
@@ -174,7 +174,7 @@ class SitemapGenerator
 
     protected function getCrawlObserver(): Observer
     {
-        $performAfterUrlHasBeenCrawled = function (UriInterface $crawlerUrl, ResponseInterface $response = null) {
+        $performAfterUrlHasBeenCrawled = function (UriInterface $crawlerUrl, ?ResponseInterface $response = null) {
             $sitemapUrl = ($this->hasCrawled)(Url::create((string) $crawlerUrl), $response);
 
             if ($this->shouldStartNewSitemapFile()) {
