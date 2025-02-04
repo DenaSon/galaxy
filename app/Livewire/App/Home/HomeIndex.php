@@ -28,7 +28,7 @@ class HomeIndex extends Component
         try {
 
             $this->blogs = Cache::remember('blogs_cache', now()->addMinutes(60), function () {
-                $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts?_embed&per_page=10&_fields=id,title,featured_media');
+                $response = Http::get('https://liftpal.ir/blogpress/wp-json/wp/v2/posts?_embed&per_page=10&_fields=id,title,featured_media');
                 if ($response->successful()) {
                     $blogs = $response->json();
 
@@ -37,7 +37,7 @@ class HomeIndex extends Component
 
                             $mediaCacheKey = 'media_' . $blog['featured_media'];
                             $media = Cache::remember($mediaCacheKey, now()->addMinutes(60), function () use ($blog) {
-                                $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $blog['featured_media'] . '?_fields=id,source_url');
+                                $mediaResponse = Http::get('https://liftpal.ir/blogpress/wp-json/wp/v2/media/' . $blog['featured_media'] . '?_fields=id,source_url');
                                 return $mediaResponse->successful() ? $mediaResponse->json() : null;
                             });
 

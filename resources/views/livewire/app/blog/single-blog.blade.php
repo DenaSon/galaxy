@@ -23,7 +23,7 @@
                 {{--                @if(isset($post['featured_media']))--}}
                 {{--                    @php--}}
                 {{--                        // Get the media URL for the featured image--}}
-                {{--                        $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $article['featured_media']);--}}
+                {{--                        $mediaResponse = Http::get('https://liftpal.ir/blogpress/wp-json/wp/v2/media/' . $article['featured_media']);--}}
                 {{--                        $media = $mediaResponse->json();--}}
                 {{--                        $featuredImageUrl = $media['source_url'] ?? '';--}}
                 {{--                    @endphp--}}
