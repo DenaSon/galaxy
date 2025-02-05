@@ -71,14 +71,14 @@ hidden md:block
 
 
 
-            <a wire:navigate href=""
-               class="link link-hover"> سی سخت </a>
+{{--            <a wire:navigate href=""--}}
+{{--               class="link link-hover"> سی سخت </a>--}}
 
-            <a wire:navigate href=""
-               class="link link-hover"> خرید میوه خشک </a>
+{{--            <a wire:navigate href=""--}}
+{{--               class="link link-hover"> خرید میوه خشک </a>--}}
 
-            <a wire:navigate href=""
-               class="link link-hover"> خرید خشکبار و مغزها </a>
+{{--            <a wire:navigate href=""--}}
+{{--               class="link link-hover"> خرید خشکبار و مغزها </a>--}}
 
         </nav>
 
