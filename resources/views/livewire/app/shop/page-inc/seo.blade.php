@@ -25,7 +25,7 @@
           "streetAddress": "Yasooj,aboozar 2",
           "addressLocality": "Yasouj,
           "addressRegion": "Yasuj",
-          "postalCode": "7599114655",
+          "postalCode": "7591941386",
           "addressCountry": "IR"
         }
       }
