@@ -306,6 +306,6 @@ class Checkout extends Component
     public function render()
     {
         return view('livewire.app.shop.checkout')
-            ->title('تسویه حساب | دناپکس');
+            ->title('تسویه حساب | لیفت‌پال');
     }
 }

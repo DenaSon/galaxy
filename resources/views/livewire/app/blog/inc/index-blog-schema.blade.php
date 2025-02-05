@@ -22,7 +22,7 @@
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "مقالات وبلاگ دناپکس",
+      "name": "مقالات وبلاگ لیفت‌پال",
       "itemListElement": {!! json_encode($blogList, JSON_UNESCAPED_SLASHES) !!}
     }
 </script>

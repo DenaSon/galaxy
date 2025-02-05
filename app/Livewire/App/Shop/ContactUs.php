@@ -34,7 +34,7 @@ class ContactUs extends Component
             // Send the email
             Mail::to($supportMail)->send(new ContactUsMail($this->name, $this->email, $this->phone, $this->text));
 
-            $this->info('پیام شما ارسال شد','به زودی کارشناسان دناپکس با شما تماس خواهند گرفت',css: 'text-white bg-primary');
+            $this->info('پیام شما ارسال شد','به زودی کارشناسان لیفت‌پال با شما تماس خواهند گرفت',css: 'text-white bg-primary');
 
             $this->reset();
         }
@@ -55,6 +55,6 @@ class ContactUs extends Component
     public function render()
     {
         return view('livewire.app.shop.contact-us')
-            ->title('تماس باما | دناپکس');
+            ->title('تماس باما | لیفت‌پال');
     }
 }

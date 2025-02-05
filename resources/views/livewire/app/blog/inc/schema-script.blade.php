@@ -11,11 +11,11 @@
     "image": "{{ $featuredImageUrl ?? '' }}", {{-- Update with the actual featured image --}}
     "author": {
         "@type": "Person",
-        "name": "دناپکس"
+        "name": "لیفت‌پال"
     },
     "publisher": {
         "@type": "Organization",
-        "name": "{{ getSetting('website_title') ?? 'دناپکس' }}",
+        "name": "{{ getSetting('website_title') ?? 'لیفت‌پال' }}",
         "logo": {
             "@type": "ImageObject",
             "url": "{{ getSetting('website_logo') ?? asset('static/denapax-image/nopicuser.png') }}"

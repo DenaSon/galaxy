@@ -83,7 +83,7 @@ class Store extends Component
         return view('livewire.app.shop.store', [
             'products' => $productsQuery->paginate($this->perPage),
             'categories' => $this->categories,
-        ])->title('دناپکس | فروشگاه خرید خشکبار و سوغات');
+        ])->title('لیفت‌پال | سامانه یکپارچه آسانسور');
     }
 
 }

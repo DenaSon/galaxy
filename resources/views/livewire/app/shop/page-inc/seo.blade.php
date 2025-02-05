@@ -4,13 +4,13 @@
       "@type": "AboutPage",
       "mainEntity": {
         "@type": "Organization",
-        "name": "دنا پکس",
+        "name": "لیفت‌پال",
         "url": "https://liftpal.ir/shop",
-        "logo": "https://liftpal.ir/logo.png",
+        "logo": "https://liftpal.ir/static/small-d-logo.png",
         "sameAs": [
-          "https://www.facebook.com/denapax",
-          "https://www.instagram.com/denapax",
-          "https://twitter.com/denapax"
+          "https://www.facebook.com/liftpal",
+          "https://www.instagram.com/liftpal",
+          "https://twitter.com/liftpal"
         ],
         "contactPoint": {
           "@type": "ContactPoint",
@@ -22,8 +22,8 @@
         "description": "{{ getSetting('website_description') }}",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "123 Dena Street",
-          "addressLocality": "Si-Sakht",
+          "streetAddress": "Yasooj,aboozar 2",
+          "addressLocality": "Yasouj,
           "addressRegion": "Yasuj",
           "postalCode": "7599114655",
           "addressCountry": "IR"
