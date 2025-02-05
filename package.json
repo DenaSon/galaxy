@@ -8,7 +8,6 @@
     "devDependencies": {
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.4",
-        "daisyui": "^5.0.0-beta.2",
         "laravel-vite-plugin": "^1.0.5",
         "postcss": "^8.4.47",
         "tailwindcss": "^3.4.14",
@@ -16,6 +15,7 @@
         "vite": "^6.0.3"
     },
     "dependencies": {
+        "daisyui": "^4.12.23",
         "swiper": "^11.1.15"
     }
 }
