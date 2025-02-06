@@ -19,7 +19,7 @@ class ListProduct extends Component
     use  Toast,WithPagination;
     public $searchTerm;
 
-    public Product $product;
+
 
     public array $sortBy = ['column' => 'views', 'direction' => 'asc' ];
 
