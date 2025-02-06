@@ -142,6 +142,7 @@ class CreateProduct extends Component
             'name' => 'required|string|max:255',
             'discount' => 'numeric|nullable|max:100|min:0',
             'selectedCategories' => 'required|array',
+            'related_article_id' =>'numeric|min:0',
 
         ]);
 
