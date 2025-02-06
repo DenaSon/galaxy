@@ -15,6 +15,7 @@ class ProductDetail extends Component
     public $selectedTab =   'productFeature';
 
     public $rating = 0;
+    public $show;
 
 
 
