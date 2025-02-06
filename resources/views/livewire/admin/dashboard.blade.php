@@ -19,7 +19,7 @@
 
         </div>
 
-        <x-button wire:click="clearCart" label="clear"></x-button>
+{{--        <x-button wire:click="clearCart" label="clear"></x-button>--}}
 
     </div>
 
