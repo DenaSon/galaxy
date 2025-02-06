@@ -95,7 +95,7 @@ class SingleBlog extends Component
             ->where('is_active', '=',1)
             ->take(4)->get();
         if ($productList->isEmpty()) {
-            $productList = Product::inRandomOrder()->take(2)->get();
+            $productList = Product::inRandomOrder()->where('is_active','=','1')->take(2)->get();
         }
 
         return view('livewire.app.blog.single-blog', compact('productList'))

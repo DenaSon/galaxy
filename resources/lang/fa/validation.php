@@ -315,7 +315,8 @@ return [
         'phoneNumber' => 'شماره تلفن',
         'variant' => 'نوع',
         'address_line' => 'آدرس پستی',
-        'searchTerm' => 'جستجو'
+        'searchTerm' => 'جستجو',
+        'related_article_id' => 'شناسه مقاله مرتبط'
 
 
 
