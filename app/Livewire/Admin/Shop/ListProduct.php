@@ -19,8 +19,6 @@ class ListProduct extends Component
     use  Toast,WithPagination;
     public $searchTerm;
 
-
-
     public array $sortBy = ['column' => 'views', 'direction' => 'asc' ];
 
 
