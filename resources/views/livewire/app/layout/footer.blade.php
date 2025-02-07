@@ -52,10 +52,10 @@ hidden md:block
             <h6 class="footer-title">صفحات</h6>
             <a wire:navigate href="{{ route('contact-us')  }}"
                class="link link-hover">تماس باما</a>
-            <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>'درباره-ما']) }}"
+            <a wire:navigate href="{{ route('home.singlePage',['page'=>2,'slug'=>'درباره-ما']) }}"
                class="link link-hover">درباره ما</a>
 
-            <a wire:navigate href="{{ route('home.singlePage',['page'=>2,'slug'=>slugMaker('قوانین و مقررات')])  }}"
+            <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>slugMaker('قوانین و مقررات')])  }}"
                class="link link-hover"> قوانین و مقررات </a>
 
             <a wire:navigate href="{{ route('panel.shop.cart')  }}" rel="noopener nofollow"
