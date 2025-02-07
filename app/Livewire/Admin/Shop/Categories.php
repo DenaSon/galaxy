@@ -148,7 +148,11 @@ class Categories extends Component
     {
 
         $categories = Category::whereParentId(null)->where('type','=','product')->latest()->paginate(10);
-        $category_list = Category::query()->where('parent_id','=',null)->productType()->get(['id','name']);
+
+        $category_list = Category::whereParentId(null)->query()
+
+            ->productType()
+            ->get(['id','name']);
         return view('livewire.admin.blog.categories',compact('categories','category_list'))
             ->title('دسته');
     }
