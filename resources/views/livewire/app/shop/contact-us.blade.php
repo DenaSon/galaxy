@@ -1,4 +1,5 @@
 <div>
+
 @push('cdn')
 
         <link rel="stylesheet" href="https://static.neshan.org/sdk/mapboxgl/v1.13.2/neshan-sdk/v1.1.1/index.css" />

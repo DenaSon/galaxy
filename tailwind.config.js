@@ -7,8 +7,10 @@ export default {
 		 './app/Http/Livewire/**/*.php',
 		 "./vendor/robsontenorio/mary/src/View/Components/**/*.php",
 		'./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        "./node_modules/daisyui/dist/**/*.js",
 
-	],
+
+    ],
 
 
 

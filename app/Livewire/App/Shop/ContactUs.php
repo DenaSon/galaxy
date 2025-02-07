@@ -3,6 +3,7 @@
 namespace App\Livewire\App\Shop;
 
 use App\Mail\ContactUsMail;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
