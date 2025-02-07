@@ -7,14 +7,14 @@
             <x-card subtitle="اطلاعات" separator progress-indicator="publish">
 
                 <x-form>
-                    <x-input icon="o-pencil" label="نام یا عنوان محصول" inline wire:model.blur="name"
+                    <x-input icon="o-pencil" label="نام یا عنوان محصول"  wire:model.blur="name"
                              wire:dirty.class="focus:border-green-700"/>
 
                     <div wire:ignore>
-                        <x-textarea  wire:model.blur="content"></x-textarea>
+                        <x-textarea label="توضیحات محصول"  wire:model.blur="content"></x-textarea>
                     </div>
 
-                    <x-textarea wire:dirty.class="focus:border-green-700" label="توضیحات کوتاه" inline
+                    <x-textarea wire:dirty.class="focus:border-green-700" label="توضیحات کوتاه"
                                 wire:model="description"></x-textarea>
 
                     <x-choices-offline
@@ -70,14 +70,14 @@
 
                 <x-menu-separator/>
 
-                <x-input label="واحد" inline wire:model="unit"/>
+                <x-input label="واحد"  wire:model="unit"/>
                 <x-menu-separator/>
-                <x-input hint="درصد تخفیف" label="تخفیف" inline wire:model="discount"/>
+                <x-input hint="درصد تخفیف" label="تخفیف"  wire:model="discount"/>
                 <x-menu-separator/>
-                <x-input hint="شماره مقاله مرتبط" label="مقاله مرتبط" inline wire:model="related_article_id"/>
+                <x-input hint="شماره مقاله مرتبط" label="مقاله مرتبط"  wire:model="related_article_id"/>
 
                 <x-menu-separator/>
-                <x-input hint="کلمه مقاله مرتبط" label="کلمه مرتبط" inline wire:model="wiki"/>
+                <x-input hint="کلمه مقاله مرتبط" label="کلمه مرتبط"  wire:model="wiki"/>
 
 
                 <x-slot:actions>
