@@ -14,7 +14,7 @@
                         <x-textarea label="توضیحات محصول"  wire:model.blur="content"></x-textarea>
                     </div>
 
-                    <x-textarea wire:dirty.class="focus:border-green-700" label="توضیحات کوتاه"
+                    <x-textarea placeholder="متن 160 کارکتری توضیحات محصول" wire:dirty.class="focus:border-green-700" label="توضیحات کوتاه"
                                 wire:model="description"></x-textarea>
 
                     <x-choices-offline
