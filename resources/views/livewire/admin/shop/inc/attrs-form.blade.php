@@ -5,7 +5,7 @@
             @foreach ($attrs as $index => $attribute)
 
                 <x-input wire:key="{{ $attribute->id }}" label="{{ $attribute->name }}" icon="fas.edit"
-                         wire:model.defer="attributeValues.{{ $attribute->id }}" inline/>
+                         wire:model.defer="attributeValues.{{ $attribute->id }}" />
 
             @endforeach
             <x-slot:actions>

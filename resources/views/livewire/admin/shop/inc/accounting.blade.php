@@ -5,10 +5,10 @@
         <x-slot:content>
             <x-form>
 
-                <x-input wire:model="purchase_price" label="قیمت خرید" inline></x-input>
-                <x-input wire:model="sale_price" label="قیمت فروش" inline></x-input>
-                <x-input wire:model="inventory" label="موجودی" inline></x-input>
-                <x-input wire:model="location" label="موقعیت" inline></x-input>
+                <x-input wire:model="purchase_price" label="قیمت خرید" ></x-input>
+                <x-input wire:model="sale_price" label="قیمت فروش" ></x-input>
+                <x-input wire:model="inventory" label="موجودی" ></x-input>
+                <x-input wire:model="location" label="موقعیت" ></x-input>
 
 
                 <x-slot:actions>
