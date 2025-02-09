@@ -143,7 +143,6 @@ class Categories extends Component
         }
     }
 
-
     public function render()
     {
 
