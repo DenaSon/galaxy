@@ -77,7 +77,7 @@
 
                         <x-button tooltip="ویرایش" icon="o-pencil-square" wire:click="editProduct({{ $product->id }})"
                                   spinner
-                                  class="btn-sm"/>
+                                  class="btn-xs"/>
 
                       @if($product->is_active && $product->stop_selling == null)
                             <x-button wire:confirm="محصول غیرفعال شود؟" tooltip="غیرفعال سازی" icon="o-power"
