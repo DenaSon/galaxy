@@ -87,6 +87,7 @@
                             <x-button wire:confirm="محصول فعالسازی شود؟" tooltip="فعال سازی" icon="o-power"
                                       wire:click="ActiveProduct({{ $product->id }})" spinner
                                       class="btn-xs  bg-green-500 text-white gap-2"/>
+
                       @endif
 
 
