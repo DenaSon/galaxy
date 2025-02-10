@@ -40,18 +40,10 @@
                     <strong>{{ $loop->iteration }}</strong>
                     @endscope
 
-                    @if($product->is_active == 1)
 
-                        @scope('cell_name', $product)
-                        <x-badge :value="$product->name" class="badge-success text-white"/>
-                        @endscope
-                    @else
-
-                        @scope('cell_name', $product)
-                        <x-badge :value="$product->name" class="badge-secondary text-white"/>
-                        @endscope
-
-                    @endif
+                    @scope('cell_name', $product)
+                    <x-badge :value="$product->name" class="badge-info text-white"/>
+                    @endscope
 
 
                     @scope('cell_category', $product)
