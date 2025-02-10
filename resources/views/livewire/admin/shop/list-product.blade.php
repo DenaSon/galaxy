@@ -49,7 +49,6 @@
                     @endif
                     @endscope
 
-
                     @scope('cell_category', $product)
                     <b>{{ $product->categories->where('parent_id',null)->where('type','product')->first()->name ?? 'N/A'}}</b>
 
