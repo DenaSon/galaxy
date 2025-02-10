@@ -58,7 +58,7 @@
                     @scope('cell_status', $product)
                     <u>
                         @if($product->is_active == 0)
-                            <x-badge value="غیرفعال" class="badge-warning text-white"/>
+                            <x-badge value="غیرفعال" class="badge-error text-white"/>
                         @else
                             <x-badge value="فعال" class="badge-success text-white"/>
                         @endif
