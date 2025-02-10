@@ -42,7 +42,11 @@
 
 
                     @scope('cell_name', $product)
+                    @if($product->is_active && $product->stop_selling == null)
                     <x-badge :value="$product->name" class="badge-info p-1 text-white"/>
+                    @else
+                        <x-badge :value="$product->name" class="badge-warning p-1 text-white"/>
+                    @endif
                     @endscope
 
 
@@ -86,7 +90,7 @@
                         @else
                             <x-button wire:confirm="محصول فعالسازی شود؟" tooltip="فعال سازی" icon="o-power"
                                       wire:click="ActiveProduct({{ $product->id }})" spinner
-                                      class="btn-xs  bg-green-500 text-white gap-2"/>
+                                      class="btn-xs  bg-green-400 text-white gap-2"/>
                       @endif
 
 
