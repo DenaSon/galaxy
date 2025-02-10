@@ -82,11 +82,11 @@
                       @if($product->is_active && $product->stop_selling == null)
                             <x-button wire:confirm="محصول غیرفعال شود؟" tooltip="غیرفعال سازی" icon="o-power"
                                       wire:click="deActiveProduct({{ $product->id }})" spinner
-                                      class="btn-sm bg-red-500 text-white gap-2"/>
+                                      class="btn-xs bg-orange-500 text-white gap-2"/>
                         @else
                             <x-button wire:confirm="محصول فعالسازی شود؟" tooltip="فعال سازی" icon="o-power"
                                       wire:click="ActiveProduct({{ $product->id }})" spinner
-                                      class="btn-sm  bg-green-500 text-white gap-2"/>
+                                      class="btn-xs  bg-green-500 text-white gap-2"/>
                       @endif
 
 
