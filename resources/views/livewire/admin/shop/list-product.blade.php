@@ -43,9 +43,9 @@
 
                     @scope('cell_name', $product)
                     @if($product->is_active && $product->stop_selling == null)
-                    <x-badge :value="$product->name" class="badge-info p-1 text-white"/>
+                    <x-badge :value="$product->name" class="badge-success p-2 text-white"/>
                     @else
-                        <x-badge :value="$product->name" class="badge-warning p-1 text-white"/>
+                        <x-badge :value="$product->name" class="badge-error p-2 text-white"/>
                     @endif
                     @endscope
 
