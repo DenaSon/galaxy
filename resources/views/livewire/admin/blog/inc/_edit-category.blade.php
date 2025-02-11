@@ -7,7 +7,7 @@
 
             <x-textarea
                 label="توضیحات دسته"
-                wire:model="selectedDescription"
+                wire:model="selectedCategoryDescription"
                 placeholder="اینجا بنویسید...."
                 hint="توضیح دسته بندی"
                 rows="10"
