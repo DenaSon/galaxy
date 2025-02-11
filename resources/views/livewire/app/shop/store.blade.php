@@ -43,9 +43,16 @@
 
     <x-progress class="progress-primary h-0.5" indeterminate wire:loading/>
 
+    <h1 class="p-4">
+        {{ getSetting('website_title') }} لیست محصولات
+    </h1>
+    <p class="text-center mx-auto">بررسی و خرید آنلاین بهترین قطعات آسانسور با کیفیت بالا و قیمت مناسب در لیفت پال.</p>
 
 
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
+
+
+
 
 
     @foreach ($products as $product)
