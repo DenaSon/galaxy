@@ -1,9 +1,8 @@
 <div class="container mx-auto">
-@push('SEO')
+    @push('SEO')
 
         <meta name="description" content="{{ getSetting('meta_description') }}">
         <meta name="keywords" content="{{ getSetting('meta_keywords') }}">
-
 
     @endpush
 
@@ -38,7 +37,6 @@
         </x-slot:actions>
 
 
-
     </x-nav>
 
     <x-progress class="progress-primary h-0.5" indeterminate wire:loading/>
@@ -46,16 +44,13 @@
     <h1 class="p-4">
         {{ getSetting('website_title') }} لیست محصولات
     </h1>
-    <p class="text-center mx-auto">بررسی و خرید آنلاین بهترین قطعات آسانسور با کیفیت بالا و قیمت مناسب در لیفت پال.</p>
+    <p class="text-center mx-auto text-orange-500 text-sm ">بررسی و خرید آنلاین بهترین قطعات آسانسور با کیفیت بالا و قیمت مناسب در لیفت پال.</p>
 
 
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
 
 
-
-
-
-    @foreach ($products as $product)
+        @foreach ($products as $product)
             @livewire('app.component.product-card',['product' => $product],key($product->id))
         @endforeach
     </div>
