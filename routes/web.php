@@ -104,7 +104,7 @@ Route::middleware(['auth:web', RoleMiddleware::class . ':master', 'throttle:15,2
 
         Route::get('edit/{blog}', EditBlog::class)->name('edit');
         Route::get('list', ListBlog::class)->name('list')->lazy();
-        Route::get('categories', Categories::class)->name('categories')->lazy();
+        Route::get('categories', Categories::class)->name('categories');
     });
 
     Route::prefix('page')->name('page.')->group(function () {
