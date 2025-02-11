@@ -31,7 +31,7 @@ class GenerateSitemap extends Command
         $sitemap = Sitemap::create();
 
         $sitemap->add(Url::create('/')->setPriority(1.0)->setChangeFrequency('daily'));
-        $sitemap->add(Url::create('store')->setPriority(9.0)->setChangeFrequency('daily'));
+        $sitemap->add(Url::create('store')->setPriority(0.7)->setChangeFrequency('daily'));
         // Add dynamic pages (e.g., products)
         $products = \App\Models\Product::all();
         foreach ($products as $product) {
@@ -62,9 +62,9 @@ class GenerateSitemap extends Command
 
                 $sitemap->add(
                     Url::create('/blog/' . $blogId . '/' . $blogSlug)
-                        ->setPriority(0.4)
+                        ->setPriority(0.8)
                         ->setLastModificationDate($lastModifiedDate)
-                        ->setChangeFrequency('weekly')
+                        ->setChangeFrequency('daily')
                 );
 
             }
@@ -89,8 +89,8 @@ class GenerateSitemap extends Command
         }
         // Add static pages
 
-        $sitemap->add(Url::create('/page/1/درباره-ما')->setPriority(0.7)->setChangeFrequency('monthly'));
-        $sitemap->add(Url::create('contact-us')->setPriority(0.7)->setChangeFrequency('monthly'));
+        $sitemap->add(Url::create('/page/1/درباره-ما')->setPriority(0.4)->setChangeFrequency('monthly'));
+        $sitemap->add(Url::create('contact-us')->setPriority(0.1)->setChangeFrequency('monthly'));
 
         $sitemap->writeToFile(public_path('sitemap.xml'));
 
