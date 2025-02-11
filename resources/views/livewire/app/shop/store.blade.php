@@ -37,12 +37,12 @@
 
     <x-progress class="progress-primary h-0.5" indeterminate wire:loading/>
 
-
+    <h1> لیست محصولات  {{ getSetting('website_title') }} </h1>
 
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
 
 
-        <h1> لیست محصولات  {{ getSetting('website_title') }} </h1>
+
 
     @foreach ($products as $product)
             @livewire('app.component.product-card',['product' => $product],key($product->id))
