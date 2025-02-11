@@ -1,5 +1,6 @@
 <div>
 
+    <script src="https://cdn.tiny.cloud/1/YOUR-KEY-HERE/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
     @include('livewire.admin.blog.inc._edit-category')
 
@@ -9,7 +10,8 @@
 
             <x-form wire:submit="save">
                 <x-input label="نام دسته" wire:model="name" icon="o-pencil"/>
-                <x-textarea label="توضیحات" wire:model="description" placeholder="اختیاری"/>
+                <x-editor wire:model="description" label="Description" hint="توضیحات دسته" />
+
 
                 <x-choices-offline
                     label="دسته والد"
