@@ -11,7 +11,14 @@
 
             <x-form wire:submit="save">
                 <x-input label="نام دسته" wire:model="name" icon="o-pencil"/>
-                <x-editor wire:model="description" label="Description" hint="توضیحات دسته" />
+                <x-textarea
+                    label="توضیحات دسته"
+                    wire:model="description"
+                    placeholder="Your story ..."
+                    hint="توضیح دسته بندی"
+                    rows="10"
+                    maxlength="500"
+                    inline />
 
                 <x-choices-offline
                     label="دسته والد"
