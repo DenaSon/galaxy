@@ -97,6 +97,7 @@ class Categories extends Component
         $this->selectedCategory = $category->name;
         $this->selectedCategoryDescription = $category->description;
         $this->selectedCategoryId = $category->id;
+        $this->description = $category->description;
 
     }
 
