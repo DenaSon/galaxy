@@ -15,7 +15,7 @@
                     placeholder="اینجا بنویسید...."
                     hint="توضیح دسته بندی"
                     rows="10"
-                    maxlength="500"
+                    maxlength="40000"
                     inline />
 
                 <x-choices-offline
