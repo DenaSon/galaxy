@@ -5,7 +5,14 @@
 
             <x-input label="نام دسته" wire:model="selectedCategory" class="mt-1"/>
 
-            <x-input label="توضیحات " wire:model="selectedCategoryDescription" class="mt-1"/>
+            <x-textarea
+                label="توضیحات دسته"
+                wire:model="description"
+                placeholder="اینجا بنویسید...."
+                hint="توضیح دسته بندی"
+                rows="10"
+                maxlength="40000"
+                inline/>
 
             <x-input hidden  wire:model="selectedCategoryId"/>
             <x-slot:actions>
