@@ -9,7 +9,7 @@
 
             <x-form wire:submit="save">
                 <x-input label="نام دسته" wire:model="name" icon="o-pencil"/>
-                <x-input label="توضیحات" wire:model="description" placeholder="اختیاری"/>
+                <x-textarea label="توضیحات" wire:model="description" placeholder="اختیاری"/>
 
                 <x-choices-offline
                     label="دسته والد"
