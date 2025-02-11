@@ -32,7 +32,7 @@
                     <x-input wire:model="phone" label="شماره تلفن" placeholder="شماره تلفن" icon="o-phone" />
 
                     <x-textarea wire:model="text" label="متن پیام" placeholder="متن پیام خود را اینجا بنویسید"/>
-
+                    <span class="text-error text-xs"> آدرس IP شما :  {{ request()->ip() }} </span>
                     <x-slot:actions>
                         <x-button spinner="save" type="submit" label="ارسال" icon="o-paper-airplane" class="btn-primary"/>
                     </x-slot:actions>
