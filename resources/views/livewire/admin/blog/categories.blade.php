@@ -1,6 +1,8 @@
 <div>
 
-
+@push('styles')
+        <script src="https://cdn.tiny.cloud/1/YOUR-KEY-HERE/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+@endpush
     @include('livewire.admin.blog.inc._edit-category')
 
     <div class="flex flex-col md:flex-row md:space-x-4">
@@ -9,7 +11,7 @@
 
             <x-form wire:submit="save">
                 <x-input label="نام دسته" wire:model="name" icon="o-pencil"/>
-                <x-input label="توضیحات" wire:model="description" placeholder="اختیاری"/>
+                <x-editor wire:model="description" label="Description" hint="توضیحات دسته" />
 
                 <x-choices-offline
                     label="دسته والد"
