@@ -44,6 +44,7 @@
     <h1 class="p-4">
         {{ getSetting('website_title') }} لیست محصولات
     </h1>
+
     <p class="text-center mx-auto text-orange-500 text-sm ">بررسی و خرید آنلاین بهترین قطعات آسانسور با کیفیت بالا و قیمت مناسب در لیفت پال.</p>
 
 
