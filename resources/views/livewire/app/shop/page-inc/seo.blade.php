@@ -5,8 +5,8 @@
       "mainEntity": {
         "@type": "Organization",
         "name": "دنا پکس",
-        "url": "https://www.denapax.com",
-        "logo": "https://www.denapax.com/logo.png",
+        "url": "https://denapax.ir",
+        "logo": "https://www.denapax.ir/logo.png",
         "sameAs": [
           "https://www.facebook.com/denapax",
           "https://www.instagram.com/denapax",

@@ -32,7 +32,7 @@
             ],
             "hasMerchantReturnPolicy" => [
                 "@type" => "MerchantReturnPolicy",
-                "url" => "https://denapax.com/page/4/return-policy",
+                "url" => "https://denapax.ir/page/4/return-policy",
                 "returnPolicyCategory" => "https://schema.org/RefundPolicy",
             ],
             "shippingDetails" => [

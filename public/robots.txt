@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: /blogpress/
-Sitemap: https://denapax.com/sitemap.xml
+Sitemap: https://denapax.ir/sitemap.xml

@@ -25,7 +25,7 @@ class SingleBlog extends Component
 
         try {
 
-            $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts/' .
+            $response = Http::get('https://denapax.ir/blogpress/wp-json/wp/v2/posts/' .
                 $this->blog . '?_fields=id,title,content,yoast_head_json,excerpt,date,modified,categories,tags');
 
             if ($response->successful()) {
@@ -68,7 +68,7 @@ class SingleBlog extends Component
                 $queryParams['tags'] = implode(',', $tagIds);
             }
 
-            $suggestedResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts', $queryParams);
+            $suggestedResponse = Http::get('https://denapax.ir/blogpress/wp-json/wp/v2/posts', $queryParams);
 
             if ($suggestedResponse->successful()) {
                 $this->suggestedArticles = $suggestedResponse->json();
