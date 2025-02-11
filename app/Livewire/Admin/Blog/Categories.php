@@ -101,6 +101,8 @@ class Categories extends Component
 
     }
 
+
+
     public function updateCategory()
     {
         // Validate input data
