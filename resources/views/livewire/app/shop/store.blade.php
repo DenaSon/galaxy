@@ -1,7 +1,7 @@
 <div class="container mx-auto">
 @push('SEO')
 
-        <meta name="description" content="{{ getSetting('website_description') }}">
+        <meta name="description" content="{{ getSetting('meta_description') }}">
 
 
     @endpush
