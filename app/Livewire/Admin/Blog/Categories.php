@@ -108,7 +108,7 @@ class Categories extends Component
         // Validate input data
         $this->validate([
             'selectedCategory' => 'required|string|max:255',
-            'selectedCategoryDescription' => 'nullable|string|max:40000',
+            'selectedCategoryDescription' => 'nullable|string|max:50000',
         ]);
 
         // Find the category and handle the case where it might not exist
