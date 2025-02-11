@@ -32,7 +32,7 @@
                     ];
                 @endphp
                 <x-progress indeterminate wire:loading value="10" max="100" class="progress-primary h-2" />
-                <x-table :headers="$headers" :rows="$product"  striped="true"
+                <x-table  :headers="$headers" :rows="$product"  striped="true"
                          empty-text="موردی وجود ندارد" with-pagination>
 
 

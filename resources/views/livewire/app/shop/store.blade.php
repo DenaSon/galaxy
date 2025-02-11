@@ -1,5 +1,10 @@
 <div class="container mx-auto">
+@push('SEO')
 
+        <meta name="description" content="{{ getSetting('website_description') }}">
+
+
+    @endpush
 
     <x-nav class="h-24">
 

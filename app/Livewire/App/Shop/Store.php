@@ -83,7 +83,7 @@ class Store extends Component
         return view('livewire.app.shop.store', [
             'products' => $productsQuery->paginate($this->perPage),
             'categories' => $this->categories,
-        ])->title('لیفت‌پال | سامانه یکپارچه آسانسور');
+        ])->title(getSetting('website_title'));
     }
 
 }
