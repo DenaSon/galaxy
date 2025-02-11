@@ -1,8 +1,6 @@
 <div>
 
-@script
-        <script src="https://cdn.tiny.cloud/1/YOUR-KEY-HERE/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-@endscript
+
     @include('livewire.admin.blog.inc._edit-category')
 
     <div class="flex flex-col md:flex-row md:space-x-4">
@@ -14,7 +12,7 @@
                 <x-textarea
                     label="توضیحات دسته"
                     wire:model="description"
-                    placeholder="Your story ..."
+                    placeholder="اینجا بنویسید...."
                     hint="توضیح دسته بندی"
                     rows="10"
                     maxlength="500"
