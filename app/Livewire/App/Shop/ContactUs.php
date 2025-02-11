@@ -31,7 +31,7 @@ class ContactUs extends Component
         ]);
 
         try {
-            $supportMail = getSetting('support_mail') ?? 'support@denapax.com';
+            $supportMail = getSetting('support_email') ?? 'support@liftpal.ir';
             // Send the email
             Mail::to($supportMail)->send(new ContactUsMail($this->name, $this->email, $this->phone, $this->text));
 
