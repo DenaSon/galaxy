@@ -2,6 +2,7 @@
 @push('SEO')
 
         <meta name="description" content="{{ getSetting('meta_description') }}">
+        <meta name="keywords" content="{{ getSetting('meta_keywords') }}">
 
 
     @endpush
