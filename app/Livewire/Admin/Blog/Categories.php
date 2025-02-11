@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire\Admin\Blog;
+
 use App\Models\Category;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Lazy;
@@ -14,24 +15,24 @@ use Mary\Traits\Toast;
 #[Title('دسته ها')]
 class Categories extends Component
 {
-    use Toast,WithPagination;
+    use Toast, WithPagination;
 
     public array $expanded = [2];
     public bool $edit_category_modal = false;
 
     public $name = null;
-    public $type  = 'blog';
-    public $description  = null;
+    public $type = 'blog';
+    public $description = null;
     public ?int $parentList_id = null;
 
-    public  $parentList;
+    public $parentList;
 
     public $selectedCategory = null;
-    public $selectedCategoryId =null;
+    public $selectedCategoryId = null;
     public $selectedCategoryType = null;
     public $selectedCategoryDescription;
 
-        public function save()
+    public function save()
     {
         $this->validate([
             'name' => 'string|required|max:200',
@@ -75,14 +76,16 @@ class Categories extends Component
 
 
 
+
     public function editCategory($categoryId)
     {
         $this->edit_category_modal = true;
         $category = Category::find($categoryId);
         $this->selectedCategoryType = 'category';
-        $this->selectedCategory = $category->name ;
-        $this->selectedCategoryDescription = $category->description ;
-        $this->selectedCategoryId = $category->id ;
+        $this->selectedCategory = $category->name;
+        $this->selectedCategoryDescription = $category->description;
+        $this->selectedCategoryId = $category->id;
+        $this->description = $category->description;
 
     }
 
@@ -91,37 +94,37 @@ class Categories extends Component
         $this->edit_category_modal = true;
         $category = Category::find($categoryId);
         $this->selectedCategoryType = 'subcategory';
-        $this->selectedCategory = $category->name ;
-        $this->selectedCategoryDescription = $category->description ;
-        $this->selectedCategoryId = $category->id ;
+        $this->selectedCategory = $category->name;
+        $this->selectedCategoryDescription = $category->description;
+        $this->selectedCategoryId = $category->id;
 
     }
 
-public function updateCategory()
-{
-    // Validate input data
-    $this->validate([
-        'selectedCategory' => 'required|string|max:255',
-        'selectedCategoryDescription' => 'nullable|string|max:40000',
-    ]);
+    public function updateCategory()
+    {
+        // Validate input data
+        $this->validate([
+            'selectedCategory' => 'required|string|max:255',
+            'selectedCategoryDescription' => 'nullable|string|max:40000',
+        ]);
 
-    // Find the category and handle the case where it might not exist
-    $category = Category::find($this->selectedCategoryId);
-    if (!$category) {
-        $this->error('Category not found.');
-        return;
+        // Find the category and handle the case where it might not exist
+        $category = Category::find($this->selectedCategoryId);
+        if (!$category) {
+            $this->error('Category not found.');
+            return;
+        }
+
+        // Update category attributes
+        $category->update([
+            'name' => $this->selectedCategory,
+            'description' => $this->selectedCategoryDescription,
+        ]);
+
+        // Close the modal and provide feedback
+        $this->edit_category_modal = false;
+        $this->info('ویرایش شد :  ' . $this->selectedCategory);
     }
-
-    // Update category attributes
-    $category->update([
-        'name' => $this->selectedCategory,
-        'description' => $this->selectedCategoryDescription,
-    ]);
-
-    // Close the modal and provide feedback
-    $this->edit_category_modal = false;
-    $this->info('ویرایش شد :  ' . $this->selectedCategory);
-}
 
 
     public function deleteCategory(Category $category)
@@ -132,6 +135,7 @@ public function updateCategory()
 
         $this->warning('دسته حذف شد');
     }
+
     public function deleteSubCategory(Category $category)
     {
 
@@ -153,8 +157,8 @@ public function updateCategory()
     {
 
         $categories = Category::whereParentId(null)->blogs()->latest()->paginate(10);
-        $category_list = Category::query()->blogs()->get(['id','name']);
-        return view('livewire.admin.blog.categories',compact('categories','category_list'))
-        ->title('دسته');
+        $category_list = Category::query()->blogs()->get(['id', 'name']);
+        return view('livewire.admin.blog.categories', compact('categories', 'category_list'))
+            ->title('دسته');
     }
 }
