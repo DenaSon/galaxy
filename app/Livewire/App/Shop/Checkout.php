@@ -211,7 +211,7 @@ class Checkout extends Component
 
 
             $phone = $user->phone ?? '09999999999';
-            $email = $user->email ?? 'customer@denapax.com';
+            $email = $user->email ?? 'customer@denapax.ir';
 
 
             $response = zarinpal()
