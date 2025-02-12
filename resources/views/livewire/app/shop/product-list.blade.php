@@ -7,14 +7,14 @@
 
 
 
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
+    <section class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
         @foreach($products as $product)
             @livewire('app.component.product-card', ['product' => $product], key($product->id))
         @endforeach
-    </div>
+    </section>
 
 
-        <div class="mockup-browser border-base-300 border mt-4">
+        <section  class="mockup-browser border-base-300 border mt-4">
             <div class="mockup-browser-toolbar text-right">
                 <h1 class="justify-start text-right mx-auto">
                  خرید    {{ $category->name }}
@@ -23,7 +23,7 @@
             <div class="border-base-300 flex text-justify justify-start border-t px-4 py-4 leading-relaxed">
                 {{ $category->description }}
             </div>
-        </div>
+        </section>
 
 
 
