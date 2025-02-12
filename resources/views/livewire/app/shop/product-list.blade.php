@@ -26,7 +26,7 @@
                     خرید    {{ $category->name }}
                 </h1>
             </header>
-            <p class="border-base-300 flex text-justify justify-start border-t px-4 py-4 leading-relaxed text-gray-500 text-sm">
+            <p class="border-base-300 flex text-justify justify-start border-t px-4 py-4 leading-8 text-gray-500 text-sm">
                 {{ $category->description }}
             </p>
         </section>
