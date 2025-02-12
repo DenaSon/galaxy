@@ -20,7 +20,7 @@
                  خرید    {{ $category->name }}
                 </h1>
             </div>
-            <div class="border-base-300 flex justify-start border-t px-2 py-4  text-pretty">
+            <div class="border-base-300 flex text-justify justify-start border-t px-4 py-4 leading-relaxed">
                 {{ $category->description }}
             </div>
         </div>
