@@ -20,7 +20,7 @@
 
 
 
-        <section  class="mockup-browser border-base-300 border mt-5 mb-2">
+        <section  class="mockup-browser border-base-300 border mt-8 mb-2">
             <header class="mockup-browser-toolbar text-right">
                 <h1 class="justify-start text-right mx-auto">
                     خرید    {{ $category->name }}
