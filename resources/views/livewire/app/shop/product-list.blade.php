@@ -1,37 +1,39 @@
 <div class="container mx-auto">
+    <!-- SEO Meta Tags -->
     @push('SEO')
-        @include('livewire.app.shop.category-inc.seo')
+        <meta name="description" content="{{ $category->description }}">
+        <meta name="keywords" content="{{ implode(',', $category->tags) }}">
+        <title>خرید {{ $category->name }} - بهترین {{ $category->name }} ها | دناپکس</title>
     @endpush
+
+    <!-- Header and Navigation -->
     @include('livewire.app.shop.category-inc.top-menu')
 
+    <!-- Main Content -->
+    <main>
+        <section class="category-description">
+            <header class="category-header">
+                <h1 class="text-right">{{ $category->name }}</h1>
+            </header>
 
-
-
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
-        @foreach($products as $product)
-            @livewire('app.component.product-card', ['product' => $product], key($product->id))
-        @endforeach
-    </div>
-
-
-        <div class="mockup-browser border-base-300 border mt-4">
-            <div class="mockup-browser-toolbar text-right">
-                <h1 class="justify-start text-right mx-auto">
-                 خرید    {{ $category->name }}
-                </h1>
+            <!-- Description Section -->
+            <div class="category-description-text">
+                <p>{{ $category->description }}</p>
             </div>
-            <div class="border-base-300 flex text-justify justify-start border-t px-4 py-4 leading-relaxed">
-                {{ $category->description }}
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-list">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
+                @foreach($products as $product)
+                    @livewire('app.component.product-card', ['product' => $product], key($product->id))
+                @endforeach
             </div>
+        </section>
+
+        <!-- Pagination -->
+        <div class="pagination mt-4 flex justify-center">
+            {{ $products->links() }}
         </div>
-
-
-
-
-
-    <!-- Centered Pagination -->
-    <div class="mt-4 flex justify-center">
-        {{ $products->links() }}
-    </div>
-
+    </main>
 </div>
