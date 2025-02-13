@@ -75,11 +75,11 @@ class HomeIndex extends Component
     {
         $websiteTitle = getSetting('website_title');
 
-
-        $specialProduct = Product::where('is_active', '=', 1)
-            ->where('id', 18)
-            ->with(['variants', 'images'])
-            ->first();
+//
+//        $specialProduct = Product::where('is_active', '=', 1)
+//            ->where('id', 18)
+//            ->with(['variants', 'images'])
+//            ->first();
 
 
         $products = cache()->remember('home_products', now()->addHours(12), function () {
@@ -91,9 +91,9 @@ class HomeIndex extends Component
         });
 
 
-        if ($specialProduct) {
-            $products->prepend($specialProduct);
-        }
+//        if ($specialProduct) {
+//            $products->prepend($specialProduct);
+//        }
 
         return view('livewire.app.home.home-index', compact('products'))
             ->title($websiteTitle ?? 'Home');
