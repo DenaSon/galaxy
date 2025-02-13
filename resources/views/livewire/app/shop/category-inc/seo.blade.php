@@ -1,8 +1,10 @@
-<meta name="description" content=" خرید قطعات آسانسور لیفت‌پال {{ $category->name }} ">
-<meta name="keywords" content="{{ $category->name }},خرید لیفت‌پال">
+<meta name="description" content="{{ \Illuminate\Support\Str::limit($category->description,165,'...') ?? 'خرید محصولات برتر دسته‌بندی شده با بهترین قیمت از سایت LiftPal' }}">
+<meta name="keywords"
+      content="{{ $category->name }}, خرید {{ $category->name }}, فروشگاه دناپکس, سوغات محلی, محصولات ارگانیک">
+
 <link rel="canonical" href="{{singleCategoryUrl($category->id,$category->name)}}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{ $category->name }} - LiftPal">
+<meta property="og:title" content="{{ $category->name }} - خرید">
 <meta property="og:description"
       content="مشاهده لیست محصولات دسته‌بندی شده در سایت LiftPal. انتخاب {{ $category->name }} با بهترین کیفیت.">
 <meta property="og:url" content="{{singleCategoryUrl($category->id,$category->name)}}">
@@ -21,7 +23,9 @@
                 "name" => $product->name,
                 "image" => $productImage ? asset($productImage->file_path) : '', // Ensure image exists
                 "price" => number_format($product->variants->min('price')),
-                "priceCurrency" => "IRT"
+                "priceCurrency" => "IRT",
+                 "brand" => $product->brand ?? "نامشخص",
+                "availability" => "https://schema.org/InStock"
             ];
         }
     @endphp
