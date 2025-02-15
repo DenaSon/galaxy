@@ -11,7 +11,6 @@ export default {
 	],
 
 
-
   theme: {
     extend: {
 
@@ -26,11 +25,12 @@ export default {
 	// daisyUI config (optional - here are the default values)
 	daisyui: {
 
-        themes: ["light", "dark", "aqua", "cupcake"],
+        themes: ["light", "dark"],
 
 
 
-	},
+
+    },
 
 
 }
