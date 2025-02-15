@@ -1,12 +1,13 @@
-{{--<!-- Google tag (gtag.js) -->--}}
-{{--<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9BG3H72V6"></script>--}}
-{{--<script>--}}
-{{--    window.dataLayer = window.dataLayer || [];--}}
-{{--    function gtag(){dataLayer.push(arguments);}--}}
-{{--    gtag('js', new Date());--}}
+<!-- Google tag (gtag.js) -->
+<meta name="google-site-verification" content="i349yLWrBRwkzKCaCYV1_sgCgSrhgpIyKvV0jhSf_rY" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9BG3H72V6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-{{--    gtag('config', 'G-L9BG3H72V6');--}}
-{{--</script>--}}
+    gtag('config', 'G-L9BG3H72V6');
+</script>
 
 {{--<script type="text/javascript">--}}
 {{--    (function (c, l, a, r, i, t, y) {--}}
