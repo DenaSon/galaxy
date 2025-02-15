@@ -17,7 +17,7 @@
           as="font" type="font/woff2" crossorigin="anonymous">
 
     <meta charset="UTF-8">
-    <meta name="theme-color" content="#662D91"/>
+    <meta name="theme-color" content="#FFA500"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 
