@@ -11,13 +11,13 @@
                            itemprop="item">
                             <span itemprop="name">{{ $product?->categories?->first()?->name ?? '' }}</span>
                         </a>
-                        <meta itemprop="position" content="1" />
+                        <meta itemprop="position" content="1"/>
                     </li>
                     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                         <a href="{{ request()->url() }}" itemprop="item">
                             <span itemprop="name">{{ $product?->name ?? '' }}</span>
                         </a>
-                        <meta itemprop="position" content="2" />
+                        <meta itemprop="position" content="2"/>
                     </li>
                 </ul>
             </div>
@@ -26,17 +26,11 @@
             </h1>
         </div>
 
-        <div class="flex-[0.5] h-12 hidden sm:block">
-            <div class="stats shadow">
-                <div class="stat">
-                    <div class="stat-figure text-secondary">
-                        <x-icon name="o-chart-bar" class="text-primary w-8 h-8"></x-icon>
-                    </div>
-                    <div class="stat-title text-sm">بازدید</div>
-                    <div class="stat-value text-lg">{{ $product->views }}</div>
-                    <div class="stat-desc">از {{ jdate($product->created_at)->ago() }}</div>
-                </div>
-            </div>
+        <div class="flex-[0.3] h-12 hidden sm:block">
+
+            <x-theme-toggle class="btn btn-circle" />
+
+
         </div>
 
 
@@ -92,16 +86,16 @@
                     @endif
                 </x-slot:heading>
                 <x-slot:content>
-                  @if($product->wiki == null)
-                      <i> اطلاعات مرتبط بیشتری وجود ندارد </i>
+                    @if($product->wiki == null)
+                        <i> اطلاعات مرتبط بیشتری وجود ندارد </i>
                     @else
-                       <div class="single-blog">
-                          <p>
-                              {{ getWikipediaInfo($product->wiki) }}
-                          </p>
-                       </div>
-                     <br/>
-                    <span class="font-thin text-xs text-gray-50 mt-2 badge badge-warning">
+                        <div class="single-blog">
+                            <p>
+                                {{ getWikipediaInfo($product->wiki) }}
+                            </p>
+                        </div>
+                        <br/>
+                        <span class="font-thin text-xs text-gray-50 mt-2 badge badge-warning">
                      استخراج شده از :  <a href="https://fa.wikipedia.org/" target="_blank" rel="noopener">ویکی پدیا </a>
 
                     </span>

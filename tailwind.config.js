@@ -26,23 +26,7 @@ export default {
 	// daisyUI config (optional - here are the default values)
 	daisyui: {
 
-        themes: [
-            {
-                mytheme: {
-                    primary: '#800080',
-                    secondary: '#3a9a1f',
-                    accent: '#37CDBE',
-                    neutral: '#3D4451',
-                    'base-100': '#FFFFFF',
-                    info: '#3ABFF8',
-                    success: '#36D399',
-                    warning: '#FBBD23',
-                    error: '#F87272',
-                },
-            },
-        ],
-
-
+        themes: ["light", "dark", "aqua", "cupcake"],
 
 
 
