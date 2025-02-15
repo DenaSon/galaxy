@@ -28,7 +28,6 @@
 
         <div class="flex-[0.3] h-12 hidden sm:block">
 
-            <x-theme-toggle class="btn btn-circle" />
 
 
         </div>
