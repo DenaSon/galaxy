@@ -4,7 +4,7 @@
 @endphp
 
     <!DOCTYPE html>
-<html lang="fa" data-theme="dark">
+<html lang="fa" data-theme="light">
 <header>
 <head>
     @include('components.layouts.inc.fav-icons')
