@@ -35,7 +35,7 @@ class Categories extends Component
     {
         $this->validate([
             'name' => 'string|required|max:200',
-            'description' => 'nullable|string|max:200',
+            'description' => 'nullable|string|max:50000',
             'parentList' => 'nullable|numeric|exists:categories,id'
         ]);
 
