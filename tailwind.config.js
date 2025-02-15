@@ -25,7 +25,7 @@ export default {
 	// daisyUI config (optional - here are the default values)
 	daisyui: {
 
-        themes: ["light", "cupcake"],
+        themes: ["light"],
 
 
 
