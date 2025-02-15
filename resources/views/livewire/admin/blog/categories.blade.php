@@ -16,7 +16,7 @@
                     wire:model="description"
                     placeholder="اینجا بنویسید...."
                     hint="توضیح دسته بندی"
-                    rows="10"
+                    rows="15"
                     maxlength="40000"
                     inline/>
 
