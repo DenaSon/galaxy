@@ -6,28 +6,28 @@
     <!DOCTYPE html>
 <html lang="fa" data-theme="light">
 <header>
-<head>
-    @include('components.layouts.inc.fav-icons')
+    <head>
+        @include('components.layouts.inc.fav-icons')
 
 
-    <link rel="preload" href="{{ asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2') }}"
-          as="font" type="font/woff2" crossorigin="anonymous">
+        <link rel="preload" href="{{ asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2') }}"
+              as="font" type="font/woff2" crossorigin="anonymous">
 
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#662D91"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#662D91"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? config('app.name') }}</title>
+        <title>{{ $title ?? config('app.name') }}</title>
 
-    @stack('SEO')
-    @stack('styles')
-    @stack('cdn')
+        @stack('SEO')
+        @stack('styles')
+        @stack('cdn')
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
 </header>
 <body x-data class="font-sans antialiased" style="font-family: 'denapax-font', serif !important;">
 
@@ -38,13 +38,13 @@
         <!-- Cart Button -->
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle hidden sm:block">
             <div class="indicator">
-                <x-button link="{{ route('panel.shop.cart') }}" icon="o-shopping-cart" />
+                <x-button link="{{ route('panel.shop.cart') }}" icon="o-shopping-cart"/>
             </div>
         </div>
 
         <!-- Search Button -->
         <x-button class="md:flex hidden" responsive label="جستجو..."
-                  @click.stop="$dispatch('mary-search-open')" icon="o-magnifying-glass" />
+                  @click.stop="$dispatch('mary-search-open')" icon="o-magnifying-glass"/>
 
         <!-- Products Dropdown -->
         <x-dropdown label="محصولات" class="sm:text-sm text-xs z-50 font-bold">
@@ -78,7 +78,7 @@
     <x-slot:brand>
         <a href="{{ route('home.index-home') }}" wire:navigate.prevent>
             <img loading="lazy" src="{{ asset('static/small-d-logo.png') }}" alt="DenaPax"
-                 width="110" height="40" style="height: 40px; width: 110px;" />
+                 width="110" height="40" style="height: 40px; width: 110px;"/>
         </a>
     </x-slot:brand>
 </x-nav>
@@ -89,14 +89,14 @@
         {{ $slot }}
         @livewire('app.home.mobile-menu')
         <footer>
-        @include('livewire.app.layout.footer')
+            @include('livewire.app.layout.footer')
         </footer>
     </x-slot:content>
 </x-main>
 
 <!-- Additional Components -->
-<x-spotlight dir="rtl" search-text="جستجو در محصولات" no-results-text="محصول مشابه وجود ندارد" />
-<x-toast />
+<x-spotlight dir="rtl" search-text="جستجو در محصولات" no-results-text="محصول مشابه وجود ندارد"/>
+<x-toast/>
 @include('components.layouts.inc.analytics-code')
 </body>
 
