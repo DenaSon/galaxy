@@ -306,9 +306,17 @@ class Browsershot
 
     public function setHtml(string $html): static
     {
-        foreach ($this->unsafeProtocols as $protocol) {
-            if (str_contains(strtolower($html), $protocol)) {
-                throw HtmlIsNotAllowedToContainFile::make();
+        $decodedHtml = html_entity_decode($html, ENT_QUOTES | ENT_HTML5);
+
+        $protocols = array_filter($this->unsafeProtocols, function (string $protocol) {
+            return $protocol !== 'file:';
+        });
+
+        foreach ([$html, $decodedHtml] as $content) {
+            foreach ($protocols as $protocol) {
+                if (str_contains(strtolower($content), $protocol)) {
+                    throw HtmlIsNotAllowedToContainFile::make();
+                }
             }
         }
 
