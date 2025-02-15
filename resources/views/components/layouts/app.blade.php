@@ -97,7 +97,7 @@
 <!-- Additional Components -->
 <x-spotlight dir="rtl" search-text="جستجو در محصولات" no-results-text="محصول مشابه وجود ندارد"/>
 <x-toast/>
-
+@include('components.layouts.inc.analytics-code')
 </body>
 
 </html>
