@@ -5,10 +5,10 @@
 
     <!DOCTYPE html>
 <html lang="fa">
-
+<header>
 <head>
     @include('components.layouts.inc.fav-icons')
-    @include('components.layouts.inc.analytics-code')
+
 
     <link rel="preload" href="{{ asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2') }}"
           as="font" type="font/woff2" crossorigin="anonymous">
@@ -28,7 +28,7 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
+</header>
 <body x-data class="font-sans antialiased" style="font-family: 'denapax-font', serif !important;">
 
 <!-- Navigation Bar -->
@@ -76,7 +76,7 @@
 
     <!-- Brand Logo -->
     <x-slot:brand>
-        <a href="{{ route('home.index-home') }}" wire:navigate>
+        <a href="{{ route('home.index-home') }}" wire:navigate.prevent>
             <img loading="lazy" src="{{ asset('static/small-d-logo.png') }}" alt="DenaPax"
                  width="110" height="40" style="height: 40px; width: 110px;" />
         </a>
@@ -88,14 +88,16 @@
     <x-slot:content dir="rtl">
         {{ $slot }}
         @livewire('app.home.mobile-menu')
+        <footer>
         @include('livewire.app.layout.footer')
+        </footer>
     </x-slot:content>
 </x-main>
 
 <!-- Additional Components -->
 <x-spotlight dir="rtl" search-text="جستجو در محصولات" no-results-text="محصول مشابه وجود ندارد" />
 <x-toast />
-
+@include('components.layouts.inc.analytics-code')
 </body>
 
 </html>
