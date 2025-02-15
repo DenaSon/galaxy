@@ -16,7 +16,7 @@ class ProductDetail extends Component
 
     public $rating = 0;
 
-
+    public $show;
 
     public function mount(Product $product)
     {
