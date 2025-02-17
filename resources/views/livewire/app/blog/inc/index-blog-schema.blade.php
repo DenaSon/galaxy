@@ -1,6 +1,7 @@
 @if(request()->has('category'))
-    <link rel="canonical" href="{{ route('home.blog.indexBlog',['category'=>request()->get('category')]) }}" />
-
+    <link rel="canonical" href="{{ route('home.blog.indexBlog',['category'=>request()->get('category')]) }}"/>
+@else
+    <link rel="canonical" href="{{ route('home.blog.indexBlog') }}"/>
 @endif
 <script type="application/ld+json">
     @php
