@@ -8,7 +8,7 @@
     'image' => $slide0,
     'title' => 'انواع لواشک',
     'description' => 'لواشک‌های خوشمزه و طبیعی دناپکس، طعمی بی‌نظیر از دل طبیعت به خانه شما',
-    'url' => singleCategoryUrl(3,'لواشک'),
+    'url' => singleCategoryUrl(3,'لواشک و تنقلات'),
     'urlText' => 'مشاهده محصولات',
 
 ]
@@ -28,7 +28,7 @@
     'image' => $slide2,
     'title' => 'خشکبار خوشمزه',
     'description' => 'محصولات ارگانیک و تازه، سرشار از طعم و خواص عالی برای سلامت شما!',
-    'url' => singleCategoryUrl(1,'خشکبار'),
+    'url' => singleCategoryUrl(1,'خشکبار و مغز ها'),
     'urlText' => 'مشاهده محصولات',
 ]
 
