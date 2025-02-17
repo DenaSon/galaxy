@@ -92,17 +92,6 @@ class GenerateSitemap extends Command
         $sitemap->add(Url::create('/page/1/درباره-ما')->setPriority(0.4)->setChangeFrequency('yearly'));
         $sitemap->add(Url::create('contact-us')->setPriority(0.1)->setChangeFrequency('yearly'));
 
-
-        $images = \App\Models\Image::all();
-        foreach ($images as $image) {
-            $imageUrl = Url::create($image->file_path);
-
-            $imageUrl->addImage($image->url, $image->product->name);
-
-        }
-        $sitemap->add($imageUrl);
-
-
         $sitemap->writeToFile(public_path('sitemap.xml'));
 
         $this->info('Sitemap generated successfully!');
