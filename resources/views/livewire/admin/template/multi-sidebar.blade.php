@@ -20,7 +20,7 @@
 
     <x-menu-sub title="بلاگ" icon="o-pencil-square">
 
-        <x-menu-item title="پیشخوان" icon="o-book-open" link="{{Env::get('app_url')}}/blogpress/wp-admin/index.php" external/>
+        <x-menu-item title="پیشخوان" icon="o-book-open" link="https://liftpal.ir/blogpress/wp-admin/index.php" external/>
         <x-menu-item title="ایجاد" icon="o-pencil" link="https://liftpal.ir/blogpress/wp-admin/post-new.php" external/>
         <x-menu-item title="لیست" icon="o-queue-list" link="https://liftpal.ir/blogpress/wp-admin/edit.php" external/>
 
