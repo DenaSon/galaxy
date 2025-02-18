@@ -22,10 +22,6 @@ class RoleMiddleware
             abort(403, 'Forbidden: Insufficient permissions');
         }
 
-        // If the user has the "master" role, redirect them
-        if ($user->hasRole('master')) {
-            return redirect()->route('master.dashboard'); // Change to your desired route
-        }
 
         return $next($request);
 
