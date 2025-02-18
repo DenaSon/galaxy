@@ -733,6 +733,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'App\\Livewire\\App\\System\\Login' => __DIR__ . '/../..' . '/app/Livewire/App/System/Login.php',
         'App\\Livewire\\App\\System\\LoginPage' => __DIR__ . '/../..' . '/app/Livewire/App/System/LoginPage.php',
         'App\\Livewire\\App\\System\\Logout' => __DIR__ . '/../..' . '/app/Livewire/App/System/Logout.php',
+        'App\\Livewire\\Welcome' => __DIR__ . '/../..' . '/app/Livewire/Welcome.php',
         'App\\Mail\\ContactUsMail' => __DIR__ . '/../..' . '/app/Mail/ContactUsMail.php',
         'App\\Models\\Accounting' => __DIR__ . '/../..' . '/app/Models/Accounting.php',
         'App\\Models\\Address' => __DIR__ . '/../..' . '/app/Models/Address.php',

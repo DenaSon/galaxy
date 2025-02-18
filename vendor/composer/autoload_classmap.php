@@ -72,6 +72,7 @@ return array(
     'App\\Livewire\\App\\System\\Login' => $baseDir . '/app/Livewire/App/System/Login.php',
     'App\\Livewire\\App\\System\\LoginPage' => $baseDir . '/app/Livewire/App/System/LoginPage.php',
     'App\\Livewire\\App\\System\\Logout' => $baseDir . '/app/Livewire/App/System/Logout.php',
+    'App\\Livewire\\Welcome' => $baseDir . '/app/Livewire/Welcome.php',
     'App\\Mail\\ContactUsMail' => $baseDir . '/app/Mail/ContactUsMail.php',
     'App\\Models\\Accounting' => $baseDir . '/app/Models/Accounting.php',
     'App\\Models\\Address' => $baseDir . '/app/Models/Address.php',
