@@ -19,7 +19,7 @@ use Morilog\Jalali\Jalalian;
 |--------------------------------------------------------------------------
 | Global Functions
 |--------------------------------------------------------------------------
-|| Here is for common website functions as helper . These
+|| Here is  common website functions as helper . These
 | functions are loaded by the laravel in everywhere  and all of them will
 | be assigned to the "Setting" model .
 |*/
