@@ -20,9 +20,9 @@
 
     <x-menu-sub title="بلاگ" icon="o-pencil-square">
 
-        <x-menu-item title="ایجاد" icon="o-pencil" link="{{ route('master.blog.create') }}"/>
-        <x-menu-item title="لیست" icon="o-queue-list" link="{{ route('master.blog.list') }}"/>
-        <x-menu-item title="دسته" icon="o-book-open" link="{{ route('master.blog.categories') }}"/>
+        <x-menu-item title="ایجاد" icon="o-pencil" link="{{ env('APP_URL') }}/blogpress/wp-admin/post-new.php" external/>
+        <x-menu-item title="لیست" icon="o-queue-list" link="{{ env('APP_URL') }}/blogpress/wp-admin/edit.php" external/>
+        <x-menu-item title="پیشخوان" icon="o-book-open" link="{{ env('APP_URL') }}/blogpress/wp-admin/index.php" external/>
 
     </x-menu-sub>
 
