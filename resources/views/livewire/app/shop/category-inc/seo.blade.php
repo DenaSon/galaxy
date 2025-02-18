@@ -1,6 +1,6 @@
 <meta name="description" content="{{ \Illuminate\Support\Str::limit($category->description,165,'...') ?? 'خرید محصولات برتر دسته‌بندی شده با بهترین قیمت از سایت LiftPal' }}">
 <meta name="keywords"
-      content="{{ $category->name }}, خرید {{ $category->name }}, فروشگاه دناپکس, سوغات محلی, محصولات ارگانیک">
+      content="{{ $category->name }}, خرید {{ $category->name }}،قطعات آسانسور،سرویس آسانسور">
 
 <link rel="canonical" href="{{singleCategoryUrl($category->id,$category->name)}}">
 <meta property="og:type" content="website">
