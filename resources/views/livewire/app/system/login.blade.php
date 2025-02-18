@@ -41,7 +41,7 @@
     </x-modal>
 
     @endif
-    @if(Auth::check())
+    @if(Auth::check() && Auth::user()->hasRole('customer'))
         <x-button class="sm:text-xs text-xs"  link="{{ route('panel.profile.profileDashboard') }}"  icon="o-user-circle" label="پروفایل"/>
     @elseif(Auth::check() && Auth::user()->hasRole('master'))
         <x-button class="sm:text-xs text-xs"  link="{{ route('master.dashboard') }}"  icon="o-user-circle" label="پنل مدیریت"/>
