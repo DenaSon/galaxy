@@ -38,7 +38,7 @@
         <!-- Cart Button -->
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle hidden sm:block">
             <div class="indicator">
-                <x-button link="{{ route('panel.shop.cart') }}" icon="o-shopping-cart"/>
+                <x-button link="{{ route('panel.shop.cart') }}" icon="o-shopping-cart" spinner />
             </div>
         </div>
 
