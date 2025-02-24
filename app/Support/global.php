@@ -253,7 +253,7 @@ function setLog($action = null, $description = null, $severity = null)
  * @param $datetime
  * @return string
  */
-function toSystemDate($datetime)
+function toSystemDate($datetime): string
 {
     $jalaliDate = Jalalian::fromFormat('Y-m-d H:i', $datetime);
     $gregorianDate = $jalaliDate->toCarbon();
@@ -264,7 +264,7 @@ function toSystemDate($datetime)
  * @param $date
  * @return string
  */
-function toSystemDateOnly($date)
+function toSystemDateOnly($date): string
 {
     $jalaliDate = Jalalian::fromFormat('Y-m-d', $date);
     $gregorianDate = $jalaliDate->toCarbon();
