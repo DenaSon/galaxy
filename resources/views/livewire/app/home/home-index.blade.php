@@ -15,23 +15,25 @@
 
     @livewire('app.home.visual-category-list')
 
-        <h1 class="text-center mt-5 mb-6">
-            {{ getSetting('website_title') }}
-        </h1>
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-4">
+{{--    <h2 class="text-center mt-5 mb-6">--}}
+{{--        خدمات لیفت‌پال--}}
+{{--    </h2>--}}
+{{--    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-4">--}}
 
-        @include('livewire.app.home.services')
+{{--        @include('livewire.app.home.services')--}}
 
-    </div>
-
-
-
-
-{{--    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">--}}
-{{--        @foreach($products as $product)--}}
-{{--            @livewire('app.component.product-card', ['product' => $product], key($product->id))--}}
-{{--        @endforeach--}}
 {{--    </div>--}}
+
+
+    <h1 class="text-center mt-5 mb-6">
+        {{ getSetting('website_title') }}
+    </h1>
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
+        @foreach($products as $product)
+            @livewire('app.component.product-card', ['product' => $product], key($product->id))
+        @endforeach
+    </div>
 
 
     @include('livewire.app.home.inc.blog-section')
