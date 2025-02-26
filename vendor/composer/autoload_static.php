@@ -763,6 +763,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\DatabaseServiceProvider' => __DIR__ . '/../..' . '/app/Providers/DatabaseServiceProvider.php',
         'App\\Providers\\GateServiceProvider' => __DIR__ . '/../..' . '/app/Providers/GateServiceProvider.php',
+        'App\\Providers\\VoltServiceProvider' => __DIR__ . '/../..' . '/app/Providers/VoltServiceProvider.php',
         'App\\Services\\AlertCvaService' => __DIR__ . '/../..' . '/app/Services/AlertCvaService.php',
         'App\\Support\\Spotlight' => __DIR__ . '/../..' . '/app/Support/Spotlight.php',
         'App\\Traits\\ImageTrait' => __DIR__ . '/../..' . '/app/Traits/ImageTrait.php',

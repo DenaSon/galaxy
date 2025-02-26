@@ -102,6 +102,7 @@ return array(
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\DatabaseServiceProvider' => $baseDir . '/app/Providers/DatabaseServiceProvider.php',
     'App\\Providers\\GateServiceProvider' => $baseDir . '/app/Providers/GateServiceProvider.php',
+    'App\\Providers\\VoltServiceProvider' => $baseDir . '/app/Providers/VoltServiceProvider.php',
     'App\\Services\\AlertCvaService' => $baseDir . '/app/Services/AlertCvaService.php',
     'App\\Support\\Spotlight' => $baseDir . '/app/Support/Spotlight.php',
     'App\\Traits\\ImageTrait' => $baseDir . '/app/Traits/ImageTrait.php',
