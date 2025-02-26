@@ -85,7 +85,7 @@ class HomeIndex extends Component
         $products = cache()->remember('home_products', now()->addHours(12), function () {
             return Product::where('is_active', '=', 1)
                 ->latest()
-                ->take(24)
+                ->take(12)
                 ->with(['variants', 'images'])
                 ->get();
         });

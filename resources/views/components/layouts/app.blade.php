@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @include('components.layouts.inc.fav-icons')
-    @include('components.layouts.inc.analytics-code')
+
 
     <link rel="preload" href="{{ asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2') }}"
           as="font" type="font/woff2" crossorigin="anonymous">
@@ -100,8 +100,9 @@
 <!-- Additional Components -->
 <x-spotlight dir="rtl" search-text="جستجو در محصولات" no-results-text="محصول مشابه وجود ندارد"/>
 <x-toast/>
-
+@if(\Illuminate\Support\Facades\App::isProduction())
 @include('components.layouts.inc.analytics-code')
+@endif
 </body>
 
 </html>
