@@ -16,12 +16,12 @@ class RoleMiddleware
     public function handle(Request $request, Closure $next, $role): Response
     {
         $user = auth()->user();
+        $rolesArray = explode(',', $role);
 
-        if (!$user || !$user->hasRole($role))
-        {
-            abort(403, 'Forbidden: Insufficient permissions');
+
+        if (!$user || !$user->hasAnyRole($rolesArray)) {
+            abort(403, 'Forbidden: Insufficient Permissions');
         }
-
 
         return $next($request);
 

@@ -2,10 +2,10 @@
 $services = [
     [
         'id' => 1,
-        'service_title' => 'ثبت‌ام بعنوان تکنسین',
-        'service_description' => 'ثبت‌ام بعنوان تکنسین در سامانه لیفتپال برای ارائه خدمات مختلف.',
-        'service_image' => 'http://127.0.0.1:8000/storage/product_images/1.jpg',
-        'service_link' => 'google.com',
+        'service_title' => 'خدمات ویژه تکنسین‌ها',
+        'service_description' => 'لیفت‌پال با ارائه درخواست‌های نصب، تعمیر و نگهداری آسانسور، تکنسین‌ها را به مشتریان متصل می‌کند. دریافت پروژه‌های جدید و مدیریت سفارش‌ها، سریع و آسان!',
+        'service_image' => asset('static/services/technician-service.webp'),
+        'service_link' => route('home.blog.indexBlog'),
 
     ],
     [

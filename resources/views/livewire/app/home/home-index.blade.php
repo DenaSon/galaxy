@@ -15,14 +15,14 @@
 
     @livewire('app.home.visual-category-list')
 
-{{--    <h2 class="text-center mt-5 mb-6">--}}
-{{--        خدمات لیفت‌پال--}}
-{{--    </h2>--}}
-{{--    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-4">--}}
+    <h2 class="text-center mt-5 mb-6">
+        خدمات لیفت‌پال
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-4">
 
-{{--        @include('livewire.app.home.services')--}}
+        @include('livewire.app.home.services')
 
-{{--    </div>--}}
+    </div>
 
 
     <h1 class="text-center mt-5 mb-6">

@@ -35,14 +35,6 @@ Route::get('/contact-us', \App\Livewire\App\Shop\ContactUs::class)->name('contac
 
 
 
-Route::name('supplier.')->group(function () {
-
-
-    Route::get('supplier',LocalRegister::class)->name('local-register');
-
-});
-
-
 
 Route::name('home.')->group(function () {
 
@@ -125,9 +117,10 @@ Route::middleware(['auth:web', RoleMiddleware::class . ':master', 'throttle:15,2
     });
 });
 
-Route::get('/session', function () {
-    return response()->json([
-        'session' => session()->all(),
-        'csrf' => csrf_token(),
-    ]);
-});
+
+
+
+
+
+
+
