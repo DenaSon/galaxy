@@ -20,7 +20,13 @@
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-4">
 
-        @include('livewire.app.home.services')
+        @livewire('app.component.service-card',
+        ['service_title' => 'خدمات ویژه تکنسین‌ها',
+        'service_image' => asset('static/services/technician-service.webp'),
+        'service_description' => 'یفت‌پال با ارائه درخواست‌های نصب، تعمیر و نگهداری آسانسور، تکنسین‌ها را به مشتریان متصل می‌کند. دریافت پروژه‌های جدید و مدیریت سفارش‌ها، سریع و آسان!'],
+
+key(uniqid()))
+
 
     </div>
 
@@ -31,7 +37,7 @@
 
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
         @foreach($products as $product)
-            @livewire('app.component.product-card', ['product' => $product], key($product->id))
+            @livewire('app.component.product-card', ['product' => $product], key('product-'.$product->id))
         @endforeach
     </div>
 

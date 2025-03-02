@@ -83,6 +83,7 @@ class ProductCard extends Component
 
     public function mount(Product $product)
     {
+
         if (!$this->product) {
 
             throw new \Exception(__('The product is either inactive or does not exist.'));

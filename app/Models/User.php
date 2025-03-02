@@ -37,6 +37,15 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function isTechnician()
+    {
+        return $this->roles()->where('name', '=','technician')->exists();
+    }
+    public function isNotTechnician()
+    {
+        return $this->roles()->where('name', '=','technician')->doesntExist();
+    }
+
     /**
      * Get the attributes that should be cast.
      *
@@ -54,6 +63,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+
+
 
     public function carts()
     {

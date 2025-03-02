@@ -20,6 +20,8 @@ class HomeIndex extends Component
 
     public $blogs = [];
 
+    public $services = [];
+
 
     public $showDrawer = false;
 
@@ -73,6 +75,9 @@ class HomeIndex extends Component
 
     public function render()
     {
+
+
+
         $websiteTitle = getSetting('website_title');
 
 //

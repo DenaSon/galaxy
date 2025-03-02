@@ -3,9 +3,9 @@
         <img src="{{ $service_image ?? '' }}" class="w-full h-52 object-cover"/>
     </x-slot:figure>
 
-    <div class="p-4">
+    <div class="p-1">
         <h3 class="text-lg font-semibold text-gray-800">{{ $service_title ?? '' }}</h3>
-        <p class="text-xs text-gray-600 mt-2">{{ $service_description ?? '' }}</p>
+        <p class="text-xs text-justify text-gray-600 mt-2">{{ $service_description ?? '' }}</p>
     </div>
 
     <x-slot:menu>
@@ -14,8 +14,11 @@
 
     <x-slot:actions>
 
-        <x-button label="شروع" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg transition" link="{{ $service_link }}" />
-
+        <x-button
+            spinner
+            label="شروع"
+            wire:click="handleRequest"
+            class="w-full bg-green-600 hover:bg-green-700text-white font-semibold py-2 rounded-lg transition" />
 
     </x-slot:actions>
 </x-card>

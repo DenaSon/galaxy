@@ -36,11 +36,11 @@
 
 <body x-data class="font-sans antialiased" style="font-family: 'denapax-font', serif !important;">
 
-<!-- Navigation Bar -->
+
 <x-nav class="bg-base-200" dir="rtl">
 
     <x-slot:actions>
-        <!-- Cart Button -->
+
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle hidden sm:block">
             <div class="indicator">
                 <x-button link="{{ route('panel.shop.cart') }}" icon="o-shopping-cart"/>

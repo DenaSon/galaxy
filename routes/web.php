@@ -19,21 +19,19 @@ use App\Livewire\App\Profile\Order\OrderDetails;
 use App\Livewire\App\Profile\ProfileAddress;
 use App\Livewire\App\Profile\ProfileDashboard;
 use App\Livewire\App\Profile\ProfileInformation;
+use App\Livewire\App\Services\Technician\TechnicianArea;
 use App\Livewire\App\Shop\Cart\ShopCart;
 use App\Livewire\App\Shop\Checkout;
 use App\Livewire\App\Shop\CheckoutPayment;
 use App\Livewire\App\Shop\ProductList;
 use App\Livewire\App\Shop\SinglePage;
 use App\Livewire\App\Shop\SingleProduct;
-use App\Livewire\App\Supplier\Local\LocalRegister;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [\App\Livewire\App\System\LoginPage::class, 'login']);
 
 Route::get('/login', [\App\Livewire\App\System\LoginPage::class, 'login'])->name('login');
 Route::get('/contact-us', \App\Livewire\App\Shop\ContactUs::class)->name('contact-us');
-
-
 
 
 Route::name('home.')->group(function () {
@@ -118,8 +116,11 @@ Route::middleware(['auth:web', RoleMiddleware::class . ':master', 'throttle:15,2
 });
 
 
+Route::middleware(['auth:web'])->prefix('technician')->name('technician.')->group(function ()
+{
+    Route::get('/area', TechnicianArea::class)->name('technician-area');
 
-
+});
 
 
 
