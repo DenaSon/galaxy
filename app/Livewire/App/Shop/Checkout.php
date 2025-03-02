@@ -170,7 +170,7 @@ class Checkout extends Component
 
             if (Auth::user()->addresses()
                 ->where('is_default', 1)
-            ->where('city_id', '=',839)->exists())
+            ->where('city_id', '=',846)->exists())
             {
                 $this->shippingCost = 0;
                 $order->shipping_cost = 0;
