@@ -17,6 +17,8 @@ class ServiceCard extends Component
     public $service_image;
     public $service_link;
 
+    public $btn_text;
+
 
     public function handleRequest()
     {

@@ -3,6 +3,7 @@
 namespace App\Livewire\App\Services\Technician;
 
 use App\Models\Role;
+use Illuminate\Support\Facades\Route;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
@@ -14,6 +15,8 @@ class TechnicianArea extends Component
 
     public $step = 1;
 
+    public $currentRouteName;
+
     public function register_address()
     {
         $this->dispatch('openAddressModal');
@@ -22,12 +25,19 @@ class TechnicianArea extends Component
 
     public function next()
     {
-        $this->step++;
 
+        $this->warning('', Route::currentRouteName());
 
         if ($this->step > 3)
         {
             $this->step = 3;
+        }
+
+        if ($this->step == 2 && \Auth::user()->addresses()->count() == 0) {
+
+            $this->warning('', 'آدرس ثبت نشده است');
+        } else {
+            $this->step++;
         }
     }
 

@@ -1,6 +1,8 @@
 <x-card class="border border-gray-200 shadow-lg rounded-2xl overflow-hidden transition hover:shadow-xl">
     <x-slot:figure>
+
         <img src="{{ $service_image ?? '' }}" class="w-full h-52 object-cover"/>
+
     </x-slot:figure>
 
     <div class="p-1">
@@ -16,9 +18,9 @@
 
         <x-button
             spinner
-            label="شروع"
+            label="{{ $btn_text }}"
             wire:click="handleRequest"
-            class="w-full bg-green-600 hover:bg-green-700text-white font-semibold py-2 rounded-lg transition" />
+            class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg transition"/>
 
     </x-slot:actions>
 </x-card>

@@ -1,12 +1,12 @@
-@font-face {
-    font-family: 'denapax-font';
-    src: url('static/fonts/f1.woff') format('woff2'),
-    url('static/fonts/f1.woff2') format('woff'),
-    url('static/fonts/f1.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+/*@font-face {*/
+/*    font-family: 'denapax-font';*/
+/*    src: url('static/fonts/f1.woff') format('woff2'),*/
+/*    url('static/fonts/f1.woff2') format('woff'),*/
+/*    url('static/fonts/f1.ttf') format('truetype');*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*    font-display: swap;*/
+/*}*/
 
 
 ::-webkit-scrollbar {

@@ -13,8 +13,6 @@
     @include('components.layouts.inc.fav-icons')
 
 
-    <link rel="preload" href="{{ asset('admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2') }}"
-          as="font" type="font/woff2" crossorigin="anonymous">
 
     <meta charset="UTF-8">
     <meta name="theme-color" content="#FFA500"/>
@@ -34,7 +32,7 @@
 
 </head>
 
-<body x-data class="font-sans antialiased" style="font-family: 'denapax-font', serif !important;">
+<body x-data class="font-sans antialiased" style="font-family: 'tahoma','denapax-font', serif !important;">
 
 
 <x-nav class="bg-base-200" dir="rtl">

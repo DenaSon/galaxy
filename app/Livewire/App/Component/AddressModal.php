@@ -6,6 +6,7 @@ use App\Models\Address;
 use App\Models\City;
 use App\Models\Province;
 use App\Models\User;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\On;
@@ -22,6 +23,8 @@ class AddressModal extends Component
 
 
     public User $user;
+
+    public $currentRouteName;
 
     public $tipText;
 
@@ -59,6 +62,8 @@ class AddressModal extends Component
         $this->user = $user;
         $this->province_list = Province::get(['id', 'name']);
         $this->user = \Auth::user();
+
+        $this->currentRouteName = Route::currentRouteName();
     }
 
     public function updatedProvince($value)
@@ -122,7 +127,9 @@ class AddressModal extends Component
             $this->addressModal = false;
 
 
+            if ($this->currentRouteName != 'technician.technician-area') {
                 $this->redirectRoute('panel.checkout', [], true, true);
+            }
 
         }
 
