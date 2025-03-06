@@ -18,7 +18,7 @@
         "@neshan-maps-platform/mapbox-gl": "^1.1.5",
         "@tailwindcss/postcss": "^4.0.3",
         "leaflet": "^1.9.4",
-        "swiper": "^11.1.15",
+        "swiper": "^11.2.5",
         "tailwindcss": "^3.4.17"
     }
 }
