@@ -106,4 +106,4 @@ document.addEventListener('livewire:navigated', (event) => {
 
     startSwiper();
 
-}, {once: false});
+}, {once: true});
