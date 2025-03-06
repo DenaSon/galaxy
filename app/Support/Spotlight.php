@@ -31,7 +31,7 @@ class Spotlight
     {
         return Product::query()
             ->where('name', 'like', "%$search%")
-            ->take(8)
+            ->take(5)
             ->get()
             ->map(function (Product $product) {
                 return [

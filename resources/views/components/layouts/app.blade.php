@@ -83,9 +83,12 @@
     </x-slot:brand>
 </x-nav>
 
-<!-- Main Content -->
+
 <x-main with-nav full-width collapse-text="">
     <x-slot:content dir="rtl">
+
+        <x-blade-kit.loading/>
+
         {{ $slot }}
         @livewire('app.home.mobile-menu')
         <footer>
