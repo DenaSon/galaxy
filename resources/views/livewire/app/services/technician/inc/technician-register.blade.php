@@ -22,10 +22,7 @@
         <x-button spinner label="مرحله قبل" wire:click="prev" />
         <x-button spinner label="مرحله بعد" wire:click="next" />
 
-
         <x-hr/>
-
-
 
     </div>
 
