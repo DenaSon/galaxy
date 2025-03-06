@@ -39,7 +39,7 @@ class Spotlight
                     'name' => $product->name,
                     'avatar' => asset($product->images->first()->file_path),
                     'description' => $product->description,
-                    'link' => singleProductUrl($product->id,slugMaker($product->name)),
+                    'link' => singleProductUrl($product->id, $product->name),
                 ];
             });
     }
