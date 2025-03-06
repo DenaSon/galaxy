@@ -19,12 +19,22 @@ class ServiceCard extends Component
 
     public $btn_text;
 
+    public $action;
 
-    public function handleRequest()
+
+    public function handleRequest($action)
     {
         if (\Auth::check()) {
 
-            $this->redirectRoute('technician.technician-area',[],true,true);
+            switch ($action) {
+                case 'technician':
+                    $this->redirectRoute('service.technician-area', [], true, true);
+                    break;
+                case 'building':
+                    $this->redirectRoute('service.building-area', [], true, true);
+                    break;
+
+            }
         }
         else
         {

@@ -19,6 +19,7 @@ use App\Livewire\App\Profile\Order\OrderDetails;
 use App\Livewire\App\Profile\ProfileAddress;
 use App\Livewire\App\Profile\ProfileDashboard;
 use App\Livewire\App\Profile\ProfileInformation;
+use App\Livewire\App\Services\Building\BuildingArea;
 use App\Livewire\App\Services\Technician\TechnicianArea;
 use App\Livewire\App\Shop\Cart\ShopCart;
 use App\Livewire\App\Shop\Checkout;
@@ -116,9 +117,10 @@ Route::middleware(['auth:web', RoleMiddleware::class . ':master', 'throttle:15,2
 });
 
 
-Route::middleware(['auth:web'])->prefix('technician')->name('technician.')->group(function ()
+Route::middleware(['auth:web'])->prefix('service')->name('service.')->group(function ()
 {
-    Route::get('/area', TechnicianArea::class)->name('technician-area');
+    Route::get('/technician-area', TechnicianArea::class)->name('technician-area');
+    Route::get('/building-area', BuildingArea::class)->name('building-area');
 
 });
 

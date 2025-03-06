@@ -19,8 +19,9 @@
         <x-button
             spinner
             label="{{ $btn_text }}"
-            wire:click="handleRequest"
+            wire:click="handleRequest('{{ $action }}')"
             class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg transition"/>
+
 
     </x-slot:actions>
 </x-card>

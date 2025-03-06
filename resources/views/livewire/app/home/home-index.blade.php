@@ -23,6 +23,7 @@
         @livewire('app.component.service-card',
         ['service_title' => 'خدمات ویژه تکنسین‌ها',
         'btn_text' => 'ثبت‌نام تکنسین',
+        'action' => 'technician',
         'service_image' => asset('static/services/technician-service.webp'),
         'service_description' => 'لیفت‌پال با ارائه درخواست‌های نصب، تعمیر و نگهداری آسانسور، تکنسین‌ها را به مشتریان متصل می‌کند. دریافت پروژه‌های جدید و مدیریت سفارش‌ها، سریع و آسان!'],
 
@@ -32,6 +33,7 @@ key(uniqid()))
         @livewire('app.component.service-card',
 ['service_title' => 'مدیریت هوشمند  ساختمان شما',
 'btn_text' => 'ثبت ساختمان',
+'action' => 'building',
 'service_image' => asset('static/services/builder-master.webp'),
 'service_description' => '
 لیفت‌پال با امکان ثبت اطلاعات ساختمان و ارسال درخواست‌های تعمیر، مدیران را به تکنسین‌های معتبر متصل می‌کند. خدمات حرفه‌ای و پیگیری سفارش‌ها، سریع و آسان!

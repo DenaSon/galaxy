@@ -26,7 +26,6 @@ class TechnicianArea extends Component
     public function next()
     {
 
-        $this->warning('', Route::currentRouteName());
 
         if ($this->step > 3)
         {
