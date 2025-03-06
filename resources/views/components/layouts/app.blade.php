@@ -27,6 +27,7 @@
         @stack('cdn')
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <x-blade-kit.loading/>
     </head>
 </header>
 <body x-data class="font-sans antialiased" style="font-family: 'denapax-font', serif !important;">
@@ -87,9 +88,8 @@
 <x-main with-nav full-width collapse-text="">
     <x-slot:content dir="rtl">
 
-        <x-blade-kit.loading/>
 
-        {{ $slot }}
+    {{ $slot }}
         @livewire('app.home.mobile-menu')
         <footer>
             @include('livewire.app.layout.footer')
