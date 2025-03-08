@@ -13,7 +13,7 @@
         </div>
 
 
-        <x-input icon-right="o-phone"   wire:model="phoneNumber" label="شماره همراه" inline></x-input>
+        <x-input type="number" icon-right="o-phone" wire:model="phoneNumber" label="شماره همراه" inline clearable/>
 
 
         <div class="flex items-center justify-center">

@@ -9305,7 +9305,6 @@ var enablePersist = true;
 var showProgressBar = true;
 var restoreScroll = true;
 var autofocus = false;
-
 function navigate_default(Alpine23) {
     Alpine23.navigate = (url) => {
     let destination = createUrlObjectFromString(url);
@@ -9444,7 +9443,6 @@ function fetchHtmlOrUsePrefetchedHtml(fromDestination, callback) {
     fetchHtml(fromDestination, callback);
   });
 }
-
 function preventAlpineFromPickingUpDomChanges(Alpine23, callback) {
     Alpine23.stopObservingMutations();
   callback((afterAllThis) => {
@@ -9463,7 +9461,6 @@ function fireEventForOtherLibrariesToHookInto(name, detail) {
   document.dispatchEvent(event);
   return event.defaultPrevented;
 }
-
 function nowInitializeAlpineOnTheNewPage(Alpine23) {
     Alpine23.initTree(document.body, void 0, (el, skip) => {
     if (el._x_wasPersisted)
