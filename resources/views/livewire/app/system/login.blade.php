@@ -17,7 +17,6 @@
                    placeholder="شماره تلفن" pattern="[0-9]*" minlength="10"
                    maxlength="10" title="شماره تلفن 10 رقمی"/>
 
-
             {{--        <x-input locale="fa-IR" type="number" icon-right="o-phone" wire:model="phoneNumber" label="شماره همراه"--}}
             {{--                 inline/>--}}
 
