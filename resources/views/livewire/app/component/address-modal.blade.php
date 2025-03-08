@@ -45,6 +45,7 @@
 
         <x-select inline label="انتخاب شهر" icon="o-user" :options="$city_list" wire:model="city" class="mb-2"/>
 
+
         <x-input locale="fa-IR" money type="number" inline label="کد پستی" clearable wire:model.live="postal_code"
                  class="mb-1"/>
 

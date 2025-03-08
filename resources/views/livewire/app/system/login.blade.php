@@ -13,7 +13,7 @@
         </div>
 
 
-        <x-input money type="number" icon-right="o-phone" wire:model="phoneNumber" label="شماره همراه"
+        <x-input locale="fa-IR" money type="number" icon-right="o-phone" wire:model="phoneNumber" label="شماره همراه"
                  inline/>
 
 
