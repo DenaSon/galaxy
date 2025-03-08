@@ -9,20 +9,29 @@
 
 
             @foreach ($elevators as $elevator)
-                <x-list-item :item="$elevator" no-separator no-hover>
-                    <x-slot:avatar>
-                        <x-badge value="{{ $elevator->national_code }}" class="badge-primary"/>
-                    </x-slot:avatar>
-                    <x-slot:value>
-                        {{ $elevator->type }} {{-- Example property --}}
-                    </x-slot:value>
-                    <x-slot:sub-value>
-                        {{ $elevator->status ?? 'بدون ساختمان' }} {{-- Example nested property --}}
-                    </x-slot:sub-value>
-                    <x-slot:actions>
-                        <x-button icon="o-trash" class="text-red-500" wire:click="delete({{ $elevator->id }})" spinner/>
-                    </x-slot:actions>
-                </x-list-item>
+                <div wire:key="{{ $elevator->id }}">
+                    <x-list-item :item="$elevator" no-separator no-hover>
+                        <x-slot:avatar>
+                            <x-badge value="{{ $elevator->national_code }}" class="badge-primary"/>
+                        </x-slot:avatar>
+                        <x-slot:value>
+
+                            {{ $elevator->translateType($elevator->type) ?? 'N/A' }} با ظرفیت
+                            {{ $elevator->capacity }} نفر
+
+
+                        </x-slot:value>
+                        <x-slot:sub-value>
+                            {{ $elevator->translateStatus($elevator->status) }}
+                        </x-slot:sub-value>
+                        <x-slot:actions>
+                            <x-button wire:confirm="آسانسور حذف شود؟" icon="o-trash" class="text-red-500 btn-sm"
+                                      wire:click="delete({{ $elevator->id }})" spinner/>
+
+                        </x-slot:actions>
+                    </x-list-item>
+                    <x-hr/>
+                </div>
             @endforeach
 
 

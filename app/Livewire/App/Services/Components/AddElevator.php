@@ -49,6 +49,7 @@ class AddElevator extends Component
 
             $this->addElevatorModal = false;
             $this->success('ثبت آسانسور', 'اطلاعات آسانسور شما با موفقیت ثبت شد');
+            $this->redirectRoute('service.building-management', $this->building->id, false, true);
         } catch (Throwable $e) {
             logger($e->getMessage());
         }

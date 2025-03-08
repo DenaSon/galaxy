@@ -22,7 +22,7 @@
 @endphp
 <div>
 
-    <x-modal wire:model="addElevatorModal" title="افزودن آسانسور" subtitle="افزودن آسانسور به ساختمان" separator>
+    <x-modal wire:model="addElevatorModal" title="افزودن آسانسور" subtitle="افزودن آسانسور به ساختمان">
 
         <x-form wire:submit="save">
 
@@ -44,6 +44,7 @@
         </x-form>
     </x-modal>
 
-    <x-button @click="$wire.addElevatorModal = true" label="افزودن آسانسور" responsive icon="o-plus" class="btn-info"/>
+    <x-button @click="$wire.addElevatorModal = true" label="افزودن آسانسور" responsive icon="o-plus"
+              class="btn-info text-white  btn-sm"/>
 
 </div>
