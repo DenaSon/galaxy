@@ -316,7 +316,9 @@ return [
         'variant' => 'نوع',
         'address_line' => 'آدرس پستی',
         'searchTerm' => 'جستجو',
-        'related_article_id' => 'شناسه مقاله مرتبط'
+        'related_article_id' => 'شناسه مقاله مرتبط',
+        'identify' => 'پلاک',
+        'builder_name' => 'نام ساختمان'
 
 
 

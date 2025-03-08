@@ -64,11 +64,10 @@
             });
         }
     </script>
+        <script>
 
-    <script>
 
-
-        document.addEventListener('livewire:navigated', (event) => {
+            document.addEventListener('livewire:navigated', (event) => {
 
             initMap();
 
@@ -83,14 +82,7 @@
     </script>
 
 
-    @if(Auth::user()->hasBuilding())
-
-        has building
-
-    @else
-
         @include('livewire.app.services.building.inc.building-register')
 
-    @endif
 
 </div>
