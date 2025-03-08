@@ -14,8 +14,8 @@
 
 
             <input wire:model="phoneNumber" type="number" class="input border-primary w-full" required
-                   placeholder="شماره تلفن" pattern="[0-9]*" minlength="10"
-                   maxlength="10" title="شماره تلفن 10 رقمی"/>
+                   placeholder="شماره تلفن" pattern="[0-9]*" minlength="11" max="11"
+                   maxlength="11" title="شماره تلفن 10 رقمی"/>
 
             {{--        <x-input locale="fa-IR" type="number" icon-right="o-phone" wire:model="phoneNumber" label="شماره همراه"--}}
             {{--                 inline/>--}}
