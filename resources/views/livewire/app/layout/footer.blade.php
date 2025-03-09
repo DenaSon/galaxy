@@ -42,8 +42,6 @@ hidden md:block
     <div class="container mx-auto">
 
 
-
-
         <aside class="mb-10">
 
             <a href="{{ route('home.index-home') }}" wire:navigate>
@@ -61,19 +59,19 @@ hidden md:block
                        rel="nofollow noopener" href="https://wa.me/989173434796">تیم دنا پکس</a>
                 </span>
 
-            <div class="flex space-x-4 justify-center">
+            <div class="flex space-x-4 justify-end">
 
-                <a href="https://www.instagram.com/yourprofile" target="_blank"
-                   class="text-gray-800 hover:text-pink-600">
 
-                    <a target="_blank" href="https://www.instagram.com/denapax/">
-                        <x-icon name="fab.instagram"/>
-                    </a>
-                    <a target="_blank" href="https://www.instagram.com/sisakhtziba/?hl=fa">
-                        <x-icon name="fab.instagram"/>
-                    </a>
+                <div class="w-20 h-24 rounded flex items-center justify-center p-0">
 
-                </a>
+                    <a
+                        target='_blank'
+                        href='{{ route('home.singlePage',['page' =>3 ,'slug' => 'trust-denapax-com']) }}'>
+                        <img loading="lazy"
+                             src='{{ asset('static/enamad-logo.png') }}'
+                             alt='نماد اعتماد الکترونیک' style='cursor:pointer' code='9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'></a>
+
+                </div>
 
 
             </div>
@@ -94,7 +92,6 @@ hidden md:block
         </svg>
     </a>
 </div>
-
 
 
 
