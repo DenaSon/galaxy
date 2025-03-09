@@ -32,11 +32,8 @@
 </header>
 
 
-@if( app()->isLocal())
-    <body x-data class="font-sans antialiased" style="font-family: 'tahoma', serif !important;">
-    @else
-        <body x-data class="font-sans antialiased" style="font-family: 'denapax-font', serif !important;">
-        @endif
+<body x-data class="font-sans antialiased" style="font-family: 'denapax-font','tahoma', serif !important;">
+
 
 <!-- Navigation Bar -->
 <x-nav class="bg-base-200" dir="rtl">
