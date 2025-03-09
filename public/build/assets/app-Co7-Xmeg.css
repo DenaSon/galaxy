@@ -10997,7 +10997,7 @@ html:has(.drawer-open.drawer-open) {
 
 @font-face {
     font-family: denapax-font;
-    src: url(static/fonts/f1.woff) format("woff2"), url(static/fonts/f1.woff2) format("woff"), url(static/fonts/f1.ttf) format("truetype");
+    src: url("https://liftpal.ir/admin/assets/fonts/iransans/woff/IRANSansWeb(FaNum).woff") format("woff"), url("https://liftpal.ir/admin/assets/fonts/iransans/woff2/IRANSansWeb(FaNum).woff2") format("woff"), url("https://liftpal.ir/admin/assets/fonts/iransans/ttf/IRANSansWeb(FaNum).ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap
