@@ -30,7 +30,13 @@
         <x-blade-kit.loading/>
     </head>
 </header>
-<body x-data class="font-sans antialiased" style="font-family: 'denapax-font', serif !important;">
+
+
+@if( app()->isLocal())
+    <body x-data class="font-sans antialiased" style="font-family: 'tahoma', serif !important;">
+    @else
+        <body x-data class="font-sans antialiased" style="font-family: 'denapax-font', serif !important;">
+        @endif
 
 <!-- Navigation Bar -->
 <x-nav class="bg-base-200" dir="rtl">

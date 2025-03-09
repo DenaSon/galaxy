@@ -3,88 +3,40 @@ hidden md:block
 @endif">
     @include('livewire.app.layout.inc.footer-icons')
 
-    <div class="container mx-auto px-4 py-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
+    @if(request()->routeIs('home.index-home'))
 
+        <div class="container mx-auto px-2 py-2 flex justify-center items-center">
 
-            <div class="flex space-x-6 mb-6 md:mb-0 ">
+            <div class="card bg-base-100 w-full  max-w-[1024px] shadow-2xl border border-gray-200 rounded-2xl">
+                <div class="card-body">
 
+                    <h2 class="card-title">
+                        سوالات متداول
 
-                <div class="w-20 h-24 rounded flex items-center justify-center p-0">
+                    </h2>
 
-                    <a
-                        target='_blank'
-                        href='{{ route('home.singlePage',['page' =>3 ,'slug' => 'trust-denapax-com']) }}'>
-                        <img loading="lazy"
-                             src='{{ asset('static/enamad-logo.png') }}'
-                             alt='نماد اعتماد الکترونیک' style='cursor:pointer' code='9pAhKYDetHQRHu97nYXqh24mMTeqQcNm'></a>
+                    @include('livewire.app.layout.inc.questions-section')
+
+                    <div class="card-actions justify-center mt-1">
+                        <x-button responsive class="btn-xs btn-info btn-outline text-white text-sm" icon="o-phone"
+                                  label="تماس"
+                                  link="tel:{{ getSetting('support_phone') }}"/>
+                        <x-button responsive class="btn-xs btn-success btn-outline text-white text-sm"
+                                  icon="o-paper-airplane" label=" واتساپ"
+                                  link="https://wa.me/{{ getSetting('support_phone') }}"/>
+
+                    </div>
 
                 </div>
-
             </div>
-
-
-            <div class="text-center md:text-right">
-                <p class="text-xs mb-2 sm:text-sm leading-7">
-                    <b>
-                        دنا پکس
-                    </b>
-
-                    <br>
-
-                    عرضه‌کننده سوغات اصیل و خشکبار دنا با بسته‌بندی‌های شکیل و بهداشتی.
-
-                    هدف ما حفظ طعم و اصالت محصولات بومی و ارتباط مستقیم با تولیدکنندگان محلی است.
-                    دنـا پکس، یادآور طبیعت، طعم، و اصالت در هر بسته!
-
-                </p>
-                <x-hr/>
-            </div>
-
 
         </div>
 
-    </div>
+    @endif
+
+    <div class="container mx-auto">
 
 
-    <footer class="footer bg-base-50 text-base-content mx-auto container">
-
-
-        <nav>
-            <h6 class="footer-title">صفحات</h6>
-            <a wire:navigate href="{{ route('contact-us')  }}"
-               class="link link-hover">تماس باما</a>
-            <a wire:navigate href="{{ route('home.singlePage',['page'=>1,'slug'=>'درباره-ما']) }}"
-               class="link link-hover">درباره ما</a>
-
-            <a wire:navigate href="{{ route('home.singlePage',['page'=>2,'slug'=>slugMaker('قوانین و مقررات')])  }}"
-               class="link link-hover"> قوانین و مقررات </a>
-
-            <a wire:navigate href="{{ route('panel.shop.cart')  }}" rel="noopener nofollow"
-               class="link link-hover">سبد خرید </a>
-
-        </nav>
-
-        <nav>
-            <h6 class="footer-title">دسترسی سریع</h6>
-
-            <a wire:navigate href="{{ route('home.product.indexStore')  }}"
-               class="link link-hover"> لیست محصولات </a>
-
-
-            <a wire:navigate
-               href="https://denapax.ir/blog/17/%D8%B3%DB%8C-%D8%B3%D8%AE%D8%AA-%D9%86%DA%AF%DB%8C%D9%86-%D8%AF%D8%B1%D8%AE%D8%B4%D8%A7%D9%86-%D8%AF%D8%A7%D9%85%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AF%D9%86%D8%A7"
-               class="link link-hover"> سی سخت </a>
-
-
-            <a wire:navigate href="https://denapax.ir/store/category/2/%D9%85%DB%8C%D9%88%D9%87-%D8%AE%D8%B4%DA%A9"
-               class="link link-hover"> خرید میوه خشک </a>
-
-            <a wire:navigate
-               href="https://denapax.ir/store/category/1/%D8%AE%D8%B4%DA%A9%D8%A8%D8%A7%D8%B1-%D9%88-%D9%85%D8%BA%D8%B2%D9%87%D8%A7"
-               class="link link-hover"> خرید خشکبار و مغزها </a>
-
-        </nav>
 
 
         <aside class="mb-10">
@@ -123,22 +75,25 @@ hidden md:block
             </p>
         </aside>
 
-
-        <a href="https://wa.me/989173434796"
-           data-tip="پشتیبانی "
-           class="tooltip fixed bottom-20 left-4 bg-green-500 text-white rounded-full p-2 shadow-lg hover:bg-violet-600 transition"
-           target="_blank"
-           rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-3 h-3">
-                <path
-                    d="M20.52 3.48A11.933 11.933 0 0012 0C5.372 0 0 5.372 0 12a11.957 11.957 0 001.7 6.136L0 24l6.328-1.659A11.958 11.958 0 0012 24c6.628 0 12-5.372 12-12 0-3.194-1.228-6.197-3.48-8.52zM12 22.08c-1.852 0-3.68-.477-5.304-1.386l-.378-.214-3.764.987.988-3.764-.214-.378A10.086 10.086 0 011.92 12C1.92 6.498 6.498 1.92 12 1.92S22.08 6.498 22.08 12 17.502 22.08 12 22.08zm6.802-7.946c-.375-.188-2.222-1.098-2.567-1.226-.344-.128-.594-.188-.844.188-.25.375-.97 1.226-1.19 1.472-.218.25-.438.281-.813.094-.375-.188-1.582-.582-3.01-1.852-1.113-.993-1.862-2.21-2.08-2.585-.219-.375-.024-.562.165-.75.17-.17.375-.438.563-.657.188-.219.25-.375.375-.625.124-.25.063-.47-.031-.657-.094-.188-.844-2.031-1.157-2.782-.312-.75-.625-.656-.844-.656-.219 0-.469-.031-.719-.031-.25 0-.656.094-1.002.469-.344.375-1.31 1.28-1.31 3.12 0 1.842 1.344 3.622 1.532 3.875.188.25 2.645 4.053 6.432 5.686.9.375 1.605.6 2.152.781.906.288 1.73.25 2.376.156.719-.094 2.222-.906 2.533-1.781.312-.875.312-1.625.219-1.781-.094-.156-.344-.25-.719-.438z"/>
-            </svg>
-        </a>
+    </div>
 
 
-    </footer>
-
-
+    <a href="https://wa.me/09903632356"
+       data-tip="پشتیبانی "
+       class="tooltip fixed bottom-20 left-4 bg-green-500 text-white rounded-full p-2 shadow-lg hover:bg-violet-600 transition"
+       target="_blank"
+       rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-3 h-3">
+            <path
+                d="M20.52 3.48A11.933 11.933 0 0012 0C5.372 0 0 5.372 0 12a11.957 11.957 0 001.7 6.136L0 24l6.328-1.659A11.958 11.958 0 0012 24c6.628 0 12-5.372 12-12 0-3.194-1.228-6.197-3.48-8.52zM12 22.08c-1.852 0-3.68-.477-5.304-1.386l-.378-.214-3.764.987.988-3.764-.214-.378A10.086 10.086 0 011.92 12C1.92 6.498 6.498 1.92 12 1.92S22.08 6.498 22.08 12 17.502 22.08 12 22.08zm6.802-7.946c-.375-.188-2.222-1.098-2.567-1.226-.344-.128-.594-.188-.844.188-.25.375-.97 1.226-1.19 1.472-.218.25-.438.281-.813.094-.375-.188-1.582-.582-3.01-1.852-1.113-.993-1.862-2.21-2.08-2.585-.219-.375-.024-.562.165-.75.17-.17.375-.438.563-.657.188-.219.25-.375.375-.625.124-.25.063-.47-.031-.657-.094-.188-.844-2.031-1.157-2.782-.312-.75-.625-.656-.844-.656-.219 0-.469-.031-.719-.031-.25 0-.656.094-1.002.469-.344.375-1.31 1.28-1.31 3.12 0 1.842 1.344 3.622 1.532 3.875.188.25 2.645 4.053 6.432 5.686.9.375 1.605.6 2.152.781.906.288 1.73.25 2.376.156.719-.094 2.222-.906 2.533-1.781.312-.875.312-1.625.219-1.781-.094-.156-.344-.25-.719-.438z"/>
+        </svg>
+    </a>
 </div>
+
+
+
+
+
+
 
 
