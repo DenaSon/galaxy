@@ -31,7 +31,6 @@
     </head>
 </header>
 
-
 <body x-data class="font-sans antialiased" style="font-family: 'denapax-font','tahoma', serif !important;">
 
 
