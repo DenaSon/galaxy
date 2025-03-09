@@ -24,7 +24,7 @@ hidden md:block
                                   link="tel:{{ getSetting('support_phone') }}" external/>
                         <x-button responsive class="btn-xs btn-success btn-outline text-white text-sm font-thin"
                                   icon="o-paper-airplane" label=" واتساپ" external
-                                  link="https://wa.me/{{ getSetting('support_phone') }}"/>
+                                  link="https://wa.me/09903632356"/>
 
                     </div>
 
