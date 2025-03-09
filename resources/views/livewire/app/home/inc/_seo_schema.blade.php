@@ -1,7 +1,7 @@
 <!-- Basic Meta Tags -->
 <meta name="robots" content="index, follow" />
 @if (Request::is('/'))
-    <link rel="canonical" href="https://denapax.com/" />
+    <link rel="canonical" href="https://denapax.ir/"/>
 
 @endif
 <!-- SEO Meta Tags -->

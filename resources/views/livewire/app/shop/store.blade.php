@@ -1,5 +1,8 @@
 <div class="container mx-auto">
 
+    @push('SEO')
+        <meta name="description" content="{{ getSetting('meta_description') }}"/>
+    @endpush
 
     <x-nav class="h-24">
 
@@ -37,7 +40,7 @@
 
     <x-progress class="progress-primary h-0.5" indeterminate wire:loading/>
 
-
+    <h1 class="text-center mx-auto p-3"> لیست محصولات {{ getSetting('website_title') }} </h1>
 
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4">
 

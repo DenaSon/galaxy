@@ -9,7 +9,14 @@
 
             <x-form wire:submit="save">
                 <x-input label="نام دسته" wire:model="name" icon="o-pencil"/>
-                <x-input label="توضیحات" wire:model="description" placeholder="اختیاری"/>
+                <x-textarea
+                    label="توضیحات دسته"
+                    wire:model="description"
+                    placeholder="اینجا بنویسید...."
+                    hint="توضیح دسته بندی"
+                    rows="10"
+                    maxlength="40000"
+                    inline/>
 
                 <x-choices-offline
                     label="دسته والد"
@@ -39,7 +46,7 @@
                       ['key' => 'name', 'label' => 'دسته'],];
             @endphp
 
-            <x-table  :headers="$headers" :rows="$categories" wire:model="expanded" expandable with-pagination>
+            <x-table :headers="$headers" :rows="$categories" wire:model="expanded" expandable with-pagination>
 
 
                 @scope('expansion', $category)
@@ -77,9 +84,6 @@
                                             <x-button icon="o-trash" class="btn-square btn-xs font-thin text-sm"
                                                       @click="confirm('آیا مطمئن هستید که می‌خواهید این دسته را حذف کنید؟') && $wire.deleteSubCategory({{ $subcategory->id }})"/>
                                         </div>
-
-
-
 
 
                                     </div>

@@ -50,14 +50,14 @@ class IndexBlog extends Component
 
             ];
 
-            $response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/posts', $params);
+            $response = Http::get('https://denapax.ir/blogpress/wp-json/wp/v2/posts', $params);
 
             if ($response->successful()) {
                 $blogs = $response->json();
 
                 foreach ($blogs as &$blog) {
                     if (isset($blog['featured_media']) && $blog['featured_media']) {
-                        $mediaResponse = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/media/' . $blog['featured_media'], [
+                        $mediaResponse = Http::get('https://denapax.ir/blogpress/wp-json/wp/v2/media/' . $blog['featured_media'], [
                             '_fields' => 'id,source_url'
                         ]);
 
@@ -76,7 +76,7 @@ class IndexBlog extends Component
                 $blogs = [];
             }
 
-            $category_response = Http::get('https://denapax.com/blogpress/wp-json/wp/v2/categories?_fields=id,name,count');
+            $category_response = Http::get('https://denapax.ir/blogpress/wp-json/wp/v2/categories?_fields=id,name,count');
             if ($category_response->successful()) {
                 $categories_list = $category_response->json();
             } else {
@@ -84,7 +84,7 @@ class IndexBlog extends Component
             }
 
             if ($this->category) {
-                $category_name_url = 'https://denapax.com/blogpress/wp-json/wp/v2/categories/' . $this->category;
+                $category_name_url = 'https://denapax.ir/blogpress/wp-json/wp/v2/categories/' . $this->category;
                 $category_name_response = Http::get($category_name_url);
                 if ($category_name_response->successful()) {
 

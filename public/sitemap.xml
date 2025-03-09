@@ -2,40 +2,89 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
         <loc>http://localhost</loc>
-    
+
             </url>
     <url>
-        <loc>http://localhost/page/1/درباره-ما</loc>
-    
+        <loc>http://localhost/store</loc>
+
             </url>
     <url>
         <loc>http://localhost/store/product/1/آلو-ارگانیک-سی-سخت</loc>
-        <lastmod>2024-12-10T08:39:00+00:00</lastmod>
+        <lastmod>2025-01-08T13:48:32+00:00</lastmod>
 
             </url>
     <url>
         <loc>http://localhost/store/product/2/شیره-انگور-مرغوب</loc>
-        <lastmod>2024-12-10T13:14:13+00:00</lastmod>
+        <lastmod>2025-02-15T07:11:42+00:00</lastmod>
+
+    </url>
+    <url>
+        <loc>http://localhost/blog/563/دستور-پخت-5-شیرینی-آسان-و-سریع-برای-عید</loc>
+        <lastmod>2025-02-16T21:55:23+00:00</lastmod>
+
+    </url>
+    <url>
+        <loc>http://localhost/blog/553/جایگزین-های-سالم-و-خوشمزه-به-جای-قند</loc>
+        <lastmod>2025-02-15T21:41:33+00:00</lastmod>
+
+    </url>
+    <url>
+        <loc>http://localhost/blog/537/آجیل-های-اقتصادی-برای-نوروز</loc>
+        <lastmod>2025-02-15T18:00:11+00:00</lastmod>
+
+    </url>
+    <url>
+        <loc>http://localhost/blog/501/آموزش-طرز-تهیه-باقلوای-خانگی-با-پسته-کوهی</loc>
+        <lastmod>2025-02-14T23:14:16+00:00</lastmod>
+
+    </url>
+    <url>
+        <loc>http://localhost/blog/493/کهگیلویه-و-بویراحمد-مهد-بهترین-خشکبار-و-سوغات-ایران</loc>
+        <lastmod>2025-02-15T16:39:17+00:00</lastmod>
+
+    </url>
+    <url>
+        <loc>http://localhost/blog/489/خرید-آنلاین-بهترین-خشکبار-سی-سخت-و-دنا</loc>
+        <lastmod>2025-02-14T16:48:40+00:00</lastmod>
+
+    </url>
+    <url>
+        <loc>http://localhost/blog/481/چگونه-درخت-گیلاس-پرورش-دهیم-آموزش-کاشت-نگهداری-و-محافظت-از-میوه</loc>
+        <lastmod>2025-02-15T16:45:46+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://localhost/blog/25/بهترین-روش-های-نگهداری-خشکبار</loc>
-        <lastmod>2024-12-09T21:10:37+00:00</lastmod>
+        <loc>http://localhost/blog/473/۵-ماده-غذایی-برتر-برای-کاهش-کبد-چرب-و-افزایش-عملکرد-کبد</loc>
+        <lastmod>2025-02-01T17:09:01+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://localhost/blog/22/طرز-تهیه-فسنجان-با-مغز-گردوی-سی-سخت</loc>
-        <lastmod>2024-12-07T23:06:10+00:00</lastmod>
+        <loc>http://localhost/blog/458/کدام-مغزها-و-خشکبار-به-بهبود-کبد-چرب-کمک-می-کنند</loc>
+        <lastmod>2025-01-31T16:14:39+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://localhost/blog/17/سی-سخت-نگین-درخشان-دامنه-های-دنا</loc>
-        <lastmod>2024-12-07T20:24:47+00:00</lastmod>
+        <loc>http://localhost/blog/445/خواص-شگفت-انگیز-گیلاس-خشک-برای-سلامتی</loc>
+        <lastmod>2025-01-27T10:36:41+00:00</lastmod>
 
             </url>
     <url>
-        <loc>http://localhost/blog/1/چرا-محصولات-محلی-بهتر-از-محصولات-صنعتی-هستند</loc>
-        <lastmod>2024-12-07T20:32:42+00:00</lastmod>
+        <loc>
+            https://denapax.ir/blog/17/%D8%B3%DB%8C-%D8%B3%D8%AE%D8%AA-%D9%86%DA%AF%DB%8C%D9%86-%D8%AF%D8%B1%D8%AE%D8%B4%D8%A7%D9%86-%D8%AF%D8%A7%D9%85%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D8%AF%D9%86%D8%A7
+        </loc>
 
-            </url>
+    </url>
+    <url>
+        <loc>http://localhost/store/category/1/خشکبار</loc>
+        <lastmod>2024-12-08T13:08:15+00:00</lastmod>
+
+    </url>
+    <url>
+        <loc>http://localhost/page/1/درباره-ما</loc>
+
+    </url>
+    <url>
+        <loc>http://localhost/contact-us</loc>
+
+    </url>
 </urlset>

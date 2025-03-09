@@ -42,7 +42,7 @@ class RoleMiddleware
 //                'ip' => $request->ip(),
 //                'url' => $request->fullUrl(),
 //            ];
-//            $master_email = getSetting('admin_email') ?? 'info@denapax.com';
+//            $master_email = getSetting('admin_email') ?? 'info@denapax.ir';
 //
 //            Notification::route('mail', $master_email)->notify(new UnauthorizedAccessAlert($details));
 

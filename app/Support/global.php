@@ -19,7 +19,7 @@ use Morilog\Jalali\Jalalian;
 |--------------------------------------------------------------------------
 | Global Functions
 |--------------------------------------------------------------------------
-|| Here is for common website functions as helper . These
+|| Here is  common website functions as helper . These
 | functions are loaded by the laravel in everywhere  and all of them will
 | be assigned to the "Setting" model .
 |*/
@@ -253,7 +253,7 @@ function setLog($action = null, $description = null, $severity = null)
  * @param $datetime
  * @return string
  */
-function toSystemDate($datetime)
+function toSystemDate($datetime): string
 {
     $jalaliDate = Jalalian::fromFormat('Y-m-d H:i', $datetime);
     $gregorianDate = $jalaliDate->toCarbon();
@@ -264,7 +264,7 @@ function toSystemDate($datetime)
  * @param $date
  * @return string
  */
-function toSystemDateOnly($date)
+function toSystemDateOnly($date): string
 {
     $jalaliDate = Jalalian::fromFormat('Y-m-d', $date);
     $gregorianDate = $jalaliDate->toCarbon();

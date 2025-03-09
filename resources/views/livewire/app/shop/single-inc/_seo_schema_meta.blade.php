@@ -32,7 +32,7 @@
             ],
             "hasMerchantReturnPolicy" => [
                 "@type" => "MerchantReturnPolicy",
-                "url" => "https://denapax.com/page/4/return-policy",
+                "url" => "https://denapax.ir/page/1/return-policy",
                 "returnPolicyCategory" => "https://schema.org/RefundPolicy",
             ],
             "shippingDetails" => [
@@ -100,7 +100,7 @@ if ($product->comments->count() > 0) {
     $schemaData["aggregateRating"] = [
         "@type" => "AggregateRating",
         "ratingValue" => "4", // Default to 1 when no reviews
-        "reviewCount" =>1, // No reviews available
+        "reviewCount" =>5, // No reviews available
     ];
 
     $schemaData["review"] = [

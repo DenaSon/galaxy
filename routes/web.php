@@ -104,7 +104,7 @@ Route::middleware(['auth:web', RoleMiddleware::class . ':master', 'throttle:15,2
 
         Route::get('edit/{blog}', EditBlog::class)->name('edit');
         Route::get('list', ListBlog::class)->name('list')->lazy();
-        Route::get('categories', Categories::class)->name('categories')->lazy();
+        Route::get('categories', Categories::class)->name('categories');
     });
 
     Route::prefix('page')->name('page.')->group(function () {
@@ -115,7 +115,7 @@ Route::middleware(['auth:web', RoleMiddleware::class . ':master', 'throttle:15,2
     Route::prefix('shop')->name('shop.')->group(function () {
         Route::get('create', CreateProduct::class)->name('create');
         Route::get('list', ListProduct::class)->name('list');
-        Route::get('categories', \App\Livewire\Admin\Shop\Categories::class)->name('categories')->lazy();
+        Route::get('categories', \App\Livewire\Admin\Shop\Categories::class)->name('categories');
         Route::get('attribute', CreateAttribute::class)->name('attribute')->lazy();
         Route::get('orders', OrderList::class)->name('orders');
         Route::get('order-{order}', \App\Livewire\Admin\Shop\Orders\OrderDetail::class)->name('orderDetail');

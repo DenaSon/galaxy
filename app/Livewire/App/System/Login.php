@@ -53,7 +53,7 @@ class Login extends Component
             });
         } catch (ValidationException $e) {
 
-            $this->warning('صفحه کلید خود را به انگلیسی تغییر دهید', $e->getMessage());
+            $this->warning($e->getMessage(), '');
             return;
         } catch (Throwable $e) {
             Log::error($e->getMessage() . ' ' . $e->getFile() . ' ' . $e->getLine());

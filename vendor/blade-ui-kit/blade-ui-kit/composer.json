@@ -1,0 +1,80 @@
+{
+    "name": "blade-ui-kit/blade-ui-kit",
+    "description": "A set of renderless components to utilise in your Laravel Blade views.",
+    "keywords": [
+        "Blade",
+        "UI",
+        "Laravel"
+    ],
+    "homepage": "https://github.com/blade-ui-kit/blade-ui-kit",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/blade-ui-kit/blade-ui-kit/issues",
+        "source": "https://github.com/blade-ui-kit/blade-ui-kit"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/driesvints"
+        }
+    ],
+    "authors": [
+        {
+            "name": "Dries Vints",
+            "homepage": "https://driesvints.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "illuminate/filesystem": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/view": "^10.0|^11.0|^12.0",
+        "nesbot/carbon": "^2.38|^3.0"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.4",
+        "league/commonmark": "^1.4|^2.0",
+        "livewire/livewire": "^3.0",
+        "lorisleiva/cron-translator": "^0.1.1|^0.4",
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "orchestra/testbench-dusk": "^8.0|^9.0|^10.0",
+        "pestphp/pest": "^2.34|^3.0",
+        "phpunit/phpunit": "^10.5|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BladeUIKit\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BladeUIKit\\BladeUIKitServiceProvider"
+            ]
+        }
+    },
+    "suggest": {
+        "league/commonmark": "Required to use the markdown component (^1.4).",
+        "lorisleiva/cron-translator": "Required to use the cron component (^0.1.1)."
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "@dusk:install-chromedriver"
+        ],
+        "dusk:install-chromedriver": "@php vendor/bin/dusk-updater detect --auto-update --ansi"
+    }
+}
