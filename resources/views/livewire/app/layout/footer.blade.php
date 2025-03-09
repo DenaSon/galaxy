@@ -49,10 +49,11 @@ hidden md:block
                      style="height: 40px;width: 110px"/>
             </a>
 
-            <p>
-                دنا پکس | از دنا به خانه شما، جایی که طبیعت و اصالت به هم می‌رسند!
 
-                <br/>
+            <span class="text-sm">دنا پکس | از دنا به خانه شما، جایی که طبیعت و اصالت به هم می‌رسند!</span>
+
+
+            <br/>
                 <span class="text-xs text-gray-500">
                     © 2024   | همه حقوق محفوظ است. طراحی و توسعه با ❤️ توسط
                     <a title="تیم دناپکس" class="link text-pink-800 tooltip" data-tip="ارتباط با طراح" target="_blank"
@@ -64,7 +65,7 @@ hidden md:block
 
                 <div class="w-20 h-24 rounded flex items-center justify-center p-0">
 
-                    <a
+                    <a class="hidden sm:block"
                         target='_blank'
                         href='{{ route('home.singlePage',['page' =>3 ,'slug' => 'trust-denapax-com']) }}'>
                         <img loading="lazy"
@@ -75,7 +76,7 @@ hidden md:block
 
 
             </div>
-            </p>
+
         </aside>
 
     </div>
