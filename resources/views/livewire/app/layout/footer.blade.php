@@ -10,10 +10,10 @@ hidden md:block
             <div class="card bg-base-100 w-full  max-w-[1024px] shadow-2xl border border-gray-200 rounded-2xl">
                 <div class="card-body">
 
-                    <h2 class="card-title">
+                    <h4 class="card-title text-center mx-auto">
                         سوالات متداول
 
-                    </h2>
+                    </h4>
 
                     @include('livewire.app.layout.inc.questions-section')
 
