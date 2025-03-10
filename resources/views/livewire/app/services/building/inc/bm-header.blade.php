@@ -5,7 +5,6 @@
 
         <div class="text-center mx-auto">
 
-            @livewire('app.services.components.add-elevator',['building' => $building])
 
         </div>
     </x-slot:middle>

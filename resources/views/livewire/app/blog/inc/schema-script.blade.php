@@ -25,6 +25,7 @@
     "dateModified": "{{ \Carbon\Carbon::parse($article['modified'])->format('c') }}"
 }
 </script>
+<meta property="og:locale" content="fa_IR">
 
 <meta name="description" content="{{ $article['yoast_head_json']['description'] ?? $article['excerpt']['rendered']   }}">
 <link rel="canonical" href="{{ singleBlogUrl($article['id'], $article['title']['rendered']) }}">

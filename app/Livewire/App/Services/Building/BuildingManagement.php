@@ -4,8 +4,8 @@ namespace App\Livewire\App\Services\Building;
 
 use App\Models\Building;
 use App\Models\Elevator;
+use App\Models\Member;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
@@ -21,11 +21,10 @@ class BuildingManagement extends Component
     public function mount(Building $building)
     {
         $this->authorize('view', $building);
-
         $this->building = $building;
     }
 
-    public function delete(Elevator $elevator)
+    public function deleteElevator(Elevator $elevator)
     {
 
         $this->authorize('delete', $elevator);
@@ -33,10 +32,22 @@ class BuildingManagement extends Component
         $this->info('', 'آسانسور حذف شد');
     }
 
+    public function deleteMember(Member $member)
+    {
+        if ($this->building->id !== $member->building_id) {
+            return;
+        } else {
+            $member->delete();
+            $this->info('', 'عضو ساختمان حذف شد');
+        }
+
+    }
+
     public function render()
     {
         $elevators = $this->building->elevators()->latest()->get();
-        return view('livewire.app.services.building.building-management', compact('elevators'))
+        $members = $this->building->members()->latest()->get();
+        return view('livewire.app.services.building.building-management', compact('elevators', 'members'))
             ->title('مدیریت ساختمان ' . $this->building->builder_name);
     }
 }

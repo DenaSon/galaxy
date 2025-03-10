@@ -9,6 +9,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Building extends Model
 {
     public $guarded = [];
+
+    public function members()
+    {
+        return $this->hasMany(Member::class);
+
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo('App\Models\User');
