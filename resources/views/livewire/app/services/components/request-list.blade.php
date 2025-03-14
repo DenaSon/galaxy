@@ -1,4 +1,5 @@
-<x-card title="گزارش‌ها" subtitle="درخواست‌های ارسال شده ساختمان {{ $building->builder_name }}" separator
+<x-card wire:poll.visible title="گزارش‌ها" subtitle="درخواست‌های ارسال شده ساختمان {{ $building->builder_name }}"
+        separator
         class="shadow-2xl border w-full  mt-3">
 
 
@@ -14,7 +15,7 @@
                 <th>اقدامات</th>
             </tr>
             </thead>
-            <tbody wire:poll.visible>
+            <tbody>
 
             @forelse($requests as $request)
 
