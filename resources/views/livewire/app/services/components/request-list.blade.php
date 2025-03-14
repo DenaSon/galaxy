@@ -14,7 +14,7 @@
                 <th>اقدامات</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody wire:poll.visible>
 
             @forelse($requests as $request)
 
