@@ -29,6 +29,7 @@ class RequestList extends Component
     {
         $request->update(['status' => 'rejected']);
         $this->info('لغو درخواست', 'درخواست لغو شد', position: 'toast-middle toast-center');
+        $this->redirectRoute('service.building-management', ['building' => $this->building->id]);
     }
 
     public function render()
