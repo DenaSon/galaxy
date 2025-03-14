@@ -3,6 +3,9 @@
 namespace App\Livewire\App\Services\Building;
 
 use App\Models\Building;
+use App\Models\City;
+use App\Models\Province;
+use App\Models\Request;
 use Illuminate\Support\Facades\Http;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -26,6 +29,11 @@ class BuildingArea extends Component
     public $longitude;
     public $floors;
 
+    public $province;
+    public $city;
+    public $province_list;
+    public $city_list;
+
     public $show = true;
 
 
@@ -33,8 +41,22 @@ class BuildingArea extends Component
     {
         try {
             $building = Building::where('user_id', auth()->user()->id)->where('id', $id)->first();
-            $building->delete();
-            $this->info('ساختمان حذف شد', '');
+
+            if ($building) {
+                $activeRequest = Request::where('building_id', $building->id)->where('status', 'pending')->exists();
+                if (!$activeRequest) {
+                    $building->elevators()->delete();
+                    $building->requests()->delete();
+                    $building->members()->delete();
+                    $building->delete();
+                    $this->info('ساختمان حذف شد', '');
+
+                } else {
+                    $this->warning('درخواست فعال وجود دارد', 'ابتدا درخواست های فعال را لغو کنید');
+                }
+            }
+
+
         } catch (Throwable $e) {
             $this->warning('Failed to remove building', $e->getMessage());
         }
@@ -53,12 +75,16 @@ class BuildingArea extends Component
             'latitude' => 'nullable',
             'longitude' => 'nullable',
             'floors' => 'required|numeric',
+            'province' => 'required|exists:provinces,id',
+            'city' => 'required|exists:cities,id',
         ]);
         try {
             $building = Building::create([
                 'user_id' => auth()->user()->id,
                 'builder_name' => $this->builder_name,
                 'emergency_contact' => $this->emergency_contact,
+                'province_id' => $this->province,
+                'city_id' => $this->city,
                 'latitude' => $this->latitude,
                 'longitude' => $this->longitude,
                 'floors' => $this->floors,
@@ -70,12 +96,13 @@ class BuildingArea extends Component
             if ($building) {
 
                 $this->success('ثبت ساختمان', 'ساختمان شما با موفقیت ثبت شد');
+
             }
 
         } catch (Throwable $e) {
 
             $this->error('', $e->getMessage());
-            $this->error = $e->getMessage();
+
 
         }
 
@@ -84,9 +111,12 @@ class BuildingArea extends Component
 
     public function mount()
     {
+        $this->province_list = Province::get(['id', 'name']);
+        $this->city_list = [];
         $this->first_name = \Auth::user()->first_name;
         $this->last_name = \Auth::user()->last_name;
     }
+
 
     public function updatedFirstname($value)
     {
@@ -98,6 +128,14 @@ class BuildingArea extends Component
     public function updatedLatitude($value)
     {
         $this->showLocation();
+    }
+
+    public function updatedProvince($value)
+    {
+        $this->validate([
+            'province' => 'numeric|exists:provinces,id',
+        ]);
+        $this->city_list = City::where('province_id', $value)->get();
     }
 
     public function showLocation()

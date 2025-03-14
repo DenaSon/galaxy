@@ -12,12 +12,22 @@ class City extends Model
         return $this->belongsTo(Province::class);
     }
 
+    public function Buildings()
+    {
+        return $this->hasMany(Building::class);
 
+    }
 
 
     public function addresses()
     {
         return $this->hasMany(Address::class);
+    }
+
+    public function requests()
+    {
+        return $this->hasMany(Request::class);
+
     }
 
 

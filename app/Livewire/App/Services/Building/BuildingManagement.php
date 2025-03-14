@@ -5,6 +5,7 @@ namespace App\Livewire\App\Services\Building;
 use App\Models\Building;
 use App\Models\Elevator;
 use App\Models\Member;
+use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -16,6 +17,7 @@ class BuildingManagement extends Component
     use Toast, AuthorizesRequests;
 
     public $building;
+    public $showHelp = false;
 
 
     public function mount(Building $building)
@@ -45,9 +47,11 @@ class BuildingManagement extends Component
 
     public function render()
     {
+
+
         $elevators = $this->building->elevators()->latest()->get();
         $members = $this->building->members()->latest()->get();
         return view('livewire.app.services.building.building-management', compact('elevators', 'members'))
-            ->title('مدیریت ساختمان ' . $this->building->builder_name);
+            ->title('مدیریت ساختمان ' . $this->building?->builder_name);
     }
 }

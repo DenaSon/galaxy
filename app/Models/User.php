@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -38,6 +39,7 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+
     public function buildings(): User|HasMany
     {
         return $this->hasMany('App\Models\Building');
@@ -56,6 +58,7 @@ class User extends Authenticatable
     {
         return $this->roles()->where('name', '=','technician')->doesntExist();
     }
+
 
     /**
      * Get the attributes that should be cast.
@@ -95,7 +98,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Product::class, 'favorites', 'user_id', 'product_id');
     }
 
-    public function orders()
+    public function orders(): User|HasMany
     {
         return $this->hasMany(Order::class);
     }
@@ -107,7 +110,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Blog::class);
     }
-    public function addresses()
+
+    public function addresses(): User|HasMany
     {
         return $this->hasMany(Address::class);
     }

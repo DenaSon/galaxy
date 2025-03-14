@@ -15,6 +15,11 @@
 
         <div class="w-full md:w-4/5 p-4">
 
+            <div class="flex justify-center mt-4">
+
+                @livewire('app.services.components.request-list')
+
+            </div>
 
         </div>
 

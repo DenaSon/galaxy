@@ -69,12 +69,31 @@
                      :readonly="!$isNameEmpty" :disabled="!$isNameEmpty"/>
         </div>
 
+
         <div class="grid grid-cols-2 gap-6 mb-4">
             <x-input clearable inline label="نام ساختمان" wire:model="builder_name"/>
             <x-input type="number" clearable inline label="تعداد طبقات" wire:model="floors"/>
         </div>
 
-        <div class="grid grid-cols-2 gap-6 mb-4">
+            <div class="grid grid-cols-2 gap-6 mb-4">
+                <x-select
+                    wire:dirty.attr="disabled"
+                    inline
+                    placeholder="انتخاب"
+                    label="انتخاب استان"
+                    icon="o-user"
+                    :options="$province_list"
+                    wire:model.live.debounce.2ms="province"
+                    class="mb-1"
+                    wire:loading.attr="disabled"
+                    wire:target="updatedProvince"
+                />
+                <x-select wire:target="updatedProvince" placeholder="انتخاب" wire:loading.attr="disabled" inline
+                          label="انتخاب شهر" icon="o-user" :options="$city_list" wire:model="city" class="mb-2"/>
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-6 mb-4">
             <x-input type="number" clearable inline label="شماره تلفن اضطراری" wire:model="emergency_contact"/>
             <x-input type="number" clearable inline label="پلاک" wire:model="identify"/>
         </div>

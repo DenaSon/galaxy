@@ -8,7 +8,7 @@ use Mary\Traits\Toast;
 
 class [class] extends Component
 {
-use Toast;
+    use Toast;
 
     public function mount()
     {

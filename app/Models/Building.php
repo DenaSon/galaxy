@@ -10,10 +10,16 @@ class Building extends Model
 {
     public $guarded = [];
 
+
     public function members()
     {
         return $this->hasMany(Member::class);
 
+    }
+
+    public function requests()
+    {
+        return $this->hasMany(Request::class);
     }
 
     public function user(): BelongsTo
@@ -31,4 +37,16 @@ class Building extends Model
         return $this->elevators()->count() > 0;
 
     }
+
+    public function province(): BelongsTo
+    {
+        return $this->belongsTo(Province::class);
+    }
+
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(Province::class);
+    }
+
+
 }

@@ -1,7 +1,10 @@
 <div class="text-gray-600 sm:mb-1 mb-4 @if(request()->routeIs('panel.shop.cart') || request()->routeIs('home.product.indexStore'))
 hidden md:block
 @endif">
-    @include('livewire.app.layout.inc.footer-icons')
+
+    @if(!request()->routeIs('service.building-management'))
+        @include('livewire.app.layout.inc.footer-icons')
+    @endif
 
     <div class="container mx-auto px-4 py-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
