@@ -82,6 +82,10 @@ class SendRequest extends Component
 
             $this->reset(['description']);
             $this->sendRequestModal = false;
+
+
+            $this->redirectRoute('service.building-management', ['building' => $request->building_id]);
+
         } catch (Throwable $e) {
             $this->error($e->getMessage());
             logger($e->getMessage());

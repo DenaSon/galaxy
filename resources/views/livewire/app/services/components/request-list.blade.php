@@ -1,4 +1,4 @@
-<x-card wire:poll.visible title="گزارش‌ها" subtitle="درخواست‌های ارسال شده ساختمان {{ $building->builder_name }}"
+<x-card title="گزارش‌ها" subtitle="درخواست‌های ارسال شده ساختمان {{ $building->builder_name }}"
         separator
         class="shadow-2xl border w-full  mt-3">
 
