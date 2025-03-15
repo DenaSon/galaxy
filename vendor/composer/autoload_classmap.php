@@ -62,6 +62,7 @@ return array(
     'App\\Livewire\\App\\Services\\Components\\AddMember' => $baseDir . '/app/Livewire/App/Services/Components/AddMember.php',
     'App\\Livewire\\App\\Services\\Components\\RequestList' => $baseDir . '/app/Livewire/App/Services/Components/RequestList.php',
     'App\\Livewire\\App\\Services\\Components\\SendRequest' => $baseDir . '/app/Livewire/App/Services/Components/SendRequest.php',
+    'App\\Livewire\\App\\Services\\Components\\StaticMap' => $baseDir . '/app/Livewire/App/Services/Components/StaticMap.php',
     'App\\Livewire\\App\\Services\\Technician\\TechnicianArea' => $baseDir . '/app/Livewire/App/Services/Technician/TechnicianArea.php',
     'App\\Livewire\\App\\Shop\\Cart\\ShopCart' => $baseDir . '/app/Livewire/App/Shop/Cart/ShopCart.php',
     'App\\Livewire\\App\\Shop\\Chart\\ViewsChart' => $baseDir . '/app/Livewire/App/Shop/Chart/ViewsChart.php',

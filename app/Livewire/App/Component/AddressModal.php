@@ -127,7 +127,7 @@ class AddressModal extends Component
             $this->addressModal = false;
 
 
-            if ($this->currentRouteName != 'technician.technician-area') {
+            if ($this->currentRouteName != 'service.technician-area') {
                 $this->redirectRoute('panel.checkout', [], true, true);
             }
 

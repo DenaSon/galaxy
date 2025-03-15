@@ -64,9 +64,9 @@
 
         <div class="grid grid-cols-2 gap-6 mb-4">
             <x-input inline label="نام" wire:model.live.debounce.150ms="first_name" class="mb-2"
-                     :readonly="!$isNameEmpty" :disabled="!$isNameEmpty"/>
+            />
             <x-input inline label="نام خانوادگی" wire:model.live.debounce.150ms="last_name" class="mb-2"
-                     :readonly="!$isNameEmpty" :disabled="!$isNameEmpty"/>
+            />
         </div>
 
 

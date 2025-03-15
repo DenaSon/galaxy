@@ -7,6 +7,16 @@
                 src="https://api.neshan.org/v4/static?key={{ $apiKey }}&type=neshan&width=500&height=350&zoom=16&center={{ $lat }},{{ $lng }}&markerToken=431815.ZlPCN9kU"
                 alt="Static Map">
 
+
+            <div class="text-justify mt-2">
+
+
+                <span> {{ $building->address }} </span>
+                <b>ساختمان {{ $building->builder_name }}</b>
+                <b>پلاک {{ $building->identify }}</b>
+
+            </div>
+
         </div>
 
     </x-modal>

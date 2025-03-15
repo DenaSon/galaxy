@@ -17,7 +17,7 @@
 
             <div class="flex justify-center mt-4">
 
-                @livewire('app.services.components.request-list')
+                @livewire('app.services.components.technician.report-list')
 
             </div>
 

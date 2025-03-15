@@ -728,6 +728,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'App\\Livewire\\App\\Services\\Components\\AddMember' => __DIR__ . '/../..' . '/app/Livewire/App/Services/Components/AddMember.php',
         'App\\Livewire\\App\\Services\\Components\\RequestList' => __DIR__ . '/../..' . '/app/Livewire/App/Services/Components/RequestList.php',
         'App\\Livewire\\App\\Services\\Components\\SendRequest' => __DIR__ . '/../..' . '/app/Livewire/App/Services/Components/SendRequest.php',
+        'App\\Livewire\\App\\Services\\Components\\StaticMap' => __DIR__ . '/../..' . '/app/Livewire/App/Services/Components/StaticMap.php',
         'App\\Livewire\\App\\Services\\Technician\\TechnicianArea' => __DIR__ . '/../..' . '/app/Livewire/App/Services/Technician/TechnicianArea.php',
         'App\\Livewire\\App\\Shop\\Cart\\ShopCart' => __DIR__ . '/../..' . '/app/Livewire/App/Shop/Cart/ShopCart.php',
         'App\\Livewire\\App\\Shop\\Chart\\ViewsChart' => __DIR__ . '/../..' . '/app/Livewire/App/Shop/Chart/ViewsChart.php',
