@@ -396,8 +396,8 @@ class Validator implements ValidatorContract
 
         foreach ($data as $key => $value) {
             $originalData[$this->replacePlaceholderInString($key)] = is_array($value)
-                        ? $this->replacePlaceholders($value)
-                        : $value;
+                ? $this->replacePlaceholders($value)
+                : $value;
         }
 
         return $originalData;
@@ -588,8 +588,8 @@ class Validator implements ValidatorContract
     public function safe(?array $keys = null)
     {
         return is_array($keys)
-                ? (new ValidatedInput($this->validated()))->only($keys)
-                : new ValidatedInput($this->validated());
+            ? (new ValidatedInput($this->validated()))->only($keys)
+            : new ValidatedInput($this->validated());
     }
 
     /**
@@ -675,8 +675,8 @@ class Validator implements ValidatorContract
 
         if ($rule instanceof RuleContract) {
             return $validatable
-                    ? $this->validateUsingCustomRule($attribute, $value, $rule)
-                    : null;
+                ? $this->validateUsingCustomRule($attribute, $value, $rule)
+                : null;
         }
 
         $method = "validate{$rule}";
@@ -1244,9 +1244,9 @@ class Validator implements ValidatorContract
         $response = (new ValidationRuleParser($this->data))
             ->explode(ValidationRuleParser::filterConditionalRules($rules, $this->data));
 
-        $this->rules = array_merge_recursive(
-            $this->rules, $response->rules
-        );
+        foreach ($response->rules as $key => $rule) {
+            $this->rules[$key] = array_merge($this->rules[$key] ?? [], $rule);
+        }
 
         $this->implicitAttributes = array_merge(
             $this->implicitAttributes, $response->implicitAttributes
@@ -1291,8 +1291,8 @@ class Validator implements ValidatorContract
         $lastSegmentOfAttribute = strrchr($attribute, '.');
 
         $attribute = $lastSegmentOfAttribute && $removeLastSegmentOfAttribute
-                    ? Str::replaceLast($lastSegmentOfAttribute, '', $attribute)
-                    : $attribute;
+            ? Str::replaceLast($lastSegmentOfAttribute, '', $attribute)
+            : $attribute;
 
         return is_array($data = data_get($this->data, $attribute))
             ? new Fluent($data)
@@ -1321,7 +1321,7 @@ class Validator implements ValidatorContract
     public function addExtensions(array $extensions)
     {
         if ($extensions) {
-            $keys = array_map([Str::class, 'snake'], array_keys($extensions));
+            $keys = array_map(Str::snake(...), array_keys($extensions));
 
             $extensions = array_combine($keys, array_values($extensions));
         }
@@ -1408,7 +1408,7 @@ class Validator implements ValidatorContract
     public function addReplacers(array $replacers)
     {
         if ($replacers) {
-            $keys = array_map([Str::class, 'snake'], array_keys($replacers));
+            $keys = array_map(Str::snake(...), array_keys($replacers));
 
             $replacers = array_combine($keys, array_values($replacers));
         }

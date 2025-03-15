@@ -97,16 +97,16 @@ class Table extends Component
     {
         $format = $header['format'] ?? null;
 
-        if (!$format){
+        if (! $format) {
             return $field;
         }
 
-        if (is_callable($format)){
+        if (is_callable($format)) {
             return $format($row, $field);
         }
 
         if ($format[0] == 'currency') {
-            return ($format[2] ?? '').number_format($field, ...str_split($format[1]));
+            return ($format[2] ?? '') . number_format($field, ...str_split($format[1]));
         }
 
         if ($format[0] == 'date' && $field) {
@@ -236,6 +236,7 @@ class Table extends Component
                                     this.handleCheckAll()
                                 },
                                 toggleCheckAll(checked) {
+                                    this.$dispatch('row-selection-all', { selected: checked });
                                     checked ? this.pushIds() : this.removeIds()
                                 },
                                 toggleExpand(key) {
@@ -272,7 +273,7 @@ class Table extends Component
                         }}
                     >
                         <!-- HEADERS -->
-                        <thead @class(["text-black dark:text-gray-200", "hidden" => $noHeaders])>
+                        <thead @class(["text-base-content", "hidden" => $noHeaders])>
                             <tr x-ref="headers">
                                 <!-- CHECKALL -->
                                 @if($selectable)
@@ -340,7 +341,7 @@ class Table extends Component
                                             <input
                                                 id="checkbox-{{ $uuid }}-{{ $k }}"
                                                 type="checkbox"
-                                                class="checkbox checkbox-sm checkbox-primary"
+                                                class="checkbox checkbox-sm"
                                                 value="{{ data_get($row, $selectableKey) }}"
                                                 x-model{{ $selectableModifier() }}="selection"
                                                 @click="toggleCheck($el.checked, {{ json_encode($row) }})" />
@@ -419,12 +420,12 @@ class Table extends Component
 
                     @if(count($rows) === 0)
                         @if($showEmptyText)
-                            <div class="text-center py-4 text-gray-500 dark:text-gray-400">
+                            <div class="text-center py-4 text-base-content/50">
                                 {{ $emptyText }}
                             </div>
                         @endif
                         @if($empty)
-                            <div class="text-center py-4 text-gray-500 dark:text-gray-400">
+                            <div class="text-center py-4 text-base-content/50">
                                 {{ $empty }}
                             </div>
                         @endif

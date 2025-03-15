@@ -114,8 +114,8 @@ class SqlServerGrammar extends Grammar
     protected function compileIndexHint(Builder $query, $indexHint)
     {
         return $indexHint->type === 'force'
-                    ? "with (index({$indexHint->index}))"
-                    : '';
+            ? "with (index({$indexHint->index}))"
+            : '';
     }
 
     /**
@@ -281,8 +281,8 @@ class SqlServerGrammar extends Grammar
         $sql = parent::compileDeleteWithoutJoins($query, $table, $where);
 
         return ! is_null($query->limit) && $query->limit > 0 && $query->offset <= 0
-                        ? Str::replaceFirst('delete', 'delete top ('.$query->limit.')', $sql)
-                        : $sql;
+            ? Str::replaceFirst('delete', 'delete top ('.$query->limit.')', $sql)
+            : $sql;
     }
 
     /**
@@ -557,12 +557,13 @@ class SqlServerGrammar extends Grammar
      * Wrap a table in keyword identifiers.
      *
      * @param  \Illuminate\Contracts\Database\Query\Expression|string  $table
+     * @param  string|null  $prefix
      * @return string
      */
-    public function wrapTable($table)
+    public function wrapTable($table, $prefix = null)
     {
         if (! $this->isExpression($table)) {
-            return $this->wrapTableValuedFunction(parent::wrapTable($table));
+            return $this->wrapTableValuedFunction(parent::wrapTable($table, $prefix));
         }
 
         return $this->getValue($table);
