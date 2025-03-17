@@ -18,15 +18,15 @@ hidden md:block
                     @include('livewire.app.layout.inc.questions-section')
 
                     <div class="card-actions justify-center mt-1">
-                        <x-button responsive class="btn-xs btn-info btn-outline text-white text-sm font-thin"
+                        <x-button responsive class="btn-xs btn-info btn-outline  text-sm font-thin"
                                   icon="o-phone"
                                   label="تلفن"
                                   link="tel:{{ getSetting('support_phone') }}" external/>
-                        <x-button responsive class="btn-xs btn-success btn-outline text-white text-sm font-thin"
+                        <x-button responsive class="btn-xs btn-success btn-outline  text-sm font-thin"
                                   icon="o-paper-airplane" label=" واتساپ" external
                                   link="https://wa.me/09903632356"/>
 
-                        <x-button responsive class="btn-xs btn-warning btn-outline text-white text-sm font-thin"
+                        <x-button responsive class="btn-xs btn-warning btn-outline  text-sm font-thin"
                                   icon="o-globe-alt" label="فرم تماس"
                                   link="{{ route('contact-us') }}"/>
 
