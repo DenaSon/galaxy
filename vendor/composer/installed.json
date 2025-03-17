@@ -5750,17 +5750,17 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.7",
-            "version_normalized": "0.12.7.0",
+            "version": "v0.12.8",
+            "version_normalized": "0.12.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "d73fa3c74918ef4522bb8a3bf9cab39161c4b57c"
+                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/d73fa3c74918ef4522bb8a3bf9cab39161c4b57c",
-                "reference": "d73fa3c74918ef4522bb8a3bf9cab39161c4b57c",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/85057ceedee50c49d4f6ecaff73ee96adb3b3625",
+                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625",
                 "shasum": ""
             },
             "require": {
@@ -5782,7 +5782,7 @@
                 "ext-pdo-sqlite": "The doc command requires SQLite to work.",
                 "ext-posix": "If you have PCNTL, you'll want the POSIX extension as well."
             },
-            "time": "2024-12-10T01:58:33+00:00",
+            "time": "2025-03-16T03:05:19+00:00",
             "bin": [
                 "bin/psysh"
             ],
@@ -5826,7 +5826,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.7"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.8"
             },
             "install-path": "../psy/psysh"
         },
@@ -6058,12 +6058,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/robsontenorio/mary.git",
-                "reference": "08ec5e23a8d77adcc288951b9d560de34e38bdde"
+                "reference": "d406c563eee612b7d10db7a1b266968ed62b9336"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/robsontenorio/mary/zipball/08ec5e23a8d77adcc288951b9d560de34e38bdde",
-                "reference": "08ec5e23a8d77adcc288951b9d560de34e38bdde",
+                "url": "https://api.github.com/repos/robsontenorio/mary/zipball/d406c563eee612b7d10db7a1b266968ed62b9336",
+                "reference": "d406c563eee612b7d10db7a1b266968ed62b9336",
                 "shasum": ""
             },
             "require": {
@@ -6076,7 +6076,7 @@
                 "orchestra/testbench": "^8|^9|^10",
                 "phpunit/phpunit": "^10|^11"
             },
-            "time": "2025-03-15T15:05:21+00:00",
+            "time": "2025-03-17T01:07:05+00:00",
             "type": "library",
             "extra": {
                 "laravel": {

@@ -90,7 +90,6 @@
 <x-main with-nav full-width collapse-text="">
     <x-slot:content dir="rtl">
 
-
     {{ $slot }}
         @livewire('app.home.mobile-menu')
         <footer>
