@@ -1,6 +1,6 @@
 <div>
 
-    <div class="btm-nav md:hidden border border-gray-100 rounded" style="z-index: 10001">
+    <div class="dock dock-md md:hidden border border-gray-100 rounded" style="z-index: 10001">
 
 
         <a wire:navigate role="button" href="{{ homeUrl() }}" class="hover:text-primary">
