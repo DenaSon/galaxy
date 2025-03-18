@@ -20,7 +20,6 @@
                     <x-group
                         label="انتخاب نوع"
                         :options="$product->variants()->orderBy('price')->select(['id', 'type'])->get()"
-                        wire:model="selectedUser2"
                         option-value="id"
                         option-label="type"
                         class="[&:checked]:!btn-primary btn-sm"
