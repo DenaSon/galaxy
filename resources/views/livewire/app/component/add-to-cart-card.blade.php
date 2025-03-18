@@ -22,7 +22,7 @@
                         :options="$product->variants()->orderBy('price')->select(['id', 'type'])->get()"
                         option-value="id"
                         option-label="type"
-                        class="[&:checked]:!btn-primary btn-sm"
+                        class="btn btn-sm sm:btn-md md:btn-lg [&:checked]:!btn-success"
                         wire:model.live="variant"/>
 
                 </div>
