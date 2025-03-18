@@ -1,6 +1,6 @@
 Overview
 
-DenaPax is an online store specializing in high-quality local delicacies, dried fruits, nuts, and other traditional snacks sourced from reputable local producers. The platform is built using Laravel with WordPress API integration for content management and SEO enhancement.
+galaxy is an online store specializing in high-quality local delicacies, dried fruits, nuts, and other traditional snacks sourced from reputable local producers. The platform is built using Laravel with WordPress API integration for content management and SEO enhancement.
 
 Features
 
@@ -52,8 +52,8 @@ Steps to Install
 
 Clone the repository:
 
-git clone https://github.com/your-username/denapax.git
-cd denapax
+git clone https://github.com/denason/galaxy.git
+cd galaxy
 
 Install dependencies:
 
@@ -82,7 +82,7 @@ php artisan serve
 
 API Integration
 
-DenaPax retrieves blog content using the WordPress REST API. Ensure the WordPress installation has the wp-json API enabled. API endpoint example:
+galaxy retrieves blog content using the WordPress REST API. Ensure the WordPress installation has the wp-json API enabled. API endpoint example:
 
 https://your-wordpress-site.com/wp-json/wp/v2/posts
 
@@ -102,13 +102,13 @@ Open a Pull Request.
 
 License
 
-DenaPax is licensed under the MIT License. See LICENSE for details.
+galaxy is licensed under the MIT License. See LICENSE for details.
 
 Contact
 
 For inquiries or support, contact us at:
 
-Website: https://denapax.com
+Website: https://galaxy.com
 
-Email: support@denapax.com
+Email: support@galaxy.com
 
