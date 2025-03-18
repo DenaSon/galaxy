@@ -31,7 +31,7 @@
     </head>
 </header>
 
-<body x-data class="font-sans antialiased" style="font-family: 'denapax-font','tahoma', serif !important;">
+<body x-data class="font-sans antialiased" style="font-family: 'tahoma','tahoma', serif !important;">
 
 
 <!-- Navigation Bar -->

@@ -2,6 +2,7 @@ import "./libs/trix";
 import './bootstrap';
 import '../css/app.css';
 import '../css/style.css';
+import 'swiper/css';
 
 
 import Swiper from 'swiper/bundle';
@@ -107,3 +108,4 @@ document.addEventListener('livewire:navigated', (event) => {
     startSwiper();
 
 }, {once: true});
+

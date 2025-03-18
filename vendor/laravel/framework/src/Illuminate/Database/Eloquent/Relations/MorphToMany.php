@@ -11,7 +11,7 @@ use Illuminate\Support\Collection;
  * @template TRelatedModel of \Illuminate\Database\Eloquent\Model
  * @template TDeclaringModel of \Illuminate\Database\Eloquent\Model
  *
- * @extends \Illuminate\Database\Eloquent\Relations\BelongsToMany<TRelatedModel, TDeclaringModel>
+ * @extends \Illuminate\Database\Eloquent\Relations\BelongsToMany<TRelatedModel, TDeclaringModel, \Illuminate\Database\Eloquent\Relations\Pivot>
  */
 class MorphToMany extends BelongsToMany
 {
@@ -157,8 +157,9 @@ class MorphToMany extends BelongsToMany
 
         $attributes = array_merge([$this->morphType => $this->morphClass], $attributes);
 
-        $pivot = $using ? $using::fromRawAttributes($this->parent, $attributes, $this->table, $exists)
-                        : MorphPivot::fromAttributes($this->parent, $attributes, $this->table, $exists);
+        $pivot = $using
+            ? $using::fromRawAttributes($this->parent, $attributes, $this->table, $exists)
+            : MorphPivot::fromAttributes($this->parent, $attributes, $this->table, $exists);
 
         $pivot->setPivotKeys($this->foreignPivotKey, $this->relatedPivotKey)
             ->setRelatedModel($this->related)
@@ -177,11 +178,15 @@ class MorphToMany extends BelongsToMany
      */
     protected function aliasedPivotColumns()
     {
-        $defaults = [$this->foreignPivotKey, $this->relatedPivotKey, $this->morphType];
-
-        return (new Collection(array_merge($defaults, $this->pivotColumns)))->map(function ($column) {
-            return $this->qualifyPivotColumn($column).' as pivot_'.$column;
-        })->unique()->all();
+        return (new Collection([
+            $this->foreignPivotKey,
+            $this->relatedPivotKey,
+            $this->morphType,
+            ...$this->pivotColumns,
+        ]))
+            ->map(fn ($column) => $this->qualifyPivotColumn($column).' as pivot_'.$column)
+            ->unique()
+            ->all();
     }
 
     /**
