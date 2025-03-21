@@ -96,7 +96,6 @@ class HomeIndex extends Component
             $products->prepend($specialProduct);
         }
 
-
         return view('livewire.app.home.home-index', compact('products'))
             ->title($websiteTitle ?? 'Home');
     }
