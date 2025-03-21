@@ -921,17 +921,17 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "4.0.3",
-            "version_normalized": "4.0.3.0",
+            "version": "4.0.4",
+            "version_normalized": "4.0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "b115554301161fa21467629f1e1391c1936de517"
+                "reference": "d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/b115554301161fa21467629f1e1391c1936de517",
-                "reference": "b115554301161fa21467629f1e1391c1936de517",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa",
+                "reference": "d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa",
                 "shasum": ""
             },
             "require": {
@@ -946,7 +946,7 @@
             "suggest": {
                 "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
             },
-            "time": "2024-12-27T00:36:43+00:00",
+            "time": "2025-03-06T22:45:56+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -979,7 +979,7 @@
             ],
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
-                "source": "https://github.com/egulias/EmailValidator/tree/4.0.3"
+                "source": "https://github.com/egulias/EmailValidator/tree/4.0.4"
             },
             "funding": [
                 {
@@ -5148,17 +5148,17 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.13",
-            "version_normalized": "11.5.13.0",
+            "version": "11.5.14",
+            "version_normalized": "11.5.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3bbb8d54b3a6718e51fd48cd478079f5f49b82bd"
+                "reference": "9d6046153c2893b521784069e6b5249ce7d2acae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3bbb8d54b3a6718e51fd48cd478079f5f49b82bd",
-                "reference": "3bbb8d54b3a6718e51fd48cd478079f5f49b82bd",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9d6046153c2893b521784069e6b5249ce7d2acae",
+                "reference": "9d6046153c2893b521784069e6b5249ce7d2acae",
                 "shasum": ""
             },
             "require": {
@@ -5178,7 +5178,7 @@
                 "phpunit/php-text-template": "^4.0.1",
                 "phpunit/php-timer": "^7.0.1",
                 "sebastian/cli-parser": "^3.0.2",
-                "sebastian/code-unit": "^3.0.2",
+                "sebastian/code-unit": "^3.0.3",
                 "sebastian/comparator": "^6.3.1",
                 "sebastian/diff": "^6.0.2",
                 "sebastian/environment": "^7.2.0",
@@ -5192,7 +5192,7 @@
             "suggest": {
                 "ext-soap": "To be able to generate mocks based on WSDL files"
             },
-            "time": "2025-03-18T13:41:57+00:00",
+            "time": "2025-03-19T13:45:48+00:00",
             "bin": [
                 "phpunit"
             ],
@@ -5232,7 +5232,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.13"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.14"
             },
             "funding": [
                 {
@@ -6058,12 +6058,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/robsontenorio/mary.git",
-                "reference": "355d528ddfc6ccdb45ea96ec9315307ac7755745"
+                "reference": "2dea9f47a4e69183f511381de81d04795443f35a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/robsontenorio/mary/zipball/355d528ddfc6ccdb45ea96ec9315307ac7755745",
-                "reference": "355d528ddfc6ccdb45ea96ec9315307ac7755745",
+                "url": "https://api.github.com/repos/robsontenorio/mary/zipball/2dea9f47a4e69183f511381de81d04795443f35a",
+                "reference": "2dea9f47a4e69183f511381de81d04795443f35a",
                 "shasum": ""
             },
             "require": {
@@ -6076,7 +6076,7 @@
                 "orchestra/testbench": "^8|^9|^10",
                 "phpunit/phpunit": "^10|^11"
             },
-            "time": "2025-03-18T15:28:57+00:00",
+            "time": "2025-03-20T13:24:29+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -6203,17 +6203,17 @@
         },
         {
             "name": "sebastian/code-unit",
-            "version": "3.0.2",
-            "version_normalized": "3.0.2.0",
+            "version": "3.0.3",
+            "version_normalized": "3.0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/code-unit.git",
-                "reference": "ee88b0cdbe74cf8dd3b54940ff17643c0d6543ca"
+                "reference": "54391c61e4af8078e5b276ab082b6d3c54c9ad64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/code-unit/zipball/ee88b0cdbe74cf8dd3b54940ff17643c0d6543ca",
-                "reference": "ee88b0cdbe74cf8dd3b54940ff17643c0d6543ca",
+                "url": "https://api.github.com/repos/sebastianbergmann/code-unit/zipball/54391c61e4af8078e5b276ab082b6d3c54c9ad64",
+                "reference": "54391c61e4af8078e5b276ab082b6d3c54c9ad64",
                 "shasum": ""
             },
             "require": {
@@ -6222,7 +6222,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^11.5"
             },
-            "time": "2024-12-12T09:59:06+00:00",
+            "time": "2025-03-19T07:56:08+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -6251,7 +6251,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/code-unit/issues",
                 "security": "https://github.com/sebastianbergmann/code-unit/security/policy",
-                "source": "https://github.com/sebastianbergmann/code-unit/tree/3.0.2"
+                "source": "https://github.com/sebastianbergmann/code-unit/tree/3.0.3"
             },
             "funding": [
                 {
@@ -7385,17 +7385,17 @@
         },
         {
             "name": "spatie/laravel-package-tools",
-            "version": "1.19.0",
-            "version_normalized": "1.19.0.0",
+            "version": "1.91.1",
+            "version_normalized": "1.91.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-package-tools.git",
-                "reference": "1c9c30ac6a6576b8d15c6c37b6cf23d748df2faa"
+                "reference": "b0b509b9b01d77caa431ce9af3a706bc678e09c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/1c9c30ac6a6576b8d15c6c37b6cf23d748df2faa",
-                "reference": "1c9c30ac6a6576b8d15c6c37b6cf23d748df2faa",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/b0b509b9b01d77caa431ce9af3a706bc678e09c9",
+                "reference": "b0b509b9b01d77caa431ce9af3a706bc678e09c9",
                 "shasum": ""
             },
             "require": {
@@ -7409,7 +7409,7 @@
                 "phpunit/phpunit": "^9.5.24|^10.5|^11.5",
                 "spatie/pest-plugin-test-time": "^1.1|^2.2"
             },
-            "time": "2025-02-06T14:58:20+00:00",
+            "time": "2025-03-21T09:50:49+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -7436,7 +7436,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-package-tools/issues",
-                "source": "https://github.com/spatie/laravel-package-tools/tree/1.19.0"
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.91.1"
             },
             "funding": [
                 {

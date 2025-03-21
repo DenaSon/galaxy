@@ -252,6 +252,10 @@ class Choices extends Component
                                         @click="focus()"
                                         x-ref="container"
 
+                                        @if($isDisabled())
+                                            disabled
+                                        @endif
+
                                         {{
                                             $attributes->whereStartsWith('class')->class([
                                                 "select w-full h-fit pl-2.5",
@@ -271,7 +275,7 @@ class Choices extends Component
                                             <x-mary-icon :name="$icon" class="pointer-events-none w-4 h-4 opacity-40" />
                                         @endif
 
-                                        <div class="w-full py-1 min-h-9.5 text-wrap">
+                                        <div class="w-full py-0.5 min-h-9.5 content-center text-wrap">
 
                                             {{-- SELECTED OPTIONS --}}
                                             <span wire:key="selected-options-{{ $uuid }}">
@@ -281,7 +285,7 @@ class Choices extends Component
                                                     </div>
                                                 @else
                                                     <template x-for="(option, index) in selectedOptions" :key="index">
-                                                        <span class="mary-choices-element cursor-pointer badge badge-soft mx-0.5 inline-block">
+                                                        <span class="mary-choices-element cursor-pointer badge badge-soft m-0.5 !inline-block">
                                                             {{-- SELECTION SLOT --}}
                                                             @if($selection)
                                                                 <span x-html="document.getElementById('selection-{{ $uuid . '-\' + option.'. $optionValue }}).innerHTML"></span>
@@ -289,7 +293,7 @@ class Choices extends Component
                                                                 <span x-text="option?.{{ $optionLabel }}"></span>
                                                             @endif
 
-                                                            <x-mary-icon @click="toggle(option.{{ $optionValue }})" x-show="!isReadonly && !isDisabled && !isSingle" name="o-x-mark" class="w-4 h-4 mb-1 hover:text-error" />
+                                                            <x-mary-icon @click="toggle(option.{{ $optionValue }})" x-show="!isReadonly && !isDisabled && !isSingle" name="o-x-mark" class="w-4 h-4 hover:text-error" />
                                                         </span>
                                                     </template>
                                                 @endif
@@ -308,7 +312,7 @@ class Choices extends Component
                                                 @keydown.arrow-down.prevent="focus()"
                                                 :required="isRequired && isSelectionEmpty"
                                                 :readonly="isReadonly || isDisabled || ! isSearchable"
-                                                class="w-10 py-1 !inline-block outline-hidden"
+                                                class="w-1 !inline-block outline-hidden"
 
                                                 @if($searchable)
                                                     @keydown.debounce.{{ $debounce }}="search($el.value, $event)"
@@ -318,7 +322,7 @@ class Choices extends Component
 
                                         {{-- CLEAR ICON  --}}
                                         @if($clearable && !$isReadonly() && !$isDisabled())
-                                            <x-mary-icon @click="clearAll()" x-show="tags.length" name="o-x-mark" class="cursor-pointer w-4 h-4 opacity-40"/>
+                                            <x-mary-icon @click="reset()" x-show="!isSelectionEmpty" name="o-x-mark" class="cursor-pointer w-4 h-4 opacity-40"/>
                                         @endif
 
                                         {{-- ICON RIGHT --}}
@@ -332,7 +336,7 @@ class Choices extends Component
                                         @endif
                                     </label>
 
-                                     {{-- APPEND --}}
+                                    {{-- APPEND --}}
                                     @if($append)
                                         {{ $append }}
                                     @endif
@@ -358,7 +362,11 @@ class Choices extends Component
 
                         {{-- OPTIONS LIST --}}
                         <div x-cloak x-show="focused" class="relative" wire:key="options-list-main-{{ $uuid }}">
-                            <div wire:key="options-list-{{ $uuid }}" class="{{ $height }} w-full absolute z-10 shadow-xl bg-base-100 border border-base-300 rounded-lg cursor-pointer overflow-y-auto" x-anchor.bottom-start="$refs.container">
+                            <div
+                                wire:key="options-list-{{ $uuid }}"
+                                class="{{ $height }} w-full absolute z-10 shadow-xl bg-base-100 border border-base-content/10 rounded-lg cursor-pointer overflow-y-auto @if(!$hint) !top-1 @else !-top-5 @endif"
+                                x-anchor.bottom-start="$refs.container"
+                            >
 
                                 {{-- PROGRESS --}}
                                 <progress wire:loading wire:target="{{ preg_replace('/\((.*?)\)/', '', $searchFunction) }}" class="progress absolute top-0 h-0.5"></progress>
@@ -367,7 +375,7 @@ class Choices extends Component
                                @if($allowAll)
                                    <div
                                         wire:key="allow-all-{{ rand() }}"
-                                        class="font-bold   border border-s-4 border-s-base-300 border-base-200 hover:bg-base-200"
+                                        class="font-bold   border border-s-4 border-s-base-content/10 border-base-200 hover:bg-base-200"
                                    >
                                         <div x-show="!isAllSelected" @click="selectAll()" class="p-3 underline decoration-wavy decoration-info">{{ $allowAllText }}</div>
                                         <div x-show="isAllSelected" @click="reset()" class="p-3 underline decoration-wavy decoration-error">{{ $removeAllText }}</div>
@@ -389,7 +397,7 @@ class Choices extends Component
                                         @click="toggle({{ $getOptionValue($option) }}, true)"
                                         @keydown.enter="toggle({{ $getOptionValue($option) }}, true)"
                                         :class="isActive({{ $getOptionValue($option) }}) && 'border-s-4 border-s-base-content'"
-                                        class="border-s-4 border-base-300 focus:bg-base-200 focus:outline-none"
+                                        class="border-s-4 border-base-content/10 focus:bg-base-200 focus:outline-none"
                                         tabindex="0"
                                     >
                                         {{-- ITEM SLOT --}}
