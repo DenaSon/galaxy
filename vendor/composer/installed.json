@@ -399,6 +399,65 @@
             "install-path": "../blade-ui-kit/blade-ui-kit"
         },
         {
+            "name": "bordoni/phpass",
+            "version": "0.3.6",
+            "version_normalized": "0.3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bordoni/phpass.git",
+                "reference": "12f8f5cc03ebb7efd69554f104afe9aa1aa46e1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bordoni/phpass/zipball/12f8f5cc03ebb7efd69554f104afe9aa1aa46e1a",
+                "reference": "12f8f5cc03ebb7efd69554f104afe9aa1aa46e1a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "replace": {
+                "hautelook/phpass": "0.3.*"
+            },
+            "time": "2012-08-31T00:00:00+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Hautelook": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Public Domain"
+            ],
+            "authors": [
+                {
+                    "name": "Solar Designer",
+                    "email": "solar@openwall.com",
+                    "homepage": "http://openwall.com/phpass/"
+                },
+                {
+                    "name": "Gustavo Bordoni",
+                    "email": "gustavo@bordoni.me",
+                    "homepage": "https://bordoni.me"
+                }
+            ],
+            "description": "Portable PHP password hashing framework",
+            "homepage": "http://github.com/bordoni/phpass/",
+            "keywords": [
+                "blowfish",
+                "crypt",
+                "password",
+                "security"
+            ],
+            "support": {
+                "issues": "https://github.com/bordoni/phpass/issues",
+                "source": "https://github.com/bordoni/phpass/tree/0.3.6"
+            },
+            "install-path": "../bordoni/phpass"
+        },
+        {
             "name": "brick/math",
             "version": "0.12.3",
             "version_normalized": "0.12.3.0",
@@ -2230,6 +2289,74 @@
                 }
             ],
             "install-path": "../jfcherng/php-sequence-matcher"
+        },
+        {
+            "name": "jgrossi/corcel",
+            "version": "v9.0.0",
+            "version_normalized": "9.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/corcel/corcel.git",
+                "reference": "aa06fc527ab6dcfe46cd0b34030ac152b2b1f13e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/corcel/corcel/zipball/aa06fc527ab6dcfe46cd0b34030ac152b2b1f13e",
+                "reference": "aa06fc527ab6dcfe46cd0b34030ac152b2b1f13e",
+                "shasum": ""
+            },
+            "require": {
+                "bordoni/phpass": "0.3.*",
+                "fakerphp/faker": "^1.24",
+                "illuminate/database": "^12.0",
+                "illuminate/filesystem": "^12.0",
+                "illuminate/support": "^12.0",
+                "php": "^8.2",
+                "thunderer/shortcode": "^0.7.6"
+            },
+            "replace": {
+                "juniorgrossi/corcel": "self.version"
+            },
+            "require-dev": {
+                "laravel/legacy-factories": "^1.0",
+                "mockery/mockery": "^1.6.12",
+                "orchestra/testbench": "^10.1",
+                "symfony/thanks": "^1.4"
+            },
+            "time": "2025-03-19T13:06:35+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Corcel\\Laravel\\CorcelServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Corcel\\": "src/",
+                    "Corcel\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Junior Grossi",
+                    "email": "juniorgro@gmail.com",
+                    "homepage": "http://jgrossi.com"
+                }
+            ],
+            "description": "Use WordPress backend with Laravel or any PHP framework",
+            "homepage": "http://github.com/corcel/corcel",
+            "support": {
+                "issues": "https://github.com/corcel/corcel/issues",
+                "source": "https://github.com/corcel/corcel/tree/v9.0.0"
+            },
+            "install-path": "../jgrossi/corcel"
         },
         {
             "name": "laravel/framework",
@@ -10215,6 +10342,65 @@
             "install-path": "../theseer/tokenizer"
         },
         {
+            "name": "thunderer/shortcode",
+            "version": "v0.7.6",
+            "version_normalized": "0.7.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thunderer/Shortcode.git",
+                "reference": "9f81424b4909007483d93c5defc0917d8a58debd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thunderer/Shortcode/zipball/9f81424b4909007483d93c5defc0917d8a58debd",
+                "reference": "9f81424b4909007483d93c5defc0917d8a58debd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.1",
+                "symfony/yaml": ">=2.0"
+            },
+            "suggest": {
+                "ext-dom": "if you want to use XML serializer",
+                "ext-json": "if you want to use JSON serializer",
+                "symfony/yaml": "if you want to use YAML serializer"
+            },
+            "time": "2024-12-15T21:57:40+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Thunder\\Shortcode\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tomasz Kowalczyk",
+                    "email": "tomasz@kowalczyk.cc"
+                }
+            ],
+            "description": "Advanced shortcode (BBCode) parser and engine for PHP",
+            "keywords": [
+                "bbcode",
+                "engine",
+                "library",
+                "parser",
+                "shortcode"
+            ],
+            "support": {
+                "issues": "https://github.com/thunderer/Shortcode/issues",
+                "source": "https://github.com/thunderer/Shortcode/tree/v0.7.6"
+            },
+            "install-path": "../thunderer/shortcode"
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "v2.3.0",
             "version_normalized": "2.3.0.0",
@@ -10501,7 +10687,6 @@
     "dev": true,
     "dev-package-names": [
         "barryvdh/laravel-debugbar",
-        "fakerphp/faker",
         "filp/whoops",
         "hamcrest/hamcrest-php",
         "laravel/pint",

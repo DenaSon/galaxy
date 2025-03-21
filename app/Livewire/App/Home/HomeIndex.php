@@ -3,6 +3,7 @@
 namespace App\Livewire\App\Home;
 
 use App\Models\Product;
+use Corcel\Model\Post;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -95,7 +96,10 @@ class HomeIndex extends Component
             $products->prepend($specialProduct);
         }
 
-        return view('livewire.app.home.home-index', compact('products'))
+
+        $posts = Post::all();
+
+        return view('livewire.app.home.home-index', compact('products', 'posts'))
             ->title($websiteTitle ?? 'Home');
     }
 

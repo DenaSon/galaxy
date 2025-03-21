@@ -28,6 +28,12 @@
     @include('livewire.app.home.inc.blog-section')
 
 
+        @foreach($posts as $post)
+
+            {{ dd($post) }}
+
+        @endforeach
+
 
 
 

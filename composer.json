@@ -9,6 +9,7 @@
         "blade-ui-kit/blade-ui-kit": "^0.7.0",
         "cryptommer/smsir": "^1.2",
         "intervention/image-laravel": "^1.3",
+        "jgrossi/corcel": "^9.0",
         "laravel/framework": "^v12.2.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
