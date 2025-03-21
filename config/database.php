@@ -119,7 +119,7 @@ return [
             'password' => 'Bi+jI_^#-dgSACCXN',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix' => 'wp_',
+            'prefix' => 'wp_blog_',
             'strict' => false,
             'engine' => null,
         ],
