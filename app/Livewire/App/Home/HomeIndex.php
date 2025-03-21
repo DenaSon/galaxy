@@ -97,9 +97,7 @@ class HomeIndex extends Component
         }
 
 
-        $posts = Post::all();
-
-        return view('livewire.app.home.home-index', compact('products', 'posts'))
+        return view('livewire.app.home.home-index', compact('products'))
             ->title($websiteTitle ?? 'Home');
     }
 
