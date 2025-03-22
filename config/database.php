@@ -117,7 +117,7 @@ return [
             'host' => 'localhost',
             'database' => 'denapaxc_blog',
             'username' => 'denapaxc_bloguser',
-            'password' => 'Bi+jI_^#-dgSACCXN',
+            'password' => env('WP_DB_PASSWORD', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => 'wp_blog_',
