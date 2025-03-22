@@ -25,7 +25,8 @@ class HomeIndex extends Component
     {
         try {
 
-                $this->blogs = Post::all(['post_status' => 'publish']);
+            $blogs = Post::where('post_status', 'publish')->get();
+
 
 
         } catch (Throwable $e) {
