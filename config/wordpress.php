@@ -2,7 +2,7 @@
 
 return
     [
-        'wp_enable' => true,
+        'wp_enable' => false,
 
 
         'corcel_database_connection' => env('WP_CORCEL_CONNECTION_NAME', 'wordpress'),
