@@ -25,12 +25,14 @@ class HomeIndex extends Component
     {
         try {
 
-            $this->blogs = Post::where('post_status', 'publish')->get();
+            $this->blogs = Post::get();
 
 
 
         } catch (Throwable $e) {
             $this->blogs = collect();
+
+            logger('Error: ' . $e->getMessage());
 
         }
     }
