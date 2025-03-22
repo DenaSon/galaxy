@@ -13,7 +13,6 @@
                     <div class="swiper-slide">
                         @livewire('app.component.blog-card',['blog'=>$blog])
                     </div>
-
                 @endforeach
 
 

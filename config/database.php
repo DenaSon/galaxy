@@ -113,13 +113,13 @@ return [
         ],
         'wordpress' => [ // for WordPress database (used by Corcel)
             'driver' => 'mysql',
-            'host' => 'localhost',
-            'database' => 'denapaxc_blog',
-            'username' => 'denapaxc_bloguser',
-            'password' => 'Bi+jI_^#-dgSACCXN',
-            'charset' => 'utf8',
+            'host' => config('wordpress.wp_db_host'),
+            'database' => config('wordpress.wp_db_name'),
+            'username' => config('wordpress.wp_db_user'),
+            'password' => config('wordpress.wp_db_password'),
+            'charset' => config('wordpress.wp_db_charset', 'utf8mb4'),
             'collation' => 'utf8_unicode_ci',
-            'prefix' => 'wp_blog_',
+            'prefix' => config('wordpress.wp_db_prefix'),
             'strict' => false,
             'engine' => null,
         ],
@@ -159,7 +159,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [

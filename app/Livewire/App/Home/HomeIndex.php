@@ -4,9 +4,6 @@ namespace App\Livewire\App\Home;
 
 use App\Models\Product;
 use Corcel\Model\Post;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
@@ -27,43 +24,20 @@ class HomeIndex extends Component
     public function mount()
     {
         try {
+            if (config('wordpress.wp_enable')) {
 
-            $this->blogs = Cache::remember('blogs_cache', now()->addMinutes(60), function () {
-                $response = Http::get('https://denapax.ir/blogpress/wp-json/wp/v2/posts?_embed&per_page=10&_fields=id,title,featured_media');
-                if ($response->successful()) {
-                    $blogs = $response->json();
+                $this->blogs = Post::take(10)->get();
 
-                    foreach ($blogs as &$blog) {
-                        if (isset($blog['featured_media']) && $blog['featured_media']) {
+            } else {
+                $this->blogs = collect();
+            }
 
-                            $mediaCacheKey = 'media_' . $blog['featured_media'];
-                            $media = Cache::remember($mediaCacheKey, now()->addMinutes(60), function () use ($blog) {
-                                $mediaResponse = Http::get('https://denapax.ir/blogpress/wp-json/wp/v2/media/' . $blog['featured_media'] . '?_fields=id,source_url');
-                                return $mediaResponse->successful() ? $mediaResponse->json() : null;
-                            });
 
-                            if ($media) {
-                                $blog['featured_image_url'] = $media['source_url'];
-                            } else {
-                                $blog['featured_image_url'] = null;
-                            }
-                        } else {
-                            $blog['featured_image_url'] = null;
-                        }
-                    }
-                    return $blogs;
-                } else {
-                    return [];
-                }
-            });
         } catch (Throwable $e) {
-            $this->blogs = [];
-            Log::error('API : Get Blog in Home Index Error : ' . $e->getMessage());
+            $this->blogs = collect();
+
         }
-
-
     }
-
 
     public function blogList()
     {
@@ -96,12 +70,16 @@ class HomeIndex extends Component
             $products->prepend($specialProduct);
         }
 
-        return view('livewire.app.home.home-index', compact('products'))
+
+        if (config('wordpress.wp_enable')) {
+            $posts = Post::all();
+        } else {
+            $posts = collect();
+        }
+
+        return view('livewire.app.home.home-index', compact('products', 'posts'))
             ->title($websiteTitle ?? 'Home');
     }
-
-
-
 
 
 }
