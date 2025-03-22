@@ -11,7 +11,7 @@
 
                 @foreach($blogs as $blog)
                     <div class="swiper-slide">
-                        @livewire('app.component.blog-card',['blog'=>$blog])
+                        @livewire('app.component.blog-card',['blog'=>$blog->id])
                     </div>
                 @endforeach
 
