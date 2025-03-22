@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'connection' => config('wordpress.corcel_database_connection'),
+    'connection' => 'wordpress',
 
     /*
     |--------------------------------------------------------------------------

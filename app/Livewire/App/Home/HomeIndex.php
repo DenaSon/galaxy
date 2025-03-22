@@ -26,7 +26,7 @@ class HomeIndex extends Component
         try {
             if (config('wordpress.wp_enable')) {
 
-                $this->blogs = Post::take(10)->get();
+                $this->blogs = Post::all(['post_status' => 'publish']);
 
             } else {
                 $this->blogs = collect();
