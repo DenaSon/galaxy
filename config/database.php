@@ -111,15 +111,16 @@ return [
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
-        'wordpress' => [ // for WordPress database (used by Corcel)
+
+        'wordpress' => [
             'driver' => 'mysql',
-            'host' => config('wordpress.wp_db_host'),
-            'database' => config('wordpress.wp_db_name'),
-            'username' => config('wordpress.wp_db_user'),
-            'password' => config('wordpress.wp_db_password'),
-            'charset' => config('wordpress.wp_db_charset', 'utf8mb4'),
+            'host' => 'localhost',
+            'database' => 'denapaxc_blog',
+            'username' => 'denapaxc_bloguser',
+            'password' => 'Bi+jI_^#-dgSACCXN',
+            'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix' => config('wordpress.wp_db_prefix'),
+            'prefix' => 'wp_blog_',
             'strict' => false,
             'engine' => null,
         ],
