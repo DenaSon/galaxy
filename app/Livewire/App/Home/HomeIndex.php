@@ -24,13 +24,8 @@ class HomeIndex extends Component
     public function mount()
     {
         try {
-            if (config('wordpress.wp_enable')) {
 
                 $this->blogs = Post::all(['post_status' => 'publish']);
-
-            } else {
-                $this->blogs = collect();
-            }
 
 
         } catch (Throwable $e) {
@@ -71,13 +66,7 @@ class HomeIndex extends Component
         }
 
 
-        if (config('wordpress.wp_enable')) {
-            $posts = Post::all();
-        } else {
-            $posts = collect();
-        }
-
-        return view('livewire.app.home.home-index', compact('products', 'posts'))
+        return view('livewire.app.home.home-index', compact('products'))
             ->title($websiteTitle ?? 'Home');
     }
 
