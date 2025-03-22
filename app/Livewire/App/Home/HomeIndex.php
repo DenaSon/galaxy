@@ -25,7 +25,7 @@ class HomeIndex extends Component
     {
         try {
 
-            $this->blogs = Post::get();
+            return $this->blogs = Post::get();
 
 
 
