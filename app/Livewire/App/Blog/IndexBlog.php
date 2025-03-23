@@ -41,7 +41,7 @@ class IndexBlog extends Component
     {
         try {
 
-            $blogs = Post::where('post_status', 'publish')->get();
+            $blogs = Post::type('post')->published()->orderBy('post_date', 'desc')->get();
 
         } catch (\Throwable $e) {
             $blogs = [];

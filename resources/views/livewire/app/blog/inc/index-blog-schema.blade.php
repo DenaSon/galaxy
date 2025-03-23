@@ -1,22 +1,26 @@
+@php use Illuminate\Support\Carbon; @endphp
 @if(request()->has('category'))
     <link rel="canonical" href="{{ route('home.blog.indexBlog',['category'=>request()->get('category')]) }}"/>
 @else
     <link rel="canonical" href="{{ route('home.blog.indexBlog') }}"/>
 @endif
+
 <script type="application/ld+json">
     @php
+
         $blogList = [];
+
         foreach ($blogs as $index => $blog) {
-            $imageUrl = isset($blog['featured_media']['source_url']) ? $blog['featured_media']['source_url'] : '';
+            $imageUrl = $blog->thumbnail ? $blog->thumbnail : '';
             $blogList[] = [
                 "@type" => "ListItem",
                 "position" => $index + 1,
-                "url" => route('home.blog.singleBlog', ['blog' => $blog['id'], 'slug' => slugMaker($blog['title']['rendered'])]),
-                "name" => $blog['title']['rendered'],
+                "url" => route('home.blog.singleBlog', ['blog' => $blog->ID, 'slug' => slugMaker($blog->post_name)]),
+                "name" => $blog->title,
                 "image" => $imageUrl,
-                "description" => strip_tags(Str::limit($blog['excerpt']['rendered'], 160)), // محدود کردن توضیحات
-                "datePublished" => \Carbon\Carbon::parse($blog['date'])->toDateString(),
-                "dateModified" => \Carbon\Carbon::parse($blog['modified'])->toDateString()
+                "description" => strip_tags(Str::limit($blog->excerpt, 160)),
+                "datePublished" => Carbon::parse($blog->post_date)->toDateString(),
+                "dateModified" => Carbon::parse($blog->post_modified)->toDateString()
             ];
         }
     @endphp
