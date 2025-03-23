@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Url;
 use Livewire\Component;
-use Livewire\WithoutUrlPagination;
+use Livewire\WithPagination;
 use Mary\Traits\Toast;
 
 #[Layout('components.layouts.app')]
 class IndexBlog extends Component
 {
-    use Toast, WithoutUrlPagination;
+    use Toast, WithPagination;
 
     public $searchTerm;
 
