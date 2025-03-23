@@ -31,7 +31,7 @@
         </div>
 
 
-        <div class="text-center mt-5 mx-auto">
+        <div class="text-center mt-5 mx-auto join">
             {{ $blogs->links() }}
         </div>
 
