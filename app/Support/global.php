@@ -286,7 +286,7 @@ function slugMaker($string)
     // Remove leading/trailing dashes
     $slug = trim($slug, '-');
 
-    return $slug;
+    return $slug ?? '';
 }
 
 
@@ -333,7 +333,7 @@ function singleProductUrl($productId, $slug = 'slug')
     return route('home.product.singleProduct', ['product' => $productId, 'slug' => slugMaker($slug)]) ?? '';
 }
 
-function singleBlogUrl($blogId, $slug)
+function singleBlogUrl($blogId, $slug = '')
 {
     return route('home.blog.singleBlog', ['blog' => $blogId, 'slug' => slugMaker($slug)]) ?? '';
 }
