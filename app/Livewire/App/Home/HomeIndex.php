@@ -16,7 +16,7 @@ class HomeIndex extends Component
 
     public $price = 0;
 
-    public $blogs = [];
+    public $blogs;
 
 
     public $showDrawer = false;
