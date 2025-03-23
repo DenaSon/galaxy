@@ -14,7 +14,12 @@
 
                 </b>
                 <hr/>
-                <br/><br/><br/>
+                <br/>
+
+                <a href="{{ singleBlogUrl($blog->ID,$blog->post_title) }}">{{ $blog->post_title  }}</a>
+
+
+                <br/><br/>
 
             @endforeach
 
