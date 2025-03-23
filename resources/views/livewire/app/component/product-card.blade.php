@@ -3,7 +3,7 @@
 
         href="{{ singleProductUrl($product->id, $product->name) }}" wire:click="openSingleProduct({{$product->id}})">
         <x-card>
-            <x-slot:title class="text-xs font-normal hidden sm:block">
+            <x-slot:title class="text-sm font-normal hidden sm:block">
                 {{ $product->name }}
             </x-slot:title>
 
@@ -35,7 +35,7 @@
                 @endif
 
                 <div class="absolute bottom-0 right-0 p-3 flex space-x-2 sm:hidden">
-                    <span class="text-xs font-normal rounded border-gray-700 bg-gray-100 p-2 opacity-80">
+                    <span class="text-sm font-normal rounded border-gray-700 bg-gray-100 p-2 opacity-80">
                         {{ $product->name }}
                     </span>
                 </div>
