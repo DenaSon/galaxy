@@ -18,7 +18,7 @@
                 "url" => route('home.blog.singleBlog', ['blog' => $blog->ID, 'slug' => slugMaker($blog->post_name)]),
                 "name" => $blog->title,
                 "image" => $imageUrl,
-                "description" => strip_tags(Str::limit($blog->excerpt, 160)),
+                "description" => strip_tags(Str::limit($blog->content, 160)),
                 "datePublished" => Carbon::parse($blog->post_date)->toDateString(),
                 "dateModified" => Carbon::parse($blog->post_modified)->toDateString()
             ];
