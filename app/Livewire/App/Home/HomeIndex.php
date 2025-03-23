@@ -52,7 +52,7 @@ class HomeIndex extends Component
 
         // Get Blogs
 
-        $blogs = Post::where('post_status', 'publish')->get();
+        $blogs = Post::type('post')->published()->orderBy('post_date', 'desc')->take(12)->get();
 
 
 
