@@ -1,3 +1,6 @@
+<div>
+
+</div>
 {{--<div class="w-full max-w-md mx-auto" wire:key="{{$blog['id']}}">--}}
 {{--    <a @if(request()->routeIs('home.blog.indexBlog')) wire:navigate @endif--}}
 
