@@ -3,7 +3,6 @@
 namespace App\Livewire\App\Blog;
 
 use App\Models\Product;
-use Corcel\Model\Post;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
@@ -26,7 +25,15 @@ class SingleBlog extends Component
 
         try {
 
-            $article = Post::find($this->blog);
+            $response = Http::get('https://denapax.ir/blogpress/wp-json/wp/v2/posts/' .
+                $this->blog . '?_fields=id,title,content,yoast_head_json,excerpt,date,modified,categories,tags');
+
+            if ($response->successful()) {
+                $this->article = $response->json();
+
+            } else {
+                abort(404);
+            }
         } catch (Throwable $e) {
 
             Log::error($e->getMessage());
