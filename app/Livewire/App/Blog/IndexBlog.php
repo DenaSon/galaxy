@@ -3,7 +3,6 @@
 namespace App\Livewire\App\Blog;
 
 use Corcel\Model\Post;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Url;
@@ -23,9 +22,6 @@ class IndexBlog extends Component
     public $category = [];
 
     public $category_name;
-
-
-
 
 
     public function render()

@@ -31,7 +31,9 @@
         </div>
 
 
-        {{ $blogs->links() }}
+        <div class="text-center mt-5 mx-auto">
+            {{ $blogs->links() }}
+        </div>
 
 
         <x-progress wire:loading class="progress-primary h-0.5" indeterminate/>
