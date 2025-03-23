@@ -4,7 +4,13 @@
         <div class="w-full md:w-2/3 shadow-lg m-2">
 
 
-            {{ dd($posts) }}
+            @foreach($posts as $blog)
+
+                {{ $blog->ID }}
+
+                {{ $blog->post_title }}
+
+            @endforeach
 
 
         </div>
