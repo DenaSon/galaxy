@@ -23,24 +23,6 @@ class HomeIndex extends Component
 
     public function mount()
     {
-        try {
-
-            $this->blogs = Post::get();
-            $this->blogs = collect();
-
-
-
-        } catch (Throwable $e) {
-            $this->blogs = collect();
-
-            logger('Error: ' . $e->getMessage());
-
-        }
-    }
-
-    public function blogList()
-    {
-
 
     }
 
@@ -69,8 +51,12 @@ class HomeIndex extends Component
             $products->prepend($specialProduct);
         }
 
+        // Get Blogs
 
-        return view('livewire.app.home.home-index', compact('products'))
+        $blogs = Post::get();
+
+
+        return view('livewire.app.home.home-index', compact('products', 'blogs'))
             ->title($websiteTitle ?? 'Home');
     }
 
