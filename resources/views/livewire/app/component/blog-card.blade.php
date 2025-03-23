@@ -1,7 +1,7 @@
 <div class="w-full max-w-md mx-auto" wire:key="{{ $blog->ID }}">
     <a @if(request()->routeIs('home.blog.indexBlog')) wire:navigate @endif
     class="block relative bg-white overflow-hidden rounded-lg shadow-lg border border-gray-200"
-       href="">
+       href="{{ slugMaker($blog->post_title) }}">
         <div class="flex flex-col h-48 shadow-xl">
             <div class="relative h-40 overflow-hidden p-0">
                 @if(isset($blog->thumbnail))
