@@ -16,7 +16,6 @@
 
             </div>
 
-
             <div class="p-1">
                 <div class="text-center">
                     <h2 class=" mt-2 text-xs text-gray-700 leading-snug font-black">
