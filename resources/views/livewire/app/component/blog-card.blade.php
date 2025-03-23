@@ -1,4 +1,4 @@
-<div class="w-full max-w-md mx-auto" wire:key="{{$blog->ID}}">
+<div class="w-full max-w-md mx-auto" wire:key="{{ time() }}">
     <a @if(request()->routeIs('home.blog.indexBlog')) wire:navigate @endif
     class="block relative bg-white overflow-hidden rounded-lg shadow-lg border border-gray-200"
        href="{{ singleBlogUrl($blog->ID, $blog->post_title) }}">
