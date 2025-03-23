@@ -19,7 +19,7 @@ class WordPress extends Component
 
     public function render()
     {
-        $posts = Post::get();
+        $posts = Post::status('published')->get();
 
         return view('livewire.app.word-press')->with(['posts' => $posts])
             ->title('Wordpress');
