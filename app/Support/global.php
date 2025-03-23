@@ -286,7 +286,7 @@ function slugMaker($string)
     // Remove leading/trailing dashes
     $slug = trim($slug, '-');
 
-    return $slug;
+    return $slug ?? '';
 }
 
 
