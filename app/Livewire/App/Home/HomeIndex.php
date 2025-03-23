@@ -52,7 +52,7 @@ class HomeIndex extends Component
 
         // Get Blogs
 
-        $posts = Post::where('post_status', 'publish')->get();
+        $blogs = Post::where('post_status', 'publish')->get();
 
 
 
