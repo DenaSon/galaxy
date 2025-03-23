@@ -52,7 +52,7 @@ class HomeIndex extends Component
 
         // Get Blogs
 
-        $blogs = Post::get();
+        $blogs = Post::published()->get();
 
 
         return view('livewire.app.home.home-index', compact('products'))->with(['blogs' => $blogs])
