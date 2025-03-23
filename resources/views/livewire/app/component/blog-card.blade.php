@@ -1,7 +1,7 @@
 <div class="w-full max-w-md mx-auto" wire:key="{{ time() }}">
     <a @if(request()->routeIs('home.blog.indexBlog')) wire:navigate @endif
     class="block relative bg-white overflow-hidden rounded-lg shadow-lg border border-gray-200"
-       href="{{ singleBlogUrl($blog->ID, $blog?->post_title ?? 'test') }}">
+       href="">
         <div class="flex flex-col h-48 shadow-xl">
             <div class="relative h-40 overflow-hidden p-0">
                 @if(isset($blog->thumbnail))
