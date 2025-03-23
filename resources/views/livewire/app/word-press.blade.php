@@ -6,9 +6,15 @@
 
             @foreach($posts as $blog)
 
-                {{ $blog->ID }}
+                <b>
 
-                {{ $blog->post_title }}
+                    {{ $blog->ID }}-
+
+                    {{ $blog->post_title }}
+
+                </b>
+                <hr/>
+                <br/><br/><br/>
 
             @endforeach
 
