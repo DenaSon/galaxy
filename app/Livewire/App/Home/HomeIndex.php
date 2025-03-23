@@ -4,6 +4,7 @@ namespace App\Livewire\App\Home;
 
 use App\Models\Product;
 use Corcel\Model\Post;
+use Illuminate\Support\Facades\Cache;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
@@ -52,7 +53,14 @@ class HomeIndex extends Component
 
         // Get Blogs
 
-        $blogs = Post::type('post')->published()->orderBy('post_date', 'desc')->take(12)->get();
+
+        $blogs = Cache::remember('latest_blogs', 60, function () {
+            return Post::type('post')
+                ->published()
+                ->orderBy('post_date', 'desc')
+                ->take(12)
+                ->get();
+        });
 
 
 
