@@ -31,11 +31,7 @@
         </div>
 
 
-        @if (count($blogs) >= $per_page)
-            <div class="flex justify-center mt-8">
-                <x-button label="مشاهده مقالات بیشتر" wire:click="addBlogs" class="mt-5" class="btn-primary" />
-            </div>
-        @endif
+        {{ $blogs->links() }}
 
 
         <x-progress wire:loading class="progress-primary h-0.5" indeterminate/>

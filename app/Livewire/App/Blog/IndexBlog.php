@@ -25,23 +25,14 @@ class IndexBlog extends Component
     public $category_name;
 
 
-    public function addBlogs()
-    {
-        $this->per_page += 18; // Livewire will handle reactivity and re-render
-    }
 
-    public function updatedSearchTerm($value)
-    {
-        $this->validate(['searchTerm' => 'string|max:45|min:1']);
-        $this->searchTerm = $value;
-    }
 
 
     public function render()
     {
         try {
 
-            $blogs = Post::type('post')->published()->orderBy('post_date', 'desc')->get();
+            $blogs = Post::type('post')->published()->orderBy('post_date', 'desc')->paginate(18);
 
         } catch (\Throwable $e) {
             $blogs = [];
