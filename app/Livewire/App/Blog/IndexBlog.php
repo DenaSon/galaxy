@@ -3,6 +3,7 @@
 namespace App\Livewire\App\Blog;
 
 use Corcel\Model\Post;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Url;
@@ -29,7 +30,9 @@ class IndexBlog extends Component
     {
         try {
 
-            $blogs = Post::type('post')->published()->orderBy('post_date', 'desc')->paginate(18);
+            $blogs = Cache::remember('blogs_page_' . request('page', 1), 3600, function () {
+                return Post::type('post')->published()->orderBy('post_date', 'desc')->paginate(18);
+            });
 
         } catch (\Throwable $e) {
             $blogs = [];
