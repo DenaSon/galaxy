@@ -76,8 +76,7 @@ class SingleBlog extends Component
                 $this->suggestedArticles = [];
             }
 
-        }
-        catch (Throwable $e) {
+        } catch (Throwable $e) {
 
             Log::error($e->getMessage());
             $this->suggestedArticles = [];
