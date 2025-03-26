@@ -4216,6 +4216,7 @@ return array(
     'Monolog\\Registry' => $vendorDir . '/monolog/monolog/src/Monolog/Registry.php',
     'Monolog\\ResettableInterface' => $vendorDir . '/monolog/monolog/src/Monolog/ResettableInterface.php',
     'Monolog\\SignalHandler' => $vendorDir . '/monolog/monolog/src/Monolog/SignalHandler.php',
+    'Monolog\\Test\\MonologTestCase' => $vendorDir . '/monolog/monolog/src/Monolog/Test/MonologTestCase.php',
     'Monolog\\Test\\TestCase' => $vendorDir . '/monolog/monolog/src/Monolog/Test/TestCase.php',
     'Monolog\\Utils' => $vendorDir . '/monolog/monolog/src/Monolog/Utils.php',
     'Morilog\\Jalali\\CalendarUtils' => $vendorDir . '/morilog/jalali/src/CalendarUtils.php',
