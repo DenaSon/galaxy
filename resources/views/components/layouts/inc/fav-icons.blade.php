@@ -9,12 +9,3 @@
 <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('static/small-d-logo.png') }}">
 <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('static/small-d-logo.png') }}">
 
-<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "دناپکس",
-      "url": "https://denapax.ir",
-      "logo": "{{ asset('static/small-d-logo.png') }}"
-    }
-</script>

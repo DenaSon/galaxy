@@ -34,7 +34,7 @@
       "@type": "Organization",
       "name": "{{ getSetting('website_title') ?? 'DenaPax' }}",
   "url": "{{ url('/') }}",
-  "logo": "{{ asset('static/denapax-image/nopicuser.png') }}",
+  "logo": "{{ asset('static/small-d-logo.png') }}",
   "contactPoint": [
     {
       "@type": "ContactPoint",
