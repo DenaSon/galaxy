@@ -1806,17 +1806,17 @@
         },
         {
             "name": "intervention/gif",
-            "version": "4.2.1",
-            "version_normalized": "4.2.1.0",
+            "version": "4.2.2",
+            "version_normalized": "4.2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/gif.git",
-                "reference": "6addac2c68b4bc0e37d0d3ccedda57eb84729c49"
+                "reference": "5999eac6a39aa760fb803bc809e8909ee67b451a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/gif/zipball/6addac2c68b4bc0e37d0d3ccedda57eb84729c49",
-                "reference": "6addac2c68b4bc0e37d0d3ccedda57eb84729c49",
+                "url": "https://api.github.com/repos/Intervention/gif/zipball/5999eac6a39aa760fb803bc809e8909ee67b451a",
+                "reference": "5999eac6a39aa760fb803bc809e8909ee67b451a",
                 "shasum": ""
             },
             "require": {
@@ -1824,11 +1824,11 @@
             },
             "require-dev": {
                 "phpstan/phpstan": "^2.1",
-                "phpunit/phpunit": "^10.0 || ^11.0",
+                "phpunit/phpunit": "^10.0 || ^11.0  || ^12.0",
                 "slevomat/coding-standard": "~8.0",
                 "squizlabs/php_codesniffer": "^3.8"
             },
-            "time": "2025-01-05T10:52:39+00:00",
+            "time": "2025-03-29T07:46:21+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1857,7 +1857,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Intervention/gif/issues",
-                "source": "https://github.com/Intervention/gif/tree/4.2.1"
+                "source": "https://github.com/Intervention/gif/tree/4.2.2"
             },
             "funding": [
                 {
@@ -2775,17 +2775,17 @@
         },
         {
             "name": "laravel/serializable-closure",
-            "version": "v2.0.3",
-            "version_normalized": "2.0.3.0",
+            "version": "v2.0.4",
+            "version_normalized": "2.0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "f379c13663245f7aa4512a7869f62eb14095f23f"
+                "reference": "b352cf0534aa1ae6b4d825d1e762e35d43f8a841"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/f379c13663245f7aa4512a7869f62eb14095f23f",
-                "reference": "f379c13663245f7aa4512a7869f62eb14095f23f",
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/b352cf0534aa1ae6b4d825d1e762e35d43f8a841",
+                "reference": "b352cf0534aa1ae6b4d825d1e762e35d43f8a841",
                 "shasum": ""
             },
             "require": {
@@ -2798,7 +2798,7 @@
                 "phpstan/phpstan": "^2.0",
                 "symfony/var-dumper": "^6.2.0|^7.0.0"
             },
-            "time": "2025-02-11T15:03:05+00:00",
+            "time": "2025-03-19T13:51:03+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -4027,17 +4027,17 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.8.6",
-            "version_normalized": "3.8.6.0",
+            "version": "3.9.0",
+            "version_normalized": "3.9.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "ff2f20cf83bd4d503720632ce8a426dc747bf7fd"
+                "reference": "6d16a8a015166fe54e22c042e0805c5363aef50d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/ff2f20cf83bd4d503720632ce8a426dc747bf7fd",
-                "reference": "ff2f20cf83bd4d503720632ce8a426dc747bf7fd",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/6d16a8a015166fe54e22c042e0805c5363aef50d",
+                "reference": "6d16a8a015166fe54e22c042e0805c5363aef50d",
                 "shasum": ""
             },
             "require": {
@@ -4064,7 +4064,7 @@
                 "phpunit/phpunit": "^10.5.20",
                 "squizlabs/php_codesniffer": "^3.9.0"
             },
-            "time": "2025-02-20T17:33:38+00:00",
+            "time": "2025-03-27T12:57:33+00:00",
             "bin": [
                 "bin/carbon"
             ],
@@ -4201,17 +4201,17 @@
         },
         {
             "name": "nette/utils",
-            "version": "v4.0.5",
-            "version_normalized": "4.0.5.0",
+            "version": "v4.0.6",
+            "version_normalized": "4.0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "736c567e257dbe0fcf6ce81b4d6dbe05c6899f96"
+                "reference": "ce708655043c7050eb050df361c5e313cf708309"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/736c567e257dbe0fcf6ce81b4d6dbe05c6899f96",
-                "reference": "736c567e257dbe0fcf6ce81b4d6dbe05c6899f96",
+                "url": "https://api.github.com/repos/nette/utils/zipball/ce708655043c7050eb050df361c5e313cf708309",
+                "reference": "ce708655043c7050eb050df361c5e313cf708309",
                 "shasum": ""
             },
             "require": {
@@ -4235,7 +4235,7 @@
                 "ext-mbstring": "to use Strings::lower() etc...",
                 "ext-tokenizer": "to use Nette\\Utils\\Reflection::getUseStatements()"
             },
-            "time": "2024-08-07T15:39:19+00:00",
+            "time": "2025-03-30T21:06:30+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -4284,7 +4284,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v4.0.5"
+                "source": "https://github.com/nette/utils/tree/v4.0.6"
             },
             "install-path": "../nette/utils"
         },
@@ -4599,17 +4599,17 @@
         },
         {
             "name": "owenvoke/blade-fontawesome",
-            "version": "v2.9.0",
-            "version_normalized": "2.9.0.0",
+            "version": "v2.9.1",
+            "version_normalized": "2.9.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/owenvoke/blade-fontawesome.git",
-                "reference": "923f40567296e58a6a3452c525ac1e095ece9772"
+                "reference": "94dcd0c78f43f8234b0d9c76c903ecd288b8b0d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/owenvoke/blade-fontawesome/zipball/923f40567296e58a6a3452c525ac1e095ece9772",
-                "reference": "923f40567296e58a6a3452c525ac1e095ece9772",
+                "url": "https://api.github.com/repos/owenvoke/blade-fontawesome/zipball/94dcd0c78f43f8234b0d9c76c903ecd288b8b0d1",
+                "reference": "94dcd0c78f43f8234b0d9c76c903ecd288b8b0d1",
                 "shasum": ""
             },
             "require": {
@@ -4624,7 +4624,7 @@
                 "phpstan/phpstan": "^1.10|^2.1",
                 "symfony/var-dumper": "^6.3|^7.2"
             },
-            "time": "2025-02-17T10:20:16+00:00",
+            "time": "2025-03-28T16:03:42+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -4646,7 +4646,7 @@
             "description": "A package to easily make use of Font Awesome in your Laravel Blade views",
             "support": {
                 "issues": "https://github.com/owenvoke/blade-fontawesome/issues",
-                "source": "https://github.com/owenvoke/blade-fontawesome/tree/v2.9.0"
+                "source": "https://github.com/owenvoke/blade-fontawesome/tree/v2.9.1"
             },
             "funding": [
                 {
@@ -6180,17 +6180,17 @@
         },
         {
             "name": "robsontenorio/mary",
-            "version": "v2.x-dev",
-            "version_normalized": "2.9999999.9999999.9999999-dev",
+            "version": "2.0.0",
+            "version_normalized": "2.0.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/robsontenorio/mary.git",
-                "reference": "2dea9f47a4e69183f511381de81d04795443f35a"
+                "reference": "0b76374f2e4462eb7f7a92b40eef62dfa3d3858c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/robsontenorio/mary/zipball/2dea9f47a4e69183f511381de81d04795443f35a",
-                "reference": "2dea9f47a4e69183f511381de81d04795443f35a",
+                "url": "https://api.github.com/repos/robsontenorio/mary/zipball/0b76374f2e4462eb7f7a92b40eef62dfa3d3858c",
+                "reference": "0b76374f2e4462eb7f7a92b40eef62dfa3d3858c",
                 "shasum": ""
             },
             "require": {
@@ -6203,7 +6203,7 @@
                 "orchestra/testbench": "^8|^9|^10",
                 "phpunit/phpunit": "^10|^11"
             },
-            "time": "2025-03-20T13:24:29+00:00",
+            "time": "2025-04-01T00:47:35+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -6258,7 +6258,7 @@
             ],
             "support": {
                 "issues": "https://github.com/robsontenorio/mary/issues",
-                "source": "https://github.com/robsontenorio/mary/tree/v2"
+                "source": "https://github.com/robsontenorio/mary/tree/2.0.0"
             },
             "funding": [
                 {

@@ -18,7 +18,7 @@
         "nesbot/carbon": "^3.8",
         "owenvoke/blade-fontawesome": "^2.7",
         "pishran/zarinpal": "*",
-        "robsontenorio/mary": "V2.x-dev",
+        "robsontenorio/mary": "V2.0",
         "spatie/laravel-image-optimizer": "*",
         "spatie/laravel-sitemap": "^7.2"
     },
