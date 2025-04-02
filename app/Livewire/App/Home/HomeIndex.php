@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Cache;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Mary\Traits\Toast;
-use Throwable;
 
 #[Layout('components.layouts.app')]
 class HomeIndex extends Component
@@ -16,7 +15,6 @@ class HomeIndex extends Component
     use Toast;
 
     public $price = 0;
-
 
 
     public $showDrawer = false;
@@ -54,14 +52,20 @@ class HomeIndex extends Component
         // Get Blogs
 
 
-        $blogs = Cache::remember('latest_blogs', 60, function () {
-            return Post::type('post')
-                ->published()
-                ->orderBy('post_date', 'desc')
-                ->take(12)
-                ->get();
-        });
+        if (app()->isLocal()) {
 
+            $blogs = collect();
+
+        } else {
+            $blogs = Cache::remember('latest_blogs', 60, function () {
+                return Post::type('post')
+                    ->published()
+                    ->orderBy('post_date', 'desc')
+                    ->take(12)
+                    ->get();
+            });
+
+        }
 
 
         return view('livewire.app.home.home-index', compact('products'))->with(['blogs' => $blogs])

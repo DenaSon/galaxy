@@ -41,7 +41,7 @@
         <!-- Cart Button -->
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle hidden sm:block">
             <div class="indicator">
-                <x-button link="{{ route('panel.shop.cart') }}" icon="o-shopping-cart" spinner />
+                <x-button link="{{ route('panel.shop.cart') }}" icon="o-shopping-cart" spinner/>
             </div>
         </div>
 
@@ -90,7 +90,7 @@
 <x-main with-nav full-width collapse-text="">
     <x-slot:content dir="rtl">
 
-    {{ $slot }}
+        {{ $slot }}
         @livewire('app.home.mobile-menu')
         <footer>
             @include('livewire.app.layout.footer')
