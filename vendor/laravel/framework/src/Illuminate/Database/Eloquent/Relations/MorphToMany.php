@@ -10,8 +10,10 @@ use Illuminate\Support\Collection;
 /**
  * @template TRelatedModel of \Illuminate\Database\Eloquent\Model
  * @template TDeclaringModel of \Illuminate\Database\Eloquent\Model
+ * @template TPivotModel of \Illuminate\Database\Eloquent\Relations\Pivot = \Illuminate\Database\Eloquent\Relations\MorphPivot
+ * @template TAccessor of string = 'pivot'
  *
- * @extends \Illuminate\Database\Eloquent\Relations\BelongsToMany<TRelatedModel, TDeclaringModel, \Illuminate\Database\Eloquent\Relations\Pivot>
+ * @extends \Illuminate\Database\Eloquent\Relations\BelongsToMany<TRelatedModel, TDeclaringModel, TPivotModel, TAccessor>
  */
 class MorphToMany extends BelongsToMany
 {
@@ -25,7 +27,7 @@ class MorphToMany extends BelongsToMany
     /**
      * The class name of the morph type constraint.
      *
-     * @var string
+     * @var class-string<TRelatedModel>
      */
     protected $morphClass;
 
@@ -51,7 +53,6 @@ class MorphToMany extends BelongsToMany
      * @param  string  $relatedKey
      * @param  string|null  $relationName
      * @param  bool  $inverse
-     * @return void
      */
     public function __construct(
         Builder $query,
@@ -122,7 +123,7 @@ class MorphToMany extends BelongsToMany
     /**
      * Get the pivot models that are currently attached.
      *
-     * @return \Illuminate\Support\Collection<int, \Illuminate\Database\Eloquent\Relations\Pivot|\Illuminate\Database\Eloquent\Relations\MorphPivot>
+     * @return \Illuminate\Support\Collection<int, TPivotModel>
      */
     protected function getCurrentlyAttachedPivots()
     {
@@ -149,7 +150,7 @@ class MorphToMany extends BelongsToMany
      *
      * @param  array  $attributes
      * @param  bool  $exists
-     * @return \Illuminate\Database\Eloquent\Relations\Pivot
+     * @return TPivotModel
      */
     public function newPivot(array $attributes = [], $exists = false)
     {
@@ -212,7 +213,7 @@ class MorphToMany extends BelongsToMany
     /**
      * Get the class name of the parent model.
      *
-     * @return string
+     * @return class-string<TRelatedModel>
      */
     public function getMorphClass()
     {

@@ -170,7 +170,6 @@ class Route
      * @param  array|string  $methods
      * @param  string  $uri
      * @param  \Closure|array  $action
-     * @return void
      */
     public function __construct($methods, $uri, $action)
     {
@@ -1322,9 +1321,9 @@ class Route
     /**
      * Get the optional parameter names for the route.
      *
-     * @return array
+     * @return array<string, null>
      */
-    protected function getOptionalParameterNames()
+    public function getOptionalParameterNames()
     {
         preg_match_all('/\{(\w+?)\?\}/', $this->uri(), $matches);
 

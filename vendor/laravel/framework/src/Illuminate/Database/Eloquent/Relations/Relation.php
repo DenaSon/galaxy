@@ -88,7 +88,6 @@ abstract class Relation implements BuilderContract
      *
      * @param  \Illuminate\Database\Eloquent\Builder<TRelatedModel>  $query
      * @param  TDeclaringModel  $parent
-     * @return void
      */
     public function __construct(Builder $query, Model $parent)
     {
@@ -172,7 +171,7 @@ abstract class Relation implements BuilderContract
     public function getEager()
     {
         return $this->eagerKeysWereEmpty
-            ? $this->query->getModel()->newCollection()
+            ? $this->related->newCollection()
             : $this->get();
     }
 

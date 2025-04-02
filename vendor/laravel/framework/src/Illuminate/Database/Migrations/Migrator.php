@@ -100,7 +100,6 @@ class Migrator
      * @param  \Illuminate\Database\ConnectionResolverInterface  $resolver
      * @param  \Illuminate\Filesystem\Filesystem  $files
      * @param  \Illuminate\Contracts\Events\Dispatcher|null  $dispatcher
-     * @return void
      */
     public function __construct(
         MigrationRepositoryInterface $repository,
@@ -241,12 +240,20 @@ class Migrator
             return $this->pretendToRun($migration, 'up');
         }
 
-        $this->write(Task::class, $name, fn () => $this->runMigration($migration, 'up'));
+        $shouldRunMigration = $migration instanceof Migration
+            ? $migration->shouldRun()
+            : true;
 
-        // Once we have run a migrations class, we will log that it was run in this
-        // repository so that we don't try to run it next time we do a migration
-        // in the application. A migration repository keeps the migrate order.
-        $this->repository->log($name, $batch);
+        if (! $shouldRunMigration) {
+            $this->write(Task::class, $name, fn () => MigrationResult::Skipped);
+        } else {
+            $this->write(Task::class, $name, fn () => $this->runMigration($migration, 'up'));
+
+            // Once we have run a migrations class, we will log that it was run in this
+            // repository so that we don't try to run it next time we do a migration
+            // in the application. A migration repository keeps the migrate order.
+            $this->repository->log($name, $batch);
+        }
     }
 
     /**
