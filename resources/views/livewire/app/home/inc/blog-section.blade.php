@@ -1,4 +1,4 @@
-<div class="container mx-auto lg:px-4 2xl:px-0 mt-2 overflow-hidden shadow-sm">
+<div class="container mx-auto lg:px-4 2xl:px-0 mt-2 overflow-hidden shadow-lg">
     <div class="px-2 lg:px-3">
         <div class="flex items-center justify-center py-3 lg:py-4 mb-2">
 
@@ -19,7 +19,7 @@
 
         </div>
 
-        <div class="flex justify-center mt-8">
+        <div class="flex justify-center mt-8 mb-4">
         <x-button link="{{ route('home.blog.indexBlog') }}" icon="o-list-bullet" label="مشاهده همه" class="btn-sm btn-outline btn-primary"/>
         </div>
 
