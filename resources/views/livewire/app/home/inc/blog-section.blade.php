@@ -1,6 +1,6 @@
 <div class="container mx-auto lg:px-4 2xl:px-0 mt-2 overflow-hidden shadow-sm">
     <div
-        class="px-2 lg:px-3  bg-white lg:rounded-large border-1 border-gradient-to-r from-blue-500 to-green-500 rounded-lg p-4">
+        class="px-2 lg:px-3  bg-white lg:rounded-large  rounded-lg p-4 border">
         <div class="flex items-center justify-center py-3 lg:py-4 mb-2">
 
             <h3 class="text-h3"> خواندنی های دناپکس </h3>
