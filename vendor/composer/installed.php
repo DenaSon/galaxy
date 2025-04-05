@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'aeb999a71a92a303bc8f695bac37bcb84c849048',
+        'reference' => '3ebc5d820cd436361e281ed009df1e6318d6507a',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -238,205 +238,205 @@
         'illuminate/auth' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/broadcasting' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/bus' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/cache' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/collections' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/concurrency' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/conditionable' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/config' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/console' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/container' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/contracts' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/cookie' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/database' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/encryption' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/events' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/filesystem' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/hashing' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/http' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/log' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/macroable' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/mail' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/notifications' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/pagination' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/pipeline' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/process' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/queue' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/redis' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/routing' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/session' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/support' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/testing' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/translation' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/validation' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'illuminate/view' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v12.6.0',
+                0 => 'v12.7.2',
             ),
         ),
         'intervention/gif' => array(
@@ -458,9 +458,9 @@
             'dev_requirement' => false,
         ),
         'intervention/image-laravel' => array(
-            'pretty_version' => '1.5.5',
-            'version' => '1.5.5.0',
-            'reference' => '3ee4b63b4e88c1967878c4b8cd51da4f38919c1a',
+            'pretty_version' => '1.5.6',
+            'version' => '1.5.6.0',
+            'reference' => '056029431400a5cc56036172787a578f334683c4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../intervention/image-laravel',
             'aliases' => array(),
@@ -524,9 +524,9 @@
             ),
         ),
         'laravel/framework' => array(
-            'pretty_version' => 'v12.6.0',
-            'version' => '12.6.0.0',
-            'reference' => '0219fdf28b749460e2f9ebd4e283a00d58b8f758',
+            'pretty_version' => 'v12.7.2',
+            'version' => '12.7.2.0',
+            'reference' => 'a4ba76e06fe6dd02312359f8184ab259900a7780',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/framework',
             'aliases' => array(),
@@ -535,7 +535,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'aeb999a71a92a303bc8f695bac37bcb84c849048',
+            'reference' => '3ebc5d820cd436361e281ed009df1e6318d6507a',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -764,9 +764,9 @@
             'dev_requirement' => false,
         ),
         'nunomaduro/collision' => array(
-            'pretty_version' => 'v8.7.0',
-            'version' => '8.7.0.0',
-            'reference' => '586cb8181a257a2152b6a855ca8d9598878a1a26',
+            'pretty_version' => 'v8.8.0',
+            'version' => '8.8.0.0',
+            'reference' => '4cf9f3b47afff38b139fb79ce54fc71799022ce8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nunomaduro/collision',
             'aliases' => array(),

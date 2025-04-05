@@ -1,6 +1,31 @@
 # Release Notes for 12.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v12.5.0...12.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v12.7.1...12.x)
+
+## [v12.7.1](https://github.com/laravel/framework/compare/v12.7.0...v12.7.1) - 2025-04-03
+
+## [v12.7.0](https://github.com/laravel/framework/compare/v12.6.0...v12.7.0) - 2025-04-03
+
+* [12.x] `AbstractPaginator` should implement `CanBeEscapedWhenCastToString` by [@gdebrauwer](https://github.com/gdebrauwer) in https://github.com/laravel/framework/pull/55256
+* [12.x] Add `whereAttachedTo()` Eloquent builder method by [@bakerkretzmar](https://github.com/bakerkretzmar) in https://github.com/laravel/framework/pull/55245
+* Make Illuminate\Support\Uri Macroable by [@riesjart](https://github.com/riesjart) in https://github.com/laravel/framework/pull/55260
+* [12.x] Add resource helper functions to Model/Collections by [@TimKunze96](https://github.com/TimKunze96) in https://github.com/laravel/framework/pull/55107
+* [12.x]: Use char(36) for uuid type on MariaDB < 10.7.0 by [@boedah](https://github.com/boedah) in https://github.com/laravel/framework/pull/55197
+* [12.x] Introducing `toArray` to `ComponentAttributeBag` class by [@devajmeireles](https://github.com/devajmeireles) in https://github.com/laravel/framework/pull/55258
+
+## [v12.6.0](https://github.com/laravel/framework/compare/v12.5.0...v12.6.0) - 2025-04-02
+
+* [12.x] Dont stop pruning if pruning one model fails by [@gdebrauwer](https://github.com/gdebrauwer) in https://github.com/laravel/framework/pull/55237
+* [12.x] Update Date Facade Docblocks by [@fdalcin](https://github.com/fdalcin) in https://github.com/laravel/framework/pull/55235
+* Make `db:seed` command prohibitable by [@spawnia](https://github.com/spawnia) in https://github.com/laravel/framework/pull/55238
+* [12.x] Introducing `Rules\Password::appliedRules` Method by [@devajmeireles](https://github.com/devajmeireles) in https://github.com/laravel/framework/pull/55206
+* [12.x] Allowing merging model attributes before insert via `Model::fillAndInsert()` by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/framework/pull/55038
+* [12.x] Fix type hints for DateTimeZone and DateTimeInterface on DateFactory by [@AndrewMast](https://github.com/AndrewMast) in https://github.com/laravel/framework/pull/55243
+* [12.x] Fix DateFactory docblock type hints by [@AndrewMast](https://github.com/AndrewMast) in https://github.com/laravel/framework/pull/55244
+* List missing `migrate:rollback` in DB::prohibitDestructiveCommands PhpDoc by [@spawnia](https://github.com/spawnia) in https://github.com/laravel/framework/pull/55252
+* [12.x] Add `Http::requestException()` by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/framework/pull/55241
+* New: Uri `pathSegments()` helper method by [@chester-sykes](https://github.com/chester-sykes) in https://github.com/laravel/framework/pull/55250
+* [12.x] Do not require returning a Builder instance from a local scope method by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/framework/pull/55246
 
 ## [v12.5.0](https://github.com/laravel/framework/compare/v12.4.1...v12.5.0) - 2025-04-01
 
