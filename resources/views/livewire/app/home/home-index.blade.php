@@ -28,7 +28,7 @@
     @include('livewire.app.home.inc.blog-section')
 
 
-    {{ slug_fa('اسلاگ فارسی اولین دناسان محمد اسدی سی سخت 58') }}
+
 
 </div>
 
