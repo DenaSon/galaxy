@@ -9566,22 +9566,22 @@ function replace(url, key, object) {
   if (!state.alpine)
     state.alpine = {};
   state.alpine[key] = unwrap(object);
-    try {
-        window.history.replaceState(state, "", url.toString());
-    } catch (e) {
-        console.error(e);
-    }
+  try {
+    window.history.replaceState(state, "", url.toString());
+  } catch (e) {
+    console.error(e);
+  }
 }
 function push(url, key, object) {
   let state = window.history.state || {};
   if (!state.alpine)
     state.alpine = {};
   state = { alpine: { ...state.alpine, ...{ [key]: unwrap(object) } } };
-    try {
-        window.history.pushState(state, "", url.toString());
-    } catch (e) {
-        console.error(e);
-    }
+  try {
+    window.history.pushState(state, "", url.toString());
+  } catch (e) {
+    console.error(e);
+  }
 }
 function unwrap(object) {
   if (object === void 0)
@@ -10824,8 +10824,8 @@ import_alpinejs15.default.interceptInit((el) => {
 
 // js/directives/wire-dirty.js
 var refreshDirtyStatesByComponent = new WeakBag();
-on("commit", ({component, respond}) => {
-    respond(() => {
+on("commit", ({ component, respond }) => {
+  respond(() => {
     setTimeout(() => {
       refreshDirtyStatesByComponent.each(component, (i) => i(false));
     });
