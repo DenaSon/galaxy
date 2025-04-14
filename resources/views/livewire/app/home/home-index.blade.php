@@ -27,7 +27,7 @@
 
     @include('livewire.app.home.inc.blog-section')
 
-        @slug('this is a slug for text persian')
+        {{ slug_fa('این متن تست است') }}
 
 </div>
 
