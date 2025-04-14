@@ -27,7 +27,7 @@
 
     @include('livewire.app.home.inc.blog-section')
 
-        {{ \Denason\PersianSlug\SlugGenerator::make('this is rtest','/',1,0) }}
+        @slug('این متن تست است')
 
 </div>
 
