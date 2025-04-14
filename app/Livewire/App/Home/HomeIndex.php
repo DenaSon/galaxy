@@ -21,6 +21,7 @@ class HomeIndex extends Component
 
     public function mount()
     {
+        dd(\Illuminate\Support\Facades\Blade::getCustomDirectives());
 
     }
 
