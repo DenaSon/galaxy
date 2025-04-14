@@ -551,16 +551,16 @@
         },
         {
             "name": "denason/persian-slug",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DenaSon/persian-slug.git",
-                "reference": "68225b11db32f8a2999f40e17f67e42f45f6b76d"
+                "reference": "e3001602f18218bf859f9e372e3a4e85aec62b9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DenaSon/persian-slug/zipball/68225b11db32f8a2999f40e17f67e42f45f6b76d",
-                "reference": "68225b11db32f8a2999f40e17f67e42f45f6b76d",
+                "url": "https://api.github.com/repos/DenaSon/persian-slug/zipball/e3001602f18218bf859f9e372e3a4e85aec62b9e",
+                "reference": "e3001602f18218bf859f9e372e3a4e85aec62b9e",
                 "shasum": ""
             },
             "require": {
@@ -606,7 +606,7 @@
                 "issues": "https://github.com/denason/persian-slug/issues",
                 "source": "https://github.com/denason/persian-slug"
             },
-            "time": "2025-04-14T08:15:01+00:00"
+            "time": "2025-04-14T09:29:09+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
