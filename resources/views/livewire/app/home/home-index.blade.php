@@ -27,7 +27,6 @@
 
     @include('livewire.app.home.inc.blog-section')
 
-        @slug('این متن تست است','/',0)
 
 </div>
 
