@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '153f7a7f41a65b3cd05a2c122935c0b7395a7438',
+        'reference' => '8ffdd6bb9155a267de99152430393834c61e4ab1',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -102,15 +102,6 @@
             'replaced' => array(
                 0 => '*',
             ),
-        ),
-        'denason/persian-slug' => array(
-            'pretty_version' => '1.0.0',
-            'version' => '1.0.0.0',
-            'reference' => 'b2b4fd09c636e00734ced7bc2137b6d99b73dba3',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../denason/persian-slug',
-            'aliases' => array(),
-            'dev_requirement' => false,
         ),
         'dflydev/dot-access-data' => array(
             'pretty_version' => 'v3.0.3',
@@ -544,7 +535,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '153f7a7f41a65b3cd05a2c122935c0b7395a7438',
+            'reference' => '8ffdd6bb9155a267de99152430393834c61e4ab1',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

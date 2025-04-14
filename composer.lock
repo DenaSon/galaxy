@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d4a03859b6a10d278326e89f5c1c2be",
+    "content-hash": "899bdd4f0a292c58d89113bce2a1d00a",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -548,65 +548,6 @@
                 "source": "https://github.com/cryptommer/smsir/tree/v1.2.0"
             },
             "time": "2024-07-22T18:02:31+00:00"
-        },
-        {
-            "name": "denason/persian-slug",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DenaSon/persian-slug.git",
-                "reference": "b2b4fd09c636e00734ced7bc2137b6d99b73dba3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DenaSon/persian-slug/zipball/b2b4fd09c636e00734ced7bc2137b6d99b73dba3",
-                "reference": "b2b4fd09c636e00734ced7bc2137b6d99b73dba3",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "^10.0|^11.0|^12.0",
-                "php": ">=8.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Denason\\PersianSlug\\PersianSlugServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Denason\\PersianSlug\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mohammad Asadi Sisakht",
-                    "email": "mohammad.asadi.sisakht@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Generate SEO-friendly slugs for Persian text in Laravel applications",
-            "keywords": [
-                "denason",
-                "laravel",
-                "persian",
-                "seo",
-                "slug"
-            ],
-            "support": {
-                "issues": "https://github.com/denason/persian-slug/issues",
-                "source": "https://github.com/denason/persian-slug"
-            },
-            "time": "2025-04-13T13:38:50+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
