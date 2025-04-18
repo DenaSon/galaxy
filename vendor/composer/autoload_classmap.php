@@ -11,6 +11,7 @@ return array(
     'App\\Console\\Commands\\GenerateSitemap' => $baseDir . '/app/Console/Commands/GenerateSitemap.php',
     'App\\Console\\Commands\\SendLogEmail' => $baseDir . '/app/Console/Commands/SendLogEmail.php',
     'App\\Console\\Commands\\SystemClear' => $baseDir . '/app/Console/Commands/SystemClear.php',
+    'App\\Console\\Commands\\tilp' => $baseDir . '/app/Console/Commands/tilp.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Middleware\\ConvertToPersianNumbers' => $baseDir . '/app/Http/Middleware/ConvertToPersianNumbers.php',
     'App\\Http\\Middleware\\RoleMiddleware' => $baseDir . '/app/Http/Middleware/RoleMiddleware.php',

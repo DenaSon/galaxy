@@ -683,6 +683,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'App\\Console\\Commands\\GenerateSitemap' => __DIR__ . '/../..' . '/app/Console/Commands/GenerateSitemap.php',
         'App\\Console\\Commands\\SendLogEmail' => __DIR__ . '/../..' . '/app/Console/Commands/SendLogEmail.php',
         'App\\Console\\Commands\\SystemClear' => __DIR__ . '/../..' . '/app/Console/Commands/SystemClear.php',
+        'App\\Console\\Commands\\tilp' => __DIR__ . '/../..' . '/app/Console/Commands/tilp.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Middleware\\ConvertToPersianNumbers' => __DIR__ . '/../..' . '/app/Http/Middleware/ConvertToPersianNumbers.php',
         'App\\Http\\Middleware\\RoleMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/RoleMiddleware.php',
