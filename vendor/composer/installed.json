@@ -656,6 +656,74 @@
             "install-path": "../cryptommer/smsir"
         },
         {
+            "name": "denason/iran-location",
+            "version": "1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DenaSon/iran-location.git",
+                "reference": "26a0f4f23b8455dbe6113442735ac928b4642a86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DenaSon/iran-location/zipball/26a0f4f23b8455dbe6113442735ac928b4642a86",
+                "reference": "26a0f4f23b8455dbe6113442735ac928b4642a86",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
+                "php": ">=8.0"
+            },
+            "time": "2025-04-18T07:28:15+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "IranLocation": "Denason\\IranLocation\\Facades\\IranLocation"
+                    },
+                    "providers": [
+                        "Denason\\IranLocation\\IranLocationServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/Helpers.php"
+                ],
+                "psr-4": {
+                    "Denason\\IranLocation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohammad Asadi Sisakht",
+                    "email": "mohammad.asadi.sisakht@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel package to manage Iranian location data including provinces and cities,and Eloquent relations,helpers,facades and Caching features",
+            "keywords": [
+                "geocoding",
+                "iran",
+                "iran regions",
+                "iran-cities",
+                "iran-geocoding",
+                "iran-location",
+                "iran-province",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/denason/iran-location/issues",
+                "source": "https://github.com/denason/iran-location"
+            },
+            "install-path": "../denason/iran-location"
+        },
+        {
             "name": "denason/persian-slug",
             "version": "1.1.0",
             "version_normalized": "1.1.0.0",

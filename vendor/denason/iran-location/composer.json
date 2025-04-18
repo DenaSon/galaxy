@@ -1,0 +1,54 @@
+{
+    "name": "denason/iran-location",
+    "version": "1.0.2",
+    "description": "A Laravel package to manage Iranian location data including provinces and cities,and Eloquent relations,helpers,facades and Caching features",
+    "keywords": ["laravel", "iran-location", "iran-geocoding", "geocoding", "iran-cities","iran regions","iran-province","iran"],
+
+    "authors": [
+        {
+            "name": "Mohammad Asadi Sisakht",
+            "email": "mohammad.asadi.sisakht@gmail.com",
+            "role": "Developer"
+        }
+    ],
+
+    "support": {
+        "issues": "https://github.com/denason/iran-location/issues",
+        "source": "https://github.com/denason/iran-location"
+    },
+
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Denason\\IranLocation\\": "src/"
+
+        },
+        "files": [
+            "src/Helpers.php"
+        ]
+    },
+
+
+
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Denason\\IranLocation\\IranLocationServiceProvider"
+
+            ],
+            "aliases": {
+                "IranLocation": "Denason\\IranLocation\\Facades\\IranLocation"
+            }
+
+        }
+
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.0",
+        "illuminate/support": "^9.0|^10.0|^11.0|^12.0"
+    }
+}

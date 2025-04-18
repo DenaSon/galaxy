@@ -39,6 +39,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
+        'bef5ee23a0565b79a662bd41e376f391' => __DIR__ . '/..' . '/denason/iran-location/src/Helpers.php',
         '4acb246000775810e52909b6a1e73f42' => __DIR__ . '/..' . '/denason/persian-slug/src/helpers.php',
         'b0b808d855d8f6fc568ca07586cb55de' => __DIR__ . '/..' . '/livewire/volt/functions.php',
         'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
@@ -195,6 +196,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
             'Doctrine\\Common\\Lexer\\' => 22,
             'Dflydev\\DotAccessData\\' => 22,
             'Denason\\PersianSlug\\' => 20,
+            'Denason\\IranLocation\\' => 21,
             'DeepCopy\\' => 9,
             'DebugBar\\' => 9,
             'Database\\Seeders\\' => 17,
@@ -618,6 +620,10 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Denason\\PersianSlug\\' => 
         array (
             0 => __DIR__ . '/..' . '/denason/persian-slug/src',
+        ),
+        'Denason\\IranLocation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/denason/iran-location/src',
         ),
         'DeepCopy\\' => 
         array (
@@ -1206,6 +1212,13 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+        'Denason\\IranLocation\\Database\\Seeders\\IranLocationSeeder' => __DIR__ . '/..' . '/denason/iran-location/src/Database/Seeders/IranLocationSeeder.php',
+        'Denason\\IranLocation\\Facades\\IranLocation' => __DIR__ . '/..' . '/denason/iran-location/src/Facades/IranLocation.php',
+        'Denason\\IranLocation\\IranLocation' => __DIR__ . '/..' . '/denason/iran-location/src/IranLocation.php',
+        'Denason\\IranLocation\\IranLocationInterface' => __DIR__ . '/..' . '/denason/iran-location/src/IranLocationInterface.php',
+        'Denason\\IranLocation\\IranLocationServiceProvider' => __DIR__ . '/..' . '/denason/iran-location/src/IranLocationServiceProvider.php',
+        'Denason\\IranLocation\\Models\\City' => __DIR__ . '/..' . '/denason/iran-location/src/Models/City.php',
+        'Denason\\IranLocation\\Models\\Province' => __DIR__ . '/..' . '/denason/iran-location/src/Models/Province.php',
         'Denason\\PersianSlug\\Facades\\SlugGeneratorFacade' => __DIR__ . '/..' . '/denason/persian-slug/src/Facades/SlugGeneratorFacade.php',
         'Denason\\PersianSlug\\PersianSlugServiceProvider' => __DIR__ . '/..' . '/denason/persian-slug/src/PersianSlugServiceProvider.php',
         'Denason\\PersianSlug\\SlugGenerator' => __DIR__ . '/..' . '/denason/persian-slug/src/SlugGenerator.php',
