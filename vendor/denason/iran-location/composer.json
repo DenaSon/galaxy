@@ -1,6 +1,5 @@
 {
     "name": "denason/iran-location",
-    "version": "1.0.2",
     "description": "A Laravel package to manage Iranian location data including provinces and cities,and Eloquent relations,helpers,facades and Caching features",
     "keywords": ["laravel", "iran-location", "iran-geocoding", "geocoding", "iran-cities","iran regions","iran-province","iran"],
 

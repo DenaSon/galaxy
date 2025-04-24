@@ -102,6 +102,7 @@ return array(
     'Doctrine\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/src'),
     'Dflydev\\DotAccessData\\' => array($vendorDir . '/dflydev/dot-access-data/src'),
+    'Denason\\Wikipedia\\' => array($vendorDir . '/denason/wikipedia/src'),
     'Denason\\PersianSlug\\' => array($vendorDir . '/denason/persian-slug/src'),
     'Denason\\IranLocation\\' => array($vendorDir . '/denason/iran-location/src'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),

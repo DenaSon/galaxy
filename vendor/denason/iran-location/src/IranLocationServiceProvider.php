@@ -1,8 +1,8 @@
 <?php
 
 namespace Denason\IranLocation;
-
 use Denason\IranLocation\Console\Commands\IranLocationInstallCommand;
+
 use Illuminate\Support\ServiceProvider;
 
 class IranLocationServiceProvider extends ServiceProvider
@@ -37,7 +37,7 @@ class IranLocationServiceProvider extends ServiceProvider
         ], 'iran-location-config');
 
 
-        // Register commands
+         //Register commands
         if ($this->app->runningInConsole()) {
             $this->commands([
                 IranLocationInstallCommand::class

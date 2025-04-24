@@ -41,6 +41,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'bef5ee23a0565b79a662bd41e376f391' => __DIR__ . '/..' . '/denason/iran-location/src/Helpers.php',
         '4acb246000775810e52909b6a1e73f42' => __DIR__ . '/..' . '/denason/persian-slug/src/helpers.php',
+        '5c433caba815cfad855e9d81b2e36a78' => __DIR__ . '/..' . '/denason/wikipedia/src/Helpers.php',
         'b0b808d855d8f6fc568ca07586cb55de' => __DIR__ . '/..' . '/livewire/volt/functions.php',
         'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
@@ -195,6 +196,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
             'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Common\\Lexer\\' => 22,
             'Dflydev\\DotAccessData\\' => 22,
+            'Denason\\Wikipedia\\' => 18,
             'Denason\\PersianSlug\\' => 20,
             'Denason\\IranLocation\\' => 21,
             'DeepCopy\\' => 9,
@@ -616,6 +618,10 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Dflydev\\DotAccessData\\' => 
         array (
             0 => __DIR__ . '/..' . '/dflydev/dot-access-data/src',
+        ),
+        'Denason\\Wikipedia\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/denason/wikipedia/src',
         ),
         'Denason\\PersianSlug\\' => 
         array (
@@ -1212,6 +1218,9 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+        'Denason\\IranLocation\\Console\\Commands\\IranLocationInstallCommand' => __DIR__ . '/..' . '/denason/iran-location/src/Console/Commands/IranLocationInstallCommand.php',
+        'Denason\\IranLocation\\Console\\Commands\\IranLocationMigrateCommand' => __DIR__ . '/..' . '/denason/iran-location/src/Console/Commands/IranLocationMigrateCommand.php',
+        'Denason\\IranLocation\\Console\\Commands\\IranLocationSeedCommand' => __DIR__ . '/..' . '/denason/iran-location/src/Console/Commands/IranLocationSeedCommand.php',
         'Denason\\IranLocation\\Database\\Seeders\\IranLocationSeeder' => __DIR__ . '/..' . '/denason/iran-location/src/Database/Seeders/IranLocationSeeder.php',
         'Denason\\IranLocation\\Facades\\IranLocation' => __DIR__ . '/..' . '/denason/iran-location/src/Facades/IranLocation.php',
         'Denason\\IranLocation\\IranLocation' => __DIR__ . '/..' . '/denason/iran-location/src/IranLocation.php',
@@ -1223,6 +1232,10 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Denason\\PersianSlug\\PersianSlugServiceProvider' => __DIR__ . '/..' . '/denason/persian-slug/src/PersianSlugServiceProvider.php',
         'Denason\\PersianSlug\\SlugGenerator' => __DIR__ . '/..' . '/denason/persian-slug/src/SlugGenerator.php',
         'Denason\\PersianSlug\\SlugGeneratorInterface' => __DIR__ . '/..' . '/denason/persian-slug/src/SlugGeneratorInterface.php',
+        'Denason\\Wikipedia\\Facades\\Wikipedia' => __DIR__ . '/..' . '/denason/wikipedia/src/Facades/Wikipedia.php',
+        'Denason\\Wikipedia\\Services\\WikipediaManager' => __DIR__ . '/..' . '/denason/wikipedia/src/Services/WikipediaManager.php',
+        'Denason\\Wikipedia\\WikipediaInterface' => __DIR__ . '/..' . '/denason/wikipedia/src/WikipediaInterface.php',
+        'Denason\\Wikipedia\\WikipediaServiceProvider' => __DIR__ . '/..' . '/denason/wikipedia/src/WikipediaServiceProvider.php',
         'Dflydev\\DotAccessData\\Data' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Data.php',
         'Dflydev\\DotAccessData\\DataInterface' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/DataInterface.php',
         'Dflydev\\DotAccessData\\Exception\\DataException' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Exception/DataException.php',
@@ -2168,6 +2181,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Illuminate\\Cache\\DynamoDbLock' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/DynamoDbLock.php',
         'Illuminate\\Cache\\DynamoDbStore' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/DynamoDbStore.php',
         'Illuminate\\Cache\\Events\\CacheEvent' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/Events/CacheEvent.php',
+        'Illuminate\\Cache\\Events\\CacheFlushFailed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/Events/CacheFlushFailed.php',
         'Illuminate\\Cache\\Events\\CacheFlushed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/Events/CacheFlushed.php',
         'Illuminate\\Cache\\Events\\CacheFlushing' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/Events/CacheFlushing.php',
         'Illuminate\\Cache\\Events\\CacheHit' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/Events/CacheHit.php',
@@ -2189,6 +2203,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Illuminate\\Cache\\MemcachedConnector' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/MemcachedConnector.php',
         'Illuminate\\Cache\\MemcachedLock' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/MemcachedLock.php',
         'Illuminate\\Cache\\MemcachedStore' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/MemcachedStore.php',
+        'Illuminate\\Cache\\MemoizedStore' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/MemoizedStore.php',
         'Illuminate\\Cache\\NoLock' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/NoLock.php',
         'Illuminate\\Cache\\NullStore' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/NullStore.php',
         'Illuminate\\Cache\\PhpRedisLock' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/PhpRedisLock.php',
@@ -2283,6 +2298,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Illuminate\\Console\\View\\Components\\Task' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/View/Components/Task.php',
         'Illuminate\\Console\\View\\Components\\TwoColumnDetail' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/View/Components/TwoColumnDetail.php',
         'Illuminate\\Console\\View\\Components\\Warn' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/View/Components/Warn.php',
+        'Illuminate\\Console\\View\\TaskResult' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/View/TaskResult.php',
         'Illuminate\\Container\\Attributes\\Auth' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Container/Attributes/Auth.php',
         'Illuminate\\Container\\Attributes\\Authenticated' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Container/Attributes/Authenticated.php',
         'Illuminate\\Container\\Attributes\\Cache' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Container/Attributes/Cache.php',

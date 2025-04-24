@@ -2,17 +2,17 @@
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v3.15.3",
-            "version_normalized": "3.15.3.0",
+            "version": "v3.15.4",
+            "version_normalized": "3.15.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "4ccab20844d18c5af08b68d310e7151a791c3037"
+                "reference": "c0667ea91f7185f1e074402c5788195e96bf8106"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/4ccab20844d18c5af08b68d310e7151a791c3037",
-                "reference": "4ccab20844d18c5af08b68d310e7151a791c3037",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/c0667ea91f7185f1e074402c5788195e96bf8106",
+                "reference": "c0667ea91f7185f1e074402c5788195e96bf8106",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,7 @@
                 "phpunit/phpunit": "^9.5.10|^10|^11",
                 "squizlabs/php_codesniffer": "^3.5"
             },
-            "time": "2025-04-08T15:11:06+00:00",
+            "time": "2025-04-16T06:32:06+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -74,7 +74,7 @@
             ],
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-debugbar/issues",
-                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.15.3"
+                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.15.4"
             },
             "funding": [
                 {
@@ -657,24 +657,24 @@
         },
         {
             "name": "denason/iran-location",
-            "version": "1.0.2",
-            "version_normalized": "1.0.2.0",
+            "version": "v1.1.4",
+            "version_normalized": "1.1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DenaSon/iran-location.git",
-                "reference": "26a0f4f23b8455dbe6113442735ac928b4642a86"
+                "reference": "8c04a2e2b2952235e87e1d0467e5921fa704495f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DenaSon/iran-location/zipball/26a0f4f23b8455dbe6113442735ac928b4642a86",
-                "reference": "26a0f4f23b8455dbe6113442735ac928b4642a86",
+                "url": "https://api.github.com/repos/DenaSon/iran-location/zipball/8c04a2e2b2952235e87e1d0467e5921fa704495f",
+                "reference": "8c04a2e2b2952235e87e1d0467e5921fa704495f",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
                 "php": ">=8.0"
             },
-            "time": "2025-04-18T07:28:15+00:00",
+            "time": "2025-04-21T14:10:24+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -784,6 +784,64 @@
                 "source": "https://github.com/denason/persian-slug"
             },
             "install-path": "../denason/persian-slug"
+        },
+        {
+            "name": "denason/wikipedia",
+            "version": "v1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DenaSon/wikipedia.git",
+                "reference": "df9a7ac0e85f65cd8be9aae5d086365846f40ff6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DenaSon/wikipedia/zipball/df9a7ac0e85f65cd8be9aae5d086365846f40ff6",
+                "reference": "df9a7ac0e85f65cd8be9aae5d086365846f40ff6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+                "php": ">=8.0"
+            },
+            "time": "2025-04-24T11:48:25+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Wikipedia": "Denason\\Wikipedia\\Facades\\Wikipedia"
+                    },
+                    "providers": [
+                        "Denason\\Wikipedia\\WikipediaServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/Helpers.php"
+                ],
+                "psr-4": {
+                    "Denason\\Wikipedia\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohammad Asadi Sisakht",
+                    "email": "mohammad.asadi.sisakht@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel package to get data and manage information from Wikipedia Directly",
+            "support": {
+                "issues": "https://github.com/denason/wikipedia/issues",
+                "source": "https://github.com/denason/wikipedia"
+            },
+            "install-path": "../denason/wikipedia"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2487,17 +2545,17 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.8.1",
-            "version_normalized": "12.8.1.0",
+            "version": "v12.10.1",
+            "version_normalized": "12.10.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d1ea3566f6e0cad34834c6d18db0bf995438eb87"
+                "reference": "3264999c3123f55b7651c275efb6942034c47eda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d1ea3566f6e0cad34834c6d18db0bf995438eb87",
-                "reference": "d1ea3566f6e0cad34834c6d18db0bf995438eb87",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3264999c3123f55b7651c275efb6942034c47eda",
+                "reference": "3264999c3123f55b7651c275efb6942034c47eda",
                 "shasum": ""
             },
             "require": {
@@ -2606,7 +2664,7 @@
                 "league/flysystem-sftp-v3": "^3.25.1",
                 "mockery/mockery": "^1.6.10",
                 "orchestra/testbench-core": "^10.0.0",
-                "pda/pheanstalk": "^5.0.6",
+                "pda/pheanstalk": "^5.0.6|^7.0.0",
                 "php-http/discovery": "^1.15",
                 "phpstan/phpstan": "^2.0",
                 "phpunit/phpunit": "^10.5.35|^11.5.3|^12.0.1",
@@ -2653,7 +2711,7 @@
                 "symfony/postmark-mailer": "Required to enable support for the Postmark mail transport (^7.2).",
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^7.2)."
             },
-            "time": "2025-04-08T19:58:59+00:00",
+            "time": "2025-04-23T14:49:24+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2836,17 +2894,17 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.41.0",
-            "version_normalized": "1.41.0.0",
+            "version": "v1.41.1",
+            "version_normalized": "1.41.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "fe1a4ada0abb5e4bd99eb4e4b0d87906c00cdeec"
+                "reference": "e5692510f1ef8e0f5096cde2b885d558f8d86592"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/fe1a4ada0abb5e4bd99eb4e4b0d87906c00cdeec",
-                "reference": "fe1a4ada0abb5e4bd99eb4e4b0d87906c00cdeec",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/e5692510f1ef8e0f5096cde2b885d558f8d86592",
+                "reference": "e5692510f1ef8e0f5096cde2b885d558f8d86592",
                 "shasum": ""
             },
             "require": {
@@ -2861,7 +2919,7 @@
                 "orchestra/testbench": "^7.0|^8.0|^9.0|^10.0",
                 "phpstan/phpstan": "^1.10"
             },
-            "time": "2025-01-24T15:45:36+00:00",
+            "time": "2025-04-22T13:39:39+00:00",
             "bin": [
                 "bin/sail"
             ],
@@ -3035,17 +3093,17 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.6.1",
-            "version_normalized": "2.6.1.0",
+            "version": "2.6.2",
+            "version_normalized": "2.6.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "d990688c91cedfb69753ffc2512727ec646df2ad"
+                "reference": "06c3b0bf2540338094575612f4a1778d0d2d5e94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d990688c91cedfb69753ffc2512727ec646df2ad",
-                "reference": "d990688c91cedfb69753ffc2512727ec646df2ad",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/06c3b0bf2540338094575612f4a1778d0d2d5e94",
+                "reference": "06c3b0bf2540338094575612f4a1778d0d2d5e94",
                 "shasum": ""
             },
             "require": {
@@ -3079,7 +3137,7 @@
             "suggest": {
                 "symfony/yaml": "v2.3+ required if using the Front Matter extension"
             },
-            "time": "2024-12-29T14:10:59+00:00",
+            "time": "2025-04-18T21:09:27+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -5403,17 +5461,17 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.17",
-            "version_normalized": "11.5.17.0",
+            "version": "11.5.18",
+            "version_normalized": "11.5.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "fd2e863a2995cdfd864fb514b5e0b28b09895b5c"
+                "reference": "fc3e887c7f3f9917e1bf61e523413d753db00a17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fd2e863a2995cdfd864fb514b5e0b28b09895b5c",
-                "reference": "fd2e863a2995cdfd864fb514b5e0b28b09895b5c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fc3e887c7f3f9917e1bf61e523413d753db00a17",
+                "reference": "fc3e887c7f3f9917e1bf61e523413d753db00a17",
                 "shasum": ""
             },
             "require": {
@@ -5447,7 +5505,7 @@
             "suggest": {
                 "ext-soap": "To be able to generate mocks based on WSDL files"
             },
-            "time": "2025-04-08T07:59:11+00:00",
+            "time": "2025-04-22T06:09:49+00:00",
             "bin": [
                 "phpunit"
             ],
@@ -5487,7 +5545,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.17"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.18"
             },
             "funding": [
                 {
@@ -5497,6 +5555,14 @@
                 {
                     "url": "https://github.com/sebastianbergmann",
                     "type": "github"
+                },
+                {
+                    "url": "https://liberapay.com/sebastianbergmann",
+                    "type": "liberapay"
+                },
+                {
+                    "url": "https://thanks.dev/u/gh/sebastianbergmann",
+                    "type": "thanks_dev"
                 },
                 {
                     "url": "https://tidelift.com/funding/github/packagist/phpunit/phpunit",
