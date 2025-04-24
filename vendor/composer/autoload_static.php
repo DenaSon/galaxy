@@ -40,6 +40,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         '4acb246000775810e52909b6a1e73f42' => __DIR__ . '/..' . '/denason/persian-slug/src/helpers.php',
+        '5c433caba815cfad855e9d81b2e36a78' => __DIR__ . '/..' . '/denason/wikipedia/src/Helpers.php',
         'b0b808d855d8f6fc568ca07586cb55de' => __DIR__ . '/..' . '/livewire/volt/functions.php',
         'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
@@ -193,6 +194,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
             'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Common\\Lexer\\' => 22,
             'Dflydev\\DotAccessData\\' => 22,
+            'Denason\\Wikipedia\\' => 18,
             'Denason\\PersianSlug\\' => 20,
             'DeepCopy\\' => 9,
             'DebugBar\\' => 9,
@@ -608,6 +610,10 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         array (
             0 => __DIR__ . '/..' . '/dflydev/dot-access-data/src',
         ),
+        'Denason\\Wikipedia\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/denason/wikipedia/src',
+        ),
         'Denason\\PersianSlug\\' => 
         array (
             0 => __DIR__ . '/..' . '/denason/persian-slug/src',
@@ -683,7 +689,6 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'App\\Console\\Commands\\GenerateSitemap' => __DIR__ . '/../..' . '/app/Console/Commands/GenerateSitemap.php',
         'App\\Console\\Commands\\SendLogEmail' => __DIR__ . '/../..' . '/app/Console/Commands/SendLogEmail.php',
         'App\\Console\\Commands\\SystemClear' => __DIR__ . '/../..' . '/app/Console/Commands/SystemClear.php',
-        'App\\Console\\Commands\\tilp' => __DIR__ . '/../..' . '/app/Console/Commands/tilp.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Middleware\\ConvertToPersianNumbers' => __DIR__ . '/../..' . '/app/Http/Middleware/ConvertToPersianNumbers.php',
         'App\\Http\\Middleware\\RoleMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/RoleMiddleware.php',
@@ -1137,6 +1142,10 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Denason\\PersianSlug\\PersianSlugServiceProvider' => __DIR__ . '/..' . '/denason/persian-slug/src/PersianSlugServiceProvider.php',
         'Denason\\PersianSlug\\SlugGenerator' => __DIR__ . '/..' . '/denason/persian-slug/src/SlugGenerator.php',
         'Denason\\PersianSlug\\SlugGeneratorInterface' => __DIR__ . '/..' . '/denason/persian-slug/src/SlugGeneratorInterface.php',
+        'Denason\\Wikipedia\\Facades\\Wikipedia' => __DIR__ . '/..' . '/denason/wikipedia/src/Facades/Wikipedia.php',
+        'Denason\\Wikipedia\\Services\\WikipediaManager' => __DIR__ . '/..' . '/denason/wikipedia/src/Services/WikipediaManager.php',
+        'Denason\\Wikipedia\\WikipediaInterface' => __DIR__ . '/..' . '/denason/wikipedia/src/WikipediaInterface.php',
+        'Denason\\Wikipedia\\WikipediaServiceProvider' => __DIR__ . '/..' . '/denason/wikipedia/src/WikipediaServiceProvider.php',
         'Dflydev\\DotAccessData\\Data' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Data.php',
         'Dflydev\\DotAccessData\\DataInterface' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/DataInterface.php',
         'Dflydev\\DotAccessData\\Exception\\DataException' => __DIR__ . '/..' . '/dflydev/dot-access-data/src/Exception/DataException.php',

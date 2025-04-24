@@ -659,6 +659,64 @@
             "install-path": "../denason/persian-slug"
         },
         {
+            "name": "denason/wikipedia",
+            "version": "v1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DenaSon/wikipedia.git",
+                "reference": "df9a7ac0e85f65cd8be9aae5d086365846f40ff6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DenaSon/wikipedia/zipball/df9a7ac0e85f65cd8be9aae5d086365846f40ff6",
+                "reference": "df9a7ac0e85f65cd8be9aae5d086365846f40ff6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+                "php": ">=8.0"
+            },
+            "time": "2025-04-24T11:48:25+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Wikipedia": "Denason\\Wikipedia\\Facades\\Wikipedia"
+                    },
+                    "providers": [
+                        "Denason\\Wikipedia\\WikipediaServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/Helpers.php"
+                ],
+                "psr-4": {
+                    "Denason\\Wikipedia\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohammad Asadi Sisakht",
+                    "email": "mohammad.asadi.sisakht@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel package to get data and manage information from Wikipedia Directly",
+            "support": {
+                "issues": "https://github.com/denason/wikipedia/issues",
+                "source": "https://github.com/denason/wikipedia"
+            },
+            "install-path": "../denason/wikipedia"
+        },
+        {
             "name": "dflydev/dot-access-data",
             "version": "v3.0.3",
             "version_normalized": "3.0.3.0",
