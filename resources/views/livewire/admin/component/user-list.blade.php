@@ -42,9 +42,9 @@
                         <td>
                             {{ number_format($user?->orders_sum_grand_total) }} تومان
                         </td>
-                        <td class="text-xs" title="{{ auth()->user()->roles()->first()->name  }}">
+                        <td class="text-xs" title="">
 
-                            @foreach($user->roles() as $role)
+                            @foreach($user->roles()->get() as $role)
                                 {{ $role->name }}
                             @endforeach
 
