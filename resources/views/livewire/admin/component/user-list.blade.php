@@ -16,7 +16,7 @@
                         <a role="button" wire:click="toggleSort">#</a>
                     </th>
                     <th>
-                        مبلغ سفارش‌ها
+                        ساخنمان
                     </th>
                     <th> نقش</th>
                     <th>تاریخ ثبت‌نام</th>
@@ -40,7 +40,11 @@
                         </td>
 
                         <td>
-                            {{ number_format($user?->orders_sum_grand_total) }} تومان
+                            @if($user->hasBuilding())
+                                <x-icon name="o-hand-thumb-up" class="text-success"/>
+                            @else
+                                <x-icon name="o-hand-thumb-down" class="text-gray-700"/>
+                            @endif
                         </td>
                         <td class="text-xs" title="">
 
@@ -49,9 +53,6 @@
                                 {{ __('roles.' . $role->name) }},
 
                             @endforeach
-                                @if($user->hasBuilding())
-                                    مدیر ساختمان,
-                                @endif
 
 
                         </td>
