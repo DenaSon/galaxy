@@ -16,7 +16,8 @@
                         <a role="button" wire:click="toggleSort">#</a>
                     </th>
                     <th>
-                        مبلغ سفارش‌ها</th>
+                        مبلغ سفارش‌ها
+                    </th>
                     <th> نقش</th>
                     <th>تاریخ ثبت‌نام</th>
 
@@ -26,7 +27,8 @@
 
                 @foreach($users as $index => $user)
 
-                    <tr wire:key="{{ $user->id }}" @if($user->created_at->isToday())) class="text-pink-700 font-bold" @endif>
+                    <tr wire:key="{{ $user->id }}" @if($user->created_at->isToday()))
+                        class="text-pink-700 font-bold" @endif>
                         <th>{{ $loop->iteration }}</th>
                         <td>{{ $user?->first_name ?? 'N/A' }} {{ $user?->last_name ?? 'N/A' }}</td>
                         <td>{{ $user?->phone }}</td>
@@ -42,11 +44,8 @@
                         </td>
                         <td class="text-xs" title="{{ auth()->user()->roles()->first()->name  }}">
 
-                            @if ($user->orders_max_created_at)
-                                {{ jdate($user->orders_max_created_at)->ago()  }}
-                            @else
-                                N/A
-                            @endif
+                            {{ auth()->user()->roles()->first()->name  }}
+
 
                         </td>
 
