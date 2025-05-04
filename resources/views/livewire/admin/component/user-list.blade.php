@@ -17,7 +17,7 @@
                     </th>
                     <th>
                         مبلغ سفارش‌ها</th>
-                    <th>زمان آخرین خرید</th>
+                    <th> نقش</th>
                     <th>تاریخ ثبت‌نام</th>
 
                 </tr>
@@ -40,7 +40,7 @@
                         <td>
                             {{ number_format($user?->orders_sum_grand_total) }} تومان
                         </td>
-                        <td class="text-xs" title="{{ jdate($user->orders_max_created_at) }}">
+                        <td class="text-xs" title="{{ auth()->user()->roles()->first()->name  }}">
 
                             @if ($user->orders_max_created_at)
                                 {{ jdate($user->orders_max_created_at)->ago()  }}
