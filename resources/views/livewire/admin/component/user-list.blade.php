@@ -49,6 +49,9 @@
                                 {{ __('roles.' . $role->name) }},
 
                             @endforeach
+                                @if($user->hasBuilding())
+                                    مدیر ساختمان,
+                                @endif
 
 
                         </td>
