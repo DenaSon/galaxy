@@ -47,6 +47,9 @@ badge-{{ $request->status == 'rejected' ? 'error' : ($request->status == 'approv
                             @if($request->lat != null && $request->lng != null)
                                 @livewire('app.services.components.static-map',['building' => $request->building_id,'request'=>$request->id],key($request->id))
                             @endif
+                            @if($request->status == 'pending')
+                                    @livewire('app.services.components.technician.request-action',['building' => $request->building_id,'request'=>$request->id],key($request->id))
+                            @endif
 
                         </div>
                     </td>

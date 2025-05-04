@@ -22,7 +22,6 @@ class Request extends Model
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
-
     }
 
     public function building(): BelongsTo

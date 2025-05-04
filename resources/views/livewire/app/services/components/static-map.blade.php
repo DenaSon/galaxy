@@ -4,7 +4,7 @@
 
             <img
                 class="w-full h-full object-cover"
-                src="https://api.neshan.org/v4/static?key={{ $apiKey }}&type=neshan&width=500&height=350&zoom=16&center={{ $lat }},{{ $lng }}&markerToken=431815.ZlPCN9kU"
+                src="https://api.neshan.org/v4/static?key={{ $apiKey }}&type=neshan&width=500&height=350&zoom=15&center={{ $lat }},{{ $lng }}&markerToken=431815.ZlPCN9kU"
                 alt="Static Map">
 
 
@@ -21,6 +21,6 @@
 
     </x-modal>
 
-    <x-button responsive icon="o-map" @click="$wire.staticMap = true" class="btn-warning btn-xs"/>
+    <x-button responsive icon="o-map" @click="$wire.staticMap = true" class="btn-warning btn-xs text-white tooltip" data-tip="نقشه"/>
 
 </div>
