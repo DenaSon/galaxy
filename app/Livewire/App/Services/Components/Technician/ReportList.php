@@ -23,7 +23,10 @@ class ReportList extends Component
         $user = auth()->user();
         $technicianCity = optional($user->addresses()->first())->city?->name;
         $technicianCityId = optional($user->addresses()->first())->city?->id;
-        $requests = Request::query()?->where('requests.city_id', '=', $technicianCityId)?->paginate(10);
+        $requests = Request::query()
+            ?->where('requests.city_id', '=', $technicianCityId)
+            ->orderBy('requests.created_at', 'desc')
+            ?->paginate(10);
 
         return view('livewire.app.services.components.technician.report-list', compact('requests', 'technicianCity'));
     }
