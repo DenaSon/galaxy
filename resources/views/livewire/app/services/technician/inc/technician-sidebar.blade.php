@@ -1,6 +1,6 @@
 <x-menu class="border border-dashed">
 
-    <x-stat title="درخواست ها" value="44" icon="o-user-group" tooltip="درخواست های کارفرما"/>
+    <x-stat title="درخواست ها" value="{{ $requestsCount }}" icon="o-user-group" tooltip="درخواست های کارفرما"/>
 
     <hr/>
 

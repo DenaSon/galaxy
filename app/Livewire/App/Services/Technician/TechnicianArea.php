@@ -2,7 +2,9 @@
 
 namespace App\Livewire\App\Services\Technician;
 
+use App\Models\Request;
 use App\Models\Role;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -80,7 +82,10 @@ class TechnicianArea extends Component
 
     public function render()
     {
+        $authUserCityId = Auth::user()->addresses()->first()->city_id;
+        $requestsCount = Request::query()->where('requests.city_id', '=', $authUserCityId)->count();
         return view('livewire.app.services.technician.technician-area')
+            ->with('requestsCount', $requestsCount)
             ->title('خدمات تکنسین لیفت‌پال');
     }
 }
