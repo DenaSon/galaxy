@@ -44,7 +44,9 @@
                         </td>
                         <td class="text-xs" title="{{ auth()->user()->roles()->first()->name  }}">
 
-                            {{ $user->roles()->first()->name  }}
+                            @foreach($user->roles() as $role)
+                                {{ $role->name }}
+                            @endforeach
 
 
                         </td>
