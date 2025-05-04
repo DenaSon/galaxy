@@ -45,7 +45,8 @@
                         <td class="text-xs" title="">
 
                             @foreach($user->roles()->get() as $role)
-                                {{ $role->name }}
+                                {{ $user->roles->map(fn($role) => __('roles.' . $role->name))->join(', ') }}
+
                             @endforeach
 
 
