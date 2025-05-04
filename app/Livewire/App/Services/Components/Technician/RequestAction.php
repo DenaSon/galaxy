@@ -40,7 +40,7 @@ class RequestAction extends Component
 
                 $this->success('تایید درخواست','درخواست پذیرفته شد و پیامک اطلاع رسانی برای مدیر ساختمان ارسال شد.');
 
-                 $this->redirectRoute('service.technician-area', [], true, true);
+                return $this->redirectRoute('service.technician-area', [], true, true);
 
             } else {
                 $this->warning('Access denied', 'Request has been changed to other status : ' . $this->request->status);
