@@ -16,7 +16,7 @@
                         <a role="button" wire:click="toggleSort">#</a>
                     </th>
                     <th>
-                        ساخنمان
+                        ساختمان
                     </th>
                     <th> نقش</th>
                     <th>تاریخ ثبت‌نام</th>
@@ -43,7 +43,7 @@
                             @if($user->hasBuilding())
                                 <x-icon name="o-hand-thumb-up" class="text-success"/>
                             @else
-                                <x-icon name="o-hand-thumb-down" class="text-gray-700"/>
+                                <x-icon name="o-hand-thumb-down" class="text-gray-400"/>
                             @endif
                         </td>
                         <td class="text-xs" title="">
