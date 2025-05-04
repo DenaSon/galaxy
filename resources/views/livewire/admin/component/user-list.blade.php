@@ -44,7 +44,7 @@
                         </td>
                         <td class="text-xs" title="{{ auth()->user()->roles()->first()->name  }}">
 
-                            {{ auth()->user()->roles()->first()->name  }}
+                            {{ $user->roles()->first()->name  }}
 
 
                         </td>
