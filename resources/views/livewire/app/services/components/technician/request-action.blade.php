@@ -6,8 +6,18 @@
 
         <div class="max-w-2xl mx-auto bg-white shadow-md rounded-2xl p-6 space-y-2">
             <div>
+
+
                 <h3 class="text-lg font-bold text-gray-700 mb-2">شرح </h3>
-                <p class="text-gray-600">{{ $request->description }}</p>
+                <p class="text-gray-600">
+                    {{ $request->description }}
+
+                    <br/>
+                    <b>زمان ارسال:</b>
+                <p>
+
+                    {{ jdate($request->created_at)->toFormattedDateTimeString() }}
+                </p>
             </div>
 
             <x-hr/>
