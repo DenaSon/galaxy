@@ -1,6 +1,50 @@
 # Release Notes for 12.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v12.10.0...12.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v12.12.0...12.x)
+
+## [v12.12.0](https://github.com/laravel/framework/compare/v12.11.1...v12.12.0) - 2025-05-01
+
+* [12.x] Make Blueprint Resolver Statically by [@finagin](https://github.com/finagin) in https://github.com/laravel/framework/pull/55607
+* [12.x] Allow limiting number of assets to preload by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/framework/pull/55618
+* [12.x] Set job instance on "failed" command instance by [@willrowe](https://github.com/willrowe) in https://github.com/laravel/framework/pull/55617
+
+## [v12.11.1](https://github.com/laravel/framework/compare/v12.11.0...v12.11.1) - 2025-04-30
+
+* Revert "[12.x]`ScheduledTaskFailed` not dispatched on scheduled task failing" by [@taylorotwell](https://github.com/taylorotwell) in https://github.com/laravel/framework/pull/55612
+* [12.x] Resolve issue with BelongsToManyRelationship factory by [@jackbayliss](https://github.com/jackbayliss) in https://github.com/laravel/framework/pull/55608
+
+## [v12.11.0](https://github.com/laravel/framework/compare/v12.10.2...v12.11.0) - 2025-04-29
+
+* Add payload creation and original delay info to job payload by [@taylorotwell](https://github.com/taylorotwell) in https://github.com/laravel/framework/pull/55529
+* Add config option to ignore view cache timestamps by [@pizkaz](https://github.com/pizkaz) in https://github.com/laravel/framework/pull/55536
+* [12.x] Dispatch NotificationFailed when sending fails by [@rodrigopedra](https://github.com/rodrigopedra) in https://github.com/laravel/framework/pull/55507
+* [12.x] Option to disable dispatchAfterResponse in a test by [@gdebrauwer](https://github.com/gdebrauwer) in https://github.com/laravel/framework/pull/55456
+* [12.x] Pass flags to custom Json::$encoder by [@rodrigopedra](https://github.com/rodrigopedra) in https://github.com/laravel/framework/pull/55548
+* [12.x] Use pendingAttributes of relationships when creating relationship models via model factories by [@gdebrauwer](https://github.com/gdebrauwer) in https://github.com/laravel/framework/pull/55558
+* [12.x] Fix double query in model relation serialization by [@AndrewMast](https://github.com/AndrewMast) in https://github.com/laravel/framework/pull/55547
+* [12.x] Improve circular relation check in Automatic Relation Loading by [@litvinchuk](https://github.com/litvinchuk) in https://github.com/laravel/framework/pull/55542
+* [12.x] Prevent relation autoload context from being serialized by [@litvinchuk](https://github.com/litvinchuk) in https://github.com/laravel/framework/pull/55582
+* Remove `@internal` Annotation from `$components` Property in `InteractsWithIO` by [@michaelnabil230](https://github.com/michaelnabil230) in https://github.com/laravel/framework/pull/55580
+* Ensure fake job implements job contract by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/framework/pull/55574
+* [12.x] Fix `AnyOf` constructor parameter type by [@axlon](https://github.com/axlon) in https://github.com/laravel/framework/pull/55577
+* Sync changes to Illuminate components before release by [@driesvints](https://github.com/driesvints) in https://github.com/laravel/framework/pull/55591
+* [12.x] Set class-string generics on `Enum` rule by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/framework/pull/55588
+* [12.x] added detailed doc types to bindings related methods by [@taka-oyama](https://github.com/taka-oyama) in https://github.com/laravel/framework/pull/55576
+* [12.x] Improve [@use](https://github.com/use) directive to support function and const modifiers by [@rodolfosrg](https://github.com/rodolfosrg) in https://github.com/laravel/framework/pull/55583
+* 12.x scheduled task failed not dispatched on scheduled task failing by [@achrafAa](https://github.com/achrafAa) in https://github.com/laravel/framework/pull/55572
+* [12.x] Introduce Reflector methods for accessing class attributes by [@daniser](https://github.com/daniser) in https://github.com/laravel/framework/pull/55568
+* [12.x] Typed getters for Arr helper by [@tibbsa](https://github.com/tibbsa) in https://github.com/laravel/framework/pull/55567
+
+## [v12.10.2](https://github.com/laravel/framework/compare/v12.10.1...v12.10.2) - 2025-04-24
+
+* [12.x] Address Model@relationLoaded when relation is null by [@rodrigopedra](https://github.com/rodrigopedra) in https://github.com/laravel/framework/pull/55531
+
+## [v12.10.1](https://github.com/laravel/framework/compare/v12.10.0...v12.10.1) - 2025-04-23
+
+* Revert "Use value() helper in 'when' method to simplify code" #55465 by [@mohammadrasoulasghari](https://github.com/mohammadrasoulasghari) in https://github.com/laravel/framework/pull/55514
+* [12.x] Use xxh128 when comparing views for changes by [@shawnlindstrom](https://github.com/shawnlindstrom) in https://github.com/laravel/framework/pull/55517
+* [12.x] Ensure related models is iterable on `HasRelationships@relationLoaded()` by [@rodrigopedra](https://github.com/rodrigopedra) in https://github.com/laravel/framework/pull/55519
+* [12.x] Add Enum support for assertJsonPath in AssertableJsonString.php by [@azim-kordpour](https://github.com/azim-kordpour) in https://github.com/laravel/framework/pull/55516
 
 ## [v12.10.0](https://github.com/laravel/framework/compare/v12.9.2...v12.10.0) - 2025-04-22
 
