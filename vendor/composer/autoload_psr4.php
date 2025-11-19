@@ -104,6 +104,7 @@ return array(
     'Dflydev\\DotAccessData\\' => array($vendorDir . '/dflydev/dot-access-data/src'),
     'Denason\\Wikipedia\\' => array($vendorDir . '/denason/wikipedia/src'),
     'Denason\\PersianSlug\\' => array($vendorDir . '/denason/persian-slug/src'),
+    'Denason\\Neshan\\' => array($vendorDir . '/denason/laravel-neshan/src'),
     'Denason\\IranLocation\\' => array($vendorDir . '/denason/iran-location/src'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'DebugBar\\' => array($vendorDir . '/php-debugbar/php-debugbar/src/DebugBar'),

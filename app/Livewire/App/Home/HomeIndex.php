@@ -4,6 +4,7 @@ namespace App\Livewire\App\Home;
 
 use App\Models\Product;
 use Corcel\Model\Post;
+
 use Illuminate\Support\Facades\Cache;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -19,15 +20,13 @@ class HomeIndex extends Component
 
     public $showDrawer = false;
 
-    public function mount()
-    {
 
-
-    }
 
 
     public function render()
     {
+
+
         $websiteTitle = getSetting('website_title');
 
 

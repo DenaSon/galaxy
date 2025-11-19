@@ -1,0 +1,46 @@
+{
+    "name": "denason/laravel-neshan",
+    "description": "A Laravel package to interact with the Neshan Map API services",
+    "authors": [
+        {
+            "name": "Mohammad Asadi Sisakht",
+            "email": "mohammad.asadi.sisakht@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/denason/laravel-neshan/issues",
+        "source": "https://github.com/denason/laravel-neshan"
+    },
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Denason\\Neshan\\": "src/"
+        },
+        "files": [
+            "src/Helpers/ResponseFormatter.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "Tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Denason\\Neshan\\NeshanServiceProvider"
+            ],
+            "aliases": {
+                "Neshan": "Denason\\Neshan\\Facades\\Neshan"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0"
+    }
+}

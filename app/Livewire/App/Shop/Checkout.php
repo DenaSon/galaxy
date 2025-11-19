@@ -179,6 +179,13 @@ class Checkout extends Component
 
             $this->total = $order->total_price + $order->shipping_cost; // Total cost = cart + shipping
 
+            $order->grand_total = $this->total;
+            $order->save();
+            Log::info('PAY_DEBUG_FIX_GRAND_TOTAL', [
+                'order_id' => $order->id,
+                'fixed_grand_total' => $order->grand_total,
+            ]);
+
             if (Auth::user()->carts?->isEmpty()) {
                 $this->totalItems = $order?->orderItems?->sum('quantity') ?? 0;
             } else {
@@ -194,8 +201,35 @@ class Checkout extends Component
     public function startPayment()
     {
 
-        $this->clearCart();
+        Log::info('PAY_DEBUG_START', [
+            'order_id' => $this->orderId,
+            'order_total_price' => $this->order->total_price ?? null,
+            'order_shipping' => $this->order->shipping_cost ?? null,
+            'order_grand_total' => $this->order->grand_total ?? null,
+            'calc_total_before' => $this->total ?? null,
+            'cart_sum_live' => Auth::user()->carts()->with('variant')->get()
+                ->sum(fn($c) => $c->variant->price * $c->quantity),
+            'order_items_sum' => $this->order?->orderItems()?->sum(DB::raw('price * quantity')),
+            'user_id' => Auth::id(),
+        ]);
+
+
+        // $this->clearCart();
         $this->calcCosts();
+
+        Log::info('PAY_DEBUG_AFTER_CALC', [
+            'order_id' => $this->orderId,
+            'order_total_price' => $this->order->total_price ?? null,
+            'order_shipping' => $this->order->shipping_cost ?? null,
+            'order_grand_total' => $this->order->grand_total ?? null,
+            'calc_total_after' => $this->total ?? null,
+            'cart_sum_live' => Auth::user()->carts()->with('variant')->get()
+                ->sum(fn($c) => $c->variant->price * $c->quantity),
+            'order_items_sum' => $this->order?->orderItems()?->sum(DB::raw('price * quantity')),
+            'user_id' => Auth::id(),
+        ]);
+
+
         $this->setNewPayment();
     }
 
@@ -222,6 +256,7 @@ class Checkout extends Component
                 ->mobile($phone)
                 ->email($email)
                 ->send();
+
 
             if (!$response->success()) {
                 $this->warning('خطا', $response->error()->message());

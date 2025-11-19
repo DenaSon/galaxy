@@ -40,6 +40,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'bef5ee23a0565b79a662bd41e376f391' => __DIR__ . '/..' . '/denason/iran-location/src/Helpers.php',
+        'd07fe879f73bf86cf9208e5c17f027c7' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Helpers/ResponseFormatter.php',
         '4acb246000775810e52909b6a1e73f42' => __DIR__ . '/..' . '/denason/persian-slug/src/helpers.php',
         '5c433caba815cfad855e9d81b2e36a78' => __DIR__ . '/..' . '/denason/wikipedia/src/Helpers.php',
         'b0b808d855d8f6fc568ca07586cb55de' => __DIR__ . '/..' . '/livewire/volt/functions.php',
@@ -198,6 +199,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
             'Dflydev\\DotAccessData\\' => 22,
             'Denason\\Wikipedia\\' => 18,
             'Denason\\PersianSlug\\' => 20,
+            'Denason\\Neshan\\' => 15,
             'Denason\\IranLocation\\' => 21,
             'DeepCopy\\' => 9,
             'DebugBar\\' => 9,
@@ -626,6 +628,10 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Denason\\PersianSlug\\' => 
         array (
             0 => __DIR__ . '/..' . '/denason/persian-slug/src',
+        ),
+        'Denason\\Neshan\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/denason/laravel-neshan/src',
         ),
         'Denason\\IranLocation\\' => 
         array (
@@ -1225,6 +1231,26 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Denason\\IranLocation\\IranLocationServiceProvider' => __DIR__ . '/..' . '/denason/iran-location/src/IranLocationServiceProvider.php',
         'Denason\\IranLocation\\Models\\City' => __DIR__ . '/..' . '/denason/iran-location/src/Models/City.php',
         'Denason\\IranLocation\\Models\\Province' => __DIR__ . '/..' . '/denason/iran-location/src/Models/Province.php',
+        'Denason\\Neshan\\Contracts\\DirectionInterface' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Contracts/DirectionInterface.php',
+        'Denason\\Neshan\\Contracts\\GeocodingInterface' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Contracts/GeocodingInterface.php',
+        'Denason\\Neshan\\Contracts\\MapMatchingInterface' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Contracts/MapMatchingInterface.php',
+        'Denason\\Neshan\\Contracts\\NeshanManagerInterface' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Contracts/NeshanManagerInterface.php',
+        'Denason\\Neshan\\Contracts\\ReverseGeocodingInterface' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Contracts/ReverseGeocodingInterface.php',
+        'Denason\\Neshan\\Contracts\\SearchInterface' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Contracts/SearchInterface.php',
+        'Denason\\Neshan\\Contracts\\StaticMapInterface' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Contracts/StaticMapInterface.php',
+        'Denason\\Neshan\\Exceptions\\NeshanException' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Exceptions/NeshanException.php',
+        'Denason\\Neshan\\Facades\\Neshan' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Facades/Neshan.php',
+        'Denason\\Neshan\\NeshanManager' => __DIR__ . '/..' . '/denason/laravel-neshan/src/NeshanManager.php',
+        'Denason\\Neshan\\NeshanServiceProvider' => __DIR__ . '/..' . '/denason/laravel-neshan/src/NeshanServiceProvider.php',
+        'Denason\\Neshan\\Services\\BaseNeshanService' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Services/BaseNeshanService.php',
+        'Denason\\Neshan\\Services\\DirectionService' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Services/DirectionService.php',
+        'Denason\\Neshan\\Services\\GeocodingService' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Services/GeocodingService.php',
+        'Denason\\Neshan\\Services\\MapMatchingService' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Services/MapMatchingService.php',
+        'Denason\\Neshan\\Services\\ReverseGeocodingService' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Services/ReverseGeocodingService.php',
+        'Denason\\Neshan\\Services\\SearchService' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Services/SearchService.php',
+        'Denason\\Neshan\\Services\\StaticMapService' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Services/StaticMapService.php',
+        'Denason\\Neshan\\Support\\IranProvinces' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Support/IranProvinces.php',
+        'Denason\\Neshan\\Traits\\ValidatesMapParameters' => __DIR__ . '/..' . '/denason/laravel-neshan/src/Traits/ValidatesMapParameters.php',
         'Denason\\PersianSlug\\Facades\\SlugGeneratorFacade' => __DIR__ . '/..' . '/denason/persian-slug/src/Facades/SlugGeneratorFacade.php',
         'Denason\\PersianSlug\\PersianSlugServiceProvider' => __DIR__ . '/..' . '/denason/persian-slug/src/PersianSlugServiceProvider.php',
         'Denason\\PersianSlug\\SlugGenerator' => __DIR__ . '/..' . '/denason/persian-slug/src/SlugGenerator.php',

@@ -724,6 +724,64 @@
             "install-path": "../denason/iran-location"
         },
         {
+            "name": "denason/laravel-neshan",
+            "version": "v0.1.2",
+            "version_normalized": "0.1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DenaSon/laravel-neshan.git",
+                "reference": "9cdfbb81a825a282d61ab7d00ae77ac600c4d89a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DenaSon/laravel-neshan/zipball/9cdfbb81a825a282d61ab7d00ae77ac600c4d89a",
+                "reference": "9cdfbb81a825a282d61ab7d00ae77ac600c4d89a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+                "php": ">=8.0"
+            },
+            "time": "2025-05-24T11:49:58+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Neshan": "Denason\\Neshan\\Facades\\Neshan"
+                    },
+                    "providers": [
+                        "Denason\\Neshan\\NeshanServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/Helpers/ResponseFormatter.php"
+                ],
+                "psr-4": {
+                    "Denason\\Neshan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohammad Asadi Sisakht",
+                    "email": "mohammad.asadi.sisakht@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel package to interact with the Neshan Map API services",
+            "support": {
+                "issues": "https://github.com/denason/laravel-neshan/issues",
+                "source": "https://github.com/denason/laravel-neshan"
+            },
+            "install-path": "../denason/laravel-neshan"
+        },
+        {
             "name": "denason/persian-slug",
             "version": "1.1.0",
             "version_normalized": "1.1.0.0",
@@ -5573,24 +5631,24 @@
         },
         {
             "name": "pishran/zarinpal",
-            "version": "v4.3.5",
-            "version_normalized": "4.3.5.0",
+            "version": "v4.3.6",
+            "version_normalized": "4.3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pishran/Zarinpal.git",
-                "reference": "dd2ee1cebf3d4628ea44805f19e7f1aedaeb62c9"
+                "reference": "dcae297d8fdf73de78f3445a1cb1372650702c8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pishran/Zarinpal/zipball/dd2ee1cebf3d4628ea44805f19e7f1aedaeb62c9",
-                "reference": "dd2ee1cebf3d4628ea44805f19e7f1aedaeb62c9",
+                "url": "https://api.github.com/repos/pishran/Zarinpal/zipball/dcae297d8fdf73de78f3445a1cb1372650702c8d",
+                "reference": "dcae297d8fdf73de78f3445a1cb1372650702c8d",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
                 "php": "^7.2|^8.0"
             },
-            "time": "2025-02-24T10:19:19+00:00",
+            "time": "2025-09-13T08:59:12+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -5629,7 +5687,7 @@
             ],
             "support": {
                 "issues": "https://github.com/pishran/Zarinpal/issues",
-                "source": "https://github.com/pishran/Zarinpal/tree/v4.3.5"
+                "source": "https://github.com/pishran/Zarinpal/tree/v4.3.6"
             },
             "install-path": "../pishran/zarinpal"
         },

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+         colors="true"
+         stopOnFailure="false"
+         convertDeprecationsToExceptions="true"
+>
+    <testsuites>
+        <testsuite name="Laravel Neshan Package">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory>./src</directory>
+        </include>
+    </coverage>
+
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="NESHAN_STATIC_MAP_API_KEY" value="Your_API_KEY"/>
+        <env name="NESHAN_STATIC_MAP_BASE_URL" value="https://api.neshan.org/v4/static"/>
+    </php>
+</phpunit>

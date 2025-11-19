@@ -39,6 +39,7 @@ return array(
     '801c31d8ed748cfa537fa45402288c95' => $vendorDir . '/psy/psysh/src/functions.php',
     '4a1f389d6ce373bda9e57857d3b61c84' => $vendorDir . '/barryvdh/laravel-debugbar/src/helpers.php',
     'bef5ee23a0565b79a662bd41e376f391' => $vendorDir . '/denason/iran-location/src/Helpers.php',
+    'd07fe879f73bf86cf9208e5c17f027c7' => $vendorDir . '/denason/laravel-neshan/src/Helpers/ResponseFormatter.php',
     '4acb246000775810e52909b6a1e73f42' => $vendorDir . '/denason/persian-slug/src/helpers.php',
     '5c433caba815cfad855e9d81b2e36a78' => $vendorDir . '/denason/wikipedia/src/Helpers.php',
     'b0b808d855d8f6fc568ca07586cb55de' => $vendorDir . '/livewire/volt/functions.php',

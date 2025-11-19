@@ -9,6 +9,7 @@
         "blade-ui-kit/blade-ui-kit": "^0.7.0",
         "cryptommer/smsir": "^1.2",
         "denason/iran-location": "^1.0",
+        "denason/laravel-neshan": "^0.1.2",
         "denason/persian-slug": "^1.0",
         "denason/wikipedia": "^1.0",
         "intervention/image-laravel": "^1.3",
